@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0e0918">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -66,11 +67,13 @@
             --bg-rotation: 30deg;
         }
 
-        body {
+        html, body {
             background-color: #0e0918;
             color: #ffffff;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            width: 100%;
+            position: relative;
         }
 
         /* Buttons from Design System */
@@ -320,10 +323,12 @@
     </div>
 
     <!-- Background Elements -->
-    <div class="grid-bg"></div>
-    <div class="glow-orb glow-orange animate-pulse-slow"></div>
-    <div class="glow-orb glow-purple animate-pulse-slow" style="animation-delay: -3s;"></div>
-    <div id="particles-js"></div>
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+        <div class="grid-bg"></div>
+        <div class="glow-orb glow-orange animate-pulse-slow"></div>
+        <div class="glow-orb glow-purple animate-pulse-slow" style="animation-delay: -3s;"></div>
+        <div id="particles-js"></div>
+    </div>
 
     <!-- Navbar -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
@@ -334,22 +339,47 @@
             </div>
             
             <div class="hidden md:flex items-center gap-8 font-medium text-[13px] text-white/70">
+                <a href="#parallax-container" class="hover:text-white transition-colors duration-200 gsap-nav-item">Home</a>
                 <a href="#quem-somos"    class="hover:text-white transition-colors duration-200 gsap-nav-item">Quem somos</a>
                 <a href="#servicos"      class="hover:text-white transition-colors duration-200 gsap-nav-item">Serviços</a>
                 <a href="#tecnologia"    class="hover:text-white transition-colors duration-200 gsap-nav-item">Tecnologia</a>
-                <a href="#como-funciona" class="hover:text-white transition-colors duration-200 gsap-nav-item">Como funciona</a>
                 <a href="#contato"       class="hover:text-white transition-colors duration-200 gsap-nav-item">Contato</a>
             </div>
             
-            <div class="flex items-center gap-6 gsap-nav-item">
+            <div class="flex items-center gap-4 sm:gap-6 gsap-nav-item">
                 <a href="#contato" class="btn btn-primary px-[1.31rem] btn-anim-icon hidden sm:inline-flex">
                     <span class="btn-label pr-5">Começar Agora</span>
                     <span class="btn-icon"><i data-lucide="arrow-right" class="w-4 h-4"></i></span>
                 </a>
-                <button class="md:hidden text-white/80 hover:text-white">
+                <button id="mobile-menu-btn" class="md:hidden text-white/80 hover:text-white p-2">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu-overlay" class="fixed inset-0 bg-midnight/98 backdrop-blur-2xl z-[100] flex flex-col items-center justify-center transition-all duration-500 opacity-0 pointer-events-none">
+            <button id="mobile-menu-close" class="absolute top-7 right-6 text-white/60 hover:text-white p-2">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            
+            <div class="flex flex-col items-center gap-8 text-center">
+                <a href="#parallax-container" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Home</a>
+                <a href="#quem-somos" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Quem somos</a>
+                <a href="#servicos" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Serviços</a>
+                <a href="#tecnologia" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Tecnologia</a>
+                <a href="#contato" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Contato</a>
+                
+                <div class="mt-8 mobile-nav-link">
+                    <a href="#contato" class="btn btn-primary px-10 py-4 text-lg">
+                        Começar Agora
+                    </a>
+                </div>
+            </div>
+
+            <!-- Decorative background elements for menu -->
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-orange/10 blur-[80px] rounded-full pointer-events-none"></div>
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-purple/10 blur-[80px] rounded-full pointer-events-none"></div>
         </div>
     </nav>
 
@@ -408,10 +438,10 @@
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             
             <div class="text-center max-w-5xl mx-auto mb-20">
-                <h2 class="gsap-reveal-scroll font-display text-[2.2rem] md:text-[3.5rem] tracking-tight leading-[1.1] mb-6">
+                <h2 class="gsap-reveal-scroll font-display text-[1.8rem] sm:text-[2.5rem] md:text-[3.5rem] tracking-tight leading-[1.1] mb-6">
                     <span class="text-white/60 block">O maior desperdício da sua empresa</span>
                     <span class="text-white/50 block mt-1">talvez não esteja no financeiro.</span>
-                    <strong class="text-gradient block mt-4 text-[2.8rem] md:text-[4.5rem]">Está no operacional.</strong>
+                    <strong class="text-gradient block mt-4 text-[2.2rem] sm:text-[3.2rem] md:text-[4.5rem]">Está no operacional.</strong>
                 </h2>
             </div>
 
@@ -419,34 +449,34 @@
             <div class="max-w-6xl mx-auto mb-24">
                 <p class="gsap-reveal-scroll text-center text-[1.2rem] text-white/50 uppercase tracking-[0.2em] font-semibold mb-10">Enquanto sua equipe...</p>
                 
-                <div class="flex flex-wrap justify-center gap-4">
-                    <div class="gsap-reveal-scroll glass-card py-3 px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="copy" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[1rem] text-white/80">copia informações entre sistemas</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">copia informações entre sistemas</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="message-square" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[1rem] text-white/80">responde as mesmas mensagens diariamente</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">responde as mesmas mensagens diariamente</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="table" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[1rem] text-white/80">atualiza planilhas manualmente</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">atualiza planilhas manualmente</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="user-minus" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[1rem] text-white/80">perde leads por demora no atendimento</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">perde leads por demora no atendimento</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="repeat" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[1rem] text-white/80">executa processos repetitivos</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">executa processos repetitivos</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="clock" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[1rem] text-white/80">depende de aprovações lentas</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">depende de aprovações lentas</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="flame" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[1rem] text-white/80">e trabalha apagando incêndios...</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">e trabalha apagando incêndios...</span>
                     </div>
                 </div>
             </div>
@@ -490,7 +520,7 @@
                 <p class="gsap-reveal-scroll font-sans text-[1.2rem] md:text-[1.8rem] text-white/50 font-light leading-relaxed mb-6">
                     Empresas modernas não crescem contratando<br class="hidden md:block"> mais pessoas para tarefas repetitivas.
                 </p>
-                <h2 class="gsap-reveal-scroll font-display text-[3rem] md:text-[5rem] tracking-tight text-white leading-none">
+                <h2 class="gsap-reveal-scroll font-display text-[2.2rem] sm:text-[3rem] md:text-[5rem] tracking-tight text-white leading-none">
                     Elas crescem <strong class="bg-clip-text text-transparent bg-gradient-to-r from-brand-orange via-brand-red to-brand-purple">automatizando.</strong>
                 </h2>
             </div>
@@ -730,7 +760,7 @@
                         <div class="w-64 h-64 rounded-full bg-brand-orange/10 blur-[80px]"></div>
                     </div>
                     <!-- Card Stack -->
-                    <div class="relative w-[300px] h-[320px] mx-auto">
+                    <div class="relative w-full max-w-[280px] sm:max-w-[300px] h-[320px] mx-auto">
                         <!-- Card 3 (back) -->
                         <div class="float-card-3 absolute inset-0 rounded-3xl border border-white/8 bg-white/3 backdrop-blur-sm" style="transform: rotate(-5deg) translateY(12px) scale(0.9); z-index:1;"></div>
                         <!-- Card 2 (mid) -->
@@ -870,7 +900,7 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse inline-block"></span>
                     O que a WizzyBots faz
                 </span>
-                <h2 class="gsap-reveal-scroll font-display text-[2.5rem] md:text-[4.5rem] font-bold tracking-tight leading-[1.05] text-white mb-0">
+                <h2 class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[4.5rem] font-bold tracking-tight leading-[1.05] text-white mb-0">
                     Transformamos operações manuais<br class="hidden md:block">
                     <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(89.98deg, #ffb552 29.9%, #ff5873 71.24%, #b83dff 96.05%);">em sistemas inteligentes.</span>
                 </h2>
@@ -1201,7 +1231,7 @@
                     <span class="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse inline-block"></span>
                     Áreas de atuação
                 </span>
-                <h2 class="gsap-reveal-scroll font-display text-[2.8rem] md:text-[5rem] tracking-tight leading-[1.02] text-white">
+                <h2 class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[5rem] tracking-tight leading-[1.02] text-white">
                     Transformamos operações manuais<br>
                     <strong class="text-transparent bg-clip-text" style="background-image: linear-gradient(89.98deg, #fd8925 15%, #ff0c00 55%, #b83dff 100%);">em sistemas inteligentes.</strong>
                 </h2>
@@ -1440,7 +1470,7 @@
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-purple animate-pulse inline-block"></span>
                         Serviços
                     </span>
-                    <h2 class="gsap-reveal-scroll font-display text-[2.5rem] md:text-[4rem] tracking-tight leading-[1.05] text-white">
+                    <h2 class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[4rem] tracking-tight leading-[1.05] text-white">
                         O que<br>
                         <strong style="background-image: linear-gradient(89.98deg, #fd8925 15%, #ff0c00 55%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">automatizamos</strong>
                     </h2>
@@ -2842,20 +2872,56 @@
                     }
                 });
 
-                // Content Layer - Moves Up
-                gsap.to('.hero-content-parallax', {
-                    y: -150,
-                    opacity: 0,
-                    ease: 'none',
-                    scrollTrigger: {
-                        trigger: heroWrapper,
-                        start: 'top top',
-                        end: 'bottom top',
-                        scrub: true
+            // Content Layer - Moves Up
+            gsap.to('.hero-content-parallax', {
+                y: -150,
+                opacity: 0,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroWrapper,
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: true
+                }
+            });
+        }
+
+        // ── Mobile Menu Logic ──
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menuClose = document.getElementById('mobile-menu-close');
+        const menuOverlay = document.getElementById('mobile-menu-overlay');
+        const menuLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu(open) {
+            if (open) {
+                menuOverlay.classList.remove('pointer-events-none');
+                gsap.to(menuOverlay, { opacity: 1, duration: 0.4, ease: "power2.out" });
+                gsap.fromTo('.mobile-nav-link', 
+                    { y: 20, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: 0.2, ease: "power3.out" }
+                );
+                document.body.style.overflow = 'hidden';
+            } else {
+                gsap.to(menuOverlay, { 
+                    opacity: 0, 
+                    duration: 0.3, 
+                    ease: "power2.in",
+                    onComplete: () => {
+                        menuOverlay.classList.add('pointer-events-none');
+                        document.body.style.overflow = '';
                     }
                 });
             }
         }
+
+        if (menuBtn && menuClose && menuOverlay) {
+            menuBtn.addEventListener('click', () => toggleMenu(true));
+            menuClose.addEventListener('click', () => toggleMenu(false));
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => toggleMenu(false));
+            });
+        }
+    }
 
         // Sophisticated Parallax Effect
         const container = document.getElementById('parallax-container');
