@@ -1,0 +1,1 @@
+import{j as n,o as t,c as o,w as s,r,T as m}from"./brCOAL2F.js";const d=n({__name:"TransitionFade",props:{name:{default:"fade"}},setup(e){return(a,c)=>(t(),o(m,{name:e.name},{default:s(()=>[r(a.$slots,"default")]),_:3},8,["name"]))}});export{d as _};

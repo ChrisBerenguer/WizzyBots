@@ -1,0 +1,3160 @@
+<!-- Built with LaunchNotes -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LangChain - Changelog</title>
+<meta name="description" content="Check out the latest product updates on the LangChain LaunchNotes page.">
+<meta name="keywords" content="launchnotes, release notes, product updates, changelog">
+<link rel="canonical" href="https://changelog.langchain.com/">
+<link rel="alternate" href="https://changelog.langchain.com/feed.rss" type="application/rss+xml" title="RSS">
+<meta property="og:title" content="LangChain - Changelog">
+<meta property="og:description" content="Check out the latest product updates on the LangChain LaunchNotes page.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://uploads-ssl.webflow.com/5d4754a8a904cd6b8b0355be/5db7affd24ac076310645649_RocketHero%20Light%20Orange-p-800.png">
+<meta name="twitter:title" content="LangChain - Changelog">
+<meta name="twitter:description" content="Check out the latest product updates on the LangChain LaunchNotes page.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@launchawesome">
+<meta name="twitter:image" content="https://uploads-ssl.webflow.com/5d4754a8a904cd6b8b0355be/5db7affd24ac076310645649_RocketHero%20Light%20Orange-p-800.png">
+<meta name="twitter:image:alt" content="The LangChain LaunchNotes page">
+<meta name="author" content="The LangChain Team">
+<meta name="slack-app-id" content="AQZ806FNX">
+
+    <!-- Pagination link tags (prev/next only) -->
+        <link rel="next" href="https://changelog.langchain.com/?page=2" />
+
+    <link rel="stylesheet" href="https://assets.launchnotes.io/packs/css/public-f0ed8d11.css" media="all" />
+
+      <style>
+        
+      /* Custom Styles for LaunchNotes - Generated on 2026-03-09 */
+
+/* H1 Heading */
+.t-heading-1-rg,
+h1.t-heading-1-rg {
+  color: var(--c-blue---dark-900, #030710) !important;
+  font-family: "Twklausanne", Tahoma, sans-serif !important;
+  font-size: 72px !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  line-height: 110% !important;
+  letter-spacing: -2.16px !important;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Aeonik Mono Pro TRIAL";
+  src: url("https://changelog-langchain.netlify.app/fonts/aeonikmono-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWK Lausanne";
+  src: url("https://changelog-langchain.netlify.app/fonts/twklausanne-300.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWK Lausanne";
+  src: url("https://changelog-langchain.netlify.app/fonts/twklausanne-700.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Month Published Header (e.g., "February 2026") */
+.month-published-header {
+  color: var(--c-blue---dark-400, #006DDD) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  text-align: left !important;
+  margin: 0 0 40px 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+.month-published-header::before,
+.month-published-header::after {
+  content: none !important;
+  border: none !important;
+  width: auto !important;
+  flex: none !important;
+}
+
+.month-published-header::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px !important;
+  max-width: 8px !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 4C8 1.79086 6.20914 -1.93129e-07 4 0C1.79086 1.93129e-07 -1.93129e-07 1.79086 0 4C1.93129e-07 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z' fill='%23006DDD'/%3E%3C/svg%3E") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  flex-shrink: 0 !important;
+  border-bottom: none !important;
+}
+
+/* Article Cards */
+article.release.announcement.card {
+  display: flex !important;
+  padding: 24px !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  align-self: stretch !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  border: none !important;
+  position: relative !important;
+  background: #f2faff !important;
+  margin-bottom: 16px !important;
+}
+
+article.release.announcement.card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 12px !important;
+  padding: 1px !important;
+  background: linear-gradient(180deg, #E5F4FF 0%, #99D3FF 100%) !important;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  pointer-events: none !important;
+}
+
+article.release.announcement.card:hover {
+  background: var(--c-white, #FFF) !important;
+  box-shadow: 0 0 48px 0 rgba(127, 200, 255, 0.32) !important;
+}
+
+article.release.announcement.card > a {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+/* Category Section */
+.announcement-categories {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  width: 100% !important;
+  gap: 8px !important;
+  margin-bottom: 8px !important;
+  padding: 0 !important;
+}
+
+.announcement-categories .d-flex {
+  flex-shrink: 0 !important;
+  margin-right: 8px !important;
+}
+
+.announcement-categories .d-flex:last-child {
+  margin-right: 0 !important;
+}
+
+.announcement-categories .d-flex:first-child:has(.category-title:empty) {
+  display: none !important;
+}
+
+/* Category Badge (Tag) */
+.category-badge .category-title {
+  display: flex !important;
+  padding: 6px 12px !important;
+  align-items: center !important;
+  gap: 32px !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--c-blue---light-500, #CCE9FF) !important;
+  background: var(--c-blue---light-400, #E5F4FF) !important;
+  color: var(--c-blue---dark-600, #2F4B68) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  letter-spacing: -0.36px !important;
+  margin: 0 !important;
+  text-transform: capitalize !important;
+}
+
+/* Hide category dot */
+.category-dot {
+  display: none !important;
+}
+
+/* Version text style */
+.announcement-categories > .d-flex:has(.category-title:not(:empty)) .category-title {
+  color: var(--c-blue---dark-600, #2F4B68) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  letter-spacing: -0.36px !important;
+}
+
+/* Date Container */
+.announcement-date-container {
+  margin-left: auto !important;
+  padding: 0 !important;
+}
+
+/* Title Container */
+.announcement-title-container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.announcement-title-container h2 {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--c-blue---dark-900, #030710) !important;
+  font-family: "Twklausanne", Tahoma, sans-serif !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: 140% !important;
+}
+
+/* Excerpt Container */
+.announcement-excerpt-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  color: var(--c-black-60-p, rgba(3, 7, 16, 0.60)) !important;
+  font-family: "Twklausanne", Tahoma, sans-serif !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 300 !important;
+  line-height: 140% !important;
+}
+
+/* Filter Categories */
+.categories span.css-pdgs7p {
+  display: inline-flex !important;
+  padding: 6px 12px !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--c-blue---light-500, #CCE9FF) !important;
+  background: var(--c-blue---light-400, #E5F4FF) !important;
+  color: var(--c-blue---dark-600, #2F4B68) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  letter-spacing: -0.36px !important;
+  text-transform: lowercase !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+.categories span.css-pdgs7p:hover {
+  box-shadow: 0 2px 8px 0 rgba(127, 200, 255, 0.4) !important;
+}
+
+.categories span.css-pdgs7p.primary-background,
+.categories span.css-pdgs7p.active {
+  border-radius: 6px !important;
+  border: 1px solid var(--c-blue---dark-700, #161F34) !important;
+  background: var(--c-blue---dark-800, #0D1322) !important;
+  color: var(--c-blue---light-500, #CCE9FF) !important;
+}
+
+/* Jump to Month Section */
+.month-picker dt.primary-text-color {
+  color: var(--c-blue---dark-400, #006DDD) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-bottom: 16px !important;
+}
+
+.month-picker dt.primary-text-color::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 4C8 1.79086 6.20914 -1.93129e-07 4 0C1.79086 1.93129e-07 -1.93129e-07 1.79086 0 4C1.93129e-07 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z' fill='%23006DDD'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.month-picker dd {
+  margin-bottom: 8px !important;
+}
+
+.month-picker dd:last-child {
+  margin-bottom: 0 !important;
+}
+
+.month-picker a.active {
+  color: var(--c-blue---dark-900, #030710) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  letter-spacing: -0.36px !important;
+}
+
+.month-picker a:not(.active) {
+  color: var(--c-blue---dark-600, #2F4B68) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  letter-spacing: -0.36px !important;
+}
+
+.month-picker a:hover {
+  color: var(--c-blue---dark-800, #0c1a2b) !important;
+  text-decoration: none !important;
+}
+
+/* Align month picker to left */
+dl.month-picker.align-right,
+dl.quarter-picker.align-right {
+  text-align: left !important;
+}
+
+/* Pagination */
+.pagy-bootstrap-nav {
+  position: relative !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 80px !important;
+}
+
+#announcement-pagination .mx-auto {
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 100% !important;
+}
+
+.pagination {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.pagination .page-item {
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.pagination .page-numbers {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: center !important;
+  flex: 1 !important;
+  margin: 0 16px !important;
+}
+
+.pagination .page-link {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--c-blue---light-500, #CCE9FF) !important;
+  background: var(--c-blue---light-400, #E5F4FF) !important;
+  color: var(--c-blue---dark-600, #2F4B68) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.pagination .page-item.active .page-link {
+  background: var(--c-blue---dark-800, #0D1322) !important;
+  border-color: var(--c-blue---dark-700, #161F34) !important;
+  color: var(--c-blue---light-500, #CCE9FF) !important;
+}
+
+.pagination .page-item:not(.active):not(.disabled) .page-link:hover {
+  background: var(--c-blue---light-500, #CCE9FF) !important;
+  color: var(--c-blue---dark-900, #030710) !important;
+}
+
+.pagination .page-item.disabled .page-link {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.pagination .page-item.prev .page-link,
+.pagination .page-item.next .page-link {
+  display: inline-flex !important;
+  padding: 4px 8px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--c-blue---light-500, #CCE9FF) !important;
+  background: var(--c-blue---light-400, #E5F4FF) !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+}
+
+.pagination .page-item.prev:hover .page-link,
+.pagination .page-item.next:hover .page-link {
+  box-shadow: 0 2px 8px 0 rgba(127, 200, 255, 0.4) !important;
+}
+
+.pagination .page-item.prev.disabled .page-link,
+.pagination .page-item.next.disabled .page-link {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.pagination .page-item.prev svg path,
+.pagination .page-item.next svg path {
+  fill: var(--c-blue---dark-600, #2F4B68) !important;
+}
+
+.pagination .page-item.prev.disabled svg path,
+.pagination .page-item.next.disabled svg path {
+  fill: var(--c-blue---dark-600, #2F4B68) !important;
+  opacity: 0.5 !important;
+}
+
+/* Article CSS */
+time[data-local="time"] {
+  font-size: 14px;
+}
+
+dd.mb-0 {
+  font-size: 14px;
+}
+
+section#post.release-article.article > p[xmlns="http://www.w3.org/1999/xhtml"] {
+  font-family: "TWK Lausanne", Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+.release-name.primary-text-color.mt-0 {
+  font-size: 28px;
+}
+
+@media (max-width: 767px) {
+  .release-name.primary-text-color.mt-0 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 479px) {
+  .pl-5,
+  .px-5 {
+    padding-left: 15px !important;
+  }
+
+  .pr-5,
+  .px-5 {
+    padding-right: 15px !important;
+  }
+
+  .release-show {
+    padding-bottom: 3rem;
+}
+
+  section#post.release-article.article ul[xmlns="http://www.w3.org/1999/xhtml"] li > p {
+    font-size: 16px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Custom Overrides - added changes */
+
+/* H1 Heading - overrides */
+.t-heading-1-rg,
+h1.t-heading-1-rg {
+  font-family: "TWK Lausanne", Tahoma, sans-serif !important;
+  font-weight: 250 !important;
+}
+
+/* Paragraph 1 Regular */
+.t-paragraph-1-rg {
+  color: var(--c-black-60-p, rgba(3, 7, 16, 0.60)) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 140% !important;
+  letter-spacing: -0.18px !important;
+}
+
+/* HubSpot Form Placeholder */
+.hs-form input::placeholder,
+.hs-form textarea::placeholder {
+  color: var(--c-black-60-p, rgba(3, 7, 16, 0.60)) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+}
+
+/* HubSpot Error Messages */
+/* Standard error message - lighter weight */
+.hs-error-msg {
+  font-weight: 300 !important;
+}
+
+/* Hide "Did you mean..." suggestion with link */
+.hs-error-msgs label:has(a) {
+  display: none !important;
+}
+
+/* Month Published Header - override margin */
+.month-published-header,
+.float-left.d-flex.align-items-center.primary-text-color:has(strong:contains("Categories")) {
+  margin-bottom: 24px !important;
+}
+
+/* Categories label - same style as month header */
+.float-left.d-flex.align-items-center.primary-text-color strong,
+.categories-label {
+  color: var(--c-blue---dark-400, #006DDD) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Blue dot before Categories text */
+.float-left.d-flex.align-items-center.primary-text-color strong::before,
+.categories-label::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 4C8 1.79086 6.20914 -1.93129e-07 4 0C1.79086 1.93129e-07 -1.93129e-07 1.79086 0 4C1.93129e-07 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z' fill='%23006DDD'/%3E%3C/svg%3E") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  flex-shrink: 0 !important;
+}
+
+/* Mobile flex layout for article categories - badge and version in row, date wraps below */
+@media screen and (max-width: 767px) {
+  article.release .announcement-categories {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 0 1rem !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* Badge and version stay in first row */
+  article.release .announcement-categories .d-flex.flex-wrap.mb-2 {
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Default: date in second row (full width forces wrap) */
+  article.release .announcement-categories .announcement-date-container {
+    margin-left: 0 !important;
+    order: 3 !important;
+  }
+
+  /* If there is NO non-empty version label, move date to top (before badge) */
+  article.release .announcement-categories:not(:has(.d-flex .category-title:not(:empty))) .announcement-date-container {
+    order: 0 !important;
+  }
+}
+
+/* Space between articles and date header */
+article.release + .month-published-header {
+  margin-top: 40px !important;
+}
+
+/* Month Published Header - override margin */
+.month-published-header {
+  margin-bottom: 24px !important;
+}
+
+/* Month picker container - add left padding */
+.month-picker-container,
+dl.month-picker.align-right {
+  padding-left: 24px !important;
+}
+
+/* Search form styling */
+#nav-search-form {
+  display: flex !important;
+  height: 44px !important;
+  padding: 14px 18px !important;
+  align-items: center !important;
+  gap: 10px !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--c-black-16-p, rgba(3, 7, 16, 0.16)) !important;
+  background: transparent !important;
+}
+
+/* Search input styling */
+#nav-search-form input[type="search"],
+#nav-search-form #search {
+  color: var(--c-black-60-p, rgba(3, 7, 16, 0.60)) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+
+/* Search icon styling */
+#nav-search-form .svg-icon {
+  width: 20px !important;
+  height: 20px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Hide clear button and search icon */
+#nav-search-form #search-clear,
+#nav-search-form .svg-icon {
+  display: none !important;
+}
+
+/* Search form hover effect */
+#nav-search-form:hover {
+  border-color: var(--c-blue---dark-400, #006DDD) !important;
+}
+
+/* Darker text when user types (input has value) */
+#nav-search-form input[type="search"]:not(:placeholder-shown) {
+  color: var(--c-blue---dark-900, #030710) !important;
+}
+
+/* Navbar font fixes */
+/* Main nav links and dropdown toggles */
+.navbar2_menu .t-label-1-rg,
+.navbar2_link,
+.navbar2_dropdwn-toggle .t-label-1-rg {
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+}
+
+/* Dropdown menu items */
+.navbar2_dropdown-list .t-label-1-rg,
+.v2-navbar-dropdown-link .t-label-1-rg,
+.navbar2_dropdown-list .t-paragraph-3-rg {
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+}
+
+/* Button text in navbar */
+.navbar2_button-wrapper .no-wrap-arrow,
+.navbar-tablet-buttons .no-wrap-arrow {
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+/* Disable hover underline in navbar */
+.navbar2_menu a:hover,
+.navbar2_menu a:focus,
+.navbar2_menu a:active,
+.navbar2_dropdown-list a:hover,
+.navbar2_dropdown-list a:focus,
+.navbar2_dropdown-list a:active,
+.navbar2_link:hover,
+.navbar2_link:focus,
+.navbar2_link:active,
+.navbar2_button-wrapper a:hover,
+.navbar2_button-wrapper a:focus,
+.navbar2_button-wrapper a:active,
+.navbar-tablet-buttons a:hover,
+.navbar-tablet-buttons a:focus,
+.navbar-tablet-buttons a:active {
+  text-decoration: none !important;
+}
+
+/* Remove padding from nav-link */
+.navbar2_menu .nav-link,
+.v2-navbar-dropdown-column .nav-link {
+  padding: 0 !important;
+}
+
+/* Horizontal line at top of main content section */
+#main {
+  border-top: 2px solid rgba(3, 7, 16, 0.1) !important;
+}
+
+/* Hide empty views navbar */
+nav.views.navbar:has(.navbar-nav:empty),
+nav.views.navbar:has(ul.navbar-nav[style*="min-height: 60px"]) {
+  display: none !important;
+}
+
+/* Vertical divider on right side of sidebar */
+.category-feedback-container {
+  position: relative !important;
+}
+
+.category-feedback-container::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 2px !important;
+  background: rgba(3, 7, 16, 0.1) !important;
+}
+
+/* Remove padding from main container */
+.container-fluid.pb-4.container-padding-left.container-padding-right.container-padding-top.layout-content.announcements-index.d-md-flex {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Add padding to sidebar and content row */
+.category-feedback-container,
+.row.mt-0.flex-grow-1 {
+  padding-top: 100px !important;
+  padding-bottom: 150px !important;
+}
+
+/* Sidebar inner container margin */
+.category-feedback-container .d-md-block.d-none.mt-4 {
+  margin-right: 20px !important;
+}
+
+/* Sidebar minimum width */
+.category-feedback-container {
+  min-width: 354px !important;
+}
+
+/* Tablet view adjustments (0px - 991px) */
+@media screen and (max-width: 991px) {
+  /* Navbar background only when mobile menu is open */
+  .navbar2_component.w-nav.w--open,
+  .navbar2_component:has(.w-nav-button.w--open) {
+    background-color: #f2faff !important;
+  }
+
+  /* Smaller sidebar min-width on tablet */
+  .category-feedback-container {
+    min-width: 280px !important;
+    margin-right: 1rem !important;
+  }
+
+  /* Reduced margins on tablet */
+  .row.mt-0.flex-grow-1 {
+    margin-left: 20px !important;
+  }
+
+  .category-feedback-container .d-md-block.d-none.mt-4 {
+    margin-right: 20px !important;
+  }
+
+  /* Reduced padding on tablet */
+  .category-feedback-container,
+  .row.mt-0.flex-grow-1 {
+    padding-top: 60px !important;
+    padding-bottom: 80px !important;
+  }
+
+  /* Smaller padding for month picker */
+  .month-picker-container,
+  dl.month-picker.align-right {
+    padding-left: 16px !important;
+  }
+
+  /* Limit pagination items on tablet - hide middle pages */
+  .pagination .page-numbers .page-item:not(.active):not(:first-child):not(:last-child):not(.gap) {
+    display: none !important;
+  }
+
+  /* Always show active page */
+  .pagination .page-numbers .page-item.active {
+    display: list-item !important;
+  }
+
+  /* Show gaps on tablet */
+  .pagination .page-numbers .page-item.gap {
+    display: list-item !important;
+  }
+}
+
+/* Mobile view adjustments (up to 767px) */
+@media screen and (max-width: 767px) {
+  /* Smaller heading and subheading on mobile */
+  .t-heading-1-rg,
+  h1.t-heading-1-rg {
+    font-size: 48px !important;
+  }
+
+  .t-paragraph-1-rg {
+    font-size: 16px !important;
+  }
+
+  /* Extra spacing at bottom of changelog wrapper */
+  .changelog-wrapper {
+    padding-bottom: 2rem !important;
+  }
+
+  /* Spacer overrides on mobile */
+  .spacer-48 {
+    padding-top: 2rem !important;
+  }
+
+  .spacer-24 {
+    padding-top: 1rem !important;
+  }
+
+  /* Hide horizontal line on mobile */
+  #main {
+    border-top: none !important;
+  }
+
+  /* Hide sidebar on mobile */
+  .category-feedback-container {
+    display: none !important;
+  }
+
+  /* Remove margin from main content on mobile */
+  .row.mt-0.flex-grow-1 {
+    margin-left: 0 !important;
+  }
+
+  /* Reduced padding on mobile */
+  .row.mt-0.flex-grow-1 {
+    padding-top: 40px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Limit pagination items on mobile */
+  .pagination .page-numbers .page-item:not(.active):not(:first-child):not(:last-child):not(.gap) {
+    display: none !important;
+  }
+
+  .pagination .page-numbers .page-item.active {
+    display: list-item !important;
+  }
+
+  .pagination .page-numbers .page-item.gap {
+    display: list-item !important;
+  }
+
+  /* Remove left padding from announcements content */
+  #announcements-content {
+    padding-left: 0 !important;
+  }
+
+  /* Remove left padding from containers */
+  .container,
+  .container-fluid,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    padding-left: 0 !important;
+  }
+}
+
+/* Remove left padding from filter pane headings and categories */
+.filter-pane-wrapper .heading.clearfix.px-3,
+.filter-pane-wrapper .categories.pt-3.px-3.pb-2,
+.css-4z07o0 .heading.clearfix.px-3,
+.css-4z07o0 .categories.pt-3.px-3.pb-2 {
+  padding-left: 0 !important;
+}
+
+/* Pagination fixes */
+/* Hide all empty page-numbers containers */
+.pagination .page-numbers:empty {
+  display: none !important;
+}
+
+/* Hide duplicate page-numbers - only keep the last one with content */
+.pagination .page-numbers:nth-of-type(1):not(:has(.page-item)),
+.pagination .page-numbers:nth-of-type(2):not(:has(.page-item)),
+.pagination .page-numbers:nth-of-type(3):not(:has(.page-item)) {
+  display: none !important;
+}
+
+/* Ensure pagination layout - always use flex with proper positioning */
+.pagination {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Fix prev button - always stay on left */
+.pagination .page-item.prev {
+  order: -1 !important;
+  flex-shrink: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Fix next button - always stay on right */
+.pagination .page-item.next {
+  order: 999 !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+}
+
+/* All page-numbers containers should be centered */
+.pagination .page-numbers {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex: 1 !important;
+  gap: 8px !important;
+  margin: 0 16px !important;
+  order: 0 !important;
+}
+
+/* Hide page-numbers that don't have page items */
+.pagination .page-numbers:not(:has(> .page-item)) {
+  display: none !important;
+}
+
+/* Ensure page items inside page-numbers are visible */
+.pagination .page-numbers .page-item {
+  flex-shrink: 0 !important;
+}
+
+/* Handle pagination WITHOUT page-numbers wrapper (after Turbo reload) */
+/* Center all page-items except prev/next */
+.pagination > .page-item:not(.prev):not(.next) {
+  order: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Create centered group for page numbers when no wrapper exists */
+.pagination:not(:has(> .page-numbers)):not(:has(.page-item.active ~ .page-numbers)) {
+  justify-content: flex-start !important;
+}
+
+/* When no page-numbers wrapper, push numbers to center using margins */
+.pagination:not(:has(> .page-numbers)) > .page-item.prev + .page-item:not(.prev):not(.next) {
+  margin-left: auto !important;
+}
+
+.pagination:not(:has(> .page-numbers)) > .page-item.next {
+  margin-left: auto !important;
+}
+
+/* Alternative: use flex-grow for numbers when no wrapper */
+.pagination:not(:has(> .page-numbers)) {
+  display: flex !important;
+}
+
+.pagination:not(:has(> .page-numbers)) > .page-item:not(.prev):not(.next):first-of-type,
+.pagination:not(:has(> .page-numbers)) > .page-item.prev + .page-item:not(.prev) {
+  margin-left: auto !important;
+}
+
+.pagination:not(:has(> .page-numbers)) > .page-item:not(.prev):not(.next):last-of-type,
+.pagination:not(:has(> .page-numbers)) > .page-item:not(.prev):not(.next) + .page-item.next {
+  margin-right: auto !important;
+}
+
+/* Categories label - same style as month header */
+.float-left.d-flex.align-items-center.primary-text-color strong,
+.categories-label {
+  color: var(--c-blue---dark-400, #006DDD) !important;
+  font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+  font-size: 14px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Blue dot before Categories text */
+.float-left.d-flex.align-items-center.primary-text-color strong::before,
+.categories-label::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 4C8 1.79086 6.20914 -1.93129e-07 4 0C1.79086 1.93129e-07 -1.93129e-07 1.79086 0 4C1.93129e-07 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4Z' fill='%23006DDD'/%3E%3C/svg%3E") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  flex-shrink: 0 !important;
+}
+
+.navbar2_button-wrapper .no-wrap-arrow, .navbar-tablet-buttons .no-wrap-arrow {
+    font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+.hs-button {
+    font-family: "Aeonik Mono Pro TRIAL", monospace !important;
+    font-weight: 400 !important;
+}
+
+.d-none .d-md-block {
+  display: none !important;
+}
+
+.footie {
+  display: none !important;
+}
+
+.sticky-top dl {
+  padding-top: 6rem !important;
+}
+      </style>
+
+    <style>
+  body {
+    color: #1c3c3c;
+  }
+
+  /* primary-color primary-background */
+    .primary-color { color: #1c3c3c; }
+    .primary-background { background-color: #1c3c3c; }
+    .primary-border { border-color: #1c3c3c; }
+    .secondary-color { color: #1c3c3c; }
+    .secondary-background { background-color: #1c3c3c; }
+    .secondary-border { border-color: #1c3c3c; }
+    .white-color { color: #f2faff; }
+    .white-background { background-color: #f2faff; }
+    .white-border { border-color: #f2faff; }
+    .off-white-color { color: #f2faff; }
+    .off-white-background { background-color: #f2faff; }
+    .off-white-border { border-color: #f2faff; }
+    .gray-color { color: #1c3c3c; }
+    .gray-background { background-color: #1c3c3c; }
+    .gray-border { border-color: #1c3c3c; }
+    .light-gray-color { color: #f2faff; }
+    .light-gray-background { background-color: #f2faff; }
+    .light-gray-border { border-color: #f2faff; }
+    .primary-text-color { color: #1c3c3c; }
+    .primary-text-background { background-color: #1c3c3c; }
+    .primary-text-border { border-color: #1c3c3c; }
+    .secondary-text-color { color: #1c3c3c; }
+    .secondary-text-background { background-color: #1c3c3c; }
+    .secondary-text-border { border-color: #1c3c3c; }
+
+  .btn-primary {
+    background-color: #1c3c3c !important;
+    color: #f2faff !important;
+    border-color: #1c3c3c !important;
+  }
+
+  .btn-outline-primary {
+    border-color: #1c3c3c !important;
+    color: #1c3c3c !important;
+    outline: unset !important;
+  }
+
+  .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:focus {
+    border-color: #1c3c3c !important;
+    background-color: #1c3c3c !important;
+    color: #f2faff !important;
+  }
+
+  .custom-control-input:not(:disabled) ~ .custom-control-label {
+    cursor: pointer;
+  }
+
+  .custom-control-input:checked ~ .custom-control-label:before {
+    border-color: #1c3c3c !important;
+    background-color: #1c3c3c !important;
+  }
+
+  .custom-control-input:checked:disabled ~ .custom-control-label:before {
+    border-color: #1c3c3c !important;
+    background-color: #1c3c3c !important;
+  }
+
+  .ln-end-user-layout .form-control::placeholder {
+    color:rgba(28, 60, 60, 0.35)
+  }
+
+  .work-item-outer-container:hover {
+    color:#1c3c3c;
+  }
+
+  input#search-clear {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 0px 2px rgba(80, 80, 80, 0.7);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    height: 16px;
+    padding: 0;
+    width: 16px;
+  }
+
+  input#search {
+    background-color: #f2faff;
+    border-bottom-color: #f2faff;
+  }
+
+  input#search:focus {
+    border-bottom-color: #1c3c3c;
+  }
+
+  .navbar-brand, .navbar-brand:hover {
+    color: #1c3c3c !important;
+  }
+
+  .brand-circle {
+    color: #1c3c3c;
+    background-color: #1c3c3c;
+  }
+
+  .views.navbar {
+    border-top: 1px solid #f2faff;
+  }
+
+  .footie p, .footie a, .footie a:hover {
+    color: #1c3c3c !important;
+  }
+
+  header.cover-header button.subscribe-button svg {
+    position: relative;
+    bottom: 1px;
+    fill: #f2faff;
+  }
+
+  header.cover-header button.subscribe-button svg * {
+    transition: fill 60ms;
+  }
+
+  header.cover-header button.subscribe-button:hover svg *, header.cover-header button.subscribe-button:active svg *, header.cover-header button.subscribe-button:active:focus svg * {
+    fill: #1c3c3c;
+  }
+
+  .navbar.views .nav-item a.nav-link {
+    color: #1c3c3c;
+  }
+
+  a, a:hover, a:active {
+    color: #1c3c3c;
+  }
+
+  .navbar.views .nav-item.active {
+    border-bottom: 2px solid #1c3c3c;
+  }
+
+  .navbar.views .nav-item.active a.nav-link {
+    color: #1c3c3c;
+  }
+
+  .navbar.views .nav-item {
+    border-bottom: 2px solid #f2faff;
+  }
+
+  .month-picker a.active {
+    font-weight: bold;
+  }
+
+  .red {
+    color: #f9512b;
+  }
+
+  .separator::before, .separator::after {
+    border-bottom: 1px solid #f2faff;
+  }
+
+  .pagination .page-item.active > .page-link, .pagination .page-item.active > .page-link:focus, .pagination .page-item.active > .page-link:hover {
+    background-color: #1c3c3c;
+    border-color: #1c3c3c;
+    color: #f2faff;
+  }
+
+  .pagination .page-item .page-link {
+    color: #1c3c3c;
+  }
+
+  .pagination .page-item .page-link:hover, .pagination .page-item .page-link:focus {
+    background-color: #f2faff;
+    color: #1c3c3c;
+  }
+
+  .release.card {
+    background-color: #f2faff;
+  }
+
+  .release .latest-update .update-wrapper:before {
+    color: #1c3c3c;
+  }
+
+  .release .latest-update .update-wrapper .latest-update-heading {
+    color: #1c3c3c;
+  }
+
+  .release .content-body {
+    color: #1c3c3c
+  }
+
+  .form-control {
+    background-color: #f2faff;
+  }
+
+  ul.timeline li:after {
+    color: #1c3c3c;
+  }
+
+  ul.timeline li:before {
+    border-left: 1px solid #f2faff;
+  }
+
+  .work-items-index .subscribe-button {
+    background-color: #f2faff;
+  }
+  .work-items-index .subscribe-button.following {
+    background-color: #1c3c3c;
+  }
+  .work-item-show .subscribe-button {
+    background-color: unset;
+  }
+  .work-item-show .subscribe-button.following {
+    background-color: #1c3c3c;
+  }
+  /* Subscribe modal */
+  #subscribeModal button[type="submit"] {
+    background-color: #1c3c3c;
+    border: none;
+    color: #f2faff
+  }
+
+  /* jQuery table of contents */
+  ul.toc, ul.toc ul {
+    padding-left: 24px;
+    padding-left: 0;
+
+    ul li {
+      padding-left: 12px;
+      border-left: 1px solid #f2faff;
+    }
+
+    > li {
+      padding: 0;
+      border: none;
+    }
+
+
+    li > a {
+      color: #1c3c3c;
+      font-size: 16px;
+      white-space: nowrap;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    li::marker {
+      line-height: 1.5;
+      content: ''
+    }
+  }
+
+  pre {
+    background-color: #f2faff;
+  }
+
+  .Toastify .Toastify__toast-container {
+    pointer-events: none;
+  }
+  .Toastify .Toastify__toast {
+    border: 1px solid;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+    font-family: inherit;
+  }
+  .Toastify .Toastify__toast-theme--colored.Toastify__toast--success {
+    border-color: #1c3c3c;
+    background-color: #1c3c3c;
+    color: white;
+  }
+  .Toastify .Toastify__toast-theme--colored.Toastify__toast--error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+
+  .secure-page {
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  .secure-page-logo {
+    margin-bottom: 30px;
+  }
+
+  .secure-page-card {
+    width: 450px;
+    max-width: 90%;
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 48px;
+  }
+
+  .secure-page-card-body { text-align: center; margin-bottom: 30px; }
+
+  .public-timeline {
+    list-style-type: none;
+    padding: 15px;
+    padding-bottom: 0px;
+    position: relative;
+  }
+
+  .public-timeline .timeline-item {
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  .public-timeline .timeline-item .timeline-announcement {
+    flex: 1;
+  }
+
+  .public-timeline .timeline-item p {
+    color: #1c3c3c;
+    display: inline-block;
+    margin-bottom: 0px;
+  }
+
+  .public-timeline .timeline-item .date {
+    color: #1c3c3c;
+    display: inline-block;
+    width: 160px;
+  }
+
+  .public-timeline .timeline-item .announcement-link {
+    color: #E66A47;
+  }
+
+  .public-timeline .timeline-item::before {
+    content: '';
+    background: gray;
+    position: absolute;
+    border-radius: 50%;
+    left: -8px;
+    top: 19px;
+    width: 8px;
+    height: 8px;
+    z-index: 100
+  }
+
+  .public-timeline .timeline-tail {
+    position: absolute;
+    top: 20px;
+    left: -5px;
+    height: 100%;
+    border-left: 2px solid #f2faff;
+    z-index: 1;
+  }
+
+  .public-timeline .timeline-item.last .timeline-tail {
+    display: none;
+  }
+</style>
+
+
+        <link rel="apple-touch-icon" sizes=60x60 href="https://ik.imagekit.io/launchnotes/production/tr:w-60,h-60/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="apple-touch-icon" sizes=76x76 href="https://ik.imagekit.io/launchnotes/production/tr:w-76,h-76/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="apple-touch-icon" sizes=114x114 href="https://ik.imagekit.io/launchnotes/production/tr:w-114,h-114/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="apple-touch-icon" sizes=120x120 href="https://ik.imagekit.io/launchnotes/production/tr:w-120,h-120/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="apple-touch-icon" sizes=152x152 href="https://ik.imagekit.io/launchnotes/production/tr:w-152,h-152/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="apple-touch-icon" sizes=167x167 href="https://ik.imagekit.io/launchnotes/production/tr:w-167,h-167/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="apple-touch-icon" sizes=180x180 href="https://ik.imagekit.io/launchnotes/production/tr:w-180,h-180/a3xgw1xu3cba3pa819dqeizzq520">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/launchnotes/production/tr:w-32,h-32/a3xgw1xu3cba3pa819dqeizzq520">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://ik.imagekit.io/launchnotes/production/tr:w-16,h-16/a3xgw1xu3cba3pa819dqeizzq520">
+  <link rel="shortcut icon" href="https://ik.imagekit.io/launchnotes/production/tr:w-16,h-16/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="mask-icon" sizes=60x60 href="https://ik.imagekit.io/launchnotes/production/tr:w-32,h-32/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="mask-icon" sizes=76x76 href="https://ik.imagekit.io/launchnotes/production/tr:w-32,h-32/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="mask-icon" sizes=114x114 href="https://ik.imagekit.io/launchnotes/production/tr:w-32,h-32/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="mask-icon" sizes=120x120 href="https://ik.imagekit.io/launchnotes/production/tr:w-32,h-32/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="mask-icon" sizes=152x152 href="https://ik.imagekit.io/launchnotes/production/tr:w-32,h-32/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="mask-icon" sizes=167x167 href="https://ik.imagekit.io/launchnotes/production/tr:w-32,h-32/a3xgw1xu3cba3pa819dqeizzq520">
+    <link rel="mask-icon" sizes=180x180 href="https://ik.imagekit.io/launchnotes/production/tr:w-32,h-32/a3xgw1xu3cba3pa819dqeizzq520">
+
+<link rel="manifest" href="https://assets.launchnotes.io/assets/favicon/site-95b4d753717a3b3021b9dcd1a94a59a9918da1016969dcfcca0ce747add2e243.webmanifest">
+<meta name="apple-mobile-web-app-title" content="LangChain">
+<meta name="application-name" content="LangChain">
+<meta name="msapplication-TileColor" content="#2b5797">
+<meta name="msapplication-config" content="https://assets.launchnotes.io/assets/favicon/browserconfig-05a7558d6d75012d9277748d15242876a62df20a501c39d8a0c9a506d298d0bb.xml">
+<meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css" integrity="sha512-Jk4AqjWsdSzSWCSuQTfYRIF84Rq/eV0G2+tu07byYwHcbTGfdmLrHjUSwvzp5HvbiqK4ibmNwdcG49Y5RGYPTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.slim.min.js" integrity="sha512-jxwTCbLJmXPnV277CvAjAcWAjURzpephk0f0nO2lwsvcoDMqBdy1rh1jEwWWTabX1+Grdmj9GFAgtN22zrV0KQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="HYZXdm_EnR_ID7lR_H_3_JHyxiQCw2Zh6FxsnVODA_iV_Z6fEMbVZefps5p_aIAEWcEFD26tBeT1ZcKNwfeXJQ" />
+    <meta name="csp-nonce" />
+
+    <html data-wf-page="69a95c7d82d975827303ea17" data-wf-site="69a95c7c82d975827303e883">
+
+
+<link href="https://changelog-langchain.netlify.app/css/webflow.css" rel="stylesheet" type="text/css"/>
+<link href="https://changelog-langchain.netlify.app/css/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="https://changelog-langchain.netlify.app/css/changelog-e1debd.webflow.css" rel="stylesheet" type="text/css"/>
+
+
+
+<style>
+* {
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-o-font-smoothing: antialiased;
+}
+</style>
+
+<!-- [Attributes by Finsweet] Disable scrolling -->
+<script defer src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-scrolldisable@1/scrolldisable.js"></script>
+
+<div class="page-wrapper">
+    <div class="global-styles">
+      <div class="style-overrides w-embed">
+        <style>
+/* Ensure all elements inherit the color from its parent */
+a,
+/*     .w-input,    */
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-nav-brand,
+.w-dropdown-btn,
+/*.w-dropdown-toggle, */
+.w-slider-arrow-left,
+.w-slider-arrow-right,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+/* Remove default Webflow chevron from form select */
+select{
+  -webkit-appearance:none;
+}
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+.margin-0 {
+  margin: 0rem !important;
+}
+.padding-0 {
+  padding: 0rem !important;
+}
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+/* Apply "..." at 100% width */
+.truncate-width { 
+		width: 100%; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+/* Removes native scrollbar */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none; 
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.page-wrapper {
+	overflow: clip;
+}
+/* Bullets Pricing */
+.bullet-list_wrapper{
+  list-style: none;
+  margin: 0;
+}
+.bullet-list_wrapper > li{
+  position: relative;
+  padding-left: 1.3em;
+}
+.bullet-list_wrapper > li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 999px;
+  background: var(--_v-2-colors---c-blue-light--900);
+  transform: translateY(-50%);
+}
+</style>
+      </div>
+      <div class="w-embed">
+        <style>
+  :root {
+    --font-from: 18;
+    --font-to: 20;
+    --vw-from: calc(1920 / 100);
+    --vw-to: calc(2400 / 100);
+    --coefficient: calc((var(--font-to) - var(--font-from)) / (var(--vw-to) - var(--vw-from)));
+    --base: calc((var(--font-from) - var(--vw-from) * var(--coefficient)) / 16);
+  }
+  html {
+    font-size: calc(var(--base) * 1rem + var(--coefficient) * 1vw);
+  }
+  @media screen and (max-width: 1920px) {
+    :root {
+      --font-from: 16;
+      --font-to: 18;
+      --vw-from: calc(1440 / 100);
+      --vw-to: calc(1920 / 100);
+      }
+  }
+  @media screen and (max-width: 1440px) {
+    :root {
+      --font-from: 16;
+      --font-to: 16;
+      --vw-from: calc(1 / 100);
+      --vw-to: calc(1440 / 100);
+      }
+  }
+</style>
+      </div>
+    </div>
+    <div data-animation="default" class="navbar2_component light-82 w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium" data-w-id="78591661-528d-fca0-cbe9-320c1ea09ead" role="banner" data-duration="400">
+      <div class="navbar2_container light-83">
+        <a href="https://www.langchain.com/" class="navbar2_logo-link light-84 w-nav-brand">
+          <div class="navbar2_logo light-85 w-embed"><svg width="100%" height="100%" viewbox="0 0 131 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_4783_495)">
+                <path d="M69.3795 9.85744H69.3579C68.9576 8.92431 67.8011 7.92334 65.8885 7.92334C62.7764 7.92334 60.5527 10.1023 60.5527 13.7488C60.5527 17.3953 62.7979 19.6189 65.91 19.6189C67.8888 19.6189 68.9112 18.6411 69.3563 17.5525H69.3778V18.9307C69.3778 20.8879 68.3768 21.8211 66.5767 21.8211C65.0645 21.8211 64.0652 21.2867 63.7988 20.0425H60.9978C61.3088 22.3108 63.4001 24 66.6231 24C69.669 24 72.3807 22.4647 72.3807 18.5303V8.23438H69.3811V9.85744H69.3795ZM66.5321 17.3738C64.464 17.3738 63.4183 15.6614 63.4183 13.772C63.4183 11.8825 64.4855 10.1933 66.5321 10.1933C68.5787 10.1933 69.6442 12.1274 69.6442 13.772C69.6442 15.4165 68.7987 17.3738 66.5321 17.3738Z" fill="currentColor"></path>
+                <path d="M47.2325 12.7727C47.2325 9.94849 45.899 7.88037 42.2955 7.88037C39.2711 7.88037 37.696 9.86245 37.3618 11.7502H40.052C40.3416 10.6831 41.187 10.0163 42.3203 10.0163C43.6307 10.0163 44.4315 10.5491 44.4315 11.4607C44.4315 12.4385 43.72 12.6619 42.231 12.8836C40.6294 13.1268 36.8506 13.4378 36.8506 16.5962C36.8506 18.5303 38.3628 20.0425 40.8743 20.0425C43.0533 20.0425 44.0096 18.8861 44.4761 17.9761H44.4993V18.5535C44.4993 18.9307 44.5225 19.3543 44.5886 19.7315H47.4559C47.2987 18.9969 47.2342 17.8189 47.2342 16.9304V12.7727H47.2325ZM44.4761 14.3974C44.4761 17.0661 43.1211 17.9314 41.6536 17.9314C40.3647 17.9314 39.6963 17.3308 39.6963 16.4639C39.6963 15.5969 40.3862 15.1304 41.92 14.8177C43.6092 14.4851 44.2098 13.9739 44.4761 13.418V14.3958V14.3974Z" fill="currentColor"></path>
+                <path d="M55.2815 7.9248C53.503 7.9248 52.4821 8.87945 51.8352 10.2146V8.23585H49.0342V19.7313H51.9014V14.5726C51.9014 11.7715 52.9471 10.4148 54.4808 10.4148C56.127 10.4148 56.5704 11.7268 56.5704 13.3946V19.7313H59.4161V12.7046C59.4161 9.88207 58.2596 7.9248 55.2799 7.9248H55.2815Z" fill="currentColor"></path>
+                <path d="M81.9947 6.10158C84.1505 6.10158 85.618 6.96853 86.4634 8.83645H89.3985C88.4207 5.59034 85.9737 3.56689 81.9947 3.56689C77.1702 3.56689 73.9009 6.99335 73.9009 11.8162C73.9009 16.639 77.147 20.0208 81.9715 20.0192C85.9075 20.0192 88.5977 17.908 89.3985 14.7496H86.4419C85.7967 16.4388 84.4185 17.4845 81.9947 17.4845C78.9256 17.4845 76.8806 15.0838 76.8806 11.8162C76.8806 8.54857 78.9041 6.10323 81.9947 6.10323V6.10158Z" fill="currentColor"></path>
+                <path d="M125.996 7.9248C124.217 7.9248 123.196 8.87945 122.55 10.2146V8.23585H119.749V19.7313H122.616V14.5726C122.616 11.7715 123.661 10.4148 125.195 10.4148C126.84 10.4148 127.285 11.7268 127.285 13.3946V19.7313H130.13V12.7046C130.13 9.88207 128.974 7.9248 125.994 7.9248H125.996Z" fill="currentColor"></path>
+                <path d="M117.814 4.84424H114.858V7.51294H117.814V4.84424Z" fill="currentColor"></path>
+                <path d="M114.903 10.2264V19.7298H117.77V8.23438H116.893C115.793 8.23438 114.903 9.12615 114.903 10.2264Z" fill="currentColor"></path>
+                <path d="M97.2693 7.92172C95.4908 7.92172 94.4699 8.87802 93.823 10.19V3.85498H91.022V19.7265H93.8892V14.5678C93.8892 11.7668 94.9349 10.4101 96.4686 10.4101C98.1148 10.4101 98.5582 11.7221 98.5582 13.3898V19.7265H101.404V12.6999C101.404 9.87733 100.247 7.92007 97.2677 7.92007L97.2693 7.92172Z" fill="currentColor"></path>
+                <path d="M113.035 12.7727C113.035 9.94849 111.701 7.88037 108.098 7.88037C105.073 7.88037 103.498 9.86245 103.166 11.7502H105.856C106.145 10.6831 106.991 10.0163 108.124 10.0163C109.434 10.0163 110.235 10.5491 110.235 11.4607C110.235 12.4385 109.524 12.6619 108.035 12.8836C106.433 13.1268 102.654 13.4378 102.654 16.5962C102.654 18.5303 104.167 20.0425 106.678 20.0425C108.857 20.0425 109.813 18.8861 110.28 17.9761H110.301V18.5535C110.301 18.9307 110.323 19.3543 110.391 19.7315H113.258C113.102 18.9969 113.036 17.8189 113.036 16.9304V12.7727H113.035ZM110.277 14.3974C110.277 17.0661 108.922 17.9314 107.454 17.9314C106.165 17.9314 105.497 17.3308 105.497 16.4639C105.497 15.5969 106.187 15.1304 107.72 14.8177C109.41 14.4851 110.01 13.9739 110.277 13.418V14.3958V14.3974Z" fill="currentColor"></path>
+                <path d="M28.525 14.4586V3.85498H25.6445V16.4589H26.5247C27.6299 16.4589 28.525 15.5638 28.525 14.4586Z" fill="currentColor"></path>
+                <path d="M35.9537 17.1851H25.6445V19.7313H35.9537V17.1851Z" fill="currentColor"></path>
+              </g>
+              <g clip-path="url(#clip1_4783_495)">
+                <path d="M6.64803 14.103C7.89438 12.8566 8.595 11.1643 8.595 9.40177C8.595 7.63928 7.89378 5.94697 6.64803 4.70058L1.94697 0C0.701225 1.24639 0 2.9387 0 4.70119C0 6.46368 0.701225 8.15599 1.94697 9.40238L6.64742 14.103H6.64803Z" fill="currentColor"></path>
+                <path d="M16.4845 14.5379C15.2388 13.2921 13.5459 12.5908 11.7841 12.5908C10.0222 12.5908 8.32936 13.2921 7.08301 14.5379L11.7841 19.239C13.0298 20.4848 14.7227 21.1861 16.4851 21.1861C18.2476 21.1861 19.9398 20.4848 21.1862 19.239L16.4851 14.5379H16.4845Z" fill="currentColor"></path>
+                <path d="M1.95832 19.228C3.20468 20.4738 4.89693 21.1751 6.65938 21.1751V14.5269H0.0107422C0.0113472 16.2893 0.711968 17.9817 1.95832 19.228Z" fill="currentColor"></path>
+                <path d="M18.2997 7.58717C17.0533 6.34138 15.3611 5.63953 13.598 5.64014C11.8356 5.64014 10.1433 6.34138 8.89697 7.58777L13.598 12.289L18.2997 7.58717Z" fill="currentColor"></path>
+              </g>
+              <defs>
+                <clippath id="clip0_4783_495">
+                  <rect width="104.488" height="20.433" fill="currentColor" transform="translate(25.6445 3.56689)"></rect>
+                </clippath>
+                <clippath id="clip1_4783_495">
+                  <rect width="21.1862" height="21.1862" fill="currentColor"></rect>
+                </clippath>
+              </defs>
+            </svg></div>
+        </a>
+        <nav role="navigation" id="w-node-_78591661-528d-fca0-cbe9-320c1ea09eb1-7303ea17" class="navbar2_menu is-page-height-tablet light-86 w-nav-menu">
+          <div class="navbar-menu-wrapper light-87">
+            <div data-delay="100" data-hover="true" data-w-id="78591661-528d-fca0-cbe9-320c1ea09eb3" class="navbar2_menu-dropdown light-189 w-dropdown">
+              <div class="navbar2_dropdwn-toggle light-190 w-dropdown-toggle">
+                <div class="t-label-1-rg light-203 is-bigger-nav light-191">Products</div>
+                <div class="embed-icon is-nav-arrow light-192 w-embed"><svg width="100%" height="100%" viewbox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 5.96046e-07L3.26786 4H2.66071L0 0L0.958333 1.19209e-07L2.96429 3L5.04167 4.76837e-07L6 5.96046e-07Z" fill="currentColor"></path>
+                  </svg></div>
+              </div>
+              <nav class="navbar2_dropdown-list is-product light-92 w-dropdown-list">
+                <div class="navbar2_dropdown-list-wrapper is-product light-194">
+                  <div class="v2-navbar-dropdown-grid light-94">
+                    <div class="v2-navbar-dropdown-column light-196">
+                      <a href="https://www.langchain.com/langsmith-platform" class="nav-link light-96 w-inline-block">
+                        <div class="t-label-1-rg light-203">LangSmith Platform</div>
+                        <div class="embed-icon-2 is-nav light-98 w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.61538 4V5.23077H9.90154L4 11.1323L4.86769 12L10.7692 6.09846V11.3846H12V4H4.61538Z" fill="currentColor"></path>
+                          </svg></div>
+                      </a>
+                      <div class="v2-navbar-divider light-178"></div>
+                      <div class="v2-navbar-dropdown-links light-125">
+                        <a href="https://www.langchain.com/langsmith/observability" class="v2-navbar-dropdown-link light-202 w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/69a95d04a16fcfebec31c02c_Frame%202147254707.svg" alt="" class="v2-navbar-dropdown-icon light-137">
+                          <div class="v2-navbar-dropdown-content light-138">
+                            <div class="t-label-1-rg light-203">Observability</div>
+                            <div class="t-paragraph-3-rg text-c-white-60-p light-140">See exactly what your agents are doing</div>
+                          </div>
+                        </a>
+                        <a href="https://www.langchain.com/langsmith/evaluation" class="v2-navbar-dropdown-link light-202 w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/69a95d04a16fcfebec31c030_Frame%202147255166.svg" alt="" class="v2-navbar-dropdown-icon light-137">
+                          <div class="v2-navbar-dropdown-content light-138">
+                            <div class="t-label-1-rg light-203">Evaluation</div>
+                            <div class="t-paragraph-3-rg text-c-white-60-p light-140">Score and improve agent performance</div>
+                          </div>
+                        </a>
+                        <a href="https://www.langchain.com/langsmith/deployment" class="v2-navbar-dropdown-link light-202 w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/69a95d04a16fcfebec31c031_updated.svg" alt="" class="v2-navbar-dropdown-icon light-137">
+                          <div class="v2-navbar-dropdown-content light-138">
+                            <div class="t-label-1-rg light-203">Deployment</div>
+                            <div class="t-paragraph-3-rg text-c-white-60-p light-140">Ship and scale agents in production</div>
+                          </div>
+                        </a>
+                        <a href="https://www.langchain.com/langsmith/agent-builder" class="v2-navbar-dropdown-link light-202 w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/69a95d04a16fcfebec31c02d_Frame%202147254986.svg" alt="" class="v2-navbar-dropdown-icon light-137">
+                          <div class="v2-navbar-dropdown-content light-138">
+                            <div class="t-label-1-rg light-203">Agent Builder</div>
+                            <div class="t-paragraph-3-rg text-c-white-60-p light-140">No-code agents for real work</div>
+                          </div>
+                        </a>
+                      </div>
+                      <div class="hide light-216 w-embed">
+                        <style>
+.nav-link:hover .embed-icon-2.is-nav {
+	transform: translateX(-0.75rem);
+}
+</style>
+                      </div>
+                    </div>
+                    <div class="v2-navbar-dropdown-column light-196">
+                      <div class="t-label-1-rg light-203 blue-light-500 light-177">Open Source Frameworks</div>
+                      <div class="v2-navbar-divider light-178"></div>
+                      <div class="v2-navbar-dropdown-links light-125">
+                        <a href="https://www.langchain.com/deep-agents" class="v2-navbar-dropdown-link light-202 w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/69a95d04a16fcfebec31c02f_updated-1.svg" alt="" class="v2-navbar-dropdown-icon light-137">
+                          <div class="v2-navbar-dropdown-content light-138">
+                            <div class="t-label-1-rg light-203">deepagents</div>
+                            <div class="t-paragraph-3-rg text-c-white-60-p light-140">Build long-running agents for complex tasks</div>
+                          </div>
+                        </a>
+                        <a href="https://www.langchain.com/langchain" class="v2-navbar-dropdown-link light-202 w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/69a95d04a16fcfebec31c02e_Frame%202147254707-1.svg" alt="" class="v2-navbar-dropdown-icon light-137">
+                          <div class="v2-navbar-dropdown-content light-138">
+                            <div class="t-label-1-rg light-203">langchain</div>
+                            <div class="t-paragraph-3-rg text-c-white-60-p light-140">Quick start agents with any model provider</div>
+                          </div>
+                        </a>
+                        <a href="https://www.langchain.com/langgraph" class="v2-navbar-dropdown-link light-202 w-inline-block"><img loading="lazy" src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/69a95d04a16fcfebec31c032_Frame%202147255166-1.svg" alt="" class="v2-navbar-dropdown-icon light-137">
+                          <div class="v2-navbar-dropdown-content light-138">
+                            <div class="t-label-1-rg light-203">langgraph</div>
+                            <div class="t-paragraph-3-rg text-c-white-60-p light-140">Build reliable agents with low-level control</div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <div data-delay="100" data-hover="true" data-w-id="78591661-528d-fca0-cbe9-320c1ea09ef9" class="navbar2_menu-dropdown light-189 w-dropdown">
+              <div class="navbar2_dropdwn-toggle light-190 w-dropdown-toggle">
+                <div class="t-label-1-rg light-203 is-bigger-nav light-191">Learn</div>
+                <div class="embed-icon is-nav-arrow light-192 w-embed"><svg width="100%" height="100%" viewbox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 5.96046e-07L3.26786 4H2.66071L0 0L0.958333 1.19209e-07L2.96429 3L5.04167 4.76837e-07L6 5.96046e-07Z" fill="currentColor"></path>
+                  </svg></div>
+              </div>
+              <nav class="navbar2_dropdown-list is-learn light-145 w-dropdown-list">
+                <div class="navbar2_dropdown-list-wrapper is-product light-194">
+                  <div class="v2-navbar-dropdown-grid light-94 is-3col light-147">
+                    <div class="v2-navbar-dropdown-column light-196">
+                      <div class="t-label-1-rg light-203 blue-light-500 light-177">Resources</div>
+                      <div class="v2-navbar-divider light-178"></div>
+                      <div class="v2-navbar-dropdown-links light-125 is-gap-16 light-197">
+                        <a href="https://blog.langchain.com/" target="_blank" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">Blog</div>
+                        </a>
+                        <a href="https://www.langchain.com/customers" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">Customer Stories</div>
+                        </a>
+                        <a href="https://www.langchain.com/resources" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">Guides</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="v2-navbar-dropdown-column light-196">
+                      <div class="t-label-1-rg light-203 blue-light-500 light-177">How-To</div>
+                      <div class="v2-navbar-divider light-178"></div>
+                      <div class="v2-navbar-dropdown-links light-125 is-gap-16 light-197">
+                        <a href="https://academy.langchain.com/" target="_blank" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">LangChain Academy</div>
+                        </a>
+                        <a href="https://www.youtube.com/@LangChain" target="_blank" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">YouTube</div>
+                        </a>
+                        <a href="https://docs.langchain.com/" target="_blank" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">Documentation</div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="v2-navbar-dropdown-column light-196">
+                      <div class="t-label-1-rg light-203 blue-light-500 light-177">Community</div>
+                      <div class="v2-navbar-divider light-178"></div>
+                      <div class="v2-navbar-dropdown-links light-125 is-gap-16 light-197">
+                        <a href="https://www.langchain.com/startups" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">LangSmith for Startups</div>
+                        </a>
+                        <a href="https://luma.com/langchain?k=c" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">Events</div>
+                        </a>
+                        <a href="https://www.langchain.com/community" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">Community</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="https://docs.langchain.com/" target="_blank" class="navbar2_link t-label-1-rg light-204 w-nav-link">Docs</a>
+            <div data-delay="100" data-hover="true" data-w-id="78591661-528d-fca0-cbe9-320c1ea09f3c" class="navbar2_menu-dropdown light-189 w-dropdown">
+              <div class="navbar2_dropdwn-toggle light-190 w-dropdown-toggle">
+                <div class="t-label-1-rg light-203 is-bigger-nav light-191">Company</div>
+                <div class="embed-icon is-nav-arrow light-192 w-embed"><svg width="100%" height="100%" viewbox="0 0 6 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 5.96046e-07L3.26786 4H2.66071L0 0L0.958333 1.19209e-07L2.96429 3L5.04167 4.76837e-07L6 5.96046e-07Z" fill="currentColor"></path>
+                  </svg></div>
+              </div>
+              <nav class="navbar2_dropdown-list is-company light-193 w-dropdown-list">
+                <div class="navbar2_dropdown-list-wrapper is-product light-194">
+                  <div class="v2-navbar-dropdown-grid light-94 is-1col light-195">
+                    <div class="v2-navbar-dropdown-column light-196">
+                      <div class="v2-navbar-dropdown-links light-125 is-gap-16 light-197">
+                        <a href="https://www.langchain.com/about" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">About</div>
+                        </a>
+                        <a href="https://www.langchain.com/careers" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">Careers</div>
+                        </a>
+                        <a href="https://www.langchain.com/langchain-partner-network" class="v2-navbar-dropdown-link light-202 w-inline-block">
+                          <div class="t-label-1-rg light-203">Partners</div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </div>
+            <a href="https://www.langchain.com/pricing" class="navbar2_link t-label-1-rg light-204 w-nav-link">Pricing</a>
+            <div class="navbar-tablet-buttons light-205">
+              <a href="https://smith.langchain.com/" target="_blank" class="button-v2 primary---dark-4 w-inline-block">
+                <div class="no-wrap-arrow primary---dark-5">Try LangSmith</div>
+                <div class="embed-icon is-btn-arrow primary---dark-6 w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+                  </svg></div>
+              </a>
+              <a href="https://www.langchain.com/contact-sales" class="button-v2 secondary---dark-4 w-inline-block">
+                <div class="no-wrap-arrow secondary---dark-2">Get a demo</div>
+                <div class="embed-icon is-btn-arrow secondary---dark-6 w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+                  </svg></div>
+              </a>
+            </div>
+          </div>
+        </nav>
+        <div class="navbar2_button-wrapper light-206">
+          <div class="hide-tablet light-208">
+            <a href="https://smith.langchain.com/" target="_blank" class="button-v2 primary---dark-4 w-inline-block">
+              <div class="no-wrap-arrow primary---dark-5">Try LangSmith</div>
+              <div class="embed-icon is-btn-arrow primary---dark-6 w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+                </svg></div>
+            </a>
+          </div>
+          <div class="hide-tablet light-208">
+            <a href="https://www.langchain.com/contact-sales" class="button-v2 secondary---dark-4 w-inline-block">
+              <div class="no-wrap-arrow secondary---dark-2">Get a demo</div>
+              <div class="embed-icon is-btn-arrow secondary---dark-6 w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11.9852 4L12 10.7704H10.9314V6.60741L10.9462 5.80741L4.74211 12L4 11.2444L10.2041 5.03704L9.47681 5.05185L5.21707 5.05185V4L11.9852 4Z" fill="currentColor"></path>
+                </svg></div>
+            </a>
+          </div>
+          <div class="hide light-216 w-embed">
+            <style>
+  @media only screen and (min-width: 992px) and (max-width: 1279px) {
+    .navbar2_button-wrapper a {
+      padding: .5rem .5rem;
+      min-height: 2.5rem;
+    }
+  }
+</style>
+          </div>
+          <div class="navbar2_menu-button light-210 w-nav-button">
+            <div class="menu-icon2 light-211">
+              <div class="menu-icon2_line-top light-212"></div>
+              <div class="menu-icon2_line-middle light-213">
+                <div class="menu-icon2_line-middle-inner light-214"></div>
+              </div>
+              <div class="menu-icon2_line-bottom light-215"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hide light-216 w-embed">
+        <style>
+  @media only screen and (max-width: 991px) {
+    .navbar2_component.w-nav.w--open,
+    .navbar2_component:has(.w-nav-button.w--open) {
+      background-color: var(--_v-2-colors---c-blue-dark--900);
+    }
+    .navbar2_component.w-variant-5ea50dfb-c632-4d13-5830-b2180e4df891.w-nav.w--open,
+    .navbar2_component.w-variant-5ea50dfb-c632-4d13-5830-b2180e4df891:has(.w-nav-button.w--open),
+    .navbar2_component[data-wf--navbar--variant="light"].w-nav.w--open,
+    .navbar2_component[data-wf--navbar--variant="light"]:has(.w-nav-button.w--open) {
+      background-color: var(--_v-2-colors---c-blue-light--300);
+    }
+  }
+</style>
+      </div>
+    </div>
+    <main class="main-wrapper">
+      <section class="changelog-section">
+        <div class="v2-padding-global">
+          <div class="w-layout-blockcontainer v2-container w-container">
+            <div class="changelog-wrapper">
+              <div class="changelog-content">
+                <h1 class="t-heading-1-rg">Changelog</h1>
+                <div class="spacer-48"></div>
+                <div class="t-paragraph-1-rg">Sign up for our newsletter to stay up to date</div>
+                <div class="spacer-24"></div>
+                <div class="max-width-485">
+                  <div class="w-embed w-script">
+                    <div class="newsletter-form-wrapper">
+                      <div id="newsletter-form"></div>
+                    </div>
+                    <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js"></script>
+                    <script>
+  hbspt.forms.create({
+    region: "na1",
+    portalId: "242623570",
+    formId: "badbd693-e1e0-43ea-87cf-bbe61f815114",
+    target: "#newsletter-form",
+    css: ""
+  });
+</script>
+                    <style>
+  label {
+    margin-bottom: 0px;
+  }
+  ul {
+    color: #ff643d;
+    margin-bottom: 0px;
+    padding-left: 34px;
+    margin-top: 6px;
+  }
+  .hs_error_rollup {
+  	display: none;
+  }
+  .submitted-message {
+  	color: #030710 !important;
+  }
+</style>
+                  </div>
+                </div>
+              </div>
+              <div class="hero-illustration-wrapper is-langgraph"><img loading="lazy" src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/69aa906f80c4fe0401e85e13_funnel%20lines.svg" alt="" class="hero-illustration is-langgraph">
+                <div class="hero-illustration-bg is-langgraph"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=69a95c7c82d975827303e883" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript" integrity="sha384-4abIlA5/v7XaW1HMXKBgnUuhnjBYJ/Z9C1OSg4OhmVw9O3QeHJ/qJqFBERCDPv7G" crossorigin="anonymous"></script>
+  <script src="https://cdn.prod.website-files.com/69a95c7c82d975827303e883/js/webflow.c649eda5.1fe7e68a45944200.js" type="text/javascript" integrity="sha384-uNvxFWMdHzHvIAD5zSPU+cZ4WWdg6JQs532ikqZuaXHG6/Nv2VgRXKIBn3DuBeiD" crossorigin="anonymous"></script>
+
+<script>
+  // Custom Scripts for LaunchNotes - Generated on 2026-03-09
+
+(function() {
+  // Wait for DOM to be ready
+  function init() {
+    // Move date container to categories section in articles
+    reorderArticleCategories();
+
+    // Fix pagination layout
+    fixPaginationLayout();
+
+    // Apply tablet pagination limit
+    document.querySelectorAll('.pagination').forEach(limitPaginationItems);
+
+    // Reorder category elements - badge first, then version
+    reorderCategoryElements();
+
+    // Move search form to sidebar container
+    moveSearchForm();
+  }
+
+  // Move date to categories section
+  function reorderArticleCategories() {
+    document.querySelectorAll('article.release').forEach(function(article) {
+      var categories = article.querySelector('.announcement-categories');
+      var dateContainer = article.querySelector('.announcement-date-container');
+      var link = article.querySelector('a');
+
+      if (dateContainer && link) {
+        if (!categories) {
+          // Create categories section if it doesn't exist
+          categories = document.createElement('section');
+          categories.className = 'announcement-categories d-flex flex-column';
+          link.insertBefore(categories, link.firstChild);
+        }
+        categories.appendChild(dateContainer);
+      }
+    });
+  }
+
+  // Fix pagination layout - arrows on sides, numbers in center
+  function fixPaginationLayout() {
+    document.querySelectorAll('.pagination').forEach(function(pagination) {
+      // Skip if already processed (has page-numbers wrapper)
+      if (pagination.querySelector('.page-numbers')) return;
+
+      var prev = pagination.querySelector('.prev');
+      var next = pagination.querySelector('.next');
+      var numbers = document.createElement('div');
+      numbers.className = 'page-numbers';
+
+      // Move all page items except prev/next to the numbers container
+      var items = Array.from(pagination.querySelectorAll('.page-item:not(.prev):not(.next)'));
+      items.forEach(function(item) {
+        numbers.appendChild(item);
+      });
+
+      pagination.appendChild(numbers);
+      if (prev) pagination.insertBefore(prev, pagination.firstChild);
+      if (next) pagination.appendChild(next);
+
+      // Limit visible page numbers on tablet
+      limitPaginationItems(pagination);
+    });
+  }
+
+  // Limit pagination items for tablet view
+  function limitPaginationItems(pagination) {
+    var isTablet = window.innerWidth <= 991 && window.innerWidth >= 768;
+
+    var pageNumbersContainer = pagination.querySelector('.page-numbers');
+    if (!pageNumbersContainer) return;
+
+    var allItems = pageNumbersContainer.querySelectorAll('.page-item');
+    var activeItem = pageNumbersContainer.querySelector('.page-item.active');
+    if (!activeItem || allItems.length <= 5) return;
+
+    if (isTablet) {
+      // Find active item index among non-gap items
+      var pageItems = [];
+      allItems.forEach(function(item) {
+        if (!item.classList.contains('gap')) {
+          pageItems.push(item);
+        }
+      });
+
+      var activeIndex = pageItems.indexOf(activeItem);
+
+      // On tablet: show only first, last, active, and 1 page before/after active
+      pageItems.forEach(function(item, index) {
+        var isFirst = index === 0;
+        var isLast = index === pageItems.length - 1;
+        var isNearActive = Math.abs(index - activeIndex) <= 1;
+
+        if (isFirst || isLast || isNearActive) {
+          item.style.display = 'list-item';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Handle gap items
+      allItems.forEach(function(item) {
+        if (item.classList.contains('gap')) {
+          var prevPage = item.previousElementSibling;
+          var nextPage = item.nextElementSibling;
+
+          // Check if prev and next are visible page items
+          var prevVisible = prevPage && !prevPage.classList.contains('gap') && prevPage.style.display !== 'none';
+          var nextVisible = nextPage && !nextPage.classList.contains('gap') && nextPage.style.display !== 'none';
+
+          if (prevVisible && nextVisible) {
+            item.style.display = 'list-item';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    } else {
+      // On desktop: show all
+      allItems.forEach(function(item) {
+        item.style.display = 'list-item';
+      });
+    }
+  }
+
+  // Reorder category elements - badge first, then version
+  function reorderCategoryElements() {
+    document.querySelectorAll('.announcement-categories').forEach(function(container) {
+      var badgeDiv = container.querySelector('.d-flex:has(.category-badge)');
+      var versionDiv = container.querySelector('.d-flex:has(.category-title:not(:empty))');
+
+      if (badgeDiv && versionDiv && badgeDiv !== versionDiv) {
+        // Insert badge div before version div
+        container.insertBefore(badgeDiv, versionDiv);
+      }
+    });
+  }
+
+  // Move search form to target container
+  function moveSearchForm() {
+    var searchForm = document.getElementById('nav-search-form');
+    var targetContainer = document.querySelector('.d-md-block.d-none.mt-4');
+
+    if (searchForm && targetContainer) {
+      // Remove position-absolute and margin-left classes
+      searchForm.classList.remove('position-absolute', 'container-margin-left');
+      // Add margin-bottom
+      searchForm.style.marginBottom = '32px';
+      // Move the form to the top of the target container (as first child)
+      targetContainer.insertBefore(searchForm, targetContainer.firstChild);
+    }
+  }
+
+  // Run on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+  // Run on Turbo page loads (for pagination navigation)
+  document.addEventListener('turbo:load', init);
+  document.addEventListener('turbo:render', init);
+
+  // Apply pagination limit immediately after Turbo renders
+  document.addEventListener('turbo:render', function() {
+    setTimeout(function() {
+      document.querySelectorAll('.pagination').forEach(limitPaginationItems);
+    }, 50);
+  });
+
+  // Re-apply pagination limit on window resize
+  var resizeTimeout;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(function() {
+      document.querySelectorAll('.pagination').forEach(limitPaginationItems);
+    }, 250);
+  });
+
+  // Also run after a short delay for dynamically loaded content
+  setTimeout(init, 100);
+  setTimeout(init, 500);
+  setTimeout(init, 1000);
+})();
+</script>
+
+      <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_UlHlA3tIQlE89WRH9NSy0MzlOg1XYiUXnXiYjKBJ4OT',
+          {
+            api_host:'https://a.launchnotes.com',
+            loaded: function (posthog_instance) {
+              var properties = {"project_id":"pro_3Ijp7fWHDFv2L","project_name":"LangChain","organization_id":"org_J6CptUvpSuQWC"};
+                posthog_instance.group('Project', "pro_3Ijp7fWHDFv2L", { name: "LangChain" });
+            },
+          }
+        );
+      </script>
+
+    <script src="https://assets.launchnotes.io/packs/js/turbo-744676db2015b15a301a.js" data-turbo-track="reload" data-cookieconsent="ignore"></script>
+
+    
+  </head>
+
+  <body class="off-white-background ln-end-user-layout" data-branding-version="a740238a8c1fe0b4161482d9c32a05c1fc009d6352ebc415ecd4f2debab312de">
+    <header class="cover-header white-background">
+      
+      
+
+    </header>
+
+    <main role="main" id="main">
+      <turbo-frame id="outlet">
+  <style>
+    body {
+      background-color: #f2faff;
+    }
+  </style>
+
+
+  
+<nav class="views navbar navbar-expand-lg navbar-light white-background py-0 position-relative">
+  <form id="nav-search-form" class="form-inline position-absolute d-none d-lg-block container-margin-left" data-turbo-frame="outlet" data-turbo-action="replace" action="https://changelog.langchain.com/" accept-charset="UTF-8" method="get">
+    <svg class="svg-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8.33333 13.8946C11.555 13.8946 14.1667 11.2829 14.1667 8.06124C14.1667 4.83958 11.555 2.22791 8.33333 2.22791C5.11167 2.22791 2.5 4.83958 2.5 8.06124C2.5 11.2829 5.11167 13.8946 8.33333 13.8946Z" stroke="#1c3c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17.5 17.2279L12.5 12.2279" stroke="#1c3c3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+    <input type="search" name="search" id="search" class="form-control search-field" tabindex="1" autocomplete="off" placeholder="search" aria-label="Search" />
+    <input id="search-clear" type="reset" value="X" alt="Clear the search form" style='display:none'>
+    
+    
+</form>
+  <div class="mx-auto">
+    <ul class="navbar-nav mx-auto mt-0 flex-row" style="min-height: 60px">
+    </ul>
+  </div>
+</nav>
+
+<script type="text/javascript" charset="utf-8">
+  var currentLocation = "/"
+
+  var clearEl = document.getElementById("search-clear");
+  var searchEl = document.getElementById("search");
+
+  document.getElementById('nav-search-form').addEventListener('submit', function() {
+    document.getElementById('loading-indicator').style.display = 'block';
+    document.getElementById('announcements-container').style.display = 'none';
+  });
+
+  clearEl.addEventListener('click', function () {
+    const frame = document.querySelector("turbo-frame#outlet");
+
+    if (!!frame) {
+      searchEl.value = "";
+
+      var params = new URLSearchParams(window.location.search);
+      var nextParams = {};
+
+      if (params.has("categories")) {
+        nextParams["categories"] = params.get("categories");
+      }
+
+      var search = new URLSearchParams(nextParams).toString();
+
+      frame.src = `${currentLocation}?${search}`;
+
+      const newURL = `${window.location.protocol}//${window.location.host}${currentLocation}?${search}`;
+
+      window.history.pushState({}, '', newURL);
+      window.Turbo.navigator.history.push(newURL);
+    }
+  });
+</script>
+
+
+  <div class="container-fluid pb-4 container-padding-left container-padding-right container-padding-top layout-content announcements-index d-md-flex">
+    <div class="category-feedback-container">
+      <div class="d-md-block d-none mt-4">
+
+        
+<div class="filter-pane-wrapper mr-auto">
+    <div
+      data-controller="categories"
+      data-categories-categories-hidden-value="false"
+      data-categories-change-types-hidden-value="false"
+      data-categories-selected-categories-value="[]"
+      data-categories-selected-change-types-value="[]"
+      data-categories-project-value="{&quot;id&quot;:&quot;pro_3Ijp7fWHDFv2L&quot;,&quot;name&quot;:&quot;LangChain&quot;,&quot;slug&quot;:&quot;langchain&quot;,&quot;published&quot;:true,&quot;categories&quot;:[{&quot;id&quot;:&quot;cat_FvjDMlZoyaKkX&quot;,&quot;name&quot;:&quot;LangSmith&quot;,&quot;description&quot;:null,&quot;color&quot;:&quot;#d85522&quot;,&quot;text_color&quot;:&quot;#394967&quot;,&quot;background_color&quot;:&quot;#d85522&quot;},{&quot;id&quot;:&quot;cat_qGqhzMRb6ntr2&quot;,&quot;name&quot;:&quot;LangChain&quot;,&quot;description&quot;:null,&quot;color&quot;:&quot;#772730&quot;,&quot;text_color&quot;:&quot;#394967&quot;,&quot;background_color&quot;:&quot;#772730&quot;},{&quot;id&quot;:&quot;cat_5UBL6DD8PcXXL&quot;,&quot;name&quot;:&quot;LangGraph&quot;,&quot;description&quot;:null,&quot;color&quot;:&quot;#076597&quot;,&quot;text_color&quot;:&quot;#394967&quot;,&quot;background_color&quot;:&quot;#076597&quot;},{&quot;id&quot;:&quot;cat_ZWTyLBFVqdtSq&quot;,&quot;name&quot;:&quot;LangSmith Self-Hosted&quot;,&quot;description&quot;:null,&quot;color&quot;:&quot;#216453&quot;,&quot;text_color&quot;:&quot;#394967&quot;,&quot;background_color&quot;:&quot;#216453&quot;}],&quot;change_types&quot;:[{&quot;id&quot;:&quot;ct_9jOb5BCHTfqN4&quot;,&quot;name&quot;:&quot;v0.13.10&quot;},{&quot;id&quot;:&quot;ct_zkhLwGSv7ET7C&quot;,&quot;name&quot;:&quot;v0.13.8&quot;},{&quot;id&quot;:&quot;ct_Sx27TFgtiEzET&quot;,&quot;name&quot;:&quot;v0.12.7&quot;},{&quot;id&quot;:&quot;ct_h8m5zVq2uRyTK&quot;,&quot;name&quot;:&quot;v0.12.61&quot;},{&quot;id&quot;:&quot;ct_CWrGLfBE7biVd&quot;,&quot;name&quot;:&quot;v0.12.43&quot;},{&quot;id&quot;:&quot;ct_yZkMxO4oVSJ9W&quot;,&quot;name&quot;:&quot;v0.11.79&quot;},{&quot;id&quot;:&quot;ct_8BYPK2S0WK1Yb&quot;,&quot;name&quot;:&quot;v0.11.51&quot;},{&quot;id&quot;:&quot;ct_QXpFl1yv97nsG&quot;,&quot;name&quot;:&quot;v0.11.31&quot;},{&quot;id&quot;:&quot;ct_V46AayKT6pAJi&quot;,&quot;name&quot;:&quot;v0.10.38&quot;},{&quot;id&quot;:&quot;ct_NvkKGQI5xKDA5&quot;,&quot;name&quot;:&quot;v0.10.122&quot;},{&quot;id&quot;:&quot;ct_P29uG3pFcVBT9&quot;,&quot;name&quot;:&quot;v0.10.111&quot;},{&quot;id&quot;:&quot;ct_dH7MnHxcdCtSC&quot;,&quot;name&quot;:&quot;v0.10.92&quot;},{&quot;id&quot;:&quot;ct_a66pzE2ckbJ6X&quot;,&quot;name&quot;:&quot;v0.10.90&quot;},{&quot;id&quot;:&quot;ct_XMkqyOTBo4vBB&quot;,&quot;name&quot;:&quot;v0.10.79&quot;},{&quot;id&quot;:&quot;ct_Sq4fVasV6seZa&quot;,&quot;name&quot;:&quot;v0.10.69&quot;},{&quot;id&quot;:&quot;ct_IT7t6kfaC6t6l&quot;,&quot;name&quot;:&quot;v0.10.63&quot;},{&quot;id&quot;:&quot;ct_FLIBWGe8hlohR&quot;,&quot;name&quot;:&quot;v0.10.19&quot;}]}"
+      data-categories-location-value="/"
+      data-categories-translations-value="{&quot;categoriesTitle&quot;:&quot;Categories&quot;,&quot;labelsTitle&quot;:&quot;Labels&quot;,&quot;categoriesClear&quot;:&quot;Clear&quot;}"
+      data-categories-change-type-rollout-value="true"
+    ></div>
+</div>
+
+
+          <div
+  data-controller="rss-feed"
+  data-rss-feed-url-value=https://changelog.langchain.com/feed
+  data-rss-feed-translations-value="{&quot;subscribeAllCategories&quot;:&quot;Subscribe to all categories&quot;,&quot;subscribeSelectedCategories&quot;:&quot;Subscribe to selected categories&quot;,&quot;subscribeWorkItem&quot;:&quot;Subscribe to this work item&quot;,&quot;feedTitle&quot;:&quot;RSS Feed&quot;}"
+></div>
+
+
+            <div class="d-none d-md-block">
+  <a class="primary-text-color powered-by-link " style="display: block !important;" href="https://www.launchnotes.com/powered-by?company=LangChain&amp;utm_campaign=https%3A%2F%2Fchangelog.langchain.com%2F&amp;utm_content=project-release-index&amp;utm_medium=powered-by&amp;utm_source=in-app">Powered by LaunchNotes</a>
+</div>
+
+      </div>
+    </div>
+
+    <div class="row mt-0 flex-grow-1">
+      <div class="loading-indicator col-md-12 col-lg-9 col-xl-8 w-75 mx-auto text-center" id="loading-indicator">
+        <svg
+  id="L9"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  x="0px"
+  y="0px"
+  viewBox="0 0 100 100"
+  xml:space="preserve"
+  width="60px"
+>
+  <path
+    fill="#1c3c3c"
+    d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+  >
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="rotate"
+      dur="1s"
+      from="0 50 50"
+      to="360 50 50"
+      repeatCount="indefinite" />
+  </path>
+</svg>
+<p class="loading-label primary-text-color">
+  Loading...
+</p>
+
+      </div>
+
+      <div class="col-md-12 col-lg-9 col-xl-8 mx-auto announcements-container" id="announcements-container">
+          
+  <div data-controller="pagination-loading">
+    <div data-pagination-loading-target="loading" class="d-none text-center py-4">
+      <svg
+  id="L9"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  x="0px"
+  y="0px"
+  viewBox="0 0 100 100"
+  xml:space="preserve"
+  width="60px"
+>
+  <path
+    fill="#1c3c3c"
+    d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+  >
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="rotate"
+      dur="1s"
+      from="0 50 50"
+      to="360 50 50"
+      repeatCount="indefinite" />
+  </path>
+</svg>
+<p class="loading-label primary-text-color">
+  Loading...
+</p>
+
+    </div>
+
+    <div id="announcements-content">
+          <div class="separator primary-text-color month-published-header">
+    March 2026
+  </div>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/agent-builder-is-now-langsmith-fleet" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#d85522" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#d85522"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">Agent Builder is now LangSmith Fleet</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      We&#39;ve renamed LangSmith Agent Builder to LangSmith Fleet . What changed Agent Builder is now LangSmith Fleet . You&#39;ll see the new name reflected across the...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2026-03-19T17:05:31Z" data-local="time" data-format="%B %e, %Y">March 19, 2026</time></small>
+    </section>
+  </a>
+</article>
+
+  <div class="separator primary-text-color month-published-header">
+    February 2026
+  </div>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/pin-a-baseline-experiment-in-langsmith" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#d85522" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#d85522"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">Pin a baseline experiment in LangSmith</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      You can now pin any experiment as your baseline, so every subsequent run is automatically measured against it. Instead of manually selecting experiments for...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2026-02-19T19:01:00Z" data-local="time" data-format="%B %e, %Y">February 19, 2026</time></small>
+    </section>
+  </a>
+</article>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/agent-builder-chat-file-uploads-and-tool-registry" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#d85522" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#d85522"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">Agent Builder: chat, file uploads, and tool registry</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      We built Agent Builder around a simple idea: working with an agent should feel like working with a teammate. There&#39;s now a central Chat agent with access to...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2026-02-18T18:59:00Z" data-local="time" data-format="%B %e, %Y">February 18, 2026</time></small>
+    </section>
+  </a>
+</article>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/scheduled-reports-for-insights-agent" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#d85522" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#d85522"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">Scheduled reports for Insights Agent</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      The LangSmith Insights Agent now runs on your schedule, no manual triggers required. Set a recurring cadence (daily, weekly, or a custom cron expression) and...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2026-02-17T18:56:00Z" data-local="time" data-format="%B %e, %Y">February 17, 2026</time></small>
+    </section>
+  </a>
+</article>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/deep-agents-v0-4" target="_self">
+    <section class="announcement-title-container">
+      <h2 class="m-0">Deep Agents v0.4</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      deepagents v0.4 ships pluggable sandbox support, smarter conversation history summarization, and Responses API as the default for OpenAI models. Agents can...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2026-02-10T18:50:00Z" data-local="time" data-format="%B %e, %Y">February 10, 2026</time></small>
+    </section>
+  </a>
+</article>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/customize-trace-previews-in-langsmith" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        v0.13.10
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#d85522" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#d85522"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">Customize trace previews in LangSmith</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      You can now configure which parts of a trace’s inputs and outputs appear directly in the tracing table. This is especially useful for projects with custom...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2026-02-06T21:09:00Z" data-local="time" data-format="%B %e, %Y">February  6, 2026</time></small>
+    </section>
+  </a>
+</article>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/track-costs-across-your-entire-agent-stack" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#d85522" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#d85522"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">Track costs across your entire agent stack</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      LangSmith now gives you a unified view of costs across your full agent workflow, not just LLM calls. Submit custom cost metadata for any run, whether that&#39;s...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2026-02-05T18:42:00Z" data-local="time" data-format="%B %e, %Y">February  5, 2026</time></small>
+    </section>
+  </a>
+</article>
+
+  <div class="separator primary-text-color month-published-header">
+    January 2026
+  </div>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/langsmith-self-hosted-v0-13" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#216453" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#216453"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith Self-Hosted</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">LangSmith Self-Hosted v0.13</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      This self-hosted release expands feature parity with LangSmith Cloud while improving performance, security, and operational control. It brings Insights , the...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2026-01-16T16:20:39Z" data-local="time" data-format="%B %e, %Y">January 16, 2026</time></small>
+    </section>
+  </a>
+</article>
+
+  <div class="separator primary-text-color month-published-header">
+    December 2025
+  </div>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/pairwise-annotation-queues-for-comparing-agent-outputs" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        v0.12.61
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#d85522" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#d85522"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">Pairwise annotation queues for comparing agent outputs</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      Pairwise Annotation Queues in LangSmith are a fast, structured way to compare two agent outputs side-by-side and pick a winner. Scoring subjective tasks is...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2025-12-17T20:17:00Z" data-local="time" data-format="%B %e, %Y">December 17, 2025</time></small>
+    </section>
+  </a>
+</article>
+
+      <article class="release announcement card white-background d-flex pt-3">
+  <a href="https://changelog.langchain.com/announcements/langsmith-fetch-debug-agents-from-your-terminal" target="_self">
+      <section class="announcement-categories d-flex flex-column">
+    <div class="d-flex flex-wrap mb-2">
+      <span class="category-title secondary-text-color" style="letter-spacing: 0.2px; font-size: 12px">
+        
+      </span>
+    </div>
+    <div class="d-flex flex-wrap mb-2">
+        <span class="category-badge d-flex align-items-center mr-3" style="font-size:12px">
+          <svg class="category-dot" width="9px" height="9px" viewBox="0 0 12 12" fill="#d85522" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="6" cy="6" r="6" fill="#d85522"/>
+          </svg>
+          <span class="category-title secondary-text-color text-uppercase" style="letter-spacing:0.2px">LangSmith</span>
+        </span>
+    </div>
+</section>
+
+    <section class="announcement-title-container">
+      <h2 class="m-0">LangSmith Fetch: Debug agents from your terminal</h2>
+    </section>
+    <section class="announcement-excerpt-container">
+      We&#39;ve launched LangSmith Fetch — a CLI tool that brings full LangSmith trace access directly into your terminal, coding environment, or IDE. If you build...
+    </section>
+    <section class="announcement-date-container">
+      <small class="primary-text-color opacity-6 timestamp release-timestamp"><time datetime="2025-12-10T19:57:00Z" data-local="time" data-format="%B %e, %Y">December 10, 2025</time></small>
+    </section>
+  </a>
+</article>
+
+
+    </div>
+
+    <div id="announcement-pagination">
+    <div class="p-2 d-flex justify-content-between align-items-center mb-4">
+      <div class="mx-auto">
+        
+
+
+  <nav aria-label="pager"  class="pagy-bootstrap-nav" role="navigation">
+    <ul class="pagination">
+
+        <li class="page-item prev disabled">
+          <a href="#" class="page-link">
+            
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><title>left chevron</title>
+  <g fill="#CCC">
+    <path d="M23.12 11.12L21 9l-9 9 9 9 2.12-2.12L16.24 18z"></path>
+  </g>
+</svg>
+          </a>
+        </li>
+
+
+          <li class="page-item active">
+            <a href="/?page=1"  class="page-link" data-turbo-action="replace" >1</a>
+          </li>
+          <li class="page-item">
+            <a href="/?page=2"  class="page-link" data-turbo-action="replace" rel="next" >2</a>
+          </li>
+          <li class="page-item">
+            <a href="/?page=3"  class="page-link" data-turbo-action="replace" >3</a>
+          </li>
+          <li class="page-item">
+            <a href="/?page=4"  class="page-link" data-turbo-action="replace" >4</a>
+          </li>
+          <li class="page-item">
+            <a href="/?page=5"  class="page-link" data-turbo-action="replace" >5</a>
+          </li>
+          <li class="page-item disabled gap">
+            <a href="#" class="page-link">
+              &hellip;
+            </a>
+          </li>
+          <li class="page-item">
+            <a href="/?page=18"  class="page-link" data-turbo-action="replace" >18</a>
+          </li>
+
+        <li class="page-item next">
+          <a href="/?page=2"  class="page-link" data-turbo-action="replace" rel="next" aria-label="next">
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 36 36"><title>left chevron</title>
+  <g fill="#CCC">
+    <path d="M15 9l-2.12 2.12L19.76 18l-6.88 6.88L15 27l9-9z"></path>
+  </g>
+</svg></a>
+        </li>
+    </ul>
+  </nav>
+
+      </div>
+    </div>
+    </div>
+  </div>
+
+      </div>
+
+      <div class="d-none d-lg-block col-lg-3 col-xl-4 month-picker-container">
+          <dl class="month-picker align-right">
+  <dt class="primary-text-color">Jump to Month</dt>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="active primary-color" aria-current="page" href="/?date=2026-03-01">March 2026</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2026-02-01">February 2026</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2026-01-01">January 2026</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-12-01">December 2025</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-11-01">November 2025</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-10-01">October 2025</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-09-01">September 2025</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-08-01">August 2025</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-07-01">July 2025</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-06-01">June 2025</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-05-01">May 2025</a>
+    </dd>
+    <dd style="">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-04-01">April 2025</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-03-01">March 2025</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-02-01">February 2025</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2025-01-01">January 2025</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-12-01">December 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-11-01">November 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-10-01">October 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-09-01">September 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-08-01">August 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-07-01">July 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-06-01">June 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-05-01">May 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-04-01">April 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-03-01">March 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-02-01">February 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2024-01-01">January 2024</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2023-12-01">December 2023</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2023-11-01">November 2023</a>
+    </dd>
+    <dd style="display:none">
+      <a data-turbo-frame="outlet" data-turbo-action="replace" class="primary-text-color opacity-8" href="/?date=2023-10-01">October 2023</a>
+    </dd>
+    <dd id="older-months-toggle">
+      <a href="/?show_older=1"
+         class="primary-text-color opacity-8"
+         data-turbo-frame="outlet"
+         data-turbo-action="replace">Older</a>
+    </dd>
+</dl>
+
+      </div>
+    </div>
+
+      <div class="footie row mt-4 mb-4 ml-0 mr-0 d-block d-md-none">
+        <div class="col text-center mt-3 mb-4 p-0">
+          <a class="primary-text-color powered-by-link " style="display: block !important;" href="https://www.launchnotes.com/powered-by?company=LangChain&amp;utm_campaign=https%3A%2F%2Fchangelog.langchain.com%2F&amp;utm_content=project-release-index&amp;utm_medium=powered-by&amp;utm_source=in-app">Powered by LaunchNotes</a>
+        </div>
+      </div>
+  </div>
+</turbo-frame>
+      
+    </main>
+
+    <div id="feedback-portal-root"></div>
+
+      <div class="modal fade white-background-color" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <style>
+            #subscribeModal .modal-header {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                margin: 20px 0 0 0 !important;
+            }
+            #subscribeModal .modal-title {
+                font-weight: 700;
+                text-align: left !important;
+                flex: 1;
+                margin: 0;
+            }
+            #subscribeModal .modal-header .close {
+                position: static !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                float: none !important;
+            }
+            .grecaptcha-badge {
+                visibility: hidden;
+            }
+        </style>
+        <div class="modal-header border-0 pb-0 px-4" style="display: flex; justify-content: space-between; align-items: center;">
+          <h5 class="modal-title mt-0 primary-text-color" id="subscribeLabel" style="font-weight: 700; text-align: left; flex: 1;">
+            Subscribe to updates
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="padding: 0; margin: 0; line-height: 1;">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form data-turbo="false" class="new_subscriber" id="new_subscriber" action="https://changelog.langchain.com/subscribers" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="4HlLLjmfy_VUX780_oHbf13CKysFWGMIJd1-T37SP7A51kfBsAnL7z51HBD-g-WOhVVwxhG4RczijHpmJ00q8g" autocomplete="off" />
+          <div class="modal-body px-4">
+            <div class="form-group">
+              <label class="primary-text-color" for="subscriber_email">
+                <span style="color: red; margin-right: 4px;">*</span>Email
+</label>              <input class="form-control" placeholder="email@example.com" type="email" name="subscriber[email]" id="subscriber_email" />
+              <div id="email-error" style="display:none; color: red; font-size: 12px; margin-top: 4px;"></div>
+              <input type="hidden" name="subscribed_object_type" id="subscribed_object_type" value="Project" autocomplete="off" />
+              <input type="hidden" name="subscribed_object_id" id="subscribed_object_id" value="pro_3Ijp7fWHDFv2L" autocomplete="off" />
+                <div class="form-group mt-3" style="margin-left: 0; padding-left: 0;">
+                  <label class="primary-text-color" style="margin-bottom: 0.5rem;"><span style="color: red; margin-right: 4px;">*</span>Categories</label>
+                  <div
+                    id="subscribe-category-select"
+                    data-controller="subscribe-category-select"
+                    data-categories="[{&quot;value&quot;:&quot;cat_FvjDMlZoyaKkX&quot;,&quot;label&quot;:&quot;LangSmith&quot;,&quot;backgroundColor&quot;:&quot;#d85522&quot;},{&quot;value&quot;:&quot;cat_qGqhzMRb6ntr2&quot;,&quot;label&quot;:&quot;LangChain&quot;,&quot;backgroundColor&quot;:&quot;#772730&quot;},{&quot;value&quot;:&quot;cat_5UBL6DD8PcXXL&quot;,&quot;label&quot;:&quot;LangGraph&quot;,&quot;backgroundColor&quot;:&quot;#076597&quot;},{&quot;value&quot;:&quot;cat_ZWTyLBFVqdtSq&quot;,&quot;label&quot;:&quot;LangSmith Self-Hosted&quot;,&quot;backgroundColor&quot;:&quot;#216453&quot;}]"
+                    data-required="true"
+                  ></div>
+                  <small class="secondary-text-color">Choose the topics you'd like to stay updated on.</small>
+                  <div id="category-error" style="display:none; color: red; font-size: 12px; margin-top: 4px;">
+                    Please select at least one category.
+                  </div>
+                </div>
+                <script src="https://www.recaptcha.net/recaptcha/api.js?render=6LcNzNsZAAAAAJH1kh0G2YHL-7Cm3dSmFKcOzOM_"   ></script>
+        <script>
+          // Define function so that we can call it again later if we need to reset it
+          // This executes reCAPTCHA and then calls our callback.
+          function executeRecaptchaForSubscribe() {
+            grecaptcha.ready(function() {
+              grecaptcha.execute('6LcNzNsZAAAAAJH1kh0G2YHL-7Cm3dSmFKcOzOM_', {action: 'subscribe'}).then(function(token) {
+                setInputWithRecaptchaResponseTokenForSubscribe('g-recaptcha-response-data-subscribe', token)
+              });
+            });
+          };
+          // Invoke immediately
+          executeRecaptchaForSubscribe()
+
+          // Async variant so you can await this function from another async function (no need for
+          // an explicit callback function then!)
+          // Returns a Promise that resolves with the response token.
+          async function executeRecaptchaForSubscribeAsync() {
+            return new Promise((resolve, reject) => {
+             grecaptcha.ready(async function() {
+                resolve(await grecaptcha.execute('6LcNzNsZAAAAAJH1kh0G2YHL-7Cm3dSmFKcOzOM_', {action: 'subscribe'}))
+              });
+            })
+          };
+
+                  var setInputWithRecaptchaResponseTokenForSubscribe = function(id, token) {
+          var element = document.getElementById(id);
+          if (element !== null) element.value = token;
+        }
+
+        </script>
+<input type="hidden" name="g-recaptcha-response-data[subscribe]" id="g-recaptcha-response-data-subscribe" data-sitekey="6LcNzNsZAAAAAJH1kh0G2YHL-7Cm3dSmFKcOzOM_" class="g-recaptcha g-recaptcha-response "/>
+
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mb-2 primary-background-color">Subscribe</button>
+            <small class="secondary-text-color">
+              By clicking subscribe, you accept our <a href="https://www.launchnotes.com/privacy" target="_blank" class="primary-color">privacy policy</a> and
+              <a href="https://www.launchnotes.com/terms" target="_blank" class="primary-color">terms and conditions</a>.
+
+                <span>
+                  reCAPTCHA <a href="https://policies.google.com/privacy" class="primary-color">privacy</a> and <a href="https://policies.google.com/terms" class="primary-color">terms</a> apply
+                </span>
+            </small>
+          </div>
+</form>      </div>
+    </div>
+  </div>
+
+
+    
+  <script 
+    src="https://browser.sentry-cdn.com/5.21.4/bundle.tracing.min.js" 
+    integrity="sha384-L18Y4dnHG3rj58y7WwOZH5ZKkXqPhaf5M9QItUT/MB5t71mgOwtxs83RI+4m/nE5" 
+    crossorigin="anonymous"></script>
+
+  <script>
+    Sentry.init({
+      release: '2b7341cdd1b5b5b9de62ed42f516182dd15bf1fe',
+      environment: 'production',
+      dsn: "https://9bfa402b68994872b61bcd78267127f6@o269410.ingest.sentry.io/1772406",
+    });
+  </script>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" integrity="sha512-hCP3piYGSBPqnXypdKxKPSOzBHF75oU8wQ81a6OiGXHFMeKs9/8ChbgYl7pUvwImXJb03N4bs1o1DzmbokeeFw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" integrity="sha512-bgHRAiTjGrzHzLyKOnpFvaEpGzJet3z4tZnXGjpsCcqOnAH6VGUx9frc5bcIhKTVLEiCO6vEhNAgx5jtLUYrfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://assets.launchnotes.io/packs/js/public-1400c2e5d9be55f81353.js" data-cookieconsent="ignore"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre, pre code').forEach((block) => {
+          hljs.highlightBlock(block);
+        });
+      });
+      if (URLSearchParams !== 'undefined') {
+        let queryParams = new URLSearchParams(window.location.search);
+        if (queryParams && (queryParams.get("token") || queryParams.get("workosToken") || queryParams.get("authToken"))) {
+          queryParams.delete('token');
+          queryParams.delete('authToken');
+          queryParams.delete('workosToken');
+          if (queryParams.size === 0) {
+            window.history.pushState({}, document.title, location.origin + location.pathname)
+          } else {
+            window.history.pushState({}, document.title, location.origin + location.pathname + '?' + queryParams.toString())
+          }
+
+        }
+      }
+    </script>
+
+    <script>
+      document.addEventListener('turbo:click', async (event) => {
+        // Clear search params, since the component for Ideas is keeping
+        // the previous state for the params, and therefore misapplying filters
+        if (event.detail.url.endsWith('/ideas')) {
+          const newURL = `${window.location.protocol}//${window.location.host}${window.location.pathname}`;
+          window.history.pushState({}, '', newURL);
+        }
+
+        // If we are targeting a pagination link, scroll to the navbar
+        // The navbar is a nice padding above the announcement list
+        // Note that we only use pagination like this for announcement
+        // list
+        if (event.target.classList.contains('page-link')) {
+          let navbarQuery = document.querySelectorAll('nav.views.navbar')
+          if (!!navbarQuery) {
+            let navbar = navbarQuery[0]
+
+            navbar.scrollIntoView({ behavior: 'smooth' })
+          }
+        }
+      })
+    </script>
+
+    <script>
+        // Strip `show_older` from the URL browser reload.
+        // show_older is added when the user clicks "Older" in the month/quarter
+        // picker to reveal entries beyond the initial 12 months / 4 quarters.
+        // On a full page reload we want to reset back to the collapsed state,
+        // but Turbo frame navigations (type === 'navigate') should preserve it.
+        if (
+            performance.getEntriesByType('navigation')[0]?.type === 'reload' &&
+            new URLSearchParams(window.location.search).has('show_older')
+        ) {
+            var url = new URL(window.location.href);
+            url.searchParams.delete('show_older');
+            window.location.replace(url.toString());
+        }
+    </script>
+
+    <script>
+        // Force a full page reload if branding has changed since the last Turbo snapshot was cached.
+        // This prevents visitors from seeing stale inline styles or custom header/footer HTML
+        // after a project's branding settings are updated
+        document.addEventListener('turbo:before-cache', () => {
+            document.body.dataset.brandingVersion = document.body.dataset.brandingVersion;
+        });
+
+        document.addEventListener('turbo:before-render', (event) => {
+            const incoming = event.detail.newBody.dataset.brandingVersion;
+            const current = document.body.dataset.brandingVersion;
+            if (incoming && current && incoming !== current) {
+                event.preventDefault();
+                window.location.reload();
+            }
+        });
+
+        document.addEventListener('turbo:frame-render', (event) => {
+            event.detail.fetchResponse.responseHTML.then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const incoming = doc.body.dataset.brandingVersion;
+                const current = document.body.dataset.brandingVersion;
+                if (incoming && current && incoming !== current) {
+                    document.body.dataset.brandingVersion = incoming;
+                    window.location.reload();
+                }
+            });
+        });
+    </script>
+
+    <div data-react-class="Alerts" data-react-props="{&quot;initialAlerts&quot;:[]}"></div>
+
+
+      <script>
+      $('body').on('hidden.bs.modal', '.modal', function() {
+          $('.btn').blur();
+      });
+      $('body').on('shown.bs.modal', '.modal', function() {
+          $('.form-control').focus();
+      });
+      $("#subscribeModal form").on("submit", function(e) {
+          let hasError = false;
+
+          const email = $(this).find('input[type="email"]').val();
+          const emailError = $("#email-error");
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!email) {
+              emailError.text('Email is required.').show();
+              hasError = true;
+          } else if (!emailRegex.test(email)) {
+              emailError.text('Please enter a valid email address.').show();
+              hasError = true;
+          } else {
+              emailError.hide();
+          }
+
+          const container = $("#subscribe-category-select");
+          if (container.length > 0 && container.data("required") === true) {
+              const selected = $("input[name='category_ids[]']", $(this));
+              if (selected.length === 0) {
+                  $("#category-error").show();
+                  hasError = true;
+              } else {
+                  $("#category-error").hide();
+              }
+          }
+
+          if (hasError) {
+              e.preventDefault();
+              return false;
+          }
+      });
+  </script>
+
+  </body>
+
+</html>

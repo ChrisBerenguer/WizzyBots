@@ -1,0 +1,1 @@
+import{j as a,o as s,c as o,m as n,w as r,r as c}from"./brCOAL2F.js";const p=a({__name:"BaseStyledContent",props:{tag:{default:"div"}},setup(e){return(t,l)=>(s(),o(n(e.tag),{class:"content-styles"},{default:r(()=>[c(t.$slots,"default")]),_:3}))}});export{p as _};

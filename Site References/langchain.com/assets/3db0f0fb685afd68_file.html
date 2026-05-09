@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- When changing any inline script contents, make sure to update the CSP in vite.config.mts and frontend-config-map-*.yaml files in deployments repo -->
+  <head>
+    <!-- START_CSP -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T5TSV3TG');</script>
+    <!-- End Google Tag Manager -->
+    <script type="text/javascript">function loadDelighted(){if(typeof trustedTypes==="undefined"){trustedTypes={createPolicy:(n,rules)=>rules};}var policy=trustedTypes.createPolicy("delighted-csp",{createScriptURL:(url)=>url});!function(e,t,r,n){if(!e[n]){for(var a=e[n]=[],i=["survey","reset","config","init","set","get","event","identify","track","page","screen","group","alias"],s=0;s<i.length;s++){var c=i[s];a[c]=a[c]||function(e){return function(){var t=Array.prototype.slice.call(arguments);a.push([e,t])}}(c)}a.SNIPPET_VERSION="1.0.1";var o=t.createElement("script");o.type="text/javascript",o.async=!0,o.src=policy.createScriptURL("https://d2yyd1h5u9mauk.cloudfront.net/integrations/web/v1/library/"+r+"/"+n+".js");var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(o,u)}}(window,document,"a6rPqxPQvXJCTGu6","delighted");}if(typeof requestIdleCallback!=='undefined'){requestIdleCallback(loadDelighted,{timeout:3000});}else{setTimeout(loadDelighted,3000);}</script>
+
+    <!-- END_CSP -->
+    <script id="ls-init" type="application/json">eyJWSVRFX0lTU1VFU19BR0VOVF9URU5BTlRfSUQiOiI3ZWZlYzZiYS0yYWU3LTRhODQtYWMzMi1kNzY3YWRiM2VlYjIiLCJWSVRFX0RBVEFET0dfVkVSU0lPTiI6IjAuMTUuMy01ZWM1ODY4NmNmYTNmY2VkODRkZjc0ZTlkMDdmMThhZGFkOTI3MzgyIiwiVklURV9TVFVESU9fQU5BTFlUSUNTX1NVUEFCQVNFX1VSTCI6Imh0dHBzOi8vamNkdWpycXZxc2hpcG5oaml4Yncuc3VwYWJhc2UuY28iLCJWSVRFX1NFTEZfSE9TVEVEX1BPTExZX0VOQUJMRUQiOiJmYWxzZSIsIlZJVEVfVVNFX05FV19TVEFSVFVQX1BMQU4iOiJ0cnVlIiwiVklURV9CQUNLRU5EX0FVVEhfVFlQRSI6InN1cGFiYXNlIiwiVklURV9TVFJJUEVfS0VZIjoicGtfbGl2ZV81MU5xNEhFSHFCcDdJQkJLNDlFbk5YNGRTZXo2WUlzajFGYjg2WGhodHA0M2s5cVprMm9VVDQ1QWNHc3JZdm1aMURwQ1lrb3ZVWjQwZGwxaW51dDNMVEVIczAwMGEwblNhMnUiLCJWSVRFX0FHRU5UX0JVSUxERVJfTUNQX1NFUlZFUl9VUkwiOiJodHRwczovL3Rvb2xzLmxhbmdjaGFpbi5jb20iLCJWSVRFX0hVQl9XRUJfVVJMIjoiaHR0cHM6Ly9hcGkuaHViLmxhbmdjaGFpbi5jb20iLCJWSVRFX1NFR01FTlRfV1JJVEVfS0VZIjoiaEpnUGNJTVduQWE0NDlSb01yeHQwbnNMYXhHVlhqazQiLCJWSVRFX1NVUEFCQVNFX0tFWSI6InNiX3B1Ymxpc2hhYmxlX0R3VExGbnJpOEhaZ0xHT01ScFdLendfQ2hDUmJpczUiLCJWSVRFX1NJTkdMRV9PUklHSU5fRU5BQkxFRCI6IjAiLCJWSVRFX0RBVEFET0dfQ0xJRU5UX1RPS0VOX1JVTSI6InB1YjhhOWM1ODc3ZjBlYmM0YWNjZmIzNjFlZmVlOWRiMDA0IiwiVklURV9BR0VOVF9CVUlMREVSX0dFTkVSQVRPUl9ERVBMT1lNRU5UX1VSTF9QVUJMSUMiOiJodHRwczovL3Byb2QtZGVlcGFnZW50cy1hZ2VudC1idWlsZC1kNGMxNDc5ZWQ4Y2U1M2ZiYjhjM2VlZmM5MWYwYWE3ZC51cy5sYW5nZ3JhcGguYXBwIiwiVklURV9BR0VOVF9CVUlMREVSX0dFTkVSQVRPUl9ERVBMT1lNRU5UX1VSTF9JTlRFUk5BTCI6Imh0dHBzOi8vcHJvZC1hZ2VudC1idWlsZGVyLTVjY2VhMTM5NDEzZTVlZjI4OWFiOGU1ZDA0Njg4ZTExLnVzLmxhbmdncmFwaC5hcHAiLCJWSVRFX1NFTEZfSE9TVEVEX0NMSU9fRU5BQkxFRCI6ImZhbHNlIiwiVklURV9IT1NUX1BSSVZBVEVfUkVQT19FTkFCTEVEIjoiMSIsIlZJVEVfSE9TVF9VUkwiOiJodHRwczovL2FwaS5ob3N0LmxhbmdjaGFpbi5jb20iLCJWSVRFX0FJUlRBQkxFX1dSSVRFX0tFWSI6InBhdG95c3VrSXJuNURVQUd4LjZiYjFiOWIzMmY0ZjRlYmQxODhlNGQ2ZjMxMmQwODUwNmE3NWU3NjA5MzNjYWIyYmYyZTJlN2JkN2QzYWMyZjYiLCJWSVRFX0FHRU5UX0JVSUxERVJfREVQTE9ZTUVOVF9VUkxfUFVCTElDIjoiaHR0cHM6Ly9wcm9kLWRlZXBhZ2VudHMtYWdlbnQtYnVpbGQtZDRjMTQ3OWVkOGNlNTNmYmI4YzNlZWZjOTFmMGFhN2QudXMubGFuZ2dyYXBoLmFwcCIsIlZJVEVfQUdFTlRfQlVJTERFUl9ERVBMT1lNRU5UX1VSTF9JTlRFUk5BTCI6Imh0dHBzOi8vcHJvZC1hZ2VudC1idWlsZGVyLTVjY2VhMTM5NDEzZTVlZjI4OWFiOGU1ZDA0Njg4ZTExLnVzLmxhbmdncmFwaC5hcHAiLCJWSVRFX1NVUEFCQVNFX1VSTCI6Imh0dHBzOi8vYXV0aC5sYW5nY2hhaW4uY29tIiwiVklURV9MSU5FQVJfT0FVVEhfUFJPVklERVIiOiJsaW5lYXItYWdlbnQtYnVpbGRlciIsIlZJVEVfU0xBQ0tfT0FVVEhfUFJPVklERVIiOiJzbGFjay1hZ2VudC1idWlsZGVyIiwiVklURV9EQVRBRE9HX0NMSUVOVF9UT0tFTiI6InB1YjI4MzkxN2IwMmM1M2JlYzljY2IwMWQ3ODIzMTQxMDQ1IiwiVklURV9HT09HTEVfT0FVVEhfUFJPVklERVIiOiJnb29nbGUtbGFuZ3NtaXRoLXByb2QiLCJWSVRFX0RBVEFET0dfQVBQX1RPS0VOX1JVTSI6Ijc2NTkyMTdkLTEzZWItNDA1My1iNDFlLWExNTM2ZDhiNzNjMSIsIlZJVEVfQUdFTlRfQlVJTERFUl9UUklHR0VSU19BUElfVVJMIjoiaHR0cHM6Ly9hcGkuc21pdGgubGFuZ2NoYWluLmNvbSIsIlZJVEVfUE9MTFlfREVQTE9ZTUVOVF9VUkwiOiJodHRwczovL3Byb2QtbGFuZ3NtaXRoLXBvbGx5LTA5MmZkMmJhNzQ3NTU4ZjFiZTA2ZTc2N2YyM2NjMjM3LnVzLmxhbmdncmFwaC5hcHAiLCJWSVRFX0VQUE9fQ0xJRU5UX1RPS0VOIjoiSkhKenN0dFducEc1TnFHSHBUdUxGRDVNMEZoU2w4Tk0uWldnOWFUUmhPREpqTG1VdVpYQndieTVqYkc5MVpDWmpjejFwTkdFNE1tTSIsIlZJVEVfU1RVRElPX0FOQUxZVElDU19TVVBBQkFTRV9LRVkiOiJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKcGMzTWlPaUp6ZFhCaFltRnpaU0lzSW5KbFppSTZJbXBqWkhWcWNuRjJjWE5vYVhCdWFHcHBlR0ozSWl3aWNtOXNaU0k2SW1GdWIyNGlMQ0pwWVhRaU9qRTNNams0TlRneE1qRXNJbVY0Y0NJNk1qQTBOVFF6TkRFeU1YMC5EZDNiMEE5ZjBidHNMd21EX0VlTjJjV1RyWFk5bnN0YVhCalRaMUpWa2JBIiwiVklURV9EQVRBRE9HX1NJVEUiOiJ1czUuZGF0YWRvZ2hxLmNvbSIsIlZJVEVfR0lUSFVCX09BVVRIX1BST1ZJREVSIjoiZ2l0aHViLW9hdXRoLXByb3ZpZGVyIiwiVklURV9IT1NUX0VOQUJMRUQiOiIxIiwiVklURV9CQUNLRU5EX1VSTCI6Imh0dHBzOi8vYXBpLnNtaXRoLmxhbmdjaGFpbi5jb20iLCJWSVRFX0RBVEFET0dfRU5WIjoicHJvZCIsIlZJVEVfSVNTVUVTX0FHRU5UX1BST0pFQ1RfSUQiOiIzOGJmODhhNS1lYjhlLTQ1YjctODZlYS1hN2JiNDg0MTk0NWEifQ==</script>
+    <script type="text/javascript">
+      let isMainBundleErrorRedirecting=!1;function onMainBundleError(event){let now=Date.now(),nextExpire=now+1e3*30;function getState(){try{var _window$sessionStorag;let value=JSON.parse((_window$sessionStorag=window.sessionStorage.getItem(`ls_preload_error`))==null?`{}`:_window$sessionStorag);if(value.expire!=null&&now<value.expire)return value}catch(_unused){}return{count:0,expire:nextExpire}}function getLoadSource(defaultSource){return event.target===null?defaultSource:event.target instanceof HTMLScriptElement?event.target.src||defaultSource:event.target instanceof HTMLLinkElement&&event.target.href||defaultSource}let state=getState(),loadSrc=getLoadSource(`<unknown file>`);if(state.count<3){if(isMainBundleErrorRedirecting)return;window.sessionStorage.setItem(`ls_preload_error`,JSON.stringify({count:state.count+1,expire:state.expire})),console.error(`Failing to load: ${loadSrc}, reloading...`),window.location.reload(),isMainBundleErrorRedirecting=!0}else{let root=document.getElementById(`root`);root&&root.childNodes.length===0&&(root.innerHTML=[`<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); flex-direction: column; display: flex; align-items: center; justify-content: center; gap: 10px;">`,`<p>An unexpected error has occurred while loading LangSmith.</p>`,loadSrc?`<pre>Failed to load: ${loadSrc}</pre>`:``,`<p>Please reach us at <a href="mailto:support@langchain.dev" style="text-decoration: underline;">support@langchain.dev</a> for further assistance.</p>`,`</div>`].filter(Boolean).join(``))}}
+        </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#030710" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="LangSmith" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="description" content="Take agents from prototype to production. LangSmith gives you the tools to build, debug, evaluate, and ship reliable agents.">
+
+    <!-- Version 3.4.0 of DOMPurify -->
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API#the_default_policy -->
+    <!-- By default, use DOMPurify to sanitize all HTML content if setting innerHTML directly. -->
+    <!-- https://github.com/cure53/DOMPurify?tab=readme-ov-file#what-about-dompurify-and-trusted-types -->
+    <script type="text/javascript">
+      if (typeof trustedTypes === "undefined") {
+        trustedTypes = { createPolicy: (n, rules) => rules };
+      }
+      trustedTypes.createPolicy("default", {
+        createHTML: (input) => DOMPurify.sanitize(input, { RETURN_TRUSTED_TYPE: false }),
+        createScript: (input) => DOMPurify.sanitize(input, { RETURN_TRUSTED_TYPE: false }),
+        createScriptURL: (input) => DOMPurify.sanitize(input, { RETURN_TRUSTED_TYPE: false }),
+      });
+    </script>
+
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
+    <title>LangSmith</title>
+
+    <!-- Open Graph meta tags for link unfurling -->
+    <meta property="og:title" content="LangSmith" />
+    <meta property="og:description" content="View in LangSmith" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="LangSmith" />
+    <script type="module" crossorigin onerror="onMainBundleError(event)" src="/assets/BzRCTDCLUMcv-y.js"></script>
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/CvIQduiWCyj5FF.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/DSphIrPQL-bHZv.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/Baw6CDojJ77TH5.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/SgxFFj5g6LqUPZ.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/Dx5OR3S9gCu11Y.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/DYSCJxNRrMChOp.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/CYmVpGRvqSBCsP.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/DodPzCawSo8cqj.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/CKUGeBy5KurmHu.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/BdkpWvsMHxHEg8.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/BbLm9BxIVXv6FD.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/CN1lyGILaDM35D.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/B5LkVTQb2eElVg.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/C6bmjMpQYRaQm2.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/Dd2fBLSut-IgcY.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/DoV8avkxz6X6V8.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/WZT94Fe4LnYnjG.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/DAkNbvtR5iHikM.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/DTXGOjmv-JCrG-.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/EMRBmJh1vTIkjd.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/CQRulAktzDEnya.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/haOw1u82LJGlEv.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/BSvdHM171gqMw2.js">
+    <link rel="modulepreload" crossorigin onerror="onMainBundleError(event)" href="/assets/BL_xh2LnHSE5-v.js">
+    <link rel="stylesheet" crossorigin onerror="onMainBundleError(event)" href="/assets/index-BRUjKHcN.css">
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T5TSV3TG"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="root"></div>
+  </body>
+</html>

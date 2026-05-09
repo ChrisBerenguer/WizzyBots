@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CrewAI</title>
+    <link rel="stylesheet" href="https://blog.crewai.com/assets/built/screen.css?v=e459ceee13">
+
+    <meta name="description" content="Explore the Future of AI Agents with Us">
+    <link rel="icon" href="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w256h256/format/png/2024/10/favicon.svg" type="image/png">
+    <link rel="canonical" href="https://blog.crewai.com/">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="next" href="https://blog.crewai.com/page/2/">
+    
+    <meta property="og:site_name" content="CrewAI">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CrewAI&#x27;s Blog">
+    <meta property="og:description" content="Explore the Future of AI Agents with Us">
+    <meta property="og:url" content="https://blog.crewai.com/">
+    <meta property="og:image" content="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/2024/10/favicon-2.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CrewAI&#x27;s Blog">
+    <meta name="twitter:description" content="Explore the Future of AI Agents with Us">
+    <meta name="twitter:url" content="https://blog.crewai.com/">
+    <meta name="twitter:image" content="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/2024/10/favicon-1.svg">
+    <meta name="twitter:site" content="@crewAIInc">
+    <meta property="og:image:width" content="48">
+    <meta property="og:image:height" content="48">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "publisher": {
+        "@type": "Organization",
+        "name": "CrewAI",
+        "url": "https://blog.crewai.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/2024/10/crewai_logo.png"
+        }
+    },
+    "url": "https://blog.crewai.com/",
+    "name": "CrewAI",
+    "mainEntityOfPage": "https://blog.crewai.com/",
+    "description": "Explore the Future of AI Agents with Us"
+}
+    </script>
+
+    <meta name="generator" content="Ghost 6.36">
+    <link rel="alternate" type="application/rss+xml" title="CrewAI" href="https://blog.crewai.com/rss/">
+    <script defer src="https://cdn.jsdelivr.net/ghost/portal@~2.68/umd/portal.min.js" data-i18n="true" data-ghost="https://blog.crewai.com/" data-key="5a7ce3efa58befb6ebf99e0dee" data-api="https://crewai.ghost.io/ghost/api/content/" data-locale="en" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <script defer src="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/sodo-search.min.js" data-key="5a7ce3efa58befb6ebf99e0dee" data-styles="https://cdn.jsdelivr.net/ghost/sodo-search@~1.8/umd/main.css" data-sodo-search="https://crewai.ghost.io/" data-locale="en" crossorigin="anonymous"></script>
+    
+    <link href="https://blog.crewai.com/webmentions/receive/" rel="webmention">
+    <script defer src="/public/cards.min.js?v=e459ceee13"></script>
+    <link rel="stylesheet" type="text/css" href="/public/cards.min.css?v=e459ceee13">
+    <script defer src="/public/comment-counts.min.js?v=e459ceee13" data-ghost-comments-counts-api="https://blog.crewai.com/members/api/comments/counts/"></script>
+    <script defer src="/public/member-attribution.min.js?v=e459ceee13"></script>
+    <script defer src="/public/ghost-stats.min.js?v=e459ceee13" data-stringify-payload="false" data-datasource="analytics_events" data-storage="localStorage" data-host="https://blog.crewai.com/.ghost/analytics/api/v1/page_hit"  tb_site_uuid="9424691b-cbff-4d03-ab09-94ce04022a63" tb_post_uuid="undefined" tb_post_type="null" tb_member_uuid="undefined" tb_member_status="undefined"></script><style>:root {--ghost-accent-color: #EB6658;}</style>
+    <link rel="preconnect" href="https://fonts.bunny.net"><link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600"><style>:root {--gh-font-heading: Inter;--gh-font-body: Inter;}</style>
+</head>
+
+<body class="home-template gh-font-heading-inter gh-font-body-inter is-head-left-logo has-serif-body is-head-brand">
+<div class="gh-site">
+
+    <header id="gh-head" class="gh-head gh-outer">
+        <div class="gh-head-inner gh-inner">
+            <div class="gh-head-brand">
+                <div class="gh-head-brand-wrapper">
+                    <h1 class="gh-head-logo">
+                    <a  href="https://blog.crewai.com">
+                            <img src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/2024/10/crewai_logo.png" alt="CrewAI">
+                    </a>
+                    </h1>
+                </div>
+                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="gh-burger"></button>
+            </div>
+
+            <nav class="gh-head-menu">
+                <ul class="nav">
+    <li class="nav-home nav-current"><a href="https://blog.crewai.com/">Home</a></li>
+    <li class="nav-docs"><a href="https://docs.crewai.com">Docs</a></li>
+    <li class="nav-open-source"><a href="https://www.crewai.com/open-source">Open Source</a></li>
+    <li class="nav-enterprise"><a href="https://www.crewai.com/enterprise">Enterprise</a></li>
+</ul>
+
+            </nav>
+
+            <div class="gh-head-actions">
+                    <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                    <div class="gh-head-members">
+                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
+                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    
+<main class="gh-main gh-outer">
+    <div class="gh-inner">
+        <section class="gh-topic gh-topic-grid">
+            <h2 class="gh-topic-name">
+                    <a href="https://blog.crewai.com/page/2">Latest</a>
+            </h2>
+
+            <div class="gh-topic-content">
+                    <article class="gh-card post tag-hash-alex large">
+    <a class="gh-card-link" href="/healthcare-provider-cuts-nurse-intake-work-80-agentic-ai/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2026/04/tmp_utyn48g.jpg 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/tmp_utyn48g.jpg 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2026/04/tmp_utyn48g.jpg 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2026/04/tmp_utyn48g.jpg 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2026/04/tmp_utyn48g.jpg 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/tmp_utyn48g.jpg"
+                    alt="Blog post featured image"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">How a Healthcare Provider Cuts Nurse Intake Work by 80% with Agentic AI</h3>
+            </header>
+
+                        <div class="gh-card-excerpt">Discover how healthcare automates patient intake using agentic AI, cutting nurse intake time by up to 80% to improve efficiency and patient experience.</div>
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2026-04-22">Apr 22, 2026</time>
+                    <script
+    data-ghost-comment-count="69d66fe37fe17f0001675f5d"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>                    <article class="gh-card post tag-hash-alex">
+    <a class="gh-card-link" href="/how-one-e-commerce-giant-automates-returns-and-refunds-with-agentic-ai/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2026/04/tmph76g1vk9.jpg 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/tmph76g1vk9.jpg 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2026/04/tmph76g1vk9.jpg 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2026/04/tmph76g1vk9.jpg 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2026/04/tmph76g1vk9.jpg 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/tmph76g1vk9.jpg"
+                    alt="Blog post featured image"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">How One E-Commerce Giant Automates Returns and Refunds with Agentic AI</h3>
+            </header>
+
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2026-04-17">Apr 17, 2026</time>
+                    <script
+    data-ghost-comment-count="69d671ff7fe17f0001675f67"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>                    <article class="gh-card post">
+    <a class="gh-card-link" href="/agent-harnesses-are-dead-long-live-agent-harnesses/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2026/04/had.png 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/had.png 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2026/04/had.png 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2026/04/had.png 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2026/04/had.png 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/had.png"
+                    alt="Agent Harnesses Are Dead. Long Live Agent Harnesses."
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">Agent Harnesses Are Dead. Long Live Agent Harnesses.</h3>
+            </header>
+
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2026-04-14">Apr 14, 2026</time>
+                    <script
+    data-ghost-comment-count="69ddde15c3987800014c3951"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>                    <article class="gh-card post tag-hash-alex">
+    <a class="gh-card-link" href="/global-cpg-automates-supply-chain-demand-forecasting-agentic-ai/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2026/04/tmplua2zaud.jpg 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/tmplua2zaud.jpg 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2026/04/tmplua2zaud.jpg 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2026/04/tmplua2zaud.jpg 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2026/04/tmplua2zaud.jpg 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/tmplua2zaud.jpg"
+                    alt="Blog post featured image"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">How a Global CPG Automates Supply Chain Demand Forecasting with Agentic AI</h3>
+            </header>
+
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2026-04-14">Apr 14, 2026</time>
+                    <script
+    data-ghost-comment-count="69d7bfb3c3987800014c38c7"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>                    <article class="gh-card post">
+    <a class="gh-card-link" href="/enterprise-ai-saas-adoption-multi-agent-crews/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2026/04/tmp022jr41y.jpg 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/tmp022jr41y.jpg 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2026/04/tmp022jr41y.jpg 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2026/04/tmp022jr41y.jpg 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2026/04/tmp022jr41y.jpg 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/tmp022jr41y.jpg"
+                    alt="Blog post featured image"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">How Enterprise AI SaaS Closes Adoption Gaps with Multi-Agent Crews</h3>
+            </header>
+
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2026-04-06">Apr 6, 2026</time>
+                    <script
+    data-ghost-comment-count="69d41566ae4c190001519d60"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>                    <article class="gh-card post">
+    <a class="gh-card-link" href="/youre-building-agent-security-in-the-wrong-order/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2026/04/photo-1605379399642-870262d3d051.jpeg 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/photo-1605379399642-870262d3d051.jpeg 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2026/04/photo-1605379399642-870262d3d051.jpeg 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2026/04/photo-1605379399642-870262d3d051.jpeg 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2026/04/photo-1605379399642-870262d3d051.jpeg 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/04/photo-1605379399642-870262d3d051.jpeg"
+                    alt="You&#x27;re building agent security in the wrong order"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">You&#x27;re building agent security in the wrong order</h3>
+            </header>
+
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2026-04-02">Apr 2, 2026</time>
+                    <script
+    data-ghost-comment-count="69cb6496eebb250001fac6d7"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>                    <article class="gh-card post">
+    <a class="gh-card-link" href="/crewai-selected-for-the-enterprise-tech-30/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2026/03/image--101-.png 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/03/image--101-.png 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2026/03/image--101-.png 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2026/03/image--101-.png 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2026/03/image--101-.png 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2026/03/image--101-.png"
+                    alt="CrewAI Selected for the Enterprise Tech 30"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">CrewAI Selected for the Enterprise Tech 30</h3>
+            </header>
+
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2026-03-31">Mar 31, 2026</time>
+                    <script
+    data-ghost-comment-count="69cbeb8d34544d00011026c8"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>            </div>
+
+            <footer class="gh-topic-footer">
+                    <a class="gh-topic-link" href="https://blog.crewai.com/page/2">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            </footer>
+        </section>
+
+                        <section class="gh-topic gh-topic-grid">
+    <h2 class="gh-topic-name">
+        <a href="/tag/tutorials/">Tutorials</a>
+    </h2>
+
+    <div class="gh-topic-content">
+                <article class="gh-card post tag-tutorials tag-hash-tony featured large">
+    <a class="gh-card-link" href="/getting-started-with-crewai-build-your-first-crew/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2025/05/CrewAI-101-Video--2-.png 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2025/05/CrewAI-101-Video--2-.png 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2025/05/CrewAI-101-Video--2-.png 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2025/05/CrewAI-101-Video--2-.png 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2025/05/CrewAI-101-Video--2-.png 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2025/05/CrewAI-101-Video--2-.png"
+                    alt="Build your First CrewAI Agents"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">Build your First CrewAI Agents</h3>
+            </header>
+
+                        <div class="gh-card-excerpt">A step-by-step guide to creating collaborative AI agent crews with the CrewAI framework</div>
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2025-05-08">May 8, 2025</time>
+                    <script
+    data-ghost-comment-count="67f6a126bec2ff00012a5948"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>                <article class="gh-card post tag-tutorials tag-hash-tony">
+    <a class="gh-card-link" href="/configuring-azure-openai-with-crewai-a-comprehensive-guide/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2024/11/Untitled-design-1-1.png 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2024/11/Untitled-design-1-1.png 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2024/11/Untitled-design-1-1.png 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2024/11/Untitled-design-1-1.png 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2024/11/Untitled-design-1-1.png 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2024/11/Untitled-design-1-1.png"
+                    alt="Configuring Azure OpenAI with CrewAI: A Comprehensive Guide"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">Configuring Azure OpenAI with CrewAI: A Comprehensive Guide</h3>
+            </header>
+
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2024-11-13">Nov 13, 2024</time>
+                    <script
+    data-ghost-comment-count="673521a47864b10001ea3c98"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>                <article class="gh-card post tag-tutorials tag-hash-tony tag-hash-sarah">
+    <a class="gh-card-link" href="/build-a-multi-ai-agent-workflow-cerebras-crewai-2/">
+            <figure class="gh-card-image">
+                <img
+                    srcset="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w300/2024/10/per-01--6-.png 300w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2024/10/per-01--6-.png 720w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w960/2024/10/per-01--6-.png 960w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w1200/2024/10/per-01--6-.png 1200w,
+                            https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w2000/2024/10/per-01--6-.png 2000w"
+                    sizes="(max-width: 1200px) 100vw, 1200px"
+                    src="https://storage.ghost.io/c/94/24/9424691b-cbff-4d03-ab09-94ce04022a63/content/images/size/w720/2024/10/per-01--6-.png"
+                    alt="Build a Multi-AI Agent Workflow with Cerebras and CrewAI"
+                >
+            </figure>
+
+        <div class="gh-card-wrapper">
+            <header class="gh-card-header">
+                <h3 class="gh-card-title">Build a Multi-AI Agent Workflow with Cerebras and CrewAI</h3>
+            </header>
+
+
+            <footer class="gh-card-footer">
+                <span class="gh-card-author">João (Joe) Moura</span>
+                <time class="gh-card-date" datetime="2024-10-22">Oct 22, 2024</time>
+                    <script
+    data-ghost-comment-count="6712ceb7a55e2100010a5dcd"
+    data-ghost-comment-count-empty=""
+    data-ghost-comment-count-singular="comment"
+    data-ghost-comment-count-plural="comments"
+    data-ghost-comment-count-tag="span"
+    data-ghost-comment-count-class-name="gh-card-comments"
+    data-ghost-comment-count-autowrap="true"
+>
+</script>
+            </footer>
+        </div>
+    </a>
+</article>    </div>
+
+    <footer class="gh-topic-footer">
+        <a class="gh-topic-link" href="/tag/tutorials/">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+    </footer>
+</section>
+                        <div class="gh-topic-list">
+                                <section class="gh-topic gh-topic-minimal">
+    <header class="gh-topic-header">
+        <h2 class="gh-topic-name">
+            <a href="/tag/community/">Community</a>
+        </h2>
+        <a class="gh-topic-link" href="/tag/community/">More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+    </header>
+
+    <div class="gh-topic-content">
+                <article class="gh-card post tag-community tag-crewai-oss featured">
+    <a class="gh-card-link" href="/crewai-oss-1-0-we-are-going-ga/">
+        <h3 class="gh-card-title">CrewAI OSS 1.0 - We are going GA</h3>
+    </a>
+</article>                <article class="gh-card post tag-crewai-oss tag-hash-shane tag-crewai-enterprise tag-community no-image">
+    <a class="gh-card-link" href="/creating-a-center-of-gravity-for-the-agentic-ai-ecosystem/">
+        <h3 class="gh-card-title">Creating a center of gravity for the Agentic AI ecosystem</h3>
+    </a>
+</article>    </div>
+</section>                                <section class="gh-topic gh-topic-minimal">
+    <header class="gh-topic-header">
+        <h2 class="gh-topic-name">
+            <a href="/tag/crewai-factory/">CrewAI Factory</a>
+        </h2>
+        <a class="gh-topic-link" href="/tag/crewai-factory/">More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+    </header>
+
+    <div class="gh-topic-content">
+                <article class="gh-card post tag-crewai-factory tag-hash-shane tag-nvidia no-image">
+    <a class="gh-card-link" href="/unlocking-agent-native-transformation-with-crewai-factory-and-nvidia/">
+        <h3 class="gh-card-title">Unlocking agent-native transformation with CrewAI Factory and NVIDIA</h3>
+    </a>
+</article>    </div>
+</section>                                <section class="gh-topic gh-topic-minimal">
+    <header class="gh-topic-header">
+        <h2 class="gh-topic-name">
+            <a href="/tag/nvidia/">NVIDIA</a>
+        </h2>
+        <a class="gh-topic-link" href="/tag/nvidia/">More <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+    </header>
+
+    <div class="gh-topic-content">
+                <article class="gh-card post tag-crewai-factory tag-hash-shane tag-nvidia no-image">
+    <a class="gh-card-link" href="/unlocking-agent-native-transformation-with-crewai-factory-and-nvidia/">
+        <h3 class="gh-card-title">Unlocking agent-native transformation with CrewAI Factory and NVIDIA</h3>
+    </a>
+</article>    </div>
+</section>                        </div>
+    </div>
+</main>
+
+    <footer class="gh-foot gh-outer">
+        <div class="gh-foot-inner gh-inner">
+                <section class="gh-subscribe">
+                    <h3 class="gh-subscribe-title">Subscribe to CrewAI</h3>
+                        <div class="gh-subscribe-description">Don&#x27;t miss out on the latest news. Sign up now to get access to the library of members-only articles.</div>
+                    <button class="gh-subscribe-btn gh-btn" data-portal="signup"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3.33332 3.33334H16.6667C17.5833 3.33334 18.3333 4.08334 18.3333 5.00001V15C18.3333 15.9167 17.5833 16.6667 16.6667 16.6667H3.33332C2.41666 16.6667 1.66666 15.9167 1.66666 15V5.00001C1.66666 4.08334 2.41666 3.33334 3.33332 3.33334Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18.3333 5L9.99999 10.8333L1.66666 5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> Subscribe now</button>
+                </section>
+
+            <nav class="gh-foot-menu">
+                
+            </nav>
+
+            <div class="gh-copyright">
+                    CrewAI © 2026. Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+
+<script src="https://blog.crewai.com/assets/built/main.min.js?v=e459ceee13"></script>
+
+
+
+</body>
+
+</html>

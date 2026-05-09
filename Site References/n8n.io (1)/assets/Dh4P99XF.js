@@ -1,0 +1,1 @@
+import{O as o,P as t,Q as i}from"./brCOAL2F.js";import{u as s}from"./BezVQY-e.js";function d(e,a){o({onEnable:()=>{try{i()}catch{}}}),t("hideCtaSection",!!e?.value?.hideFooterCta),t("hideTestimonialsSection",!!e?.value?.hideFooterTestimonials),s(a||e?.value?.SEO)}export{d as u};

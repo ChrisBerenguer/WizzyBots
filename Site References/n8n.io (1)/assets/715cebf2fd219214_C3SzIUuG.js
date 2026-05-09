@@ -1,0 +1,1 @@
+import{_ as c,o as e,f as _}from"./brCOAL2F.js";const n={},o={class:"circle-gradient"};function t(s,a){return e(),_("span",o)}const f=c(n,[["render",t],["__scopeId","data-v-531f563a"]]);export{f as _};

@@ -1,0 +1,1 @@
+import{u,A as c,M as r}from"./brCOAL2F.js";function l(t,i={}){const{$websitePagesApi:o}=u(),e=t.split("/").filter(Boolean),s=e[0]==="__preview"?e.slice(1):e,n=s.join("-")||"homepage",a=`/${s.join("/")}`,{strapiContentMode:p}=c().public;return r(`website-api-page-${n}`,()=>o(a,p),{...i})}export{l as u};

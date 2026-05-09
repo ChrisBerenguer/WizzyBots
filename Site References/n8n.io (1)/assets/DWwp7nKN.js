@@ -1,0 +1,1 @@
+import{_ as s}from"./DhUurokj.js";import{_ as c,c as n,w as t,a as _,o as r,b as f,d as i}from"./brCOAL2F.js";const d={};function m(u,e){const a=s,o=_;return r(),n(o,{class:"test-area"},{default:t(()=>[f(a,null,{counter:t(()=>[...e[0]||(e[0]=[i("100",-1)])]),_:1})]),_:1})}const x=c(d,[["render",m]]);export{x as default};

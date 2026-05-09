@@ -1,0 +1,16 @@
+fl=354f493
+h=app.spara.co
+ip=35.186.160.222
+ts=1778173986.000
+visit_scheme=https
+uag=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+colo=IAD
+sliver=none
+http=http/2
+loc=US
+tls=TLSv1.3
+sni=plaintext
+warp=off
+gateway=off
+rbi=off
+kex=X25519MLKEM768

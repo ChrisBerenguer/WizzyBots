@@ -1,0 +1,1 @@
+import{T as t}from"./BPEg3agY.js";import{j as a,c as o,w as r,p as s,o as n,r as d}from"./brCOAL2F.js";const f=a({__name:"style-guide",setup(l){return(e,i)=>(n(),o(s(t),{"delay-duration":100,"skip-delay-duration":0},{default:r(()=>[d(e.$slots,"default")]),_:3}))}});export{f as default};

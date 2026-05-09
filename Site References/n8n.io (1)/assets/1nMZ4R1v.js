@@ -1,0 +1,1 @@
+import{_ as s,c as o,w as a,a as c,o as n,d as r}from"./brCOAL2F.js";const _={};function f(d,e){const t=c;return n(),o(t,{class:"test-area"},{default:a(()=>[...e[0]||(e[0]=[r(" restore component for test ",-1)])]),_:1})}const m=s(_,[["render",f]]);export{m as default};

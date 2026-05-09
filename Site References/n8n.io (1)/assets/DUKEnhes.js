@@ -1,0 +1,1 @@
+import{s as a}from"./CLMoZmcl.js";import{W as i,X as s}from"./brCOAL2F.js";const l=a.filter(e=>e.from.includes("legal")),u=i(e=>{if(e.hash?.length>0){const r=l.find(t=>{if(t.from===`${e.path}${e.hash}`)return!0});if(r)return s({path:r.to,query:e.query},{external:!0})}});export{u as default};

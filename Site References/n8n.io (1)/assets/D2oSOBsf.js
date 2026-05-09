@@ -1,0 +1,1 @@
+import{j as s,o as t,c as l,m as o,n,w as c,r}from"./brCOAL2F.js";const g=s({__name:"GridBase",props:{tag:{default:"div"},config:{default:"grid"},gap:{default:"gap-8"},columns:{default:"sm:grid-cols-2 lg:grid-cols-3"}},setup(a){return(e,d)=>(t(),l(o(a.tag),{class:n(["grid",[a.config,a.gap,a.columns]])},{default:c(()=>[r(e.$slots,"default")]),_:3},8,["class"]))}});export{g as _};
