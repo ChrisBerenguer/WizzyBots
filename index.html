@@ -219,9 +219,8 @@
         .hero-img-backdrop {
             position: absolute;
             inset: -10%;
-            background: url('./Site References/BG_1.png') no-repeat center center;
-            background-size: cover;
-            filter: blur(40px) opacity(0.8) saturate(150%);
+            background: radial-gradient(circle at center, rgba(107, 33, 239, 0.2) 0%, rgba(253, 137, 37, 0.1) 50%, transparent 80%);
+            filter: blur(60px) opacity(0.95);
             transform: translateZ(-80px) scale(1.1);
             z-index: 5;
             transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
@@ -359,15 +358,19 @@
         
         <!-- Background Visual -->
         <div class="absolute inset-0 w-full h-full flex items-center justify-center z-0 hero-visual-wrapper">
-            <div class="hero-img-backdrop w-full h-full pointer-events-none"></div>
-            <img src="./Site References/BG_1.png" alt="Visualização Tecnológica" class="hero-img w-full h-full object-cover opacity-80 animate-float pointer-events-none">
+            <div class="w-full h-full relative hero-scroll-layer">
+                <div class="hero-img-backdrop w-full h-full pointer-events-none"></div>
+                <video autoplay muted loop playsinline class="hero-img w-full h-full object-cover opacity-95 pointer-events-none">
+                    <source src="./Site References/Video_BG_3.mp4" type="video/mp4">
+                </video>
+            </div>
             <!-- Gradient Overlay to ensure text readability -->
             <div class="absolute inset-0 bg-gradient-to-b from-midnight/30 via-midnight/50 to-midnight pointer-events-none"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-midnight/80 via-transparent to-midnight/80 pointer-events-none"></div>
         </div>
 
         <!-- Left Aligned Content over Background -->
-        <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-start text-left z-10 relative mt-12">
+        <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-start text-left z-10 relative mt-12 hero-content-parallax">
             <div class="max-w-2xl">
                 <h1 class="gsap-reveal font-sans text-[2.10rem] sm:text-[2.62rem] lg:text-[3.14rem] font-normal tracking-tight mb-8 leading-[1.1]">
                     <span class="text-white/60 block">Automação inteligente</span>
@@ -375,11 +378,11 @@
                 </h1>
                 
                 <div class="gsap-reveal flex flex-col sm:flex-row items-start gap-4 w-full sm:w-auto mb-10">
-                    <a href="#" class="btn btn-primary w-full sm:w-auto px-[1.75rem] btn-anim-icon">
+                    <a href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" class="btn btn-primary w-full sm:w-auto px-[1.75rem] btn-anim-icon">
                         <span class="btn-label pr-4">Agendar diagnóstico</span>
                         <span class="btn-icon"><i data-lucide="calendar" class="w-4 h-4"></i></span>
                     </a>
-                    <a href="#" class="btn btn-secondary w-full sm:w-auto px-[1.75rem]">
+                    <a href="#quem-somos" class="btn btn-secondary w-full sm:w-auto px-[1.75rem]">
                         Conhecer soluções
                     </a>
                 </div>
@@ -388,15 +391,7 @@
                     Workflows, IAs e sistemas que transformam processos em escala. Reduza custos, aumente a produtividade e deixe a magia da tecnologia trabalhar por você.
                 </p>
                 
-                <div class="gsap-reveal mt-16 flex flex-col items-start gap-4">
-                    <p class="text-[10px] font-semibold tracking-wider text-white/40 uppercase">Confiado por empresas inovadoras</p>
-                    <div class="flex items-center gap-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                        <i data-lucide="slack" class="w-7 h-7 hover:text-white transition-colors cursor-pointer"></i>
-                        <i data-lucide="github" class="w-7 h-7 hover:text-white transition-colors cursor-pointer"></i>
-                        <i data-lucide="figma" class="w-7 h-7 hover:text-white transition-colors cursor-pointer"></i>
-                        <i data-lucide="trello" class="w-7 h-7 hover:text-white transition-colors cursor-pointer"></i>
-                    </div>
-                </div>
+
             </div>
         </div>
     </main>
@@ -2657,13 +2652,12 @@
                 </p>
             </div>
 
-            <!-- ── CTA Buttons ── -->
             <div class="gsap-reveal-scroll mt-12 pb-32 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#" class="wz-cta-primary">
+                <a href="https://api.whatsapp.com/send/?phone=%2B5581987779095&text=Ol%C3%A1%2C+gostaria+de+falar+sobre+Produto%2C+Tecnologia%2C+Inova%C3%A7%C3%A3o+e+IA&type=phone_number&app_absent=0" target="_blank" class="wz-cta-primary">
                     <i data-lucide="rocket" class="w-4 h-4"></i>
                     Quero automatizar minha empresa
                 </a>
-                <a href="#" class="wz-cta-secondary">
+                <a href="https://api.whatsapp.com/send/?phone=%2B5581987779095&text=Ol%C3%A1%2C+gostaria+de+falar+sobre+Produto%2C+Tecnologia%2C+Inova%C3%A7%C3%A3o+e+IA&type=phone_number&app_absent=0" target="_blank" class="wz-cta-secondary">
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
                     Falar com um especialista
                 </a>
@@ -2707,7 +2701,7 @@
                         <a href="#" class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-orange/40 hover:bg-brand-orange/5 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                         </a>
-                        <a href="#" class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-purple/40 hover:bg-brand-purple/5 transition-all duration-300">
+                        <a href="https://www.linkedin.com/company/wizzy-bots/" target="_blank" class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-purple/40 hover:bg-brand-purple/5 transition-all duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                         </a>
                         <a href="#" class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-red/40 hover:bg-brand-red/5 transition-all duration-300">
@@ -2720,14 +2714,9 @@
                 </div>
             </div>
 
-            <!-- Bottom Credits -->
-            <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-6">
                 <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6">
                     <p class="text-[11px] text-white/20 font-medium uppercase tracking-[0.15em]">© 2026 WizzyBots. Todos os direitos reservados.</p>
-                </div>
-                <div class="flex items-center gap-8">
-                    <a href="#" class="text-[11px] text-white/20 hover:text-white font-medium uppercase tracking-[0.15em] transition-colors">Privacidade</a>
-                    <a href="#" class="text-[11px] text-white/20 hover:text-white font-medium uppercase tracking-[0.15em] transition-colors">Termos de Uso</a>
                 </div>
             </div>
         </div>
@@ -2837,6 +2826,35 @@
                     }
                 );
             });
+
+            // ── Hero Scroll Parallax ──
+            const heroWrapper = document.querySelector('#parallax-container');
+            if (heroWrapper) {
+                // Background Layer (Video + Backdrop) - Moves Down
+                gsap.to('.hero-scroll-layer', {
+                    y: 250,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: heroWrapper,
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+
+                // Content Layer - Moves Up
+                gsap.to('.hero-content-parallax', {
+                    y: -150,
+                    opacity: 0,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: heroWrapper,
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            }
         }
 
         // Sophisticated Parallax Effect
