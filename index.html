@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WizzyBots - Consultoria premium em IA e automação inteligente. Workflows, IAs e sistemas que transformam processos em escala.">
+    <meta name="description"
+        content="WizzyBots - Consultoria premium em IA e automação inteligente. Workflows, IAs e sistemas que transformam processos em escala.">
     <title>WizzyBots | Automação Inteligente com Toque de Mágica</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <meta name="theme-color" content="#0e0918">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,6 +25,7 @@
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
                         display: ['DM Sans', 'sans-serif'],
+                        brand: ['Outfit', 'sans-serif'],
                     },
                     colors: {
                         midnight: '#0e0918',
@@ -37,7 +42,7 @@
             }
         }
     </script>
-    
+
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -50,16 +55,19 @@
             letter-spacing: -0.025em;
             font-optical-sizing: auto;
         }
+
         .font-display strong,
         .font-display b {
             font-weight: 700;
             letter-spacing: -0.03em;
         }
+
         .font-display em,
         .font-display i {
             font-style: italic;
             font-weight: 300;
         }
+
         :root {
             --bg-from: #fd8925;
             --bg-to: #ff0c00;
@@ -67,7 +75,8 @@
             --bg-rotation: 30deg;
         }
 
-        html, body {
+        html,
+        body {
             background-color: #0e0918;
             color: #ffffff;
             overflow-x: hidden;
@@ -95,15 +104,15 @@
 
         .btn-primary {
             background: linear-gradient(to bottom, var(--bg-hover), var(--bg-hover)), linear-gradient(var(--bg-rotation), var(--bg-from), var(--bg-to));
-            box-shadow: inset 0 1px 1px rgba(255,255,255,0.3), 0 4px 14px rgba(253,137,37,0.4);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 4px 14px rgba(253, 137, 37, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .btn-primary:hover {
             --bg-hover: rgba(255, 255, 255, 0.15);
             --bg-rotation: 10deg;
             transform: translateY(-2px);
-            box-shadow: inset 0 1px 1px rgba(255,255,255,0.4), 0 8px 24px rgba(253,137,37,0.6);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 8px 24px rgba(253, 137, 37, 0.6);
         }
 
         .btn-secondary {
@@ -116,7 +125,7 @@
             background-color: rgba(255, 255, 255, 0.1);
             border-color: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
         }
 
         .btn-anim-icon .btn-icon {
@@ -155,7 +164,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .text-gradient-subtle {
             background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
             -webkit-background-clip: text;
@@ -165,10 +174,10 @@
 
         /* Background Effects */
         .grid-bg {
-            background-image: 
+            background-image:
                 radial-gradient(circle at center, transparent 0%, #0e0918 100%),
-                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), 
-                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 100% 100%, 60px 60px, 60px 60px;
             position: absolute;
             inset: 0;
@@ -187,15 +196,15 @@
         }
 
         .glow-orange {
-            background: radial-gradient(circle, rgba(253,137,37,0.5) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(253, 137, 37, 0.5) 0%, transparent 70%);
             width: 700px;
             height: 700px;
             top: -150px;
             right: -250px;
         }
-        
+
         .glow-purple {
-            background: radial-gradient(circle, rgba(107,33,239,0.4) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(107, 33, 239, 0.4) 0%, transparent 70%);
             width: 600px;
             height: 600px;
             bottom: -150px;
@@ -213,12 +222,12 @@
         .hero-img {
             transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
             will-change: transform;
-            filter: drop-shadow(0 0 40px rgba(253,137,37,0.15)) brightness(1.2);
+            filter: drop-shadow(0 0 40px rgba(253, 137, 37, 0.15)) brightness(1.2);
             z-index: 10;
             position: relative;
             transform: translateZ(20px);
         }
-        
+
         .hero-img-backdrop {
             position: absolute;
             inset: -10%;
@@ -232,32 +241,55 @@
 
         /* Animations */
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(1deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(1deg);
+            }
         }
 
         .animate-float {
             animation: float 8s ease-in-out infinite;
         }
-        
+
         @keyframes float-fast {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-10px) scale(1.05); }
+
+            0%,
+            100% {
+                transform: translateY(0px) scale(1);
+            }
+
+            50% {
+                transform: translateY(-10px) scale(1.05);
+            }
         }
 
         .animate-float-fast {
             animation: float-fast 4s ease-in-out infinite;
         }
-        
+
         @keyframes pulse-slow {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.05); }
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.05);
+            }
         }
-        
+
         .animate-pulse-slow {
             animation: pulse-slow 6s ease-in-out infinite;
         }
-        
+
         /* Particle canvas */
         #particles-js {
             position: absolute;
@@ -267,7 +299,7 @@
             left: 0;
             z-index: -1;
         }
-        
+
         /* Loader */
         .loader {
             position: fixed;
@@ -279,27 +311,26 @@
             align-items: center;
             transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .loader.hidden {
             opacity: 0;
             pointer-events: none;
         }
-        
+
         .loader-content {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 2.18rem;
-            font-weight: 700;
-            background: linear-gradient(89.98deg, #ffb552, #ff5873, #b83dff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradient-flow 2s linear infinite;
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 500;
+            color: white;
+            letter-spacing: -0.02em;
         }
 
         @keyframes gradient-flow {
-            to { background-position: 200% center; }
+            to {
+                background-position: 200% center;
+            }
         }
-        
+
         /* Initial states for GSAP */
         .gsap-reveal {
             opacity: 0;
@@ -313,13 +344,39 @@
             border-radius: 1rem;
             backdrop-filter: blur(12px);
         }
+
+        /* Brand Typography & Dot */
+        .brand-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-i-wrapper {
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .brand-i-dot {
+            position: absolute;
+            top: 0.18em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0.22em;
+            height: 0.22em;
+            background-color: #fd8925;
+            border-radius: 50%;
+            z-index: 1;
+        }
     </style>
 </head>
+
 <body class="antialiased selection:bg-brand-orange/30 selection:text-white">
 
     <!-- Loading Screen -->
     <div class="loader" id="loader">
-        <div class="loader-content">WizzyBots</div>
+        <div class="loader-content">W<span class="brand-i-wrapper">ı<span class="brand-i-dot"></span></span>zzyBots</div>
     </div>
 
     <!-- Background Elements -->
@@ -333,19 +390,24 @@
     <!-- Navbar -->
     <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-[9px] cursor-pointer gsap-nav-item">
+            <div class="flex items-center gap-1 cursor-pointer gsap-nav-item">
                 <img src="./Site References/logo2.png" alt="WizzyBots Logo" class="h-10 w-auto object-contain">
-                <span class="font-sans font-normal text-[1.31rem] tracking-tight text-white">WizzyBots</span>
+                <span class="brand-text text-[1.5rem] tracking-tight text-white flex items-center">
+                    W<span class="brand-i-wrapper">ı<span class="brand-i-dot"></span></span>zzyBots
+                </span>
             </div>
-            
+
             <div class="hidden md:flex items-center gap-8 font-medium text-[13px] text-white/70">
-                <a href="#parallax-container" class="hover:text-white transition-colors duration-200 gsap-nav-item">Home</a>
-                <a href="#quem-somos"    class="hover:text-white transition-colors duration-200 gsap-nav-item">Quem somos</a>
-                <a href="#servicos"      class="hover:text-white transition-colors duration-200 gsap-nav-item">Serviços</a>
-                <a href="#tecnologia"    class="hover:text-white transition-colors duration-200 gsap-nav-item">Tecnologia</a>
-                <a href="#contato"       class="hover:text-white transition-colors duration-200 gsap-nav-item">Contato</a>
+                <a href="#parallax-container"
+                    class="hover:text-white transition-colors duration-200 gsap-nav-item">Home</a>
+                <a href="#quem-somos" class="hover:text-white transition-colors duration-200 gsap-nav-item">Quem
+                    somos</a>
+                <a href="#servicos" class="hover:text-white transition-colors duration-200 gsap-nav-item">Serviços</a>
+                <a href="#tecnologia"
+                    class="hover:text-white transition-colors duration-200 gsap-nav-item">Tecnologia</a>
+                <a href="#contato" class="hover:text-white transition-colors duration-200 gsap-nav-item">Contato</a>
             </div>
-            
+
             <div class="flex items-center gap-4 sm:gap-6 gsap-nav-item">
                 <a href="#contato" class="btn btn-primary px-[1.31rem] btn-anim-icon hidden sm:inline-flex">
                     <span class="btn-label pr-5">Começar Agora</span>
@@ -358,18 +420,25 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu-overlay" class="fixed inset-0 bg-midnight/98 backdrop-blur-2xl z-[100] flex flex-col items-center justify-center transition-all duration-500 opacity-0 pointer-events-none">
+        <div id="mobile-menu-overlay"
+            class="fixed inset-0 bg-midnight/98 backdrop-blur-2xl z-[100] flex flex-col items-center justify-center transition-all duration-500 opacity-0 pointer-events-none">
             <button id="mobile-menu-close" class="absolute top-7 right-6 text-white/60 hover:text-white p-2">
                 <i data-lucide="x" class="w-8 h-8"></i>
             </button>
-            
+
             <div class="flex flex-col items-center gap-8 text-center">
-                <a href="#parallax-container" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Home</a>
-                <a href="#quem-somos" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Quem somos</a>
-                <a href="#servicos" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Serviços</a>
-                <a href="#tecnologia" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Tecnologia</a>
-                <a href="#contato" class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Contato</a>
-                
+                <a href="#parallax-container"
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Home</a>
+                <a href="#quem-somos"
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Quem
+                    somos</a>
+                <a href="#servicos"
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Serviços</a>
+                <a href="#tecnologia"
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Tecnologia</a>
+                <a href="#contato"
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Contato</a>
+
                 <div class="mt-8 mobile-nav-link">
                     <a href="#contato" class="btn btn-primary px-10 py-4 text-lg">
                         Começar Agora
@@ -378,37 +447,50 @@
             </div>
 
             <!-- Decorative background elements for menu -->
-            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-orange/10 blur-[80px] rounded-full pointer-events-none"></div>
-            <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-purple/10 blur-[80px] rounded-full pointer-events-none"></div>
+            <div
+                class="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-orange/10 blur-[80px] rounded-full pointer-events-none">
+            </div>
+            <div
+                class="absolute -top-20 -right-20 w-64 h-64 bg-brand-purple/10 blur-[80px] rounded-full pointer-events-none">
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <main class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden" id="parallax-container">
-        
+    <main class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden"
+        id="parallax-container">
+
         <!-- Background Visual -->
         <div class="absolute inset-0 w-full h-full flex items-center justify-center z-0 hero-visual-wrapper">
             <div class="w-full h-full relative hero-scroll-layer">
                 <div class="hero-img-backdrop w-full h-full pointer-events-none"></div>
-                <video autoplay muted loop playsinline preload="auto" class="hero-img w-full h-full object-cover pointer-events-none">
+                <video autoplay muted loop playsinline preload="auto"
+                    class="hero-img w-full h-full object-cover pointer-events-none">
                     <source src="./Site%20References/Video_BG_3.mp4" type="video/mp4">
                 </video>
             </div>
             <!-- Gradient Overlay to ensure text readability -->
-            <div class="absolute inset-0 bg-gradient-to-b from-midnight/30 via-midnight/50 to-midnight pointer-events-none"></div>
-            <div class="absolute inset-0 bg-gradient-to-r from-midnight/80 via-transparent to-midnight/80 pointer-events-none"></div>
+            <div
+                class="absolute inset-0 bg-gradient-to-b from-midnight/30 via-midnight/50 to-midnight pointer-events-none">
+            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-midnight/80 via-transparent to-midnight/80 pointer-events-none">
+            </div>
         </div>
 
         <!-- Left Aligned Content over Background -->
-        <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-start text-left z-10 relative mt-12 hero-content-parallax">
+        <div
+            class="max-w-7xl mx-auto px-6 w-full flex flex-col items-start text-left z-10 relative mt-12 hero-content-parallax">
             <div class="max-w-2xl">
-                <h1 class="gsap-reveal font-sans text-[2.10rem] sm:text-[2.62rem] lg:text-[3.14rem] font-normal tracking-tight mb-8 leading-[1.1]">
+                <h1
+                    class="gsap-reveal font-sans text-[2.10rem] sm:text-[2.62rem] lg:text-[3.14rem] font-normal tracking-tight mb-8 leading-[1.1]">
                     <span class="text-white/60 block">Automação inteligente</span>
                     <span class="text-white block mt-1 pb-2">com toque de mágica.</span>
                 </h1>
-                
+
                 <div class="gsap-reveal flex flex-col sm:flex-row items-start gap-4 w-full sm:w-auto mb-10">
-                    <a href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" class="btn btn-primary w-full sm:w-auto px-[1.75rem] btn-anim-icon">
+                    <a href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank"
+                        class="btn btn-primary w-full sm:w-auto px-[1.75rem] btn-anim-icon">
                         <span class="btn-label pr-4">Agendar diagnóstico</span>
                         <span class="btn-icon"><i data-lucide="calendar" class="w-4 h-4"></i></span>
                     </a>
@@ -418,9 +500,10 @@
                 </div>
 
                 <p class="gsap-reveal text-[0.98rem] sm:text-[1.09rem] text-white/60 font-light leading-relaxed">
-                    Workflows, IAs e sistemas que transformam processos em escala. Reduza custos, aumente a produtividade e deixe a magia da tecnologia trabalhar por você.
+                    Workflows, IAs e sistemas que transformam processos em escala. Reduza custos, aumente a
+                    produtividade e deixe a magia da tecnologia trabalhar por você.
                 </p>
-                
+
 
             </div>
         </div>
@@ -430,51 +513,68 @@
     <section class="relative w-full py-24 lg:py-32 bg-midnight z-10 border-t border-white/5 overflow-hidden">
         <!-- Background Elements -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50"></div>
+            <div
+                class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50">
+            </div>
             <div class="absolute inset-0 bg-gradient-to-b from-midnight via-transparent to-midnight"></div>
         </div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-orange/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand-orange/5 blur-[120px] rounded-full pointer-events-none z-0">
+        </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            
+
             <div class="text-center max-w-5xl mx-auto mb-20">
-                <h2 class="gsap-reveal-scroll font-display text-[1.8rem] sm:text-[2.5rem] md:text-[3.5rem] tracking-tight leading-[1.1] mb-6">
+                <h2
+                    class="gsap-reveal-scroll font-display text-[1.8rem] sm:text-[2.5rem] md:text-[3.5rem] tracking-tight leading-[1.1] mb-6">
                     <span class="text-white/60 block">O maior desperdício da sua empresa</span>
                     <span class="text-white/50 block mt-1">talvez não esteja no financeiro.</span>
-                    <strong class="text-gradient block mt-4 text-[2.2rem] sm:text-[3.2rem] md:text-[4.5rem]">Está no operacional.</strong>
+                    <strong class="text-gradient block mt-4 text-[2.2rem] sm:text-[3.2rem] md:text-[4.5rem]">Está no
+                        operacional.</strong>
                 </h2>
             </div>
 
             <!-- Block 2: Operational Chaos -->
             <div class="max-w-6xl mx-auto mb-24">
-                <p class="gsap-reveal-scroll text-center text-[1.2rem] text-white/50 uppercase tracking-[0.2em] font-semibold mb-10">Enquanto sua equipe...</p>
-                
+                <p
+                    class="gsap-reveal-scroll text-center text-[1.2rem] text-white/50 uppercase tracking-[0.2em] font-semibold mb-10">
+                    Enquanto sua equipe...</p>
+
                 <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
-                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div
+                        class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="copy" class="w-4 h-4 text-brand-orange"></i>
                         <span class="text-[0.9rem] sm:text-[1rem] text-white/80">copia informações entre sistemas</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div
+                        class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="message-square" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">responde as mesmas mensagens diariamente</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">responde as mesmas mensagens
+                            diariamente</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div
+                        class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="table" class="w-4 h-4 text-brand-orange"></i>
                         <span class="text-[0.9rem] sm:text-[1rem] text-white/80">atualiza planilhas manualmente</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div
+                        class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="user-minus" class="w-4 h-4 text-brand-orange"></i>
-                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">perde leads por demora no atendimento</span>
+                        <span class="text-[0.9rem] sm:text-[1rem] text-white/80">perde leads por demora no
+                            atendimento</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div
+                        class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="repeat" class="w-4 h-4 text-brand-orange"></i>
                         <span class="text-[0.9rem] sm:text-[1rem] text-white/80">executa processos repetitivos</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div
+                        class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="clock" class="w-4 h-4 text-brand-orange"></i>
                         <span class="text-[0.9rem] sm:text-[1rem] text-white/80">depende de aprovações lentas</span>
                     </div>
-                    <div class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
+                    <div
+                        class="gsap-reveal-scroll glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full hover:bg-white/5 hover:border-brand-orange/50 transition-all duration-300">
                         <i data-lucide="flame" class="w-4 h-4 text-brand-orange"></i>
                         <span class="text-[0.9rem] sm:text-[1rem] text-white/80">e trabalha apagando incêndios...</span>
                     </div>
@@ -483,26 +583,39 @@
 
             <!-- Block 3: The Loss -->
             <div class="max-w-5xl mx-auto mb-24 border-t border-white/10 pt-16">
-                <p class="gsap-reveal-scroll text-center text-[1.2rem] text-brand-red uppercase tracking-[0.2em] font-semibold mb-12">...sua empresa perde:</p>
-                
+                <p
+                    class="gsap-reveal-scroll text-center text-[1.2rem] text-brand-red uppercase tracking-[0.2em] font-semibold mb-12">
+                    ...sua empresa perde:</p>
+
                 <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-4 px-4">
-                    <span class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-white/40 hover:text-white transition-colors duration-500 cursor-default">tempo</span>
+                    <span
+                        class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-white/40 hover:text-white transition-colors duration-500 cursor-default">tempo</span>
                     <span class="gsap-reveal-scroll text-[1.5rem] text-brand-red/30 mx-1 md:mx-2">•</span>
-                    <span class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-white/40 hover:text-white transition-colors duration-500 cursor-default">produtividade</span>
+                    <span
+                        class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-white/40 hover:text-white transition-colors duration-500 cursor-default">produtividade</span>
                     <span class="gsap-reveal-scroll text-[1.5rem] text-brand-red/30 mx-1 md:mx-2">•</span>
-                    <span class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-white/40 hover:text-white transition-colors duration-500 cursor-default">escala</span>
+                    <span
+                        class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-white/40 hover:text-white transition-colors duration-500 cursor-default">escala</span>
                     <span class="gsap-reveal-scroll text-[1.5rem] text-brand-red/30 mx-1 md:mx-2">•</span>
-                    <span class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-white/40 hover:text-white transition-colors duration-500 cursor-default">dinheiro</span>
+                    <span
+                        class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-white/40 hover:text-white transition-colors duration-500 cursor-default">dinheiro</span>
                     <span class="gsap-reveal-scroll text-[1.5rem] text-brand-red/30 mx-1 md:mx-2">•</span>
-                    <span class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-brand-red cursor-default">competitividade.</span>
+                    <span
+                        class="gsap-reveal-scroll text-[2.2rem] md:text-[3rem] font-bold text-brand-red cursor-default">competitividade.</span>
                 </div>
             </div>
 
             <!-- Block 4: The Punchline -->
-            <div class="max-w-4xl mx-auto text-center bg-white/5 border border-white/10 rounded-3xl p-10 md:p-16 relative overflow-hidden gsap-reveal-scroll">
-                <div class="absolute inset-0 bg-gradient-to-br from-brand-red/10 to-transparent opacity-50 pointer-events-none"></div>
-                <h3 class="relative z-10 font-sans text-[1.2rem] md:text-[1.5rem] text-white/70 font-light mb-2">E o pior:</h3>
-                <p class="relative z-10 font-display text-[1.8rem] md:text-[2.5rem] font-semibold text-white leading-tight">isso normalmente acontece de forma <span class="italic text-white/50">invisível.</span></p>
+            <div
+                class="max-w-4xl mx-auto text-center bg-white/5 border border-white/10 rounded-3xl p-10 md:p-16 relative overflow-hidden gsap-reveal-scroll">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-brand-red/10 to-transparent opacity-50 pointer-events-none">
+                </div>
+                <h3 class="relative z-10 font-sans text-[1.2rem] md:text-[1.5rem] text-white/70 font-light mb-2">E o
+                    pior:</h3>
+                <p
+                    class="relative z-10 font-display text-[1.8rem] md:text-[2.5rem] font-semibold text-white leading-tight">
+                    isso normalmente acontece de forma <span class="italic text-white/50">invisível.</span></p>
             </div>
 
         </div>
@@ -511,17 +624,23 @@
     <!-- Section 3: A Solução -->
     <section class="relative w-full py-24 lg:py-32 bg-[#05030a] z-10 border-t border-white/5 overflow-hidden">
         <!-- Background Elements: Glowing Orb for 'Automation' -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-radial from-brand-orange/10 via-brand-red/5 to-transparent blur-[100px] pointer-events-none z-0"></div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-gradient-radial from-brand-orange/10 via-brand-red/5 to-transparent blur-[100px] pointer-events-none z-0">
+        </div>
         <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <!-- Header -->
             <div class="text-center max-w-4xl mx-auto mb-20">
-                <p class="gsap-reveal-scroll font-sans text-[1.2rem] md:text-[1.8rem] text-white/50 font-light leading-relaxed mb-6">
-                    Empresas modernas não crescem contratando<br class="hidden md:block"> mais pessoas para tarefas repetitivas.
+                <p
+                    class="gsap-reveal-scroll font-sans text-[1.2rem] md:text-[1.8rem] text-white/50 font-light leading-relaxed mb-6">
+                    Empresas modernas não crescem contratando<br class="hidden md:block"> mais pessoas para tarefas
+                    repetitivas.
                 </p>
-                <h2 class="gsap-reveal-scroll font-display text-[2.2rem] sm:text-[3rem] md:text-[5rem] tracking-tight text-white leading-none">
-                    Elas crescem <strong class="bg-clip-text text-transparent bg-gradient-to-r from-brand-orange via-brand-red to-brand-purple">automatizando.</strong>
+                <h2
+                    class="gsap-reveal-scroll font-display text-[2.2rem] sm:text-[3rem] md:text-[5rem] tracking-tight text-white leading-none">
+                    Elas crescem <strong
+                        class="bg-clip-text text-transparent bg-gradient-to-r from-brand-orange via-brand-red to-brand-purple">automatizando.</strong>
                 </h2>
             </div>
 
@@ -529,65 +648,78 @@
                 <p class="gsap-reveal-scroll text-[1.2rem] text-white/60 font-medium mb-12">
                     Hoje, as empresas mais eficientes utilizam IA e automação para:
                 </p>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-left">
-                    
+
                     <!-- Big Hero Card: Transformar operações -->
-                    <div class="gsap-reveal-scroll md:col-span-2 md:row-span-2 glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-orange/40 transition-all duration-500 bg-gradient-to-br from-brand-orange/10 to-transparent relative overflow-hidden group flex flex-col justify-end min-h-[240px]">
-                        <div class="absolute top-0 right-0 w-40 h-40 bg-brand-orange/20 blur-[60px] group-hover:bg-brand-orange/40 transition-colors duration-700 rounded-full"></div>
+                    <div
+                        class="gsap-reveal-scroll md:col-span-2 md:row-span-2 glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-orange/40 transition-all duration-500 bg-gradient-to-br from-brand-orange/10 to-transparent relative overflow-hidden group flex flex-col justify-end min-h-[240px]">
+                        <div
+                            class="absolute top-0 right-0 w-40 h-40 bg-brand-orange/20 blur-[60px] group-hover:bg-brand-orange/40 transition-colors duration-700 rounded-full">
+                        </div>
                         <i data-lucide="cpu" class="w-10 h-10 text-brand-orange mb-6 absolute top-8 left-8"></i>
-                        <h3 class="text-[1.8rem] font-display font-bold text-white leading-tight">Transformar operações inteiras em sistemas inteligentes</h3>
+                        <h3 class="text-[1.8rem] font-display font-bold text-white leading-tight">Transformar operações
+                            inteiras em sistemas inteligentes</h3>
                     </div>
 
                     <!-- Standard 1 -->
-                    <div class="gsap-reveal-scroll glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col">
+                    <div
+                        class="gsap-reveal-scroll glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col">
                         <i data-lucide="zap" class="w-6 h-6 text-white/70 mb-auto pb-6"></i>
                         <h3 class="text-[1.1rem] font-semibold text-white mt-auto">Operar mais rápido</h3>
                     </div>
 
                     <!-- Standard 2 -->
-                    <div class="gsap-reveal-scroll glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col">
+                    <div
+                        class="gsap-reveal-scroll glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col">
                         <i data-lucide="trending-down" class="w-6 h-6 text-brand-red mb-auto pb-6"></i>
                         <h3 class="text-[1.1rem] font-semibold text-white mt-auto">Reduzir custos operacionais</h3>
                     </div>
 
                     <!-- Wide Card: Responder -->
-                    <div class="gsap-reveal-scroll md:col-span-2 glass-card p-6 rounded-3xl border border-white/10 hover:border-brand-purple/40 transition-all duration-500 bg-gradient-to-r from-brand-purple/5 to-transparent flex items-center gap-4 group">
-                        <div class="w-14 h-14 rounded-full bg-brand-purple/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
+                    <div
+                        class="gsap-reveal-scroll md:col-span-2 glass-card p-6 rounded-3xl border border-white/10 hover:border-brand-purple/40 transition-all duration-500 bg-gradient-to-r from-brand-purple/5 to-transparent flex items-center gap-4 group">
+                        <div
+                            class="w-14 h-14 rounded-full bg-brand-purple/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
                             <i data-lucide="message-circle" class="w-6 h-6 text-brand-purple"></i>
                         </div>
                         <h3 class="text-[1.3rem] font-semibold text-white">Responder clientes instantaneamente</h3>
                     </div>
 
                     <!-- Wide Card: Integrar -->
-                    <div class="gsap-reveal-scroll md:col-span-2 glass-card p-6 rounded-3xl border border-white/10 hover:border-brand-orange/40 transition-all duration-500 flex items-center gap-4 group">
-                        <div class="w-14 h-14 rounded-full bg-brand-orange/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
+                    <div
+                        class="gsap-reveal-scroll md:col-span-2 glass-card p-6 rounded-3xl border border-white/10 hover:border-brand-orange/40 transition-all duration-500 flex items-center gap-4 group">
+                        <div
+                            class="w-14 h-14 rounded-full bg-brand-orange/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
                             <i data-lucide="network" class="w-6 h-6 text-brand-orange"></i>
                         </div>
                         <h3 class="text-[1.3rem] font-semibold text-white">Integrar sistemas</h3>
                     </div>
 
                     <!-- Standard 3 -->
-                    <div class="gsap-reveal-scroll glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col">
+                    <div
+                        class="gsap-reveal-scroll glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col">
                         <i data-lucide="check-circle" class="w-6 h-6 text-white/70 mb-auto pb-6"></i>
                         <h3 class="text-[1.1rem] font-semibold text-white mt-auto">Eliminar retrabalho</h3>
                     </div>
 
                     <!-- Standard 4 -->
-                    <div class="gsap-reveal-scroll glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col">
+                    <div
+                        class="gsap-reveal-scroll glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col">
                         <i data-lucide="users" class="w-6 h-6 text-white/70 mb-auto pb-6"></i>
                         <h3 class="text-[1.1rem] font-semibold text-white mt-auto">Escalar atendimento</h3>
                     </div>
 
                     <!-- Full Width: Conteúdo -->
-                    <div class="gsap-reveal-scroll md:col-span-4 glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-red/40 transition-all duration-500 bg-gradient-to-r from-transparent via-brand-red/5 to-transparent flex flex-col md:flex-row items-center justify-between text-center md:text-left group">
+                    <div
+                        class="gsap-reveal-scroll md:col-span-4 glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-red/40 transition-all duration-500 bg-gradient-to-r from-transparent via-brand-red/5 to-transparent flex flex-col md:flex-row items-center justify-between text-center md:text-left group">
                         <h3 class="text-[1.5rem] font-bold text-white mb-4 md:mb-0">Gerar conteúdo automaticamente</h3>
                         <div class="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-full border border-white/10">
                             <i data-lucide="sparkles" class="w-5 h-5 text-brand-red"></i>
                             <span class="text-sm font-medium text-white/80 uppercase tracking-widest">AI Agent</span>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -600,7 +732,9 @@
                     <div class="absolute -inset-4 bg-brand-orange/20 blur-xl rounded-full z-0"></div>
                     <p class="relative z-10 font-display text-[2rem] md:text-[3.5rem] text-white leading-tight">
                         outras já estão funcionando em <br class="hidden md:block">
-                        <strong class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">modo exponencial.</strong>
+                        <strong
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">modo
+                            exponencial.</strong>
                     </p>
                 </div>
             </div>
@@ -614,17 +748,40 @@
         <!-- Inline styles for section-specific animations -->
         <style>
             @keyframes clipRevealUp {
-                0%   { clip-path: inset(100% 0 0 0); opacity: 0; }
-                100% { clip-path: inset(0% 0 0 0);   opacity: 1; }
+                0% {
+                    clip-path: inset(100% 0 0 0);
+                    opacity: 0;
+                }
+
+                100% {
+                    clip-path: inset(0% 0 0 0);
+                    opacity: 1;
+                }
             }
-            .clip-reveal { animation: clipRevealUp 1s cubic-bezier(0.77, 0, 0.175, 1) both; animation-play-state: paused; }
-            .clip-reveal.in-view { animation-play-state: running; }
+
+            .clip-reveal {
+                animation: clipRevealUp 1s cubic-bezier(0.77, 0, 0.175, 1) both;
+                animation-play-state: paused;
+            }
+
+            .clip-reveal.in-view {
+                animation-play-state: running;
+            }
 
             @keyframes borderBeamSpin {
-                from { transform: rotate(0deg); }
-                to   { transform: rotate(360deg); }
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
             }
-            .border-beam-wrap { position: relative; }
+
+            .border-beam-wrap {
+                position: relative;
+            }
+
             .border-beam-wrap::before {
                 content: '';
                 position: absolute;
@@ -636,30 +793,65 @@
                 transition: opacity 0.3s;
                 z-index: 0;
             }
-            .border-beam-wrap:hover::before { opacity: 1; }
-            .border-beam-wrap > * { position: relative; z-index: 1; }
+
+            .border-beam-wrap:hover::before {
+                opacity: 1;
+            }
+
+            .border-beam-wrap>* {
+                position: relative;
+                z-index: 1;
+            }
 
             @keyframes cardFloat {
-                0%, 100% { transform: translateY(0px); }
-                50%       { transform: translateY(-8px); }
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-8px);
+                }
             }
-            .float-card { animation: cardFloat 6s ease-in-out infinite; }
-            .float-card-2 { animation: cardFloat 6s ease-in-out 2s infinite; }
-            .float-card-3 { animation: cardFloat 6s ease-in-out 4s infinite; }
+
+            .float-card {
+                animation: cardFloat 6s ease-in-out infinite;
+            }
+
+            .float-card-2 {
+                animation: cardFloat 6s ease-in-out 2s infinite;
+            }
+
+            .float-card-3 {
+                animation: cardFloat 6s ease-in-out 4s infinite;
+            }
 
             @keyframes beamSlide {
-                0%   { left: -100%; }
-                100% { left: 200%; }
+                0% {
+                    left: -100%;
+                }
+
+                100% {
+                    left: 200%;
+                }
             }
-            .animate-beam-slide { animation: beamSlide 2.5s cubic-bezier(0.4,0,0.2,1) infinite; }
+
+            .animate-beam-slide {
+                animation: beamSlide 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+            }
         </style>
 
         <!-- ── PART A: Intro Statement (full-width, centered) ── -->
         <div class="max-w-5xl mx-auto px-6 pt-24 pb-20 text-center">
-            <p class="gsap-reveal-scroll font-sans text-[1.1rem] md:text-[1.4rem] text-white/40 uppercase tracking-[0.18em] font-semibold mb-6">Por que a WizzyBots existe?</p>
-            <h2 class="gsap-reveal-scroll font-display text-[2.4rem] md:text-[4rem] tracking-tight leading-[1.1] text-white mb-6">
+            <p
+                class="gsap-reveal-scroll font-sans text-[1.1rem] md:text-[1.4rem] text-white/40 uppercase tracking-[0.18em] font-semibold mb-6">
+                Por que a WizzyBots existe?</p>
+            <h2
+                class="gsap-reveal-scroll font-display text-[2.4rem] md:text-[4rem] tracking-tight leading-[1.1] text-white mb-6">
                 A WizzyBots nasceu exatamente<br class="hidden md:block">
-                <strong class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">para resolver esse problema.</strong>
+                <strong class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">para
+                    resolver esse problema.</strong>
             </h2>
         </div>
 
@@ -668,85 +860,108 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
 
                 <!-- LEFT: Discipline Columns -->
-                <div class="flex flex-col justify-center py-12 lg:py-20 pr-0 lg:pr-16 border-b lg:border-b-0 lg:border-r border-white/10">
-                    <p class="text-[1rem] text-white/50 font-light mb-8">Unimos todas as disciplinas que<br>uma operação moderna exige:</p>
-                    
+                <div
+                    class="flex flex-col justify-center py-12 lg:py-20 pr-0 lg:pr-16 border-b lg:border-b-0 lg:border-r border-white/10">
+                    <p class="text-[1rem] text-white/50 font-light mb-8">Unimos todas as disciplinas que<br>uma operação
+                        moderna exige:</p>
+
                     <!-- Discipline cards with clip-reveal + border-beam on hover -->
                     <div class="flex flex-col gap-3" id="disciplines-list">
                         <div class="border-beam-wrap rounded-2xl gsap-reveal-scroll">
-                            <div class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
-                                <div class="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center shrink-0">
+                            <div
+                                class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center shrink-0">
                                     <i data-lucide="brain-circuit" class="w-5 h-5 text-brand-orange"></i>
                                 </div>
                                 <div>
                                     <span class="text-white font-semibold text-[1rem]">IA Aplicada</span>
-                                    <span class="hidden md:inline text-white/30 text-sm ml-3">modelos que trabalham por você</span>
+                                    <span class="hidden md:inline text-white/30 text-sm ml-3">modelos que trabalham por
+                                        você</span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-beam-wrap rounded-2xl gsap-reveal-scroll">
-                            <div class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
-                                <div class="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center shrink-0">
+                            <div
+                                class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center shrink-0">
                                     <i data-lucide="workflow" class="w-5 h-5 text-brand-orange"></i>
                                 </div>
                                 <div>
                                     <span class="text-white font-semibold text-[1rem]">Automação</span>
-                                    <span class="hidden md:inline text-white/30 text-sm ml-3">fluxos inteligentes end-to-end</span>
+                                    <span class="hidden md:inline text-white/30 text-sm ml-3">fluxos inteligentes
+                                        end-to-end</span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-beam-wrap rounded-2xl gsap-reveal-scroll">
-                            <div class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
-                                <div class="w-10 h-10 rounded-full bg-brand-purple/15 flex items-center justify-center shrink-0">
+                            <div
+                                class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-purple/15 flex items-center justify-center shrink-0">
                                     <i data-lucide="box" class="w-5 h-5 text-brand-purple"></i>
                                 </div>
                                 <div>
                                     <span class="text-white font-semibold text-[1rem]">Produto</span>
-                                    <span class="hidden md:inline text-white/30 text-sm ml-3">sistemas com foco no usuário</span>
+                                    <span class="hidden md:inline text-white/30 text-sm ml-3">sistemas com foco no
+                                        usuário</span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-beam-wrap rounded-2xl gsap-reveal-scroll">
-                            <div class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
-                                <div class="w-10 h-10 rounded-full bg-brand-purple/15 flex items-center justify-center shrink-0">
+                            <div
+                                class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-purple/15 flex items-center justify-center shrink-0">
                                     <i data-lucide="trending-up" class="w-5 h-5 text-brand-purple"></i>
                                 </div>
                                 <div>
                                     <span class="text-white font-semibold text-[1rem]">Growth</span>
-                                    <span class="hidden md:inline text-white/30 text-sm ml-3">escala com estrutura</span>
+                                    <span class="hidden md:inline text-white/30 text-sm ml-3">escala com
+                                        estrutura</span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-beam-wrap rounded-2xl gsap-reveal-scroll">
-                            <div class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
-                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                            <div
+                                class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                     <i data-lucide="pen-tool" class="w-5 h-5 text-white/70"></i>
                                 </div>
                                 <div>
                                     <span class="text-white font-semibold text-[1rem]">Design</span>
-                                    <span class="hidden md:inline text-white/30 text-sm ml-3">interfaces que convertem</span>
+                                    <span class="hidden md:inline text-white/30 text-sm ml-3">interfaces que
+                                        convertem</span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-beam-wrap rounded-2xl gsap-reveal-scroll">
-                            <div class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
-                                <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                            <div
+                                class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                                     <i data-lucide="code-2" class="w-5 h-5 text-white/70"></i>
                                 </div>
                                 <div>
                                     <span class="text-white font-semibold text-[1rem]">Tecnologia</span>
-                                    <span class="hidden md:inline text-white/30 text-sm ml-3">infra e desenvolvimento</span>
+                                    <span class="hidden md:inline text-white/30 text-sm ml-3">infra e
+                                        desenvolvimento</span>
                                 </div>
                             </div>
                         </div>
                         <div class="border-beam-wrap rounded-2xl gsap-reveal-scroll">
-                            <div class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300 border-brand-orange/20">
-                                <div class="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center shrink-0">
+                            <div
+                                class="glass-card flex items-center gap-5 px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-colors duration-300 border-brand-orange/20">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-brand-orange/15 flex items-center justify-center shrink-0">
                                     <i data-lucide="lightbulb" class="w-5 h-5 text-brand-orange"></i>
                                 </div>
                                 <div>
                                     <span class="text-white font-semibold text-[1rem]">Inteligência Operacional</span>
-                                    <span class="hidden md:inline text-white/30 text-sm ml-3">visão estratégica do todo</span>
+                                    <span class="hidden md:inline text-white/30 text-sm ml-3">visão estratégica do
+                                        todo</span>
                                 </div>
                             </div>
                         </div>
@@ -762,18 +977,24 @@
                     <!-- Card Stack -->
                     <div class="relative w-full max-w-[280px] sm:max-w-[300px] h-[320px] mx-auto">
                         <!-- Card 3 (back) -->
-                        <div class="float-card-3 absolute inset-0 rounded-3xl border border-white/8 bg-white/3 backdrop-blur-sm" style="transform: rotate(-5deg) translateY(12px) scale(0.9); z-index:1;"></div>
+                        <div class="float-card-3 absolute inset-0 rounded-3xl border border-white/8 bg-white/3 backdrop-blur-sm"
+                            style="transform: rotate(-5deg) translateY(12px) scale(0.9); z-index:1;"></div>
                         <!-- Card 2 (mid) -->
-                        <div class="float-card-2 absolute inset-0 rounded-3xl border border-white/12 bg-white/4 backdrop-blur-sm" style="transform: rotate(2.5deg) translateY(6px) scale(0.95); z-index:2;"></div>
+                        <div class="float-card-2 absolute inset-0 rounded-3xl border border-white/12 bg-white/4 backdrop-blur-sm"
+                            style="transform: rotate(2.5deg) translateY(6px) scale(0.95); z-index:2;"></div>
                         <!-- Card 1 (front) -->
-                        <div class="float-card absolute inset-0 rounded-3xl border border-white/20 bg-gradient-to-br from-white/8 to-transparent backdrop-blur-md p-8 flex flex-col justify-between overflow-hidden" style="z-index:3;">
+                        <div class="float-card absolute inset-0 rounded-3xl border border-white/20 bg-gradient-to-br from-white/8 to-transparent backdrop-blur-md p-8 flex flex-col justify-between overflow-hidden"
+                            style="z-index:3;">
                             <!-- Beam effect -->
-                            <div class="absolute top-0 left-0 w-full h-full overflow-hidden rounded-3xl pointer-events-none">
-                                <div class="animate-beam-slide absolute top-0 h-full w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent" style="transform: skewX(-20deg);"></div>
+                            <div
+                                class="absolute top-0 left-0 w-full h-full overflow-hidden rounded-3xl pointer-events-none">
+                                <div class="animate-beam-slide absolute top-0 h-full w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent"
+                                    style="transform: skewX(-20deg);"></div>
                             </div>
                             <!-- Card Header -->
                             <div class="flex items-center justify-between">
-                                <span class="font-mono text-[10px] uppercase tracking-widest text-white/30">WizzyBots // RESULT</span>
+                                <span class="font-mono text-[10px] uppercase tracking-widest text-white/30">WizzyBots //
+                                    RESULT</span>
                                 <div class="flex gap-1.5">
                                     <div class="w-2 h-2 rounded-full bg-white/20"></div>
                                     <div class="w-2 h-2 rounded-full bg-brand-orange"></div>
@@ -784,17 +1005,21 @@
                                 <div class="h-2 w-3/4 rounded-full bg-white/10"></div>
                                 <div class="h-2 w-1/2 rounded-full bg-white/6"></div>
                                 <!-- Fake metric -->
-                                <div class="mt-4 p-4 rounded-2xl bg-white/5 border border-white/10 flex items-end gap-3">
+                                <div
+                                    class="mt-4 p-4 rounded-2xl bg-white/5 border border-white/10 flex items-end gap-3">
                                     <span class="font-display text-[2.5rem] font-bold text-white leading-none">3×</span>
                                     <div class="pb-1">
-                                        <div class="text-[0.7rem] text-white/40 uppercase tracking-wider">mais rápido</div>
-                                        <div class="text-[0.8rem] text-brand-orange font-medium">operação automatizada</div>
+                                        <div class="text-[0.7rem] text-white/40 uppercase tracking-wider">mais rápido
+                                        </div>
+                                        <div class="text-[0.8rem] text-brand-orange font-medium">operação automatizada
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Card Footer -->
                             <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                                <span class="text-[0.7rem] text-white/30 font-mono uppercase tracking-widest">Vantagem Operacional</span>
+                                <span class="text-[0.7rem] text-white/30 font-mono uppercase tracking-widest">Vantagem
+                                    Operacional</span>
                                 <div class="w-7 h-7 rounded-full bg-brand-orange flex items-center justify-center">
                                     <i data-lucide="arrow-up-right" class="w-3 h-3 text-black"></i>
                                 </div>
@@ -802,33 +1027,41 @@
                         </div>
                     </div>
                     <!-- Label below card -->
-                    <p class="mt-8 text-center text-white/30 text-sm font-light">Operações mais rápidas,<br>eficientes e escaláveis.</p>
+                    <p class="mt-8 text-center text-white/30 text-sm font-light">Operações mais rápidas,<br>eficientes e
+                        escaláveis.</p>
                 </div>
             </div>
         </div>
 
         <!-- ── PART C: Focus Manifesto ── -->
         <div class="border-t border-white/10">
-            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
+            <div
+                class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10">
                 <!-- Left block -->
                 <div class="py-16 md:py-20 md:pr-16 flex flex-col justify-center gsap-reveal-scroll">
-                    <span class="text-white/30 text-[0.75rem] uppercase tracking-[0.2em] font-semibold mb-5 flex items-center gap-2">
+                    <span
+                        class="text-white/30 text-[0.75rem] uppercase tracking-[0.2em] font-semibold mb-5 flex items-center gap-2">
                         <span class="w-4 h-px bg-white/20 inline-block"></span>O que NÃO é nosso foco
                     </span>
-                    <p class="font-display text-[1.8rem] md:text-[2.2rem] font-semibold text-white/40 leading-tight line-through decoration-brand-red/60">
+                    <p
+                        class="font-display text-[1.8rem] md:text-[2.2rem] font-semibold text-white/40 leading-tight line-through decoration-brand-red/60">
                         "implementar ferramentas"
                     </p>
                 </div>
                 <!-- Right block -->
-                <div class="py-16 md:py-20 md:pl-16 flex flex-col justify-center gsap-reveal-scroll relative overflow-hidden">
+                <div
+                    class="py-16 md:py-20 md:pl-16 flex flex-col justify-center gsap-reveal-scroll relative overflow-hidden">
                     <!-- Glow behind text -->
                     <div class="absolute -inset-4 bg-brand-orange/8 blur-[60px] pointer-events-none rounded-full"></div>
-                    <span class="relative text-brand-orange text-[0.75rem] uppercase tracking-[0.2em] font-semibold mb-5 flex items-center gap-2">
+                    <span
+                        class="relative text-brand-orange text-[0.75rem] uppercase tracking-[0.2em] font-semibold mb-5 flex items-center gap-2">
                         <span class="w-4 h-px bg-brand-orange/50 inline-block"></span>Nosso foco real
                     </span>
                     <p class="relative font-display text-[2rem] md:text-[2.8rem] font-bold text-white leading-tight">
-                        Criar <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">vantagem</span><br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">operacional.</span>
+                        Criar <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">vantagem</span><br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red">operacional.</span>
                     </p>
                 </div>
             </div>
@@ -842,149 +1075,206 @@
         <style>
             /* n8n-inspired card styles */
             .wz-card-rusty {
-                background-image: radial-gradient(138% 148% at 77% 23%, #0400ff22 0, transparent 80%), linear-gradient(0deg, rgba(238,79,39,0.18), rgba(238,79,39,0.18)), linear-gradient(180deg, transparent, rgba(13,10,25,0.37)), radial-gradient(65% 111% at 50% 0, rgba(168,92,92,0.17) 0, transparent);
-                border: 1px solid rgba(255,255,255,0.1);
-                box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), inset 0 1px 0 0 rgba(255,142,93,0.3);
+                background-image: radial-gradient(138% 148% at 77% 23%, #0400ff22 0, transparent 80%), linear-gradient(0deg, rgba(238, 79, 39, 0.18), rgba(238, 79, 39, 0.18)), linear-gradient(180deg, transparent, rgba(13, 10, 25, 0.37)), radial-gradient(65% 111% at 50% 0, rgba(168, 92, 92, 0.17) 0, transparent);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 0 rgba(255, 142, 93, 0.3);
                 backdrop-filter: blur(50px);
             }
-            .wz-card-rusty:hover { background-image: radial-gradient(138% 148% at 77% 23%, #0400ff26 0, transparent 80%), linear-gradient(0deg, rgba(238,79,39,0.28), rgba(238,79,39,0.28)), linear-gradient(180deg, transparent, rgba(13,10,25,0.37)), radial-gradient(65% 111% at 50% 0, rgba(168,92,92,0.2) 0, transparent); }
+
+            .wz-card-rusty:hover {
+                background-image: radial-gradient(138% 148% at 77% 23%, #0400ff26 0, transparent 80%), linear-gradient(0deg, rgba(238, 79, 39, 0.28), rgba(238, 79, 39, 0.28)), linear-gradient(180deg, transparent, rgba(13, 10, 25, 0.37)), radial-gradient(65% 111% at 50% 0, rgba(168, 92, 92, 0.2) 0, transparent);
+            }
+
             .wz-card-spark-red {
-                background-image: radial-gradient(54% 97% at 54% 2%, rgba(168,92,92,0.29) 0, rgba(103,69,69,0.08) 14%), radial-gradient(120% 145% at 50% 100%, rgba(255,100,33,0.30) 0, rgba(255,59,33,0.04) 50%), linear-gradient(180deg, rgba(14,9,24,0.50), rgba(14,9,24,0.50));
+                background-image: radial-gradient(54% 97% at 54% 2%, rgba(168, 92, 92, 0.29) 0, rgba(103, 69, 69, 0.08) 14%), radial-gradient(120% 145% at 50% 100%, rgba(255, 100, 33, 0.30) 0, rgba(255, 59, 33, 0.04) 50%), linear-gradient(180deg, rgba(14, 9, 24, 0.50), rgba(14, 9, 24, 0.50));
                 border: 1px solid;
                 border-image: linear-gradient(55deg, #fd8925 40%, #ff0c00) 1;
                 border-radius: 1rem;
                 position: relative;
             }
+
             .wz-card-shine-blue {
-                background-image: radial-gradient(127% 234% at 10% 142%, rgba(217,126,75,0.13) 0, transparent 37%), radial-gradient(67% 136% at 77% 23%, rgba(4,0,255,0.09) 0, transparent 80%), linear-gradient(180deg, rgba(0,0,0,0.1), rgba(13,10,25,0.26));
-                border: 1px solid rgba(255,255,255,0.1);
-                box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), inset 0 1px 0 0 rgba(255,142,93,0.3);
+                background-image: radial-gradient(127% 234% at 10% 142%, rgba(217, 126, 75, 0.13) 0, transparent 37%), radial-gradient(67% 136% at 77% 23%, rgba(4, 0, 255, 0.09) 0, transparent 80%), linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(13, 10, 25, 0.26));
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 0 rgba(255, 142, 93, 0.3);
                 backdrop-filter: blur(64px);
             }
+
             .wz-gradient-tile-orange {
-                background-image: radial-gradient(circle farthest-side at 0 100%, rgba(178,0,255,0.15), transparent 56%), radial-gradient(circle at 50% 100%, rgba(163,100,58,0.53), rgba(42,25,41,0.39));
-                border: 1px solid rgba(255,255,255,0.1);
+                background-image: radial-gradient(circle farthest-side at 0 100%, rgba(178, 0, 255, 0.15), transparent 56%), radial-gradient(circle at 50% 100%, rgba(163, 100, 58, 0.53), rgba(42, 25, 41, 0.39));
+                border: 1px solid rgba(255, 255, 255, 0.1);
                 backdrop-filter: blur(22px);
             }
+
             .wz-gradient-tile-purple {
-                background-image: radial-gradient(circle at 0 100%, rgba(255,79,49,0.12), transparent), radial-gradient(circle at 50% 100%, rgba(75,57,122,0.43), rgba(42,25,41,0.39));
-                border: 1px solid rgba(255,255,255,0.1);
+                background-image: radial-gradient(circle at 0 100%, rgba(255, 79, 49, 0.12), transparent), radial-gradient(circle at 50% 100%, rgba(75, 57, 122, 0.43), rgba(42, 25, 41, 0.39));
+                border: 1px solid rgba(255, 255, 255, 0.1);
                 backdrop-filter: blur(22px);
             }
+
             /* Marquee */
-            @keyframes wz-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-            .wz-marquee-track { animation: wz-marquee 22s linear infinite; }
+            @keyframes wz-marquee {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .wz-marquee-track {
+                animation: wz-marquee 22s linear infinite;
+            }
+
             .wz-marquee-wrap {
                 mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
                 -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
             }
+
             /* n8n btn-primary gradient */
             .wz-btn-primary {
                 background: linear-gradient(30deg, #fd8925, #ff0c00);
                 transition: filter 0.3s;
             }
-            .wz-btn-primary:hover { filter: brightness(1.1); }
+
+            .wz-btn-primary:hover {
+                filter: brightness(1.1);
+            }
+
             /* hover lift */
-            .hover-lift { transition: transform 0.3s cubic-bezier(.4,0,.2,1), box-shadow 0.3s; }
-            .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 0 40px -8px rgba(253,137,37,0.4); }
+            .hover-lift {
+                transition: transform 0.3s cubic-bezier(.4, 0, .2, 1), box-shadow 0.3s;
+            }
+
+            .hover-lift:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 0 40px -8px rgba(253, 137, 37, 0.4);
+            }
         </style>
 
         <!-- Ambient glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-brand-orange/8 via-brand-red/5 to-transparent blur-[120px] pointer-events-none z-0"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-brand-orange/8 via-brand-red/5 to-transparent blur-[120px] pointer-events-none z-0">
+        </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
 
             <!-- ── BLOCO A: Statement ── -->
             <div class="py-24 lg:py-32 text-center max-w-5xl mx-auto">
-                <span class="gsap-reveal-scroll inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-[0.75rem] uppercase tracking-widest text-white/50 font-semibold mb-8">
+                <span
+                    class="gsap-reveal-scroll inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-[0.75rem] uppercase tracking-widest text-white/50 font-semibold mb-8">
                     <span class="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse inline-block"></span>
                     O que a WizzyBots faz
                 </span>
-                <h2 class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[4.5rem] font-bold tracking-tight leading-[1.05] text-white mb-0">
+                <h2
+                    class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[4.5rem] font-bold tracking-tight leading-[1.05] text-white mb-0">
                     Transformamos operações manuais<br class="hidden md:block">
-                    <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(89.98deg, #ffb552 29.9%, #ff5873 71.24%, #b83dff 96.05%);">em sistemas inteligentes.</span>
+                    <span class="text-transparent bg-clip-text"
+                        style="background-image: linear-gradient(89.98deg, #ffb552 29.9%, #ff5873 71.24%, #b83dff 96.05%);">em
+                        sistemas inteligentes.</span>
                 </h2>
             </div>
 
             <!-- ── BLOCO B: Marquee de Áreas ── -->
             <div class="mb-20">
-                <p class="gsap-reveal-scroll text-center text-white/40 text-[0.8rem] uppercase tracking-[0.2em] font-semibold mb-8">A WizzyBots automatiza:</p>
+                <p
+                    class="gsap-reveal-scroll text-center text-white/40 text-[0.8rem] uppercase tracking-[0.2em] font-semibold mb-8">
+                    A WizzyBots automatiza:</p>
                 <div class="wz-marquee-wrap overflow-hidden py-2">
                     <div class="wz-marquee-track flex gap-4 w-max">
                         <!-- Set 1 -->
                         <div class="flex gap-4">
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="megaphone" class="w-4 h-4 text-brand-orange shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Marketing</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="trending-up" class="w-4 h-4 text-brand-orange shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Vendas</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="headphones" class="w-4 h-4 text-brand-purple shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Atendimento</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="database" class="w-4 h-4 text-brand-orange shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">CRM</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="layout-grid" class="w-4 h-4 text-white/60 shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Backoffice</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="landmark" class="w-4 h-4 text-white/60 shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Financeiro</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="users" class="w-4 h-4 text-brand-purple shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">RH</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="settings-2" class="w-4 h-4 text-white/60 shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Operações Internas</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap hover:bg-white/10 hover:border-brand-orange/40 transition-all duration-300 cursor-default">
                                 <i data-lucide="git-branch" class="w-4 h-4 text-brand-orange shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Fluxos Empresariais</span>
                             </div>
                         </div>
                         <!-- Set 2 (duplicate for seamless loop) -->
                         <div class="flex gap-4">
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="megaphone" class="w-4 h-4 text-brand-orange shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Marketing</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="trending-up" class="w-4 h-4 text-brand-orange shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Vendas</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="headphones" class="w-4 h-4 text-brand-purple shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Atendimento</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="database" class="w-4 h-4 text-brand-orange shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">CRM</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="layout-grid" class="w-4 h-4 text-white/60 shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Backoffice</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="landmark" class="w-4 h-4 text-white/60 shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Financeiro</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="users" class="w-4 h-4 text-brand-purple shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">RH</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="settings-2" class="w-4 h-4 text-white/60 shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Operações Internas</span>
                             </div>
-                            <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
+                            <div
+                                class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3 whitespace-nowrap cursor-default">
                                 <i data-lucide="git-branch" class="w-4 h-4 text-brand-orange shrink-0"></i>
                                 <span class="text-white font-medium text-[0.95rem]">Fluxos Empresariais</span>
                             </div>
@@ -995,17 +1285,21 @@
 
             <!-- ── BLOCO C: Resultado — 4 Cards n8n-style ── -->
             <div class="border-t border-white/10 pt-20 pb-24">
-                <p class="gsap-reveal-scroll text-center text-white/40 text-[0.8rem] uppercase tracking-[0.2em] font-semibold mb-4">Criando uma empresa:</p>
+                <p
+                    class="gsap-reveal-scroll text-center text-white/40 text-[0.8rem] uppercase tracking-[0.2em] font-semibold mb-4">
+                    Criando uma empresa:</p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
                     <!-- Card 1: Mais Rápida -->
-                    <div class="gsap-reveal-scroll wz-card-rusty hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default">
+                    <div
+                        class="gsap-reveal-scroll wz-card-rusty hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default">
                         <div class="w-11 h-11 rounded-xl bg-brand-orange/15 flex items-center justify-center">
                             <i data-lucide="zap" class="w-5 h-5 text-brand-orange"></i>
                         </div>
                         <div>
                             <div class="text-[2rem] font-bold text-white leading-none mb-1">+rápida</div>
-                            <p class="text-white/50 text-[0.85rem] leading-relaxed">Decisões e execuções em tempo real, sem gargalos humanos.</p>
+                            <p class="text-white/50 text-[0.85rem] leading-relaxed">Decisões e execuções em tempo real,
+                                sem gargalos humanos.</p>
                         </div>
                         <!-- mini progress bar -->
                         <div class="mt-auto pt-4 border-t border-white/8">
@@ -1013,66 +1307,81 @@
                                 <span>Velocidade operacional</span><span class="text-brand-orange">3×</span>
                             </div>
                             <div class="h-1 bg-white/8 rounded-full overflow-hidden">
-                                <div class="h-full w-[72%] rounded-full bg-gradient-to-r from-brand-orange to-brand-red"></div>
+                                <div
+                                    class="h-full w-[72%] rounded-full bg-gradient-to-r from-brand-orange to-brand-red">
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card 2: Mais Organizada -->
-                    <div class="gsap-reveal-scroll wz-card-shine-blue hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default">
+                    <div
+                        class="gsap-reveal-scroll wz-card-shine-blue hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default">
                         <div class="w-11 h-11 rounded-xl bg-brand-purple/15 flex items-center justify-center">
                             <i data-lucide="layout-dashboard" class="w-5 h-5 text-brand-purple"></i>
                         </div>
                         <div>
                             <div class="text-[2rem] font-bold text-white leading-none mb-1">+organizada</div>
-                            <p class="text-white/50 text-[0.85rem] leading-relaxed">Dados, processos e times sincronizados automaticamente.</p>
+                            <p class="text-white/50 text-[0.85rem] leading-relaxed">Dados, processos e times
+                                sincronizados automaticamente.</p>
                         </div>
                         <div class="mt-auto pt-4 border-t border-white/8">
                             <div class="flex justify-between text-[0.7rem] text-white/30 mb-1.5">
                                 <span>Redução de retrabalho</span><span class="text-brand-purple">80%</span>
                             </div>
                             <div class="h-1 bg-white/8 rounded-full overflow-hidden">
-                                <div class="h-full w-[80%] rounded-full bg-gradient-to-r from-brand-purple to-blue-500"></div>
+                                <div class="h-full w-[80%] rounded-full bg-gradient-to-r from-brand-purple to-blue-500">
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card 3: Mais Produtiva -->
-                    <div class="gsap-reveal-scroll wz-gradient-tile-orange hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default">
+                    <div
+                        class="gsap-reveal-scroll wz-gradient-tile-orange hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default">
                         <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center">
                             <i data-lucide="bar-chart-2" class="w-5 h-5 text-white/80"></i>
                         </div>
                         <div>
                             <div class="text-[2rem] font-bold text-white leading-none mb-1">+produtiva</div>
-                            <p class="text-white/50 text-[0.85rem] leading-relaxed">Seu time focado em estratégia enquanto a IA cuida do operacional.</p>
+                            <p class="text-white/50 text-[0.85rem] leading-relaxed">Seu time focado em estratégia
+                                enquanto a IA cuida do operacional.</p>
                         </div>
                         <div class="mt-auto pt-4 border-t border-white/8">
                             <div class="flex justify-between text-[0.7rem] text-white/30 mb-1.5">
                                 <span>Output por colaborador</span><span class="text-white/70">2.4×</span>
                             </div>
                             <div class="h-1 bg-white/8 rounded-full overflow-hidden">
-                                <div class="h-full w-[60%] rounded-full bg-gradient-to-r from-white/40 to-white/20"></div>
+                                <div class="h-full w-[60%] rounded-full bg-gradient-to-r from-white/40 to-white/20">
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Card 4: Mais Escalável (spark-red style) -->
-                    <div class="gsap-reveal-scroll wz-gradient-tile-purple hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default relative overflow-hidden">
+                    <div
+                        class="gsap-reveal-scroll wz-gradient-tile-purple hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default relative overflow-hidden">
                         <!-- Glow spark -->
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-red/20 blur-[60px] rounded-full pointer-events-none"></div>
-                        <div class="w-11 h-11 rounded-xl bg-brand-red/15 flex items-center justify-center relative z-10">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-brand-red/20 blur-[60px] rounded-full pointer-events-none">
+                        </div>
+                        <div
+                            class="w-11 h-11 rounded-xl bg-brand-red/15 flex items-center justify-center relative z-10">
                             <i data-lucide="rocket" class="w-5 h-5 text-brand-red"></i>
                         </div>
                         <div class="relative z-10">
                             <div class="text-[2rem] font-bold text-white leading-none mb-1">+escalável</div>
-                            <p class="text-white/50 text-[0.85rem] leading-relaxed">Cresça sem contratar proporcionalmente — a operação acompanha.</p>
+                            <p class="text-white/50 text-[0.85rem] leading-relaxed">Cresça sem contratar
+                                proporcionalmente — a operação acompanha.</p>
                         </div>
                         <div class="mt-auto pt-4 border-t border-white/8 relative z-10">
                             <div class="flex justify-between text-[0.7rem] text-white/30 mb-1.5">
                                 <span>Capacidade sem headcount</span><span class="text-brand-red">∞</span>
                             </div>
                             <div class="h-1 bg-white/8 rounded-full overflow-hidden">
-                                <div class="h-full w-full rounded-full bg-gradient-to-r from-brand-red/60 to-brand-purple/60"></div>
+                                <div
+                                    class="h-full w-full rounded-full bg-gradient-to-r from-brand-red/60 to-brand-purple/60">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1091,37 +1400,43 @@
                 position: relative;
                 overflow: hidden;
                 border-radius: 1.5rem;
-                border: 1px solid rgba(255,255,255,0.08);
+                border: 1px solid rgba(255, 255, 255, 0.08);
                 cursor: default;
-                transition: transform 0.4s cubic-bezier(.4,0,.2,1), box-shadow 0.4s;
+                transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), box-shadow 0.4s;
             }
+
             .wz-photo-card:hover {
                 transform: translateY(-6px) scale(1.01);
-                box-shadow: 0 24px 60px -8px rgba(0,0,0,0.7);
+                box-shadow: 0 24px 60px -8px rgba(0, 0, 0, 0.7);
                 z-index: 10;
             }
+
             .wz-photo-card img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
                 display: block;
-                transition: transform 0.6s cubic-bezier(.4,0,.2,1);
+                transition: transform 0.6s cubic-bezier(.4, 0, .2, 1);
                 filter: saturate(0.7) brightness(0.7);
             }
+
             .wz-photo-card:hover img {
                 transform: scale(1.07);
                 filter: saturate(0.9) brightness(0.85);
             }
+
             /* Gradient overlay from instagram-slides pattern */
             .wz-photo-overlay {
                 position: absolute;
                 inset: 0;
-                background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%);
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%);
                 transition: opacity 0.4s;
             }
+
             .wz-photo-card:hover .wz-photo-overlay {
-                background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0.05) 100%);
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.35) 55%, rgba(0, 0, 0, 0.05) 100%);
             }
+
             /* Label chip — instagram-slides mono badge style */
             .wz-photo-chip {
                 position: absolute;
@@ -1132,18 +1447,20 @@
                 text-transform: uppercase;
                 letter-spacing: 0.15em;
                 padding: 0.3rem 0.75rem;
-                background: rgba(255,255,255,0.08);
-                border: 1px solid rgba(255,255,255,0.15);
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.15);
                 border-radius: 9999px;
                 backdrop-filter: blur(12px);
-                color: rgba(255,255,255,0.7);
+                color: rgba(255, 255, 255, 0.7);
                 transition: background 0.3s, border-color 0.3s;
             }
+
             .wz-photo-card:hover .wz-photo-chip {
-                background: rgba(253,137,37,0.15);
-                border-color: rgba(253,137,37,0.5);
+                background: rgba(253, 137, 37, 0.15);
+                border-color: rgba(253, 137, 37, 0.5);
                 color: #fd8925;
             }
+
             /* Label at bottom */
             .wz-photo-label {
                 position: absolute;
@@ -1152,6 +1469,7 @@
                 right: 0;
                 padding: 1.5rem 1.25rem 1.25rem;
             }
+
             .wz-photo-label-title {
                 font-family: 'DM Sans', sans-serif;
                 font-weight: 700;
@@ -1159,27 +1477,38 @@
                 color: #fff;
                 line-height: 1.1;
             }
+
             .wz-photo-label-sub {
                 font-size: 0.78rem;
-                color: rgba(255,255,255,0.45);
+                color: rgba(255, 255, 255, 0.45);
                 margin-top: 0.25rem;
                 font-weight: 400;
             }
+
             /* Scan line animation from instagram-slides */
             @keyframes wz-scan {
-                0%   { transform: translateY(-100%); }
-                100% { transform: translateY(400%); }
+                0% {
+                    transform: translateY(-100%);
+                }
+
+                100% {
+                    transform: translateY(400%);
+                }
             }
+
             .wz-photo-card::after {
                 content: '';
                 position: absolute;
-                top: 0; left: 0; right: 0;
+                top: 0;
+                left: 0;
+                right: 0;
                 height: 30%;
-                background: linear-gradient(to bottom, rgba(253,137,37,0.04), transparent);
+                background: linear-gradient(to bottom, rgba(253, 137, 37, 0.04), transparent);
                 transform: translateY(-100%);
                 transition: none;
                 pointer-events: none;
             }
+
             .wz-photo-card:hover::after {
                 animation: wz-scan 1.2s ease-out forwards;
             }
@@ -1191,49 +1520,108 @@
                 grid-template-columns: repeat(12, 1fr);
                 grid-template-rows: auto;
             }
+
             /* Row 1: 3 cards */
-            .wz-bento .card-1 { grid-column: span 5; min-height: 340px; }
-            .wz-bento .card-2 { grid-column: span 4; min-height: 340px; }
-            .wz-bento .card-3 { grid-column: span 3; min-height: 340px; }
+            .wz-bento .card-1 {
+                grid-column: span 5;
+                min-height: 340px;
+            }
+
+            .wz-bento .card-2 {
+                grid-column: span 4;
+                min-height: 340px;
+            }
+
+            .wz-bento .card-3 {
+                grid-column: span 3;
+                min-height: 340px;
+            }
+
             /* Row 2: 3 cards different split */
-            .wz-bento .card-4 { grid-column: span 3; min-height: 300px; }
-            .wz-bento .card-5 { grid-column: span 5; min-height: 300px; }
-            .wz-bento .card-6 { grid-column: span 4; min-height: 300px; }
+            .wz-bento .card-4 {
+                grid-column: span 3;
+                min-height: 300px;
+            }
+
+            .wz-bento .card-5 {
+                grid-column: span 5;
+                min-height: 300px;
+            }
+
+            .wz-bento .card-6 {
+                grid-column: span 4;
+                min-height: 300px;
+            }
+
             /* Row 3: 3 cards */
-            .wz-bento .card-7 { grid-column: span 4; min-height: 320px; }
-            .wz-bento .card-8 { grid-column: span 4; min-height: 320px; }
-            .wz-bento .card-9 { grid-column: span 4; min-height: 320px; }
+            .wz-bento .card-7 {
+                grid-column: span 4;
+                min-height: 320px;
+            }
+
+            .wz-bento .card-8 {
+                grid-column: span 4;
+                min-height: 320px;
+            }
+
+            .wz-bento .card-9 {
+                grid-column: span 4;
+                min-height: 320px;
+            }
 
             @media (max-width: 1024px) {
-                .wz-bento .card-1, .wz-bento .card-2, .wz-bento .card-3,
-                .wz-bento .card-4, .wz-bento .card-5, .wz-bento .card-6,
-                .wz-bento .card-7, .wz-bento .card-8, .wz-bento .card-9 {
-                    grid-column: span 6; min-height: 260px;
+
+                .wz-bento .card-1,
+                .wz-bento .card-2,
+                .wz-bento .card-3,
+                .wz-bento .card-4,
+                .wz-bento .card-5,
+                .wz-bento .card-6,
+                .wz-bento .card-7,
+                .wz-bento .card-8,
+                .wz-bento .card-9 {
+                    grid-column: span 6;
+                    min-height: 260px;
                 }
             }
+
             @media (max-width: 640px) {
-                .wz-bento .card-1, .wz-bento .card-2, .wz-bento .card-3,
-                .wz-bento .card-4, .wz-bento .card-5, .wz-bento .card-6,
-                .wz-bento .card-7, .wz-bento .card-8, .wz-bento .card-9 {
-                    grid-column: span 12; min-height: 240px;
+
+                .wz-bento .card-1,
+                .wz-bento .card-2,
+                .wz-bento .card-3,
+                .wz-bento .card-4,
+                .wz-bento .card-5,
+                .wz-bento .card-6,
+                .wz-bento .card-7,
+                .wz-bento .card-8,
+                .wz-bento .card-9 {
+                    grid-column: span 12;
+                    min-height: 240px;
                 }
             }
         </style>
 
         <!-- Top ambient glow -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-orange/6 blur-[100px] pointer-events-none z-0"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-brand-orange/6 blur-[100px] pointer-events-none z-0">
+        </div>
 
         <div class="max-w-[1400px] mx-auto px-6 relative z-10">
 
             <!-- ── Hero Statement ── -->
             <div class="pt-28 pb-16 max-w-4xl">
-                <span class="gsap-reveal-scroll inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-white/40 font-semibold mb-8">
+                <span
+                    class="gsap-reveal-scroll inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-white/40 font-semibold mb-8">
                     <span class="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse inline-block"></span>
                     Áreas de atuação
                 </span>
-                <h2 class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[5rem] tracking-tight leading-[1.02] text-white">
+                <h2
+                    class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[5rem] tracking-tight leading-[1.02] text-white">
                     Transformamos operações manuais<br>
-                    <strong class="text-transparent bg-clip-text" style="background-image: linear-gradient(89.98deg, #fd8925 15%, #ff0c00 55%, #b83dff 100%);">em sistemas inteligentes.</strong>
+                    <strong class="text-transparent bg-clip-text"
+                        style="background-image: linear-gradient(89.98deg, #fd8925 15%, #ff0c00 55%, #b83dff 100%);">em
+                        sistemas inteligentes.</strong>
                 </h2>
                 <p class="gsap-reveal-scroll mt-6 text-white/40 text-[1.05rem] font-light max-w-2xl">
                     A WizzyBots automatiza cada área da sua operação — de ponta a ponta.
@@ -1245,7 +1633,8 @@
 
                 <!-- Card 1: Marketing -->
                 <div class="wz-photo-card card-1">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=80" alt="Marketing" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=80"
+                        alt="Marketing" loading="lazy">
                     <div class="wz-photo-overlay"></div>
                     <span class="wz-photo-chip">01 / Marketing</span>
                     <div class="wz-photo-label">
@@ -1256,7 +1645,8 @@
 
                 <!-- Card 2: Vendas -->
                 <div class="wz-photo-card card-2">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=80" alt="Vendas" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&fit=crop&q=80"
+                        alt="Vendas" loading="lazy">
                     <div class="wz-photo-overlay"></div>
                     <span class="wz-photo-chip">02 / Vendas</span>
                     <div class="wz-photo-label">
@@ -1267,7 +1657,8 @@
 
                 <!-- Card 3: Atendimento -->
                 <div class="wz-photo-card card-3">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&auto=format&fit=crop&q=80" alt="Atendimento" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&auto=format&fit=crop&q=80"
+                        alt="Atendimento" loading="lazy">
                     <div class="wz-photo-overlay"></div>
                     <span class="wz-photo-chip">03 / Atendimento</span>
                     <div class="wz-photo-label">
@@ -1278,7 +1669,8 @@
 
                 <!-- Card 4: CRM -->
                 <div class="wz-photo-card card-4">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80" alt="CRM" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80"
+                        alt="CRM" loading="lazy">
                     <div class="wz-photo-overlay"></div>
                     <span class="wz-photo-chip">04 / CRM</span>
                     <div class="wz-photo-label">
@@ -1289,7 +1681,8 @@
 
                 <!-- Card 5: Backoffice -->
                 <div class="wz-photo-card card-5">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&auto=format&fit=crop&q=80" alt="Backoffice" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&auto=format&fit=crop&q=80"
+                        alt="Backoffice" loading="lazy">
                     <div class="wz-photo-overlay"></div>
                     <span class="wz-photo-chip">05 / Backoffice</span>
                     <div class="wz-photo-label">
@@ -1300,7 +1693,8 @@
 
                 <!-- Card 6: Financeiro -->
                 <div class="wz-photo-card card-6">
-                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80" alt="Financeiro" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+                        alt="Financeiro" loading="lazy">
                     <div class="wz-photo-overlay"></div>
                     <span class="wz-photo-chip">06 / Financeiro</span>
                     <div class="wz-photo-label">
@@ -1311,7 +1705,8 @@
 
                 <!-- Card 7: RH -->
                 <div class="wz-photo-card card-7">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop&q=80" alt="RH" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=700&auto=format&fit=crop&q=80"
+                        alt="RH" loading="lazy">
                     <div class="wz-photo-overlay"></div>
                     <span class="wz-photo-chip">07 / RH</span>
                     <div class="wz-photo-label">
@@ -1322,7 +1717,8 @@
 
                 <!-- Card 8: Operações Internas -->
                 <div class="wz-photo-card card-8">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&auto=format&fit=crop&q=80" alt="Operações" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&auto=format&fit=crop&q=80"
+                        alt="Operações" loading="lazy">
                     <div class="wz-photo-overlay"></div>
                     <span class="wz-photo-chip">08 / Operações</span>
                     <div class="wz-photo-label">
@@ -1333,13 +1729,21 @@
 
                 <!-- Card 9: Fluxos Empresariais — hero card with orange glow -->
                 <div class="wz-photo-card card-9" style="border-color: rgba(253,137,37,0.2);">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&auto=format&fit=crop&q=80" alt="Fluxos" loading="lazy">
-                    <div class="wz-photo-overlay" style="background: linear-gradient(to top, rgba(20,5,0,0.95) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.1) 100%);"></div>
-                    <span class="wz-photo-chip" style="background: rgba(253,137,37,0.12); border-color: rgba(253,137,37,0.4); color: #fd8925;">09 / Fluxos</span>
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&auto=format&fit=crop&q=80"
+                        alt="Fluxos" loading="lazy">
+                    <div class="wz-photo-overlay"
+                        style="background: linear-gradient(to top, rgba(20,5,0,0.95) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.1) 100%);">
+                    </div>
+                    <span class="wz-photo-chip"
+                        style="background: rgba(253,137,37,0.12); border-color: rgba(253,137,37,0.4); color: #fd8925;">09
+                        / Fluxos</span>
                     <!-- Extra glow for last card -->
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/20 blur-[50px] rounded-full pointer-events-none"></div>
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/20 blur-[50px] rounded-full pointer-events-none">
+                    </div>
                     <div class="wz-photo-label">
-                        <div class="wz-photo-label-title text-[1.5rem]" style="color: #fd8925;">Fluxos Empresariais</div>
+                        <div class="wz-photo-label-title text-[1.5rem]" style="color: #fd8925;">Fluxos Empresariais
+                        </div>
                         <div class="wz-photo-label-sub">Conectando sistemas, times e processos</div>
                     </div>
                 </div>
@@ -1357,47 +1761,51 @@
             .wz-svc-card {
                 position: relative;
                 border-radius: 1.5rem;
-                border: 1px solid rgba(255,255,255,0.08);
+                border: 1px solid rgba(255, 255, 255, 0.08);
                 overflow: hidden;
                 display: flex;
                 flex-direction: column;
-                transition: transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s, border-color 0.35s;
+                transition: transform 0.35s cubic-bezier(.4, 0, .2, 1), box-shadow 0.35s, border-color 0.35s;
             }
+
             .wz-svc-card:hover {
                 transform: translateY(-8px);
-                border-color: rgba(255,255,255,0.18);
-                box-shadow: 0 32px 80px -12px rgba(0,0,0,0.65);
+                border-color: rgba(255, 255, 255, 0.18);
+                box-shadow: 0 32px 80px -12px rgba(0, 0, 0, 0.65);
             }
 
             /* Card variant backgrounds — n8n gradient system */
             .wz-svc--orange {
                 background:
-                    radial-gradient(138% 148% at 77% 23%, rgba(4,0,255,0.08) 0, transparent 80%),
-                    linear-gradient(0deg, rgba(238,79,39,0.14), rgba(238,79,39,0.14)),
-                    linear-gradient(180deg, rgba(14,9,24,0.85), rgba(14,9,24,0.95)),
-                    radial-gradient(65% 111% at 50% 0, rgba(168,92,92,0.12) 0, transparent);
-                box-shadow: inset 0 1px 0 rgba(255,142,93,0.2);
+                    radial-gradient(138% 148% at 77% 23%, rgba(4, 0, 255, 0.08) 0, transparent 80%),
+                    linear-gradient(0deg, rgba(238, 79, 39, 0.14), rgba(238, 79, 39, 0.14)),
+                    linear-gradient(180deg, rgba(14, 9, 24, 0.85), rgba(14, 9, 24, 0.95)),
+                    radial-gradient(65% 111% at 50% 0, rgba(168, 92, 92, 0.12) 0, transparent);
+                box-shadow: inset 0 1px 0 rgba(255, 142, 93, 0.2);
             }
+
             .wz-svc--purple {
                 background:
-                    radial-gradient(127% 234% at 10% 142%, rgba(107,33,239,0.14) 0, transparent 37%),
-                    radial-gradient(67% 136% at 77% 23%, rgba(4,0,255,0.07) 0, transparent 80%),
-                    linear-gradient(180deg, rgba(14,9,24,0.85), rgba(14,9,24,0.95));
-                box-shadow: inset 0 1px 0 rgba(167,139,250,0.18);
+                    radial-gradient(127% 234% at 10% 142%, rgba(107, 33, 239, 0.14) 0, transparent 37%),
+                    radial-gradient(67% 136% at 77% 23%, rgba(4, 0, 255, 0.07) 0, transparent 80%),
+                    linear-gradient(180deg, rgba(14, 9, 24, 0.85), rgba(14, 9, 24, 0.95));
+                box-shadow: inset 0 1px 0 rgba(167, 139, 250, 0.18);
             }
+
             .wz-svc--red {
                 background:
-                    radial-gradient(54% 97% at 54% 2%, rgba(168,92,92,0.22) 0, rgba(103,69,69,0.06) 14%),
-                    radial-gradient(120% 145% at 50% 100%, rgba(255,100,33,0.2) 0, rgba(255,59,33,0.03) 50%),
-                    linear-gradient(180deg, rgba(14,9,24,0.85), rgba(14,9,24,0.95));
-                box-shadow: inset 0 1px 0 rgba(255,100,33,0.2);
+                    radial-gradient(54% 97% at 54% 2%, rgba(168, 92, 92, 0.22) 0, rgba(103, 69, 69, 0.06) 14%),
+                    radial-gradient(120% 145% at 50% 100%, rgba(255, 100, 33, 0.2) 0, rgba(255, 59, 33, 0.03) 50%),
+                    linear-gradient(180deg, rgba(14, 9, 24, 0.85), rgba(14, 9, 24, 0.95));
+                box-shadow: inset 0 1px 0 rgba(255, 100, 33, 0.2);
             }
+
             .wz-svc--dark {
                 background:
-                    radial-gradient(circle at 0 100%, rgba(255,79,49,0.08), transparent),
-                    radial-gradient(circle at 50% 100%, rgba(50,40,90,0.35), rgba(20,15,40,0.5)),
-                    linear-gradient(180deg, rgba(14,9,24,0.88), rgba(14,9,24,0.96));
-                box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+                    radial-gradient(circle at 0 100%, rgba(255, 79, 49, 0.08), transparent),
+                    radial-gradient(circle at 50% 100%, rgba(50, 40, 90, 0.35), rgba(20, 15, 40, 0.5)),
+                    linear-gradient(180deg, rgba(14, 9, 24, 0.88), rgba(14, 9, 24, 0.96));
+                box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
             }
 
             /* Icon badge */
@@ -1417,14 +1825,23 @@
                 align-items: center;
                 gap: 0.625rem;
                 padding: 0.5rem 0;
-                border-bottom: 1px solid rgba(255,255,255,0.05);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
                 font-size: 0.875rem;
-                color: rgba(255,255,255,0.65);
+                color: rgba(255, 255, 255, 0.65);
                 transition: color 0.2s;
             }
-            .wz-svc-item:last-child { border-bottom: none; }
-            .wz-svc-card:hover .wz-svc-item { color: rgba(255,255,255,0.8); }
-            .wz-svc-item svg { flex-shrink: 0; }
+
+            .wz-svc-item:last-child {
+                border-bottom: none;
+            }
+
+            .wz-svc-card:hover .wz-svc-item {
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .wz-svc-item svg {
+                flex-shrink: 0;
+            }
 
             /* CTA button inside card */
             .wz-svc-cta {
@@ -1437,16 +1854,17 @@
                 letter-spacing: 0.08em;
                 padding: 0.75rem 1.5rem;
                 border-radius: 0.625rem;
-                border: 1px solid rgba(255,255,255,0.12);
-                background: rgba(255,255,255,0.04);
-                color: rgba(255,255,255,0.7);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                background: rgba(255, 255, 255, 0.04);
+                color: rgba(255, 255, 255, 0.7);
                 transition: all 0.3s;
                 cursor: pointer;
                 text-decoration: none;
             }
+
             .wz-svc-cta:hover {
-                background: rgba(253,137,37,0.12);
-                border-color: rgba(253,137,37,0.4);
+                background: rgba(253, 137, 37, 0.12);
+                border-color: rgba(253, 137, 37, 0.4);
                 color: #fd8925;
             }
 
@@ -1459,23 +1877,29 @@
         </style>
 
         <!-- Ambient -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-gradient-to-b from-brand-purple/6 via-brand-orange/4 to-transparent blur-[120px] pointer-events-none z-0"></div>
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[400px] bg-gradient-to-b from-brand-purple/6 via-brand-orange/4 to-transparent blur-[120px] pointer-events-none z-0">
+        </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
 
             <!-- ── Header ── -->
             <div class="pt-28 pb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
                 <div class="max-w-2xl">
-                    <span class="gsap-reveal-scroll inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-white/40 font-semibold mb-6">
+                    <span
+                        class="gsap-reveal-scroll inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-white/40 font-semibold mb-6">
                         <span class="w-1.5 h-1.5 rounded-full bg-brand-purple animate-pulse inline-block"></span>
                         Serviços
                     </span>
-                    <h2 class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[4rem] tracking-tight leading-[1.05] text-white">
+                    <h2
+                        class="gsap-reveal-scroll font-display text-[2rem] sm:text-[3rem] md:text-[4rem] tracking-tight leading-[1.05] text-white">
                         O que<br>
-                        <strong style="background-image: linear-gradient(89.98deg, #fd8925 15%, #ff0c00 55%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">automatizamos</strong>
+                        <strong
+                            style="background-image: linear-gradient(89.98deg, #fd8925 15%, #ff0c00 55%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">automatizamos</strong>
                     </h2>
                 </div>
-                <p class="gsap-reveal-scroll text-white/35 text-[0.95rem] font-light max-w-xs md:text-right leading-relaxed">
+                <p
+                    class="gsap-reveal-scroll text-white/35 text-[0.95rem] font-light max-w-xs md:text-right leading-relaxed">
                     Cada área da sua operação transformada em um sistema inteligente, previsível e escalável.
                 </p>
             </div>
@@ -1497,10 +1921,13 @@
                             </div>
                             <div class="flex-1">
                                 <div class="flex items-center gap-3 mb-1">
-                                    <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight">Marketing & Growth</h3>
-                                    <span class="text-[0.6rem] uppercase tracking-widest font-semibold px-2 py-0.5 rounded-full bg-brand-orange/15 text-brand-orange border border-brand-orange/30">Popular</span>
+                                    <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight">Marketing
+                                        & Growth</h3>
+                                    <span
+                                        class="text-[0.6rem] uppercase tracking-widest font-semibold px-2 py-0.5 rounded-full bg-brand-orange/15 text-brand-orange border border-brand-orange/30">Popular</span>
                                 </div>
-                                <p class="text-white/45 text-[0.875rem] font-light leading-snug">Transforme marketing em uma máquina previsível de aquisição.</p>
+                                <p class="text-white/45 text-[0.875rem] font-light leading-snug">Transforme marketing em
+                                    uma máquina previsível de aquisição.</p>
                             </div>
                         </div>
 
@@ -1508,7 +1935,8 @@
                         <div class="h-px bg-white/8"></div>
 
                         <!-- Automations label -->
-                        <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/30 font-semibold">Automações incluídas</p>
+                        <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/30 font-semibold">Automações
+                            incluídas</p>
 
                         <!-- Checklist -->
                         <ul class="flex flex-col -mt-2">
@@ -1557,13 +1985,16 @@
                                 <i data-lucide="trending-up" class="w-6 h-6 text-brand-purple"></i>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight mb-1">Comercial & CRM</h3>
-                                <p class="text-white/45 text-[0.875rem] font-light leading-snug">Pare de perder oportunidades por falha operacional.</p>
+                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight mb-1">
+                                    Comercial & CRM</h3>
+                                <p class="text-white/45 text-[0.875rem] font-light leading-snug">Pare de perder
+                                    oportunidades por falha operacional.</p>
                             </div>
                         </div>
 
                         <div class="h-px bg-white/8"></div>
-                        <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/30 font-semibold">Automações incluídas</p>
+                        <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/30 font-semibold">Automações
+                            incluídas</p>
 
                         <ul class="flex flex-col -mt-2">
                             <li class="wz-svc-item">
@@ -1610,13 +2041,16 @@
                                 <i data-lucide="headphones" class="w-6 h-6 text-brand-red"></i>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight mb-1">Atendimento & Experiência</h3>
-                                <p class="text-white/45 text-[0.875rem] font-light leading-snug">Atenda clientes com velocidade e escala.</p>
+                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight mb-1">
+                                    Atendimento & Experiência</h3>
+                                <p class="text-white/45 text-[0.875rem] font-light leading-snug">Atenda clientes com
+                                    velocidade e escala.</p>
                             </div>
                         </div>
 
                         <div class="h-px bg-white/8"></div>
-                        <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/30 font-semibold">Automações incluídas</p>
+                        <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/30 font-semibold">Automações
+                            incluídas</p>
 
                         <ul class="flex flex-col -mt-2">
                             <li class="wz-svc-item">
@@ -1663,13 +2097,16 @@
                                 <i data-lucide="settings-2" class="w-6 h-6 text-white/70"></i>
                             </div>
                             <div class="flex-1">
-                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight mb-1">Operações & Backoffice</h3>
-                                <p class="text-white/45 text-[0.875rem] font-light leading-snug">Elimine tarefas repetitivas e reduza gargalos internos.</p>
+                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight mb-1">
+                                    Operações & Backoffice</h3>
+                                <p class="text-white/45 text-[0.875rem] font-light leading-snug">Elimine tarefas
+                                    repetitivas e reduza gargalos internos.</p>
                             </div>
                         </div>
 
                         <div class="h-px bg-white/8"></div>
-                        <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/30 font-semibold">Automações incluídas</p>
+                        <p class="text-[0.65rem] uppercase tracking-[0.18em] text-white/30 font-semibold">Automações
+                            incluídas</p>
 
                         <ul class="flex flex-col -mt-2">
                             <li class="wz-svc-item">
@@ -1717,12 +2154,23 @@
         <style>
             /* ── Tech Marquee System ── */
             @keyframes wz-tech-scroll {
-                0%   { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
             }
+
             @keyframes wz-tech-scroll-rev {
-                0%   { transform: translateX(-50%); }
-                100% { transform: translateX(0); }
+                0% {
+                    transform: translateX(-50%);
+                }
+
+                100% {
+                    transform: translateX(0);
+                }
             }
 
             .wz-tech-track {
@@ -1730,11 +2178,13 @@
                 width: max-content;
                 animation: wz-tech-scroll 30s linear infinite;
             }
+
             .wz-tech-track-rev {
                 display: flex;
                 width: max-content;
                 animation: wz-tech-scroll-rev 28s linear infinite;
             }
+
             .wz-tech-track:hover,
             .wz-tech-track-rev:hover {
                 animation-play-state: paused;
@@ -1742,17 +2192,15 @@
 
             .wz-tech-mask {
                 mask-image: linear-gradient(to right,
-                    transparent 0%,
-                    black 8%,
-                    black 92%,
-                    transparent 100%
-                );
+                        transparent 0%,
+                        black 8%,
+                        black 92%,
+                        transparent 100%);
                 -webkit-mask-image: linear-gradient(to right,
-                    transparent 0%,
-                    black 8%,
-                    black 92%,
-                    transparent 100%
-                );
+                        transparent 0%,
+                        black 8%,
+                        black 92%,
+                        transparent 100%);
             }
 
             /* Individual tech pill */
@@ -1762,18 +2210,20 @@
                 gap: 0.75rem;
                 padding: 0.75rem 1.5rem;
                 border-radius: 9999px;
-                border: 1px solid rgba(255,255,255,0.07);
-                background: rgba(255,255,255,0.03);
+                border: 1px solid rgba(255, 255, 255, 0.07);
+                background: rgba(255, 255, 255, 0.03);
                 white-space: nowrap;
                 margin: 0 0.5rem;
                 transition: border-color 0.3s, background 0.3s;
                 cursor: default;
                 user-select: none;
             }
+
             .wz-tech-pill:hover {
-                border-color: rgba(255,255,255,0.15);
-                background: rgba(255,255,255,0.06);
+                border-color: rgba(255, 255, 255, 0.15);
+                background: rgba(255, 255, 255, 0.06);
             }
+
             .wz-tech-pill img {
                 width: 1.25rem;
                 height: 1.25rem;
@@ -1782,19 +2232,22 @@
                 opacity: 0.6;
                 transition: opacity 0.3s, filter 0.3s;
             }
+
             .wz-tech-pill:hover img {
                 opacity: 0.9;
                 filter: brightness(0) invert(0.6) sepia(0) saturate(0) grayscale(1);
             }
+
             .wz-tech-pill span {
                 font-size: 0.82rem;
                 font-weight: 500;
-                color: rgba(255,255,255,0.4);
+                color: rgba(255, 255, 255, 0.4);
                 letter-spacing: 0.01em;
                 transition: color 0.3s;
             }
+
             .wz-tech-pill:hover span {
-                color: rgba(255,255,255,0.7);
+                color: rgba(255, 255, 255, 0.7);
             }
 
             /* Text-only badge (for logos not in Simple Icons) */
@@ -1804,45 +2257,51 @@
                 gap: 0.5rem;
                 padding: 0.75rem 1.5rem;
                 border-radius: 9999px;
-                border: 1px solid rgba(255,255,255,0.07);
-                background: rgba(255,255,255,0.03);
+                border: 1px solid rgba(255, 255, 255, 0.07);
+                background: rgba(255, 255, 255, 0.03);
                 white-space: nowrap;
                 margin: 0 0.5rem;
                 cursor: default;
                 user-select: none;
                 transition: border-color 0.3s, background 0.3s;
             }
+
             .wz-tech-badge-text:hover {
-                border-color: rgba(255,255,255,0.15);
-                background: rgba(255,255,255,0.06);
+                border-color: rgba(255, 255, 255, 0.15);
+                background: rgba(255, 255, 255, 0.06);
             }
+
             .wz-tech-badge-text .wz-monogram {
                 width: 1.25rem;
                 height: 1.25rem;
                 border-radius: 0.25rem;
-                background: rgba(255,255,255,0.08);
+                background: rgba(255, 255, 255, 0.08);
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 font-size: 0.55rem;
                 font-weight: 800;
-                color: rgba(255,255,255,0.5);
+                color: rgba(255, 255, 255, 0.5);
                 letter-spacing: -0.03em;
                 flex-shrink: 0;
             }
+
             .wz-tech-badge-text span.label {
                 font-size: 0.82rem;
                 font-weight: 500;
-                color: rgba(255,255,255,0.4);
+                color: rgba(255, 255, 255, 0.4);
                 transition: color 0.3s;
             }
+
             .wz-tech-badge-text:hover span.label {
-                color: rgba(255,255,255,0.7);
+                color: rgba(255, 255, 255, 0.7);
             }
         </style>
 
         <!-- Ambient glow -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-purple/5 blur-[120px] pointer-events-none z-0"></div>
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-brand-purple/5 blur-[120px] pointer-events-none z-0">
+        </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -1851,24 +2310,30 @@
 
                 <!-- Left: Headline -->
                 <div class="flex-1">
-                    <span class="gsap-reveal-scroll inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-white/35 font-semibold mb-6">
+                    <span
+                        class="gsap-reveal-scroll inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-white/35 font-semibold mb-6">
                         <span class="w-1.5 h-1.5 rounded-full bg-white/40 animate-pulse inline-block"></span>
                         Stack
                     </span>
-                    <h2 class="gsap-reveal-scroll font-display text-[2.5rem] md:text-[4.5rem] tracking-tight leading-[1.02] text-white">
+                    <h2
+                        class="gsap-reveal-scroll font-display text-[2.5rem] md:text-[4.5rem] tracking-tight leading-[1.02] text-white">
                         Tecnologia<br>
-                        <strong style="background-image: linear-gradient(89.98deg, #9b9fa8 20%, #d1d5db 60%, #9b9fa8 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">IA aplicada à<br>operação real.</strong>
+                        <strong
+                            style="background-image: linear-gradient(89.98deg, #9b9fa8 20%, #d1d5db 60%, #9b9fa8 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; font-weight:700;">IA
+                            aplicada à<br>operação real.</strong>
                     </h2>
                 </div>
 
                 <!-- Right: Description -->
                 <div class="flex-1 max-w-sm">
                     <p class="gsap-reveal-scroll text-white/35 text-[1rem] font-light leading-relaxed">
-                        Utilizamos as ferramentas mais modernas do mercado — escolhidas a dedo para cada caso de uso — integradas de forma inteligente para maximizar resultado e minimizar complexidade.
+                        Utilizamos as ferramentas mais modernas do mercado — escolhidas a dedo para cada caso de uso —
+                        integradas de forma inteligente para maximizar resultado e minimizar complexidade.
                     </p>
                     <div class="gsap-reveal-scroll mt-6 flex items-center gap-3">
                         <div class="h-px flex-1 bg-white/8"></div>
-                        <span class="text-[0.65rem] uppercase tracking-widest text-white/20 font-semibold">9 tecnologias</span>
+                        <span class="text-[0.65rem] uppercase tracking-widest text-white/20 font-semibold">9
+                            tecnologias</span>
                         <div class="h-px flex-1 bg-white/8"></div>
                     </div>
                 </div>
@@ -2067,6 +2532,7 @@
                 pointer-events: none;
                 z-index: 1;
             }
+
             @media (max-width: 768px) {
                 .wz-timeline-svg {
                     left: 2rem;
@@ -2094,6 +2560,7 @@
                 z-index: 2;
                 margin-bottom: 0;
             }
+
             @media (max-width: 768px) {
                 .wz-step {
                     grid-template-columns: auto 1fr;
@@ -2105,10 +2572,13 @@
             .wz-step-card-wrap {
                 padding: 2rem 3rem 2rem 0;
             }
+
             .wz-step-card-wrap.right {
                 padding: 2rem 0 2rem 3rem;
             }
+
             @media (max-width: 768px) {
+
                 .wz-step-card-wrap,
                 .wz-step-card-wrap.right {
                     padding: 1.5rem 0 1.5rem 2rem;
@@ -2130,12 +2600,13 @@
                 padding: 0 1rem;
                 user-select: none;
             }
+
             .wz-node-dot {
                 width: 3.5rem;
                 height: 3.5rem;
                 border-radius: 50%;
-                border: 2px solid rgba(255,255,255,0.12);
-                background: rgba(255,255,255,0.04);
+                border: 2px solid rgba(255, 255, 255, 0.12);
+                background: rgba(255, 255, 255, 0.04);
                 backdrop-filter: blur(8px);
                 display: flex;
                 align-items: center;
@@ -2143,7 +2614,7 @@
                 font-family: 'DM Sans', sans-serif;
                 font-weight: 800;
                 font-size: 1rem;
-                color: rgba(255,255,255,0.3);
+                color: rgba(255, 255, 255, 0.3);
                 transition: all 0.4s;
                 position: relative;
                 flex-shrink: 0;
@@ -2158,21 +2629,23 @@
                 border: 1.5px solid transparent;
                 transition: border-color 0.4s, box-shadow 0.4s;
             }
+
             .wz-node.active .wz-node-dot {
-                border-color: rgba(253,137,37,0.5);
-                background: rgba(253,137,37,0.08);
+                border-color: rgba(253, 137, 37, 0.5);
+                background: rgba(253, 137, 37, 0.08);
                 color: #fd8925;
-                box-shadow: 0 0 24px rgba(253,137,37,0.2);
+                box-shadow: 0 0 24px rgba(253, 137, 37, 0.2);
             }
+
             .wz-node.active .wz-node-dot::after {
-                border-color: rgba(253,137,37,0.25);
-                box-shadow: 0 0 40px rgba(253,137,37,0.1);
+                border-color: rgba(253, 137, 37, 0.25);
+                box-shadow: 0 0 40px rgba(253, 137, 37, 0.1);
             }
 
             /* The actual card */
             .wz-step-card {
-                background: rgba(255,255,255,0.025);
-                border: 1px solid rgba(255,255,255,0.07);
+                background: rgba(255, 255, 255, 0.025);
+                border: 1px solid rgba(255, 255, 255, 0.07);
                 border-radius: 1.25rem;
                 padding: 1.75rem;
                 position: relative;
@@ -2181,24 +2654,29 @@
                 opacity: 0;
                 transform: translateX(var(--tx, -40px));
             }
+
             .wz-step-card.right-card {
                 --tx: 40px;
             }
+
             .wz-step-card.wz-in {
                 opacity: 1;
                 transform: translateX(0);
-                transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1), border-color 0.35s, background 0.35s;
+                transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1), border-color 0.35s, background 0.35s;
             }
+
             .wz-step-card:hover {
-                border-color: rgba(255,255,255,0.14);
-                background: rgba(255,255,255,0.045);
+                border-color: rgba(255, 255, 255, 0.14);
+                background: rgba(255, 255, 255, 0.045);
             }
 
             /* Card accent bar */
             .wz-step-card::before {
                 content: '';
                 position: absolute;
-                top: 0; left: 0; right: 0;
+                top: 0;
+                left: 0;
+                right: 0;
                 height: 2px;
                 background: var(--accent-grad, linear-gradient(to right, #fd8925, transparent));
                 opacity: 0.6;
@@ -2211,7 +2689,7 @@
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 0.2em;
-                color: rgba(255,255,255,0.2);
+                color: rgba(255, 255, 255, 0.2);
                 margin-bottom: 0.5rem;
             }
 
@@ -2220,7 +2698,7 @@
                 width: 2px;
                 flex: 1;
                 min-height: 2.5rem;
-                background: rgba(255,255,255,0.06);
+                background: rgba(255, 255, 255, 0.06);
                 margin: 0 auto;
                 /* will be revealed by the SVG */
             }
@@ -2229,20 +2707,24 @@
         <!-- Background gradients -->
         <div class="absolute inset-0 pointer-events-none z-0">
             <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand-purple/5 blur-[140px] rounded-full"></div>
-            <div class="absolute bottom-0 right-1/4 w-[500px] h-[400px] bg-brand-orange/4 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 right-1/4 w-[500px] h-[400px] bg-brand-orange/4 blur-[120px] rounded-full">
+            </div>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
 
             <!-- ── Section Header ── -->
             <div class="pt-28 pb-20 text-center">
-                <span class="gsap-reveal-scroll inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-white/35 font-semibold mb-6">
+                <span
+                    class="gsap-reveal-scroll inline-flex items-center gap-2 border border-white/10 bg-white/5 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-white/35 font-semibold mb-6">
                     <span class="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse inline-block"></span>
                     Processo
                 </span>
-                <h2 class="gsap-reveal-scroll font-display text-[2.5rem] md:text-[4.5rem] tracking-tight leading-[1.02] text-white">
+                <h2
+                    class="gsap-reveal-scroll font-display text-[2.5rem] md:text-[4.5rem] tracking-tight leading-[1.02] text-white">
                     Como<br>
-                    <strong style="background-image: linear-gradient(89.98deg, #fd8925 20%, #ff0c00 55%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">funciona.</strong>
+                    <strong
+                        style="background-image: linear-gradient(89.98deg, #fd8925 20%, #ff0c00 55%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">funciona.</strong>
                 </h2>
                 <p class="gsap-reveal-scroll mt-5 text-white/35 text-[1rem] font-light max-w-lg mx-auto">
                     Da análise ao resultado — um método preciso, iterativo e orientado à vantagem operacional.
@@ -2258,34 +2740,43 @@
             <svg class="wz-timeline-svg" viewBox="0 0 2 1000" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                     <linearGradient id="wz-spine-gradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%"   stop-color="#fd8925" stop-opacity="0.8"/>
-                        <stop offset="40%"  stop-color="#ff0c00" stop-opacity="0.6"/>
-                        <stop offset="80%"  stop-color="#b83dff" stop-opacity="0.6"/>
-                        <stop offset="100%" stop-color="#b83dff" stop-opacity="0.2"/>
+                        <stop offset="0%" stop-color="#fd8925" stop-opacity="0.8" />
+                        <stop offset="40%" stop-color="#ff0c00" stop-opacity="0.6" />
+                        <stop offset="80%" stop-color="#b83dff" stop-opacity="0.6" />
+                        <stop offset="100%" stop-color="#b83dff" stop-opacity="0.2" />
                     </linearGradient>
                 </defs>
-                <path id="wz-spine-path" d="M1,0 L1,1000"/>
+                <path id="wz-spine-path" d="M1,0 L1,1000" />
             </svg>
 
             <!-- ── Step 1: Diagnóstico Estratégico ── -->
             <div class="wz-step" id="wz-step-1">
                 <!-- Card (left side) -->
                 <div class="wz-step-card-wrap">
-                    <div class="wz-step-card" style="--accent-grad: linear-gradient(to right, #fd8925 0%, transparent 70%);">
+                    <div class="wz-step-card"
+                        style="--accent-grad: linear-gradient(to right, #fd8925 0%, transparent 70%);">
                         <!-- Ambient glow -->
-                        <div class="absolute -top-8 -left-8 w-32 h-32 bg-brand-orange/10 blur-[40px] rounded-full pointer-events-none"></div>
+                        <div
+                            class="absolute -top-8 -left-8 w-32 h-32 bg-brand-orange/10 blur-[40px] rounded-full pointer-events-none">
+                        </div>
                         <div class="relative z-10">
                             <p class="wz-step-num">Etapa 01</p>
                             <div class="flex items-start gap-3 mb-3">
-                                <div class="w-9 h-9 rounded-xl bg-brand-orange/12 border border-brand-orange/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-brand-orange/12 border border-brand-orange/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                                     <i data-lucide="search" class="w-4 h-4 text-brand-orange"></i>
                                 </div>
-                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight leading-tight">Diagnóstico<br>Estratégico</h3>
+                                <h3
+                                    class="font-display text-[1.3rem] text-white font-bold tracking-tight leading-tight">
+                                    Diagnóstico<br>Estratégico</h3>
                             </div>
-                            <p class="text-white/45 text-[0.9rem] font-light leading-relaxed">Identificamos gargalos e oportunidades ocultas na sua operação — aquilo que custa mais do que deveria e não aparece nos relatórios.</p>
+                            <p class="text-white/45 text-[0.9rem] font-light leading-relaxed">Identificamos gargalos e
+                                oportunidades ocultas na sua operação — aquilo que custa mais do que deveria e não
+                                aparece nos relatórios.</p>
                             <!-- Mini metric -->
                             <div class="mt-4 pt-4 border-t border-white/6 flex items-center gap-2">
-                                <span class="text-[0.65rem] uppercase tracking-widest text-white/20 font-semibold">Entregável</span>
+                                <span
+                                    class="text-[0.65rem] uppercase tracking-widest text-white/20 font-semibold">Entregável</span>
                                 <span class="text-[0.65rem] text-white/40">→ Relatório de oportunidades</span>
                             </div>
                         </div>
@@ -2320,19 +2811,28 @@
 
                 <!-- Card (right side) -->
                 <div class="wz-step-card-wrap right">
-                    <div class="wz-step-card right-card" style="--accent-grad: linear-gradient(to right, #ff0c00 0%, transparent 70%);">
-                        <div class="absolute -top-8 -right-8 w-32 h-32 bg-brand-red/10 blur-[40px] rounded-full pointer-events-none"></div>
+                    <div class="wz-step-card right-card"
+                        style="--accent-grad: linear-gradient(to right, #ff0c00 0%, transparent 70%);">
+                        <div
+                            class="absolute -top-8 -right-8 w-32 h-32 bg-brand-red/10 blur-[40px] rounded-full pointer-events-none">
+                        </div>
                         <div class="relative z-10">
                             <p class="wz-step-num">Etapa 02</p>
                             <div class="flex items-start gap-3 mb-3">
-                                <div class="w-9 h-9 rounded-xl bg-brand-red/12 border border-brand-red/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-brand-red/12 border border-brand-red/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                                     <i data-lucide="git-branch" class="w-4 h-4 text-brand-red"></i>
                                 </div>
-                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight leading-tight">Arquitetura<br>Operacional</h3>
+                                <h3
+                                    class="font-display text-[1.3rem] text-white font-bold tracking-tight leading-tight">
+                                    Arquitetura<br>Operacional</h3>
                             </div>
-                            <p class="text-white/45 text-[0.9rem] font-light leading-relaxed">Desenhamos automações e fluxos inteligentes sob medida para a sua realidade — nada genérico, nada pronto de prateleira.</p>
+                            <p class="text-white/45 text-[0.9rem] font-light leading-relaxed">Desenhamos automações e
+                                fluxos inteligentes sob medida para a sua realidade — nada genérico, nada pronto de
+                                prateleira.</p>
                             <div class="mt-4 pt-4 border-t border-white/6 flex items-center gap-2">
-                                <span class="text-[0.65rem] uppercase tracking-widest text-white/20 font-semibold">Entregável</span>
+                                <span
+                                    class="text-[0.65rem] uppercase tracking-widest text-white/20 font-semibold">Entregável</span>
                                 <span class="text-[0.65rem] text-white/40">→ Blueprint de automações</span>
                             </div>
                         </div>
@@ -2351,19 +2851,28 @@
             <div class="wz-step" id="wz-step-3">
                 <!-- Card (left side) -->
                 <div class="wz-step-card-wrap">
-                    <div class="wz-step-card" style="--accent-grad: linear-gradient(to right, #b83dff 0%, transparent 70%);">
-                        <div class="absolute -top-8 -left-8 w-32 h-32 bg-brand-purple/10 blur-[40px] rounded-full pointer-events-none"></div>
+                    <div class="wz-step-card"
+                        style="--accent-grad: linear-gradient(to right, #b83dff 0%, transparent 70%);">
+                        <div
+                            class="absolute -top-8 -left-8 w-32 h-32 bg-brand-purple/10 blur-[40px] rounded-full pointer-events-none">
+                        </div>
                         <div class="relative z-10">
                             <p class="wz-step-num">Etapa 03</p>
                             <div class="flex items-start gap-3 mb-3">
-                                <div class="w-9 h-9 rounded-xl bg-brand-purple/12 border border-brand-purple/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-brand-purple/12 border border-brand-purple/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                                     <i data-lucide="code-2" class="w-4 h-4 text-brand-purple"></i>
                                 </div>
-                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight leading-tight">Implementação</h3>
+                                <h3
+                                    class="font-display text-[1.3rem] text-white font-bold tracking-tight leading-tight">
+                                    Implementação</h3>
                             </div>
-                            <p class="text-white/45 text-[0.9rem] font-light leading-relaxed">Criamos bots, integrações e workflows — sistemas que funcionam no seu ambiente real, integrados às ferramentas que você já usa.</p>
+                            <p class="text-white/45 text-[0.9rem] font-light leading-relaxed">Criamos bots, integrações
+                                e workflows — sistemas que funcionam no seu ambiente real, integrados às ferramentas que
+                                você já usa.</p>
                             <div class="mt-4 pt-4 border-t border-white/6 flex items-center gap-2">
-                                <span class="text-[0.65rem] uppercase tracking-widest text-white/20 font-semibold">Entregável</span>
+                                <span
+                                    class="text-[0.65rem] uppercase tracking-widest text-white/20 font-semibold">Entregável</span>
                                 <span class="text-[0.65rem] text-white/40">→ Automações em produção</span>
                             </div>
                         </div>
@@ -2393,25 +2902,38 @@
 
                 <!-- Center node -->
                 <div class="wz-node" id="wz-node-4">
-                    <div class="wz-node-dot" style="border-color: rgba(253,137,37,0.4); color:#fd8925; background:rgba(253,137,37,0.06);">04</div>
+                    <div class="wz-node-dot"
+                        style="border-color: rgba(253,137,37,0.4); color:#fd8925; background:rgba(253,137,37,0.06);">04
+                    </div>
                 </div>
 
                 <!-- Card (right side) — final step gets stronger treatment -->
                 <div class="wz-step-card-wrap right">
-                    <div class="wz-step-card right-card" style="--accent-grad: linear-gradient(to right, #fd8925 0%, #ff0c00 50%, transparent 100%); border-color: rgba(253,137,37,0.15);">
-                        <div class="absolute -top-8 -right-8 w-36 h-36 bg-brand-orange/12 blur-[50px] rounded-full pointer-events-none"></div>
-                        <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-red/10 blur-[40px] rounded-full pointer-events-none"></div>
+                    <div class="wz-step-card right-card"
+                        style="--accent-grad: linear-gradient(to right, #fd8925 0%, #ff0c00 50%, transparent 100%); border-color: rgba(253,137,37,0.15);">
+                        <div
+                            class="absolute -top-8 -right-8 w-36 h-36 bg-brand-orange/12 blur-[50px] rounded-full pointer-events-none">
+                        </div>
+                        <div
+                            class="absolute -bottom-4 -right-4 w-24 h-24 bg-brand-red/10 blur-[40px] rounded-full pointer-events-none">
+                        </div>
                         <div class="relative z-10">
                             <p class="wz-step-num" style="color:rgba(253,137,37,0.5);">Etapa 04 — Ongoing</p>
                             <div class="flex items-start gap-3 mb-3">
-                                <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5" style="background:rgba(253,137,37,0.12); border:1px solid rgba(253,137,37,0.3);">
+                                <div class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                                    style="background:rgba(253,137,37,0.12); border:1px solid rgba(253,137,37,0.3);">
                                     <i data-lucide="trending-up" class="w-4 h-4 text-brand-orange"></i>
                                 </div>
-                                <h3 class="font-display text-[1.3rem] text-white font-bold tracking-tight leading-tight">Evolução<br>Contínua</h3>
+                                <h3
+                                    class="font-display text-[1.3rem] text-white font-bold tracking-tight leading-tight">
+                                    Evolução<br>Contínua</h3>
                             </div>
-                            <p class="text-white/45 text-[0.9rem] font-light leading-relaxed">Otimizamos performance, produtividade e escala. A operação não para — e nem nós. Monitoramos, ajustamos e evoluímos continuamente.</p>
+                            <p class="text-white/45 text-[0.9rem] font-light leading-relaxed">Otimizamos performance,
+                                produtividade e escala. A operação não para — e nem nós. Monitoramos, ajustamos e
+                                evoluímos continuamente.</p>
                             <div class="mt-4 pt-4 border-t border-brand-orange/10 flex items-center gap-2">
-                                <span class="text-[0.65rem] uppercase tracking-widest text-brand-orange/40 font-semibold">Resultado</span>
+                                <span
+                                    class="text-[0.65rem] uppercase tracking-widest text-brand-orange/40 font-semibold">Resultado</span>
                                 <span class="text-[0.65rem] text-white/40">→ Operação em modo exponencial</span>
                             </div>
                         </div>
@@ -2423,7 +2945,8 @@
 
         <!-- Footnote -->
         <div class="text-center pb-24 relative z-10">
-            <p class="text-white/20 text-[0.8rem] font-light tracking-wide">Cada etapa é mensurada, documentada e orientada a resultado.</p>
+            <p class="text-white/20 text-[0.8rem] font-light tracking-wide">Cada etapa é mensurada, documentada e
+                orientada a resultado.</p>
         </div>
 
     </section>
@@ -2434,12 +2957,23 @@
         <style>
             /* ── Pulsing background gradient ── */
             @keyframes wz-cta-pulse {
-                0%, 100% { opacity: 0.6; transform: scale(1); }
-                50%       { opacity: 1;   transform: scale(1.08); }
+
+                0%,
+                100% {
+                    opacity: 0.6;
+                    transform: scale(1);
+                }
+
+                50% {
+                    opacity: 1;
+                    transform: scale(1.08);
+                }
             }
+
             .wz-cta-bg-glow {
                 animation: wz-cta-pulse 6s ease-in-out infinite;
             }
+
             .wz-cta-bg-glow-2 {
                 animation: wz-cta-pulse 8s ease-in-out infinite reverse;
             }
@@ -2449,6 +2983,7 @@
                 position: relative;
                 display: inline;
             }
+
             .wz-cta-mark::after {
                 content: '';
                 position: absolute;
@@ -2468,12 +3003,13 @@
                 gap: 1rem;
                 width: 100%;
             }
+
             .wz-vs-divider::before,
             .wz-vs-divider::after {
                 content: '';
                 flex: 1;
                 height: 1px;
-                background: rgba(255,255,255,0.08);
+                background: rgba(255, 255, 255, 0.08);
             }
 
             /* Comparison cols */
@@ -2485,6 +3021,7 @@
                 flex-direction: column;
                 gap: 0.75rem;
             }
+
             .wz-compare-item {
                 display: flex;
                 align-items: flex-start;
@@ -2492,6 +3029,7 @@
                 font-size: 0.9rem;
                 line-height: 1.4;
             }
+
             .wz-compare-dot {
                 width: 0.5rem;
                 height: 0.5rem;
@@ -2515,23 +3053,28 @@
                 color: #fff;
                 text-decoration: none;
                 transition: all 0.3s;
-                box-shadow: 0 8px 32px rgba(253,137,37,0.3);
+                box-shadow: 0 8px 32px rgba(253, 137, 37, 0.3);
                 position: relative;
                 overflow: hidden;
             }
+
             .wz-cta-primary::before {
                 content: '';
                 position: absolute;
                 inset: 0;
-                background: linear-gradient(135deg, rgba(255,255,255,0.12), transparent);
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent);
                 opacity: 0;
                 transition: opacity 0.3s;
             }
+
             .wz-cta-primary:hover {
                 transform: translateY(-2px);
-                box-shadow: 0 16px 48px rgba(253,137,37,0.45);
+                box-shadow: 0 16px 48px rgba(253, 137, 37, 0.45);
             }
-            .wz-cta-primary:hover::before { opacity: 1; }
+
+            .wz-cta-primary:hover::before {
+                opacity: 1;
+            }
 
             .wz-cta-secondary {
                 display: inline-flex;
@@ -2542,24 +3085,33 @@
                 font-weight: 500;
                 padding: 1rem 2rem;
                 border-radius: 0.75rem;
-                border: 1px solid rgba(255,255,255,0.12);
-                background: rgba(255,255,255,0.04);
-                color: rgba(255,255,255,0.65);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                background: rgba(255, 255, 255, 0.04);
+                color: rgba(255, 255, 255, 0.65);
                 text-decoration: none;
                 transition: all 0.3s;
             }
+
             .wz-cta-secondary:hover {
-                border-color: rgba(255,255,255,0.22);
-                background: rgba(255,255,255,0.08);
+                border-color: rgba(255, 255, 255, 0.22);
+                background: rgba(255, 255, 255, 0.08);
                 color: #fff;
                 transform: translateY(-2px);
             }
 
             /* Countdown urgency badge */
             @keyframes wz-blink {
-                0%, 100% { opacity: 1; }
-                50%       { opacity: 0.4; }
+
+                0%,
+                100% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0.4;
+                }
             }
+
             .wz-live-dot {
                 animation: wz-blink 1.4s ease-in-out infinite;
             }
@@ -2569,22 +3121,26 @@
         <div class="absolute inset-0 pointer-events-none z-0">
             <!-- Giant radial burst centered -->
             <div class="wz-cta-bg-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full"
-                 style="background: radial-gradient(circle, rgba(255,12,0,0.12) 0%, rgba(253,137,37,0.06) 35%, transparent 70%);"></div>
+                style="background: radial-gradient(circle, rgba(255,12,0,0.12) 0%, rgba(253,137,37,0.06) 35%, transparent 70%);">
+            </div>
             <div class="wz-cta-bg-glow-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full"
-                 style="background: radial-gradient(circle, rgba(184,61,255,0.08) 0%, transparent 65%);"></div>
+                style="background: radial-gradient(circle, rgba(184,61,255,0.08) 0%, transparent 65%);"></div>
             <!-- Subtle grid overlay -->
             <div class="absolute inset-0 opacity-[0.025]"
-                 style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 60px 60px;"></div>
+                style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 60px 60px;">
+            </div>
             <!-- Top border gradient -->
             <div class="absolute top-0 left-0 right-0 h-px"
-                 style="background: linear-gradient(to right, transparent, rgba(253,137,37,0.4) 30%, rgba(255,12,0,0.4) 50%, rgba(184,61,255,0.4) 70%, transparent);"></div>
+                style="background: linear-gradient(to right, transparent, rgba(253,137,37,0.4) 30%, rgba(255,12,0,0.4) 50%, rgba(184,61,255,0.4) 70%, transparent);">
+            </div>
         </div>
 
         <div class="max-w-5xl mx-auto px-6 relative z-10">
 
             <!-- ── Top: Urgency Badge ── -->
             <div class="pt-28 flex justify-center">
-                <div class="gsap-reveal-scroll inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/25 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-brand-red font-semibold">
+                <div
+                    class="gsap-reveal-scroll inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/25 rounded-full px-4 py-1.5 text-[0.7rem] uppercase tracking-widest text-brand-red font-semibold">
                     <span class="wz-live-dot w-1.5 h-1.5 rounded-full bg-brand-red inline-block"></span>
                     A janela de vantagem competitiva está aberta agora
                 </div>
@@ -2595,7 +3151,9 @@
                 <h2 class="gsap-reveal-scroll font-display leading-[1.05] tracking-tight text-white"
                     style="font-size: clamp(2.2rem, 5.5vw, 4.5rem);">
                     Sua empresa ainda depende de<br>
-                    <span class="wz-cta-mark"><strong style="background-image: linear-gradient(89.98deg, #fd8925 20%, #ff0c00 80%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">trabalho manual</strong></span>
+                    <span class="wz-cta-mark"><strong
+                            style="background-image: linear-gradient(89.98deg, #fd8925 20%, #ff0c00 80%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">trabalho
+                            manual</strong></span>
                     para crescer?
                 </h2>
             </div>
@@ -2604,12 +3162,15 @@
             <div class="gsap-reveal-scroll mt-16 flex flex-col md:flex-row items-stretch gap-4">
 
                 <!-- Left: Manual (desvanecido, sem brilho) -->
-                <div class="wz-compare-col flex-1" style="background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06);">
+                <div class="wz-compare-col flex-1"
+                    style="background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06);">
                     <div class="flex items-center gap-2 mb-2">
-                        <div class="w-7 h-7 rounded-lg bg-white/6 border border-white/8 flex items-center justify-center">
+                        <div
+                            class="w-7 h-7 rounded-lg bg-white/6 border border-white/8 flex items-center justify-center">
                             <i data-lucide="user" class="w-3.5 h-3.5 text-white/30"></i>
                         </div>
-                        <span class="text-[0.7rem] uppercase tracking-widest text-white/25 font-semibold">Sua equipe hoje</span>
+                        <span class="text-[0.7rem] uppercase tracking-widest text-white/25 font-semibold">Sua equipe
+                            hoje</span>
                     </div>
                     <div class="wz-compare-item text-white/30">
                         <span class="wz-compare-dot bg-white/15 mt-1.5"></span>
@@ -2632,20 +3193,25 @@
                 <!-- VS badge -->
                 <div class="flex md:flex-col items-center justify-center gap-3 px-2">
                     <div class="h-px md:h-16 w-full md:w-px bg-white/8"></div>
-                    <span class="text-[0.65rem] font-black tracking-[0.25em] text-white/20 uppercase px-3 py-1.5 border border-white/8 rounded-full bg-white/3 shrink-0">VS</span>
+                    <span
+                        class="text-[0.65rem] font-black tracking-[0.25em] text-white/20 uppercase px-3 py-1.5 border border-white/8 rounded-full bg-white/3 shrink-0">VS</span>
                     <div class="h-px md:h-16 w-full md:w-px bg-white/8"></div>
                 </div>
 
                 <!-- Right: Automatizada (iluminada, com glow laranja) -->
                 <div class="wz-compare-col flex-1 relative overflow-hidden"
-                     style="background: linear-gradient(135deg, rgba(253,137,37,0.07) 0%, rgba(255,12,0,0.04) 100%); border: 1px solid rgba(253,137,37,0.2);">
+                    style="background: linear-gradient(135deg, rgba(253,137,37,0.07) 0%, rgba(255,12,0,0.04) 100%); border: 1px solid rgba(253,137,37,0.2);">
                     <!-- Corner glow -->
-                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-brand-orange/15 blur-[30px] rounded-full pointer-events-none"></div>
+                    <div
+                        class="absolute -top-6 -right-6 w-24 h-24 bg-brand-orange/15 blur-[30px] rounded-full pointer-events-none">
+                    </div>
                     <div class="flex items-center gap-2 mb-2 relative z-10">
-                        <div class="w-7 h-7 rounded-lg flex items-center justify-center" style="background:rgba(253,137,37,0.15); border: 1px solid rgba(253,137,37,0.3);">
+                        <div class="w-7 h-7 rounded-lg flex items-center justify-center"
+                            style="background:rgba(253,137,37,0.15); border: 1px solid rgba(253,137,37,0.3);">
                             <i data-lucide="zap" class="w-3.5 h-3.5 text-brand-orange"></i>
                         </div>
-                        <span class="text-[0.7rem] uppercase tracking-widest text-brand-orange/70 font-semibold">Seus concorrentes agora</span>
+                        <span class="text-[0.7rem] uppercase tracking-widest text-brand-orange/70 font-semibold">Seus
+                            concorrentes agora</span>
                     </div>
                     <div class="wz-compare-item text-white/60 relative z-10">
                         <span class="wz-compare-dot bg-brand-orange mt-1.5" style="opacity:0.7;"></span>
@@ -2673,21 +3239,26 @@
                     A questão não é mais <em class="text-white/70 not-italic">"se"</em> sua empresa vai automatizar.
                 </p>
                 <p class="font-display tracking-tight text-white leading-none mb-2"
-                   style="font-size: clamp(2rem, 5vw, 4rem);">
-                    É <strong style="background-image: linear-gradient(89.98deg, #fd8925 10%, #ff0c00 50%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">quem fará isso</strong>
+                    style="font-size: clamp(2rem, 5vw, 4rem);">
+                    É <strong
+                        style="background-image: linear-gradient(89.98deg, #fd8925 10%, #ff0c00 50%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">quem
+                        fará isso</strong>
                 </p>
                 <p class="font-display tracking-tight text-white leading-none"
-                   style="font-size: clamp(2rem, 5vw, 4rem);">
-                    <strong style="background-image: linear-gradient(89.98deg, #fd8925 10%, #ff0c00 50%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">primeiro.</strong>
+                    style="font-size: clamp(2rem, 5vw, 4rem);">
+                    <strong
+                        style="background-image: linear-gradient(89.98deg, #fd8925 10%, #ff0c00 50%, #b83dff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">primeiro.</strong>
                 </p>
             </div>
 
             <div class="gsap-reveal-scroll mt-12 pb-32 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://api.whatsapp.com/send/?phone=%2B5581987779095&text=Ol%C3%A1%2C+gostaria+de+falar+sobre+Produto%2C+Tecnologia%2C+Inova%C3%A7%C3%A3o+e+IA&type=phone_number&app_absent=0" target="_blank" class="wz-cta-primary">
+                <a href="https://api.whatsapp.com/send/?phone=%2B5581987779095&text=Ol%C3%A1%2C+gostaria+de+falar+sobre+Produto%2C+Tecnologia%2C+Inova%C3%A7%C3%A3o+e+IA&type=phone_number&app_absent=0"
+                    target="_blank" class="wz-cta-primary">
                     <i data-lucide="rocket" class="w-4 h-4"></i>
                     Quero automatizar minha empresa
                 </a>
-                <a href="https://api.whatsapp.com/send/?phone=%2B5581987779095&text=Ol%C3%A1%2C+gostaria+de+falar+sobre+Produto%2C+Tecnologia%2C+Inova%C3%A7%C3%A3o+e+IA&type=phone_number&app_absent=0" target="_blank" class="wz-cta-secondary">
+                <a href="https://api.whatsapp.com/send/?phone=%2B5581987779095&text=Ol%C3%A1%2C+gostaria+de+falar+sobre+Produto%2C+Tecnologia%2C+Inova%C3%A7%C3%A3o+e+IA&type=phone_number&app_absent=0"
+                    target="_blank" class="wz-cta-secondary">
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
                     Falar com um especialista
                 </a>
@@ -2700,11 +3271,13 @@
     <!-- Footer Section -->
     <footer class="relative w-full py-20 bg-[#04020a] z-10 border-t border-white/5 overflow-hidden">
         <!-- Ambient glow -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-purple/5 blur-[100px] pointer-events-none z-0"></div>
+        <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-purple/5 blur-[100px] pointer-events-none z-0">
+        </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="flex flex-col md:flex-row justify-between items-start gap-12">
-                
+
                 <!-- Brand Block -->
                 <div class="max-w-xs gsap-reveal-scroll">
                     <div class="flex items-center gap-2.5 mb-5">
@@ -2712,8 +3285,10 @@
                         <span class="font-sans font-normal text-2xl tracking-tight text-white">WizzyBots</span>
                     </div>
                     <div class="space-y-1 mb-6">
-                        <p class="text-white/30 text-[0.75rem] uppercase tracking-[0.15em] font-bold">IA • Automação • Operações Inteligentes</p>
-                        <p class="text-white/60 text-[0.95rem] font-light leading-relaxed">Transformando empresas em sistemas escaláveis através de tecnologia de ponta.</p>
+                        <p class="text-white/30 text-[0.75rem] uppercase tracking-[0.15em] font-bold">IA • Automação •
+                            Operações Inteligentes</p>
+                        <p class="text-white/60 text-[0.95rem] font-light leading-relaxed">Transformando empresas em
+                            sistemas escaláveis através de tecnologia de ponta.</p>
                     </div>
                 </div>
 
@@ -2726,19 +3301,47 @@
 
                 <!-- Socials Block -->
                 <div class="flex flex-col items-start md:items-end gap-6">
-                    <p class="text-[10px] font-semibold tracking-[0.2em] text-white/20 uppercase">Conecte-se com a magia</p>
+                    <p class="text-[10px] font-semibold tracking-[0.2em] text-white/20 uppercase">Conecte-se com a magia
+                    </p>
                     <div class="flex items-center gap-3 gsap-reveal-scroll">
-                        <a href="#" class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-orange/40 hover:bg-brand-orange/5 transition-all duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        <a href="#"
+                            class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-orange/40 hover:bg-brand-orange/5 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="group-hover:scale-110 transition-transform">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                            </svg>
                         </a>
-                        <a href="https://www.linkedin.com/company/wizzy-bots/" target="_blank" class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-purple/40 hover:bg-brand-purple/5 transition-all duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                        <a href="https://www.linkedin.com/company/wizzy-bots/" target="_blank"
+                            class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-purple/40 hover:bg-brand-purple/5 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="group-hover:scale-110 transition-transform">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect width="4" height="12" x="2" y="9" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
                         </a>
-                        <a href="#" class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-red/40 hover:bg-brand-red/5 transition-all duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+                        <a href="#"
+                            class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-brand-red/40 hover:bg-brand-red/5 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="group-hover:scale-110 transition-transform">
+                                <path
+                                    d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                                <path d="m10 15 5-3-5-3z" />
+                            </svg>
                         </a>
-                        <a href="#" class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                        <a href="#"
+                            class="group w-11 h-11 rounded-xl border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-white/30 hover:bg-white/5 transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="group-hover:scale-110 transition-transform">
+                                <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -2746,7 +3349,8 @@
 
             <div class="mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-center items-center gap-6">
                 <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6">
-                    <p class="text-[11px] text-white/20 font-medium uppercase tracking-[0.15em]">© 2026 WizzyBots. Todos os direitos reservados.</p>
+                    <p class="text-[11px] text-white/20 font-medium uppercase tracking-[0.15em]">© 2026 WizzyBots. Todos
+                        os direitos reservados.</p>
                 </div>
             </div>
         </div>
@@ -2756,7 +3360,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
+
     <script>
 
 
@@ -2768,11 +3372,11 @@
             const loader = document.getElementById('loader');
             // Re-initialize Lucide just in case
             if (window.lucide) lucide.createIcons();
-            
+
             setTimeout(() => {
                 loader.classList.add('hidden');
                 initAnimations();
-                
+
                 // Force play video background
                 const video = document.querySelector('.hero-img video') || document.querySelector('video.hero-img');
                 if (video) {
@@ -2831,13 +3435,13 @@
         // GSAP Intro Animations
         function initAnimations() {
             const tl = gsap.timeline();
-            
+
             // Navbar animation
-            tl.fromTo('.gsap-nav-item', 
+            tl.fromTo('.gsap-nav-item',
                 { y: -20, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" }
             );
-            
+
             // Hero Content animation
             tl.fromTo('.gsap-reveal',
                 { y: 40, opacity: 0 },
@@ -2847,7 +3451,7 @@
 
             // Scroll Animations for Section 2
             gsap.utils.toArray('.gsap-reveal-scroll').forEach(element => {
-                gsap.fromTo(element, 
+                gsap.fromTo(element,
                     { y: 50, opacity: 0 },
                     {
                         y: 0,
@@ -2878,63 +3482,63 @@
                     }
                 });
 
-            // Content Layer - Moves Up
-            gsap.to('.hero-content-parallax', {
-                y: -150,
-                opacity: 0,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: heroWrapper,
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: true
-                }
-            });
-        }
-
-        // ── Mobile Menu Logic ──
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const menuClose = document.getElementById('mobile-menu-close');
-        const menuOverlay = document.getElementById('mobile-menu-overlay');
-        const menuLinks = document.querySelectorAll('.mobile-nav-link');
-
-        function toggleMenu(open) {
-            if (open) {
-                menuOverlay.classList.remove('pointer-events-none');
-                gsap.to(menuOverlay, { opacity: 1, duration: 0.4, ease: "power2.out" });
-                gsap.fromTo('.mobile-nav-link', 
-                    { y: 20, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: 0.2, ease: "power3.out" }
-                );
-                document.body.style.overflow = 'hidden';
-            } else {
-                gsap.to(menuOverlay, { 
-                    opacity: 0, 
-                    duration: 0.3, 
-                    ease: "power2.in",
-                    onComplete: () => {
-                        menuOverlay.classList.add('pointer-events-none');
-                        document.body.style.overflow = '';
+                // Content Layer - Moves Up
+                gsap.to('.hero-content-parallax', {
+                    y: -150,
+                    opacity: 0,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: heroWrapper,
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
                     }
                 });
             }
-        }
 
-        if (menuBtn && menuClose && menuOverlay) {
-            menuBtn.addEventListener('click', () => toggleMenu(true));
-            menuClose.addEventListener('click', () => toggleMenu(false));
-            menuLinks.forEach(link => {
-                link.addEventListener('click', () => toggleMenu(false));
-            });
+            // ── Mobile Menu Logic ──
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menuClose = document.getElementById('mobile-menu-close');
+            const menuOverlay = document.getElementById('mobile-menu-overlay');
+            const menuLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function toggleMenu(open) {
+                if (open) {
+                    menuOverlay.classList.remove('pointer-events-none');
+                    gsap.to(menuOverlay, { opacity: 1, duration: 0.4, ease: "power2.out" });
+                    gsap.fromTo('.mobile-nav-link',
+                        { y: 20, opacity: 0 },
+                        { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: 0.2, ease: "power3.out" }
+                    );
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    gsap.to(menuOverlay, {
+                        opacity: 0,
+                        duration: 0.3,
+                        ease: "power2.in",
+                        onComplete: () => {
+                            menuOverlay.classList.add('pointer-events-none');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                }
+            }
+
+            if (menuBtn && menuClose && menuOverlay) {
+                menuBtn.addEventListener('click', () => toggleMenu(true));
+                menuClose.addEventListener('click', () => toggleMenu(false));
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => toggleMenu(false));
+                });
+            }
         }
-    }
 
         // Sophisticated Parallax Effect
         const container = document.getElementById('parallax-container');
         const img = document.querySelector('.hero-img');
         const backdrop = document.querySelector('.hero-img-backdrop');
 
-        if(container && img && backdrop) {
+        if (container && img && backdrop) {
             let rafId = null;
             let targetX = 0;
             let targetY = 0;
@@ -2948,15 +3552,15 @@
                 const rect = container.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                
+
                 const centerX = rect.width / 2;
                 const centerY = rect.height / 2;
-                
+
                 // Calculate normalized values (-1 to 1)
                 targetX = (x - centerX) / centerX;
                 targetY = (y - centerY) / centerY;
-                
-                if(!rafId) {
+
+                if (!rafId) {
                     rafId = requestAnimationFrame(updateParallax);
                 }
             });
@@ -2970,11 +3574,11 @@
                 // Interpolate current values towards target values
                 currentX += (targetX - currentX) * ease;
                 currentY += (targetY - currentY) * ease;
-                
+
                 // Max rotation angles (degrees)
-                const rotateX = currentY * -12; 
+                const rotateX = currentY * -12;
                 const rotateY = currentX * 12;
-                
+
                 // Max translation (pixels)
                 const translateX = currentX * 25;
                 const translateY = currentY * 25;
@@ -2991,7 +3595,7 @@
                 }
             }
         }
-        
+
         // Navbar blur effect on scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.glass-nav');
@@ -3009,9 +3613,9 @@
             const root = document.getElementById('wz-timeline-root');
             if (!root) return;
 
-            const spinePath  = document.getElementById('wz-spine-path');
-            const cards      = root.querySelectorAll('.wz-step-card');
-            const nodes      = root.querySelectorAll('.wz-node');
+            const spinePath = document.getElementById('wz-spine-path');
+            const cards = root.querySelectorAll('.wz-step-card');
+            const nodes = root.querySelectorAll('.wz-node');
 
             // 1) Draw the spine SVG as the section scrolls
             if (spinePath) {
@@ -3024,7 +3628,7 @@
                         scrollTrigger: {
                             trigger: root,
                             start: 'top 80%',
-                            end:   'bottom 60%',
+                            end: 'bottom 60%',
                             scrub: 1.2
                         }
                     }
@@ -3060,4 +3664,5 @@
         })();
     </script>
 </body>
+
 </html>
