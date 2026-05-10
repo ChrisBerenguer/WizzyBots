@@ -421,38 +421,43 @@
 
         <!-- Mobile Menu Overlay -->
         <div id="mobile-menu-overlay"
-            class="fixed inset-0 bg-midnight/98 backdrop-blur-2xl z-[100] flex flex-col items-center justify-center transition-all duration-500 opacity-0 pointer-events-none">
-            <button id="mobile-menu-close" class="absolute top-7 right-6 text-white/60 hover:text-white p-2">
-                <i data-lucide="x" class="w-8 h-8"></i>
-            </button>
+            class="fixed inset-0 bg-black/60 backdrop-blur-2xl z-[100] flex flex-col items-center justify-start transition-all duration-500 opacity-0 pointer-events-none pt-24">
+            
+            <!-- Mobile Menu Header (Logo + Close) -->
+            <div class="absolute top-0 left-0 w-full h-20 px-6 flex items-center justify-between border-b border-white/5">
+                <div class="flex items-center gap-1">
+                    <img src="./Site References/logo2.png" alt="WizzyBots Logo" class="h-9 w-auto">
+                    <span class="brand-text text-[1.4rem] tracking-tight text-white flex items-center">
+                        W<span class="brand-i-wrapper">ı<span class="brand-i-dot"></span></span>zzyBots
+                    </span>
+                </div>
+                <button id="mobile-menu-close" class="text-white/60 hover:text-white p-2">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
+            </div>
 
-            <div class="flex flex-col items-center gap-8 text-center">
+            <div class="flex flex-col items-center gap-6 text-center mt-12 px-6 w-full">
                 <a href="#parallax-container"
-                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Home</a>
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors py-2 w-full">Home</a>
                 <a href="#quem-somos"
-                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Quem
-                    somos</a>
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors py-2 w-full">Quem somos</a>
                 <a href="#servicos"
-                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Serviços</a>
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors py-2 w-full">Serviços</a>
                 <a href="#tecnologia"
-                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Tecnologia</a>
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors py-2 w-full">Tecnologia</a>
                 <a href="#contato"
-                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors">Contato</a>
+                    class="mobile-nav-link text-2xl font-display font-medium text-white/60 hover:text-brand-orange transition-colors py-2 w-full">Contato</a>
 
-                <div class="mt-8 mobile-nav-link">
-                    <a href="#contato" class="btn btn-primary px-10 py-4 text-lg">
+                <div class="mt-8 mobile-nav-link w-full px-4">
+                    <a href="#contato" class="btn btn-primary w-full py-4 text-lg">
                         Começar Agora
                     </a>
                 </div>
             </div>
 
-            <!-- Decorative background elements for menu -->
-            <div
-                class="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-orange/10 blur-[80px] rounded-full pointer-events-none">
-            </div>
-            <div
-                class="absolute -top-20 -right-20 w-64 h-64 bg-brand-purple/10 blur-[80px] rounded-full pointer-events-none">
-            </div>
+            <!-- Decorative background elements -->
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-brand-orange/10 blur-[80px] rounded-full pointer-events-none"></div>
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-brand-purple/10 blur-[80px] rounded-full pointer-events-none"></div>
         </div>
     </nav>
 
