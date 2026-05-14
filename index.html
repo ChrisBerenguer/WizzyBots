@@ -3844,19 +3844,23 @@
                     });
 
                     const textResponse = await response.text();
-
                     console.log("Resposta bruta:", textResponse);
                     removeTyping();
 
                     if (!textResponse) {
-                        addMessage(
-                            `O n8n respondeu (Status: ${response.status}), mas o corpo está vazio. Verifique se o workflow está Ativo e se o nó Webhook está configurado para responder com dados (Response Mode).`,
-                            "bot"
-                        );
+                        addMessage("O servidor n8n enviou uma resposta vazia (Status: " + response.status + ").", "bot");
                         return;
                     }
 
-                    const data = JSON.parse(textResponse);
+                    let data;
+                    try {
+                        data = JSON.parse(textResponse);
+                    } catch (e) {
+                        console.error("Erro ao parsear JSON:", e);
+                        addMessage("Recebi uma resposta em formato inválido do servidor.", "bot");
+                        return;
+                    }
+
                     console.log("JSON parseado:", data);
 
                     // Suporte para Array (comum no n8n) ou Objeto direto
