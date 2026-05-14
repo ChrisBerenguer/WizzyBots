@@ -3847,31 +3847,35 @@
                     console.log("Resposta bruta:", textResponse);
                     removeTyping();
 
-                    if (!textResponse) {
-                        addMessage("O servidor n8n enviou uma resposta vazia (Status: " + response.status + ").", "bot");
-                        return;
-                    }
-
                     let data;
                     try {
+                        // Tenta o primeiro parse
                         data = JSON.parse(textResponse);
+                        
+                        // Checagem de segurança: se o resultado ainda for uma string que parece JSON, faz o parse de novo
+                        // (Isso resolve problemas de "double encoding" comuns no n8n)
+                        if (typeof data === 'string' && (data.trim().startsWith('{') || data.trim().startsWith('['))) {
+                            data = JSON.parse(data);
+                        }
                     } catch (e) {
-                        console.error("Erro ao parsear JSON:", e);
-                        addMessage("Recebi uma resposta em formato inválido do servidor.", "bot");
-                        return;
+                        console.error("Erro ao parsear JSON, usando resposta como texto puro:", e);
+                        data = { reply: textResponse };
                     }
 
-                    console.log("JSON parseado:", data);
+                    console.log("JSON processado:", data);
 
-                    // Suporte para Array (comum no n8n) ou Objeto direto
+                    // Extração flexível da mensagem
                     const result = Array.isArray(data) ? data[0] : data;
-                    const reply = result.reply || result.output || result.response || result.text;
+                    let reply = "";
 
-                    if (!reply) {
-                        addMessage(
-                            "A resposta da IA veio vazia ou em formato inesperado.",
-                            "bot"
-                        );
+                    if (typeof result === 'string') {
+                        reply = result;
+                    } else if (result && typeof result === 'object') {
+                        reply = result.reply || result.output || result.response || result.message || JSON.stringify(result);
+                    }
+
+                    if (!reply || reply === "{}" || reply === "[]") {
+                        addMessage("A IA não retornou uma mensagem válida.", "bot");
                         return;
                     }
 
