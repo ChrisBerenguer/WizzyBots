@@ -3783,7 +3783,7 @@
 
                 msgDiv.innerHTML = `
                     <div class="${bubbleClass} text-sm leading-relaxed shadow-sm">
-                        ${text}
+                        ${text.replace(/\n/g, "<br>")}
                     </div>
                     <span class="text-[10px] text-white/30 mt-1 mx-1">${sender === 'user' ? 'Você' : 'Nino'}</span>
                 `;
