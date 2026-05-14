@@ -3673,6 +3673,7 @@
 
         // ── Chatbot WizzyBots ────────────────────────────────────────────────
         (function initChatbot() {
+            // ... (chatbotHTML insertion remains same)
             const chatbotHTML = `
             <div id="wizzy-chatbot-container" class="fixed bottom-6 right-6 z-[100] flex flex-col items-end font-sans">
                 <!-- Chat Window -->
@@ -3744,6 +3745,8 @@
             const messagesContainer = document.getElementById('chat-messages');
 
             let isOpen = false;
+            // Session ID fix: define outside to maintain context
+            const sessionId = "sessao-" + Math.random().toString(36).substring(7);
 
             // Toggle Chat
             const toggleChat = () => {
@@ -3818,8 +3821,8 @@
                 const userMessage = chatInput.value.trim();
                 if (!userMessage) return;
 
+                // DICA: Se estiver testando no n8n sem ATIVAR o workflow, mude /webhook/ para /webhook-test/
                 const N8N_WEBHOOK_URL = "https://n8n.srv1632946.hstgr.cloud/webhook/chatbot-wizzybots";
-                const sessionId = "sessao-" + Math.random().toString(36).substring(7);
 
                 chatInput.value = '';
                 addMessage(userMessage, 'user');
@@ -3847,25 +3850,28 @@
 
                     if (!textResponse) {
                         addMessage(
-                            "O n8n recebeu sua mensagem, mas não enviou uma resposta.",
+                            "O n8n recebeu sua mensagem, mas não enviou uma resposta (vazio). Verifique se o workflow está Ativo.",
                             "bot"
                         );
                         return;
                     }
 
                     const data = JSON.parse(textResponse);
-
                     console.log("JSON parseado:", data);
 
-                    if (!data.reply) {
+                    // Suporte para Array (comum no n8n) ou Objeto direto
+                    const result = Array.isArray(data) ? data[0] : data;
+                    const reply = result.reply || result.output || result.response || result.text;
+
+                    if (!reply) {
                         addMessage(
-                            "A resposta da IA veio vazia.",
+                            "A resposta da IA veio vazia ou em formato inesperado.",
                             "bot"
                         );
                         return;
                     }
 
-                    addMessage(data.reply, "bot");
+                    addMessage(reply, "bot");
 
                 } catch(error) {
 
@@ -3873,7 +3879,7 @@
                     removeTyping();
 
                     addMessage(
-                        "Erro ao conectar ao servidor.",
+                        "Erro ao conectar ao servidor. Verifique o console ou a URL do n8n.",
                         "bot"
                     );
 
