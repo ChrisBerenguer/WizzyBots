@@ -3670,6 +3670,203 @@
                 });
             });
         })();
+
+        // ── Chatbot WizzyBots ────────────────────────────────────────────────
+        (function initChatbot() {
+            const chatbotHTML = `
+            <div id="wizzy-chatbot-container" class="fixed bottom-6 right-6 z-[100] flex flex-col items-end font-sans">
+                <!-- Chat Window -->
+                <div id="wizzy-chat-window" class="hidden w-[350px] sm:w-[400px] h-[500px] max-h-[70vh] bg-midnight/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden mb-4 origin-bottom-right">
+                    <!-- Header -->
+                    <div class="p-4 bg-gradient-to-r from-brand-orange to-brand-red flex items-center justify-between shadow-lg">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center border border-white/30 backdrop-blur-sm">
+                                <i data-lucide="bot" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-sm leading-none">Nino</h4>
+                                <span class="text-white/70 text-[10px] flex items-center gap-1 mt-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                    Online agora
+                                </span>
+                            </div>
+                        </div>
+                        <button id="close-chat" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                            <i data-lucide="x" class="w-5 h-5 text-white"></i>
+                        </button>
+                    </div>
+
+                    <!-- Messages -->
+                    <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth">
+                        <div class="bot-msg flex flex-col items-start max-w-[85%]">
+                            <div class="bg-white/5 border border-white/10 text-white/90 p-3 rounded-2xl rounded-tl-none text-sm leading-relaxed">
+                                Olá! Sou o assistente mágico da WizzyBots. Como posso transformar sua operação hoje? ✨
+                            </div>
+                            <span class="text-[10px] text-white/30 mt-1 ml-1">Nino</span>
+                        </div>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="p-4 border-t border-white/5 bg-white/[0.02]">
+                        <form id="chat-form" class="relative flex items-center gap-2">
+                            <input type="text" id="chat-input" placeholder="Pergunte qualquer coisa..." 
+                                class="flex-1 bg-white/5 border border-white/10 rounded-full py-3 px-5 text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-brand-orange/50 focus:ring-1 focus:ring-brand-orange/20 transition-all">
+                            <button type="submit" class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-orange to-brand-red flex items-center justify-center text-white shadow-lg hover:scale-105 active:scale-95 transition-all">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </form>
+                        <p class="text-[10px] text-center text-white/20 mt-3">Powered by WizzyBots AI & n8n</p>
+                    </div>
+                </div>
+
+                <!-- Floating Button -->
+                <button id="wizzy-chat-trigger" class="w-16 h-16 rounded-full bg-gradient-to-tr from-brand-orange to-brand-red flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all group relative overflow-hidden">
+                    <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <i data-lucide="message-square" id="icon-open" class="w-8 h-8 absolute transition-all duration-300 transform scale-100 rotate-0"></i>
+                    <i data-lucide="x" id="icon-close" class="w-8 h-8 absolute transition-all duration-300 transform scale-0 rotate-90"></i>
+                    
+                    <!-- Notification Dot -->
+                    <span class="absolute top-0 right-0 w-4 h-4 bg-white border-2 border-brand-red rounded-full animate-bounce"></span>
+                </button>
+            </div>
+            `;
+
+            document.body.insertAdjacentHTML('beforeend', chatbotHTML);
+            lucide.createIcons();
+
+            const trigger = document.getElementById('wizzy-chat-trigger');
+            const windowEl = document.getElementById('wizzy-chat-window');
+            const closeBtn = document.getElementById('close-chat');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+            const chatForm = document.getElementById('chat-form');
+            const chatInput = document.getElementById('chat-input');
+            const messagesContainer = document.getElementById('chat-messages');
+
+            let isOpen = false;
+
+            // Toggle Chat
+            const toggleChat = () => {
+                isOpen = !isOpen;
+                if (isOpen) {
+                    windowEl.classList.remove('hidden');
+                    gsap.fromTo(windowEl, 
+                        { opacity: 0, scale: 0.8, y: 20 }, 
+                        { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(1.7)" }
+                    );
+                    gsap.to(iconOpen, { scale: 0, rotate: -90, duration: 0.3 });
+                    gsap.to(iconClose, { scale: 1, rotate: 0, duration: 0.3 });
+                } else {
+                    gsap.to(windowEl, { 
+                        opacity: 0, scale: 0.8, y: 20, duration: 0.3, ease: "power2.in",
+                        onComplete: () => windowEl.classList.add('hidden')
+                    });
+                    gsap.to(iconOpen, { scale: 1, rotate: 0, duration: 0.3 });
+                    gsap.to(iconClose, { scale: 0, rotate: 90, duration: 0.3 });
+                }
+            };
+
+            trigger.addEventListener('click', toggleChat);
+            closeBtn.addEventListener('click', toggleChat);
+
+            // Add Message to UI
+            const addMessage = (text, sender) => {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = `${sender}-msg flex flex-col ${sender === 'user' ? 'items-end' : 'items-start'} max-w-[85%] ${sender === 'user' ? 'ml-auto' : ''}`;
+                
+                const bubbleClass = sender === 'user' 
+                    ? 'bg-gradient-to-tr from-brand-orange to-brand-red text-white p-3 rounded-2xl rounded-tr-none'
+                    : 'bg-white/5 border border-white/10 text-white/90 p-3 rounded-2xl rounded-tl-none';
+
+                msgDiv.innerHTML = `
+                    <div class="${bubbleClass} text-sm leading-relaxed shadow-sm">
+                        ${text}
+                    </div>
+                    <span class="text-[10px] text-white/30 mt-1 mx-1">${sender === 'user' ? 'Você' : 'Nino'}</span>
+                `;
+
+                messagesContainer.appendChild(msgDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+                gsap.from(msgDiv, { opacity: 0, y: 10, duration: 0.3 });
+            };
+
+            // Typing Indicator
+            const showTyping = () => {
+                const typingDiv = document.createElement('div');
+                typingDiv.id = 'typing-indicator';
+                typingDiv.className = 'bot-msg flex flex-col items-start max-w-[85%]';
+                typingDiv.innerHTML = `
+                    <div class="bg-white/5 border border-white/10 text-white/90 p-3 rounded-2xl rounded-tl-none text-sm flex gap-1 items-center">
+                        <span class="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce" style="animation-delay: 0s"></span>
+                        <span class="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+                        <span class="w-1.5 h-1.5 bg-white/50 rounded-full animate-bounce" style="animation-delay: 0.4s"></span>
+                    </div>
+                `;
+                messagesContainer.appendChild(typingDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            };
+
+            const removeTyping = () => {
+                const typing = document.getElementById('typing-indicator');
+                if (typing) typing.remove();
+            };
+
+            // Handle Form Submission
+            chatForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const text = chatInput.value.trim();
+                if (!text) return;
+
+                const N8N_WEBHOOK_URL = "https://n8n.srv1632946.hstgr.cloud/webhook/chatbot-wizzybots";
+
+                chatInput.value = '';
+                addMessage(text, 'user');
+                showTyping();
+
+                try {
+                    const response = await fetch(N8N_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ 
+                            message: text, 
+                            source: "site",
+                            sessionId: "teste-123",
+                            page: window.location.href
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const textResponse = await response.text();
+                    removeTyping();
+
+                    if (!textResponse) {
+                        console.warn('Webhook returned empty response');
+                        addMessage("O n8n recebeu sua mensagem, mas não enviou uma resposta de volta. Verifique a configuração do nó Webhook!", 'bot');
+                        return;
+                    }
+
+                    let data;
+                    try {
+                        data = JSON.parse(textResponse);
+                    } catch (e) {
+                        console.error('Invalid JSON response:', textResponse);
+                        addMessage("Recebi uma resposta, mas ela não está no formato correto. Verifique o n8n!", 'bot');
+                        return;
+                    }
+
+                    const reply = data.output || data.response || (Array.isArray(data) && (data[0].output || data[0].response)) || data.message || "Entendido! Como posso ajudar mais?";
+                    addMessage(reply, 'bot');
+                } catch (error) {
+                    console.error("Erro real ao chamar n8n:", error);
+                    removeTyping();
+                    addMessage("Não consegui conectar ao servidor (CORS ou Rede). Verifique as configurações de segurança no n8n!", "bot");
+                }
+            });
+        })();
     </script>
 </body>
 
