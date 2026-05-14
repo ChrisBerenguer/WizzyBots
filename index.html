@@ -3850,7 +3850,7 @@
 
                     if (!textResponse) {
                         addMessage(
-                            "O n8n recebeu sua mensagem, mas não enviou uma resposta (vazio). Verifique se o workflow está Ativo.",
+                            `O n8n respondeu (Status: ${response.status}), mas o corpo está vazio. Verifique se o workflow está Ativo e se o nó Webhook está configurado para responder com dados (Response Mode).`,
                             "bot"
                         );
                         return;
