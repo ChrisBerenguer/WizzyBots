@@ -3815,55 +3815,68 @@
             // Handle Form Submission
             chatForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const text = chatInput.value.trim();
-                if (!text) return;
+                const userMessage = chatInput.value.trim();
+                if (!userMessage) return;
 
                 const N8N_WEBHOOK_URL = "https://n8n.srv1632946.hstgr.cloud/webhook/chatbot-wizzybots";
+                const sessionId = "sessao-" + Math.random().toString(36).substring(7);
 
                 chatInput.value = '';
-                addMessage(text, 'user');
+                addMessage(userMessage, 'user');
                 showTyping();
 
                 try {
+
                     const response = await fetch(N8N_WEBHOOK_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ 
-                            message: text, 
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            message: userMessage,
                             source: "site",
-                            sessionId: "teste-123",
+                            sessionId: sessionId,
                             page: window.location.href
                         })
                     });
 
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-
                     const textResponse = await response.text();
+
+                    console.log("Resposta bruta:", textResponse);
                     removeTyping();
 
                     if (!textResponse) {
-                        console.warn('Webhook returned empty response');
-                        addMessage("O n8n recebeu sua mensagem, mas não enviou uma resposta de volta. Verifique a configuração do nó Webhook!", 'bot');
+                        addMessage(
+                            "O n8n recebeu sua mensagem, mas não enviou uma resposta.",
+                            "bot"
+                        );
                         return;
                     }
 
-                    let data;
-                    try {
-                        data = JSON.parse(textResponse);
-                    } catch (e) {
-                        console.error('Invalid JSON response:', textResponse);
-                        addMessage("Recebi uma resposta, mas ela não está no formato correto. Verifique o n8n!", 'bot');
+                    const data = JSON.parse(textResponse);
+
+                    console.log("JSON parseado:", data);
+
+                    if (!data.reply) {
+                        addMessage(
+                            "A resposta da IA veio vazia.",
+                            "bot"
+                        );
                         return;
                     }
 
-                    const reply = data.output || data.response || (Array.isArray(data) && (data[0].output || data[0].response)) || data.message || "Entendido! Como posso ajudar mais?";
-                    addMessage(reply, 'bot');
-                } catch (error) {
-                    console.error("Erro real ao chamar n8n:", error);
+                    addMessage(data.reply, "bot");
+
+                } catch(error) {
+
+                    console.error(error);
                     removeTyping();
-                    addMessage("Não consegui conectar ao servidor (CORS ou Rede). Verifique as configurações de segurança no n8n!", "bot");
+
+                    addMessage(
+                        "Erro ao conectar ao servidor.",
+                        "bot"
+                    );
+
                 }
             });
         })();
