@@ -3745,8 +3745,12 @@
             const messagesContainer = document.getElementById('chat-messages');
 
             let isOpen = false;
-            // Session ID fix: define outside to maintain context
-            const sessionId = "sessao-" + Math.random().toString(36).substring(7);
+            // Session ID fix: define outside and use localStorage to maintain context across reloads
+            let sessionId = localStorage.getItem('wizzybots_session_id');
+            if (!sessionId) {
+                sessionId = "sessao-" + Math.random().toString(36).substring(7);
+                localStorage.setItem('wizzybots_session_id', sessionId);
+            }
 
             // Toggle Chat
             const toggleChat = () => {
