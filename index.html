@@ -3748,7 +3748,9 @@
             // Session ID fix: define outside and use localStorage to maintain context across reloads
             let sessionId = localStorage.getItem("wizzy_session_id");
             if (!sessionId) {
-                sessionId = crypto.randomUUID();
+                sessionId = (typeof crypto !== "undefined" && crypto.randomUUID) 
+                    ? crypto.randomUUID() 
+                    : "sessao-" + Math.random().toString(36).substring(2, 15);
                 localStorage.setItem("wizzy_session_id", sessionId);
             }
 
