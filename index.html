@@ -3812,10 +3812,32 @@
                     ? 'bg-gradient-to-tr from-brand-orange to-brand-red text-white p-3 rounded-2xl rounded-tr-none'
                     : 'bg-white/5 border border-white/10 text-white/90 p-3 rounded-2xl rounded-tl-none';
 
+                // Detect and extract WhatsApp Link
+                let whatsappUrl = null;
+                let processedText = text;
+
+                if (sender === 'bot') {
+                    const waRegex = /(https?:\/\/(?:api\.whatsapp\.com|wa\.me)\/[^\s"'\<\>]+)/gi;
+                    const match = text.match(waRegex);
+                    if (match) {
+                        whatsappUrl = match[0];
+                        processedText = text.replace(waRegex, '').trim();
+                        // If the text becomes empty, give it a placeholder message
+                        if (!processedText) {
+                            processedText = "Clique no botão abaixo para falar conosco no WhatsApp:";
+                        }
+                    }
+                }
+
                 msgDiv.innerHTML = `
                     <div class="${bubbleClass} text-sm leading-relaxed shadow-sm">
-                        ${text.replace(/\n/g, "<br>")}
+                        ${processedText.replace(/\n/g, "<br>")}
                     </div>
+                    ${whatsappUrl ? `
+                    <a href="${whatsappUrl}" target="_blank" rel="noopener noreferrer" class="chatbot-whatsapp-button">
+                        Falar no WhatsApp
+                    </a>
+                    ` : ''}
                     <span class="text-[10px] text-white/30 mt-1 mx-1">${sender === 'user' ? 'Você' : 'Nino'}</span>
                 `;
 
