@@ -369,6 +369,31 @@
             border-radius: 50%;
             z-index: 1;
         }
+
+        .chatbot-whatsapp-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: #25d366;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            text-align: center;
+        }
+
+        .chatbot-whatsapp-button:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+
+        .chatbot-whatsapp-button:active {
+            transform: translateY(0);
+        }
     </style>
 </head>
 
@@ -3852,6 +3877,21 @@
                     const data = await response.json();
                     removeTyping();
                     addMessage(data.reply, "bot");
+
+                    if (data.cta?.type === "button") {
+                        const button = document.createElement("a");
+                        button.href = data.cta.url;
+                        button.target = "_blank";
+                        button.rel = "noopener noreferrer";
+                        button.textContent = data.cta.label;
+                        button.className = "chatbot-whatsapp-button";
+
+                        messagesContainer.appendChild(button);
+                        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                        if (typeof gsap !== "undefined") {
+                            gsap.from(button, { opacity: 0, y: 10, duration: 0.3 });
+                        }
+                    }
 
                 } catch(error) {
 
