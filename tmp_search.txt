@@ -1,0 +1,3 @@
+3748: // Session ID fix: define outside to maintain context
+3749: const sessionId = "sessao-" + Math.random().toString(36).substring(7);
+3841: sessionId: sessionId,

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - WizzyBots</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300;1,9..40,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#0e0918">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['DM Sans', 'sans-serif'],
+                        brand: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        midnight: '#0e0918',
+                        brand: {
+                            orange: '#fd8925',
+                            red: '#ff0c00',
+                            purple: '#6b21ef'
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Copied Styles from index.html -->
+    <style>
+        .font-display {
+            font-weight: 300;
+            letter-spacing: -0.025em;
+            font-optical-sizing: auto;
+        }
+
+        .font-display strong,
+        .font-display b {
+            font-weight: 700;
+            letter-spacing: -0.03em;
+        }
+
+        .font-display em,
+        .font-display i {
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        :root {
+            --bg-from: #fd8925;
+            --bg-to: #ff0c00;
+            --bg-hover: rgba(255, 255, 255, 0);
+            --bg-rotation: 30deg;
+        }
+
+        html,
+        body {
+            background-color: #0e0918;
+            color: #ffffff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            width: 100%;
+            position: relative;
+        }
+
+        .btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            border-radius: 0.5rem;
+            font-size: 0.83rem;
+            min-height: 2.62rem;
+            padding: 0 1.31rem;
+            font-weight: 600;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to bottom, var(--bg-hover), var(--bg-hover)), linear-gradient(var(--bg-rotation), var(--bg-from), var(--bg-to));
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 4px 14px rgba(253, 137, 37, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            --bg-hover: rgba(255, 255, 255, 0.15);
+            --bg-rotation: 10deg;
+            transform: translateY(-2px);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 8px 24px rgba(253, 137, 37, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-primary:active, .btn-secondary:active {
+            transform: translateY(0);
+        }
+
+        .btn-anim-icon .btn-icon {
+            transform: translateX(-0.5rem);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: absolute;
+            right: 1.2rem;
+        }
+
+        .btn-anim-icon .btn-label {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-anim-icon:hover .btn-label {
+            transform: translateX(-0.5rem);
+        }
+
+        .btn-anim-icon:hover .btn-icon {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Override Tailwind: make max-w-7xl use the same max-width as max-w-5xl to reduce overall component width */
+        .max-w-7xl {
+            max-width: 64rem !important;
+        }
+
+        .glass-nav {
+            background: rgba(14, 9, 24, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(89.98deg, #ffb552 29.9%, #ff5873 71.24%, #b83dff 96.05%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-gradient-subtle {
+            background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .grid-bg {
+            background-image:
+                radial-gradient(circle at center, transparent 0%, #0e0918 100%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 60px 60px, 60px 60px;
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            mask-image: radial-gradient(ellipse at top, black 40%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse at top, black 40%, transparent 80%);
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.45;
+        }
+
+        .glow-orange {
+            background: radial-gradient(circle, rgba(253, 137, 37, 0.5) 0%, transparent 70%);
+            width: 700px;
+            height: 700px;
+        }
+
+        .glow-purple {
+            background: radial-gradient(circle, rgba(107, 33, 239, 0.4) 0%, transparent 70%);
+            width: 600px;
+            height: 600px;
+        }
+
+        .hero-visual-wrapper {
+            position: relative;
+            perspective: 1200px;
+            transform-style: preserve-3d;
+        }
+
+        .hero-img {
+            transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1);
+            will-change: transform;
+            filter: drop-shadow(0 0 40px rgba(253, 137, 37, 0.15)) brightness(1.2);
+            z-index: 10;
+            position: relative;
+            transform: translateZ(20px);
+        }
+
+        .hero-img-backdrop {
+            position: absolute;
+            inset: -10%;
+            background: radial-gradient(circle at center, rgba(107, 33, 239, 0.2) 0%, rgba(253, 137, 37, 0.1) 50%, transparent 80%);
+            filter: blur(60px) opacity(0.95);
+            transform: translateZ(-80px) scale(1.1);
+            z-index: 5;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float-fast {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.05); }
+        }
+
+        .animate-float-fast {
+            animation: float-fast 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.05); }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 6s ease-in-out infinite;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .brand-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-i-wrapper {
+            position: relative;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .brand-i-dot {
+            position: absolute;
+            top: 0.18em;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0.22em;
+            height: 0.22em;
+            background-color: #fd8925;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .chatbot-whatsapp-button {
+            display: inline-block;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: #25d366;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            text-align: center;
+        }
+
+        .chatbot-whatsapp-button:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+
+        .chatbot-whatsapp-button:active {
+            transform: translateY(0);
+        }
+
+        /* Border Beam */
+        @keyframes borderBeamSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .border-beam-wrap {
+            position: relative;
+        }
+
+        .border-beam-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            background: conic-gradient(from 0deg, transparent 0%, transparent 60%, theme('colors.orange.500') 80%, transparent 100%);
+            animation: borderBeamSpin 3s linear infinite;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 0;
+        }
+
+        .border-beam-wrap:hover::before {
+            opacity: 1;
+        }
+
+        .border-beam-wrap > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* n8n-inspired card styles */
+        .wz-card-rusty {
+            background-image: radial-gradient(138% 148% at 77% 23%, #0400ff22 0, transparent 80%), linear-gradient(0deg, rgba(238, 79, 39, 0.18), rgba(238, 79, 39, 0.18)), linear-gradient(180deg, transparent, rgba(13, 10, 25, 0.37)), radial-gradient(65% 111% at 50% 0, rgba(168, 92, 92, 0.17) 0, transparent);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 0 rgba(255, 142, 93, 0.3);
+            backdrop-filter: blur(50px);
+        }
+
+        .wz-card-rusty:hover {
+            background-image: radial-gradient(138% 148% at 77% 23%, #0400ff26 0, transparent 80%), linear-gradient(0deg, rgba(238, 79, 39, 0.28), rgba(238, 79, 39, 0.28)), linear-gradient(180deg, transparent, rgba(13, 10, 25, 0.37)), radial-gradient(65% 111% at 50% 0, rgba(168, 92, 92, 0.2) 0, transparent);
+        }
+
+        .wz-card-spark-red {
+            background-image: radial-gradient(54% 97% at 54% 2%, rgba(168, 92, 92, 0.29) 0, rgba(103, 69, 69, 0.08) 14%), radial-gradient(120% 145% at 50% 100%, rgba(255, 100, 33, 0.30) 0, rgba(255, 59, 33, 0.04) 50%), linear-gradient(180deg, rgba(14, 9, 24, 0.50), rgba(14, 9, 24, 0.50));
+            border: 1px solid;
+            border-image: linear-gradient(55deg, #fd8925 40%, #ff0c00) 1;
+            border-radius: 1rem;
+            position: relative;
+        }
+
+        .wz-card-shine-blue {
+            background-image: radial-gradient(127% 234% at 10% 142%, rgba(217, 126, 75, 0.13) 0, transparent 37%), radial-gradient(67% 136% at 77% 23%, rgba(4, 0, 255, 0.09) 0, transparent 80%), linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(13, 10, 25, 0.26));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 1px 0 0 rgba(255, 142, 93, 0.3);
+            backdrop-filter: blur(64px);
+        }
+
+        .wz-gradient-tile-orange {
+            background-image: radial-gradient(circle farthest-side at 0 100%, rgba(178, 0, 255, 0.15), transparent 56%), radial-gradient(circle at 50% 100%, rgba(163, 100, 58, 0.53), rgba(42, 25, 41, 0.39));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(22px);
+        }
+
+        .wz-gradient-tile-purple {
+            background-image: radial-gradient(circle at 0 100%, rgba(255, 79, 49, 0.12), transparent), radial-gradient(circle at 50% 100%, rgba(75, 57, 122, 0.43), rgba(42, 25, 41, 0.39));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(22px);
+        }
+
+        .wz-btn-primary {
+            background: linear-gradient(30deg, #fd8925, #ff0c00);
+            transition: filter 0.3s;
+        }
+
+        .wz-btn-primary:hover {
+            filter: brightness(1.1);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(.4, 0, .2, 1), box-shadow 0.3s;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 40px -8px rgba(253, 137, 37, 0.4);
+        }
+
+        /* DS Specific Additions for documentation readability */
+        .ds-section-title {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .ds-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.1);
+        }
+        
+        .ds-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .ds-spec {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            text-align: right;
+        }
+
+        /* Overrides to make all elements show up without GSAP */
+        .gsap-reveal, .gsap-reveal-scroll, .gsap-nav-item {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-orange/30 selection:text-white pb-32">
+
+    <!-- Navbar -->
+    <nav class="glass-nav fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-1 cursor-pointer">
+                <span class="brand-text text-[1.5rem] tracking-tight text-white flex items-center">
+                    Design<span class="text-brand-orange ml-1">System</span>
+                </span>
+            </div>
+
+            <div class="hidden lg:flex items-center gap-6 font-medium text-[13px] text-white/70">
+                <a href="#hero" class="hover:text-white transition-colors duration-200">0. Hero</a>
+                <a href="#typography" class="hover:text-white transition-colors duration-200">1. Typography</a>
+                <a href="#colors" class="hover:text-white transition-colors duration-200">2. Colors & Surfaces</a>
+                <a href="#components" class="hover:text-white transition-colors duration-200">3. Components</a>
+                <a href="#layout" class="hover:text-white transition-colors duration-200">4. Layout</a>
+                <a href="#motion" class="hover:text-white transition-colors duration-200">5. Motion</a>
+                <a href="#icons" class="hover:text-white transition-colors duration-200">6. Icons</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 pointer-events-none z-[-1] overflow-hidden">
+        <div class="grid-bg"></div>
+    </div>
+
+    <!-- 0) Hero (Exact Clone, Text Adapted) -->
+    <section id="hero" class="pt-0">
+        <main class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden border-b border-white/10" id="parallax-container">
+            <!-- Background Visual -->
+            <div class="absolute inset-0 w-full h-full flex items-center justify-center z-0 hero-visual-wrapper">
+                <div class="w-full h-full relative hero-scroll-layer">
+                    <div class="hero-img-backdrop w-full h-full pointer-events-none"></div>
+                    <video autoplay muted loop playsinline preload="auto" class="hero-img w-full h-full object-cover pointer-events-none">
+                        <source src="./Site%20References/Video_BG_3.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-b from-midnight/30 via-midnight/50 to-midnight pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-midnight/80 via-transparent to-midnight/80 pointer-events-none"></div>
+            </div>
+
+            <!-- Left Aligned Content over Background -->
+            <div class="max-w-7xl mx-auto px-6 w-full flex flex-col items-start text-left z-10 relative mt-12 hero-content-parallax">
+                <div class="max-w-2xl">
+                    <h1 class="font-sans text-[2.10rem] sm:text-[2.62rem] lg:text-[3.14rem] font-normal tracking-tight mb-8 leading-[1.1]">
+                        <span class="text-white/60 block">Design System Oficial</span>
+                        <span class="text-white block mt-1 pb-2">da WizzyBots v2.</span>
+                    </h1>
+
+                    <div class="flex flex-col sm:flex-row items-start gap-4 w-full sm:w-auto mb-10">
+                        <a href="#typography" class="btn btn-primary w-full sm:w-auto px-[1.75rem] btn-anim-icon">
+                            <span class="btn-label pr-4">Explorar Padrões</span>
+                            <span class="btn-icon"><i data-lucide="arrow-down" class="w-4 h-4"></i></span>
+                        </a>
+                        <a href="#components" class="btn btn-secondary w-full sm:w-auto px-[1.75rem]">
+                            Ver Componentes
+                        </a>
+                    </div>
+
+                    <p class="text-[0.98rem] sm:text-[1.09rem] text-white/60 font-light leading-relaxed">
+                        Biblioteca viva de estilos, componentes, tipografia e micro-interações que formam a identidade visual da plataforma. Consulte as especificações abaixo.
+                    </p>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <div class="max-w-5xl mx-auto px-6 pt-24 space-y-32">
+
+        <!-- 1) Typography -->
+        <section id="typography">
+            <h2 class="ds-section-title">1. Typography</h2>
+            <div class="bg-[#05030a] border border-white/5 rounded-2xl p-8">
+                
+                <div class="ds-item-row">
+                    <div class="w-2/3">
+                        <span class="ds-label">Heading 1 (Hero Title)</span>
+                        <h1 class="font-sans text-[2.10rem] sm:text-[2.62rem] lg:text-[3.14rem] font-normal tracking-tight leading-[1.1]">
+                            <span class="text-white/60 block">Automação inteligente</span>
+                            <span class="text-white block mt-1">com toque de mágica.</span>
+                        </h1>
+                    </div>
+                    <div class="w-1/3 ds-spec">50px / 55px (lg)<br>Plus Jakarta Sans</div>
+                </div>
+
+                <div class="ds-item-row">
+                    <div class="w-2/3">
+                        <span class="ds-label">Heading 2 (Section Title)</span>
+                        <h2 class="font-display text-[1.8rem] sm:text-[2.5rem] md:text-[3.5rem] tracking-tight leading-[1.1]">
+                            <span class="text-white/60 block">O maior desperdício</span>
+                            <strong class="text-white block mt-4">Está no operacional.</strong>
+                        </h2>
+                    </div>
+                    <div class="w-1/3 ds-spec">56px / 61px (md)<br>DM Sans</div>
+                </div>
+
+                <div class="ds-item-row">
+                    <div class="w-2/3">
+                        <span class="ds-label">Heading 3 (Card Title Big)</span>
+                        <h3 class="text-[1.8rem] font-display font-bold text-white leading-tight">
+                            Transformar operações
+                        </h3>
+                    </div>
+                    <div class="w-1/3 ds-spec">28px / 33px<br>DM Sans</div>
+                </div>
+
+                <div class="ds-item-row">
+                    <div class="w-2/3">
+                        <span class="ds-label">Heading 4 (Card Title Small)</span>
+                        <h3 class="text-[1.1rem] font-semibold text-white">
+                            Operar mais rápido
+                        </h3>
+                    </div>
+                    <div class="w-1/3 ds-spec">17px / 24px<br>Plus Jakarta Sans</div>
+                </div>
+
+                <div class="ds-item-row">
+                    <div class="w-2/3">
+                        <span class="ds-label">Brand Display Text</span>
+                        <span class="brand-text text-[1.5rem] tracking-tight text-white flex items-center">
+                            W<span class="brand-i-wrapper">ı<span class="brand-i-dot"></span></span>zzyBots
+                        </span>
+                    </div>
+                    <div class="w-1/3 ds-spec">24px / 24px<br>Outfit</div>
+                </div>
+
+                <div class="ds-item-row">
+                    <div class="w-2/3">
+                        <span class="ds-label">Bold L (Highlight Text)</span>
+                        <strong class="text-[2.2rem] sm:text-[3.2rem] md:text-[4.5rem]">
+                            Texto em Destaque
+                        </strong>
+                    </div>
+                    <div class="w-1/3 ds-spec">72px (md)<br>Plus Jakarta Sans</div>
+                </div>
+
+                <div class="ds-item-row">
+                    <div class="w-2/3">
+                        <span class="ds-label">Paragraph (Hero / Lead)</span>
+                        <p class="text-[0.98rem] sm:text-[1.09rem] text-white/60 font-light leading-relaxed">
+                            Workflows, IAs e sistemas que transformam processos em escala. Reduza custos, aumente a produtividade.
+                        </p>
+                    </div>
+                    <div class="w-1/3 ds-spec">17px / 28px<br>Plus Jakarta Sans</div>
+                </div>
+
+                <div class="ds-item-row border-none pb-0">
+                    <div class="w-2/3">
+                        <span class="ds-label">Regular Text / Description</span>
+                        <p class="text-[0.85rem] text-white/50 leading-relaxed">
+                            Decisões e execuções em tempo real, sem gargalos humanos.
+                        </p>
+                    </div>
+                    <div class="w-1/3 ds-spec">13px / 22px<br>Plus Jakarta Sans</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 2) Colors & Surfaces -->
+        <section id="colors">
+            <h2 class="ds-section-title">2. Colors & Surfaces</h2>
+            
+            <div class="space-y-12">
+                <div>
+                    <span class="ds-label">Backgrounds & Surfaces</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="rounded-xl overflow-hidden border border-white/10">
+                            <div class="h-24 bg-midnight"></div>
+                            <div class="p-4 bg-white/5 text-sm">
+                                <div class="font-bold text-white">Midnight (Page Base)</div>
+                                <div class="text-white/50 font-mono text-xs mt-1">#0e0918</div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl overflow-hidden border border-white/10">
+                            <div class="h-24 bg-[#05030a]"></div>
+                            <div class="p-4 bg-white/5 text-sm">
+                                <div class="font-bold text-white">Darker BG (Sections)</div>
+                                <div class="text-white/50 font-mono text-xs mt-1">#05030a</div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl overflow-hidden border border-white/10">
+                            <div class="h-24 glass-card"></div>
+                            <div class="p-4 bg-white/5 text-sm">
+                                <div class="font-bold text-white">Glass Card</div>
+                                <div class="text-white/50 font-mono text-xs mt-1">bg-white/3 + blur(12px)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="ds-label">Brand Colors</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="rounded-xl overflow-hidden border border-white/10">
+                            <div class="h-24 bg-brand-orange"></div>
+                            <div class="p-4 bg-white/5 text-sm">
+                                <div class="font-bold text-white">Brand Orange</div>
+                                <div class="text-white/50 font-mono text-xs mt-1">#fd8925</div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl overflow-hidden border border-white/10">
+                            <div class="h-24 bg-brand-red"></div>
+                            <div class="p-4 bg-white/5 text-sm">
+                                <div class="font-bold text-white">Brand Red</div>
+                                <div class="text-white/50 font-mono text-xs mt-1">#ff0c00</div>
+                            </div>
+                        </div>
+                        <div class="rounded-xl overflow-hidden border border-white/10">
+                            <div class="h-24 bg-brand-purple"></div>
+                            <div class="p-4 bg-white/5 text-sm">
+                                <div class="font-bold text-white">Brand Purple</div>
+                                <div class="text-white/50 font-mono text-xs mt-1">#6b21ef</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="ds-label">Gradients (Text & Background)</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="rounded-xl border border-white/10 p-6 bg-white/5 flex items-center justify-center">
+                            <strong class="text-gradient text-[2rem]">Gradient Text Highlight</strong>
+                        </div>
+                        <div class="rounded-xl border border-white/10 p-6 bg-white/5 flex items-center justify-center">
+                            <strong class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-brand-red text-[2rem]">Orange to Red</strong>
+                        </div>
+                        <div class="rounded-xl border border-white/10 p-6 bg-white/5 relative overflow-hidden flex items-center justify-center h-32">
+                            <div class="absolute inset-0 bg-gradient-to-r from-brand-purple/20 to-transparent"></div>
+                            <span class="relative text-white font-semibold">Purple Gradient Background Overlay</span>
+                        </div>
+                        <div class="rounded-xl border border-white/10 p-6 bg-white/5 relative overflow-hidden flex items-center justify-center h-32">
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gradient-radial from-brand-orange/40 via-brand-red/20 to-transparent blur-[30px]"></div>
+                            <span class="relative text-white font-semibold">Radial Glow (Orange/Red)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3) UI Components -->
+        <section id="components">
+            <h2 class="ds-section-title">3. UI Components</h2>
+
+            <div class="space-y-12">
+                <!-- Buttons -->
+                <div>
+                    <span class="ds-label">Buttons</span>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                        <!-- Primary -->
+                        <div class="bg-[#05030a] border border-white/5 rounded-2xl p-8 flex flex-col items-center gap-6">
+                            <div class="text-white/40 text-xs uppercase tracking-widest text-center w-full pb-4 border-b border-white/10">Primary Button</div>
+                            
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-white/50 text-xs">Default</span>
+                                <a href="#" class="btn btn-primary px-[1.75rem]" onclick="event.preventDefault()">Button</a>
+                            </div>
+                            
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-white/50 text-xs">Hover State</span>
+                                <!-- Simulated hover state -->
+                                <a href="#" class="btn btn-primary px-[1.75rem]" style="--bg-hover: rgba(255, 255, 255, 0.15); --bg-rotation: 10deg; transform: translateY(-2px); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 8px 24px rgba(253, 137, 37, 0.6);" onclick="event.preventDefault()">Button</a>
+                            </div>
+
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-white/50 text-xs">With Icon</span>
+                                <a href="#" class="btn btn-primary px-[1.75rem] btn-anim-icon" onclick="event.preventDefault()">
+                                    <span class="btn-label pr-4">Button</span>
+                                    <span class="btn-icon"><i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Secondary -->
+                        <div class="bg-[#05030a] border border-white/5 rounded-2xl p-8 flex flex-col items-center gap-6">
+                            <div class="text-white/40 text-xs uppercase tracking-widest text-center w-full pb-4 border-b border-white/10">Secondary Button</div>
+                            
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-white/50 text-xs">Default</span>
+                                <a href="#" class="btn btn-secondary px-[1.75rem]" onclick="event.preventDefault()">Button</a>
+                            </div>
+                            
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-white/50 text-xs">Hover State</span>
+                                <a href="#" class="btn btn-secondary px-[1.75rem]" style="background-color: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.3); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);" onclick="event.preventDefault()">Button</a>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp -->
+                        <div class="bg-[#05030a] border border-white/5 rounded-2xl p-8 flex flex-col items-center gap-6">
+                            <div class="text-white/40 text-xs uppercase tracking-widest text-center w-full pb-4 border-b border-white/10">WhatsApp CTA</div>
+                            
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-white/50 text-xs">Default</span>
+                                <a href="#" class="chatbot-whatsapp-button" onclick="event.preventDefault()">Fale conosco</a>
+                            </div>
+
+                            <div class="flex items-center justify-between w-full">
+                                <span class="text-white/50 text-xs">Hover State</span>
+                                <a href="#" class="chatbot-whatsapp-button" style="background: #20ba5a; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);" onclick="event.preventDefault()">Fale conosco</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Cards -->
+                <div>
+                    <span class="ds-label">Cards & Containers</span>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        
+                        <!-- Card: Glass Default -->
+                        <div class="glass-card p-6 rounded-3xl border border-white/10 hover:border-white/30 transition-all duration-500 flex flex-col h-48">
+                            <i data-lucide="zap" class="w-6 h-6 text-white/70 mb-auto pb-6"></i>
+                            <h3 class="text-[1.1rem] font-semibold text-white mt-auto">Glass Card (Base)</h3>
+                        </div>
+
+                        <!-- Card: Rusty -->
+                        <div class="wz-card-rusty hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default h-48">
+                            <div class="w-11 h-11 rounded-xl bg-brand-orange/15 flex items-center justify-center">
+                                <i data-lucide="zap" class="w-5 h-5 text-brand-orange"></i>
+                            </div>
+                            <div>
+                                <div class="text-[1.5rem] font-bold text-white leading-none mb-1">Rusty Card</div>
+                                <p class="text-white/50 text-[0.85rem] leading-relaxed">n8n inspired styling</p>
+                            </div>
+                        </div>
+
+                        <!-- Card: Shine Blue -->
+                        <div class="wz-card-shine-blue hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default h-48">
+                            <div class="w-11 h-11 rounded-xl bg-brand-purple/15 flex items-center justify-center">
+                                <i data-lucide="layout-dashboard" class="w-5 h-5 text-brand-purple"></i>
+                            </div>
+                            <div>
+                                <div class="text-[1.5rem] font-bold text-white leading-none mb-1">Shine Blue</div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Spark Red -->
+                        <div class="wz-card-spark-red hover-lift rounded-2xl p-7 flex flex-col gap-4 cursor-default relative overflow-hidden h-48">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-red/20 blur-[60px] rounded-full pointer-events-none"></div>
+                            <div class="w-11 h-11 rounded-xl bg-brand-red/15 flex items-center justify-center relative z-10">
+                                <i data-lucide="rocket" class="w-5 h-5 text-brand-red"></i>
+                            </div>
+                            <div class="relative z-10">
+                                <div class="text-[1.5rem] font-bold text-white leading-none mb-1">Spark Red</div>
+                            </div>
+                        </div>
+
+                        <!-- Card: Full Width Gradient -->
+                        <div class="md:col-span-2 glass-card p-8 rounded-3xl border border-white/10 hover:border-brand-red/40 transition-all duration-500 bg-gradient-to-r from-transparent via-brand-red/5 to-transparent flex flex-col md:flex-row items-center justify-between text-center md:text-left group">
+                            <h3 class="text-[1.5rem] font-bold text-white mb-4 md:mb-0">Full Width Highlight Card</h3>
+                            <div class="flex items-center gap-3 bg-white/5 px-6 py-3 rounded-full border border-white/10">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-brand-red"></i>
+                                <span class="text-sm font-medium text-white/80 uppercase tracking-widest">Badge</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Chips / Badges -->
+                <div>
+                    <span class="ds-label">Badges & Chips</span>
+                    <div class="flex flex-wrap gap-4 p-8 bg-[#05030a] rounded-2xl border border-white/5">
+                        
+                        <div class="flex items-center gap-3 bg-white/5 border border-white/10 rounded-full px-6 py-3">
+                            <i data-lucide="megaphone" class="w-4 h-4 text-brand-orange"></i>
+                            <span class="text-white font-medium text-[0.95rem]">Marquee Badge</span>
+                        </div>
+
+                        <span class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-[0.75rem] uppercase tracking-widest text-white/50 font-semibold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse inline-block"></span>
+                            Section Label
+                        </span>
+
+                        <div class="glass-card py-3 px-4 sm:px-6 flex items-center gap-3 border border-white/10 rounded-full">
+                            <i data-lucide="copy" class="w-4 h-4 text-brand-orange"></i>
+                            <span class="text-[0.9rem] sm:text-[1rem] text-white/80">List Item Pill</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4) Layout & Spacing -->
+        <section id="layout">
+            <h2 class="ds-section-title">4. Layout & Spacing</h2>
+            <div class="space-y-12">
+                
+                <div>
+                    <span class="ds-label">Grid Layout Pattern (4 Columns)</span>
+                    <div class="p-6 border border-white/10 bg-white/5 rounded-2xl">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div class="md:col-span-2 md:row-span-2 border border-white/20 border-dashed rounded-xl h-48 flex items-center justify-center text-white/30 text-sm">md:col-span-2 md:row-span-2</div>
+                            <div class="border border-white/20 border-dashed rounded-xl h-24 flex items-center justify-center text-white/30 text-sm">span 1</div>
+                            <div class="border border-white/20 border-dashed rounded-xl h-24 flex items-center justify-center text-white/30 text-sm">span 1</div>
+                            <div class="border border-white/20 border-dashed rounded-xl h-24 flex items-center justify-center text-white/30 text-sm">span 1</div>
+                            <div class="border border-white/20 border-dashed rounded-xl h-24 flex items-center justify-center text-white/30 text-sm">span 1</div>
+                            <div class="md:col-span-4 border border-white/20 border-dashed rounded-xl h-24 flex items-center justify-center text-white/30 text-sm">md:col-span-4 (Full Width)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="ds-label">Split Section Layout (50/50)</span>
+                    <div class="p-6 border border-white/10 bg-white/5 rounded-2xl">
+                        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/20 border border-white/20 border-dashed rounded-xl">
+                            <div class="h-32 flex items-center justify-center text-white/30 text-sm">Left Content</div>
+                            <div class="h-32 flex items-center justify-center text-white/30 text-sm">Right Content</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5) Motion & Interaction -->
+        <section id="motion">
+            <h2 class="ds-section-title">5. Motion & Interaction</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center justify-center h-64 relative overflow-hidden">
+                    <span class="ds-label absolute top-4 left-4">Float Animation</span>
+                    <div class="w-16 h-16 bg-gradient-to-br from-brand-orange to-brand-red rounded-2xl animate-float shadow-xl"></div>
+                    <div class="mt-8 text-white/50 text-xs font-mono">.animate-float</div>
+                </div>
+
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center justify-center h-64 relative overflow-hidden">
+                    <span class="ds-label absolute top-4 left-4">Fast Float</span>
+                    <div class="w-16 h-16 bg-gradient-to-br from-brand-purple to-blue-500 rounded-full animate-float-fast shadow-xl"></div>
+                    <div class="mt-8 text-white/50 text-xs font-mono">.animate-float-fast</div>
+                </div>
+
+                <div class="p-8 bg-white/5 border border-white/10 rounded-2xl flex flex-col items-center justify-center h-64 relative overflow-hidden">
+                    <span class="ds-label absolute top-4 left-4">Slow Pulse (Glow)</span>
+                    <div class="w-32 h-32 bg-brand-orange/40 blur-[20px] rounded-full animate-pulse-slow"></div>
+                    <div class="mt-8 text-white/50 text-xs font-mono relative z-10">.animate-pulse-slow</div>
+                </div>
+
+                <div class="p-8 bg-[#05030a] border border-white/10 rounded-2xl flex flex-col items-center justify-center h-64 relative overflow-hidden">
+                    <span class="ds-label absolute top-4 left-4">Hover Lift & Border Beam</span>
+                    
+                    <div class="border-beam-wrap rounded-2xl w-full max-w-[200px]">
+                        <div class="glass-card hover-lift flex items-center justify-center px-6 py-4 rounded-2xl border border-white/10 bg-white/3 hover:bg-white/8 transition-all duration-300">
+                            <span class="text-white font-semibold text-sm">Hover Me</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-white/50 text-xs font-mono text-center">.hover-lift<br>.border-beam-wrap</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6) Icons -->
+        <section id="icons">
+            <h2 class="ds-section-title">6. Icons (Lucide)</h2>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+                <p class="text-white/50 text-sm mb-8">O sistema utiliza <a href="https://lucide.dev" class="text-brand-orange hover:underline" target="_blank">Lucide Icons</a> com tamanhos e cores variáveis herdadas pelas classes do Tailwind.</p>
+                
+                <div class="flex flex-wrap gap-8 justify-center">
+                    <div class="flex flex-col items-center gap-3"><div class="w-12 h-12 rounded-full bg-brand-orange/15 flex items-center justify-center"><i data-lucide="cpu" class="w-6 h-6 text-brand-orange"></i></div><span class="text-[0.7rem] text-white/40 font-mono">cpu</span></div>
+                    <div class="flex flex-col items-center gap-3"><div class="w-12 h-12 rounded-full bg-brand-purple/15 flex items-center justify-center"><i data-lucide="zap" class="w-6 h-6 text-brand-purple"></i></div><span class="text-[0.7rem] text-white/40 font-mono">zap</span></div>
+                    <div class="flex flex-col items-center gap-3"><div class="w-12 h-12 rounded-full bg-brand-red/15 flex items-center justify-center"><i data-lucide="rocket" class="w-6 h-6 text-brand-red"></i></div><span class="text-[0.7rem] text-white/40 font-mono">rocket</span></div>
+                    <div class="flex flex-col items-center gap-3"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center"><i data-lucide="workflow" class="w-6 h-6 text-white"></i></div><span class="text-[0.7rem] text-white/40 font-mono">workflow</span></div>
+                    <div class="flex flex-col items-center gap-3"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center"><i data-lucide="layout-dashboard" class="w-6 h-6 text-white"></i></div><span class="text-[0.7rem] text-white/40 font-mono">layout-dashboard</span></div>
+                    <div class="flex flex-col items-center gap-3"><div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center"><i data-lucide="brain-circuit" class="w-6 h-6 text-white"></i></div><span class="text-[0.7rem] text-white/40 font-mono">brain-circuit</span></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
