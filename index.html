@@ -3810,6 +3810,9 @@
 
             // Add Message to UI
             const addMessage = (text, sender) => {
+                // Ensure text is safely converted to string
+                text = text !== undefined && text !== null ? String(text) : '';
+                
                 const msgDiv = document.createElement('div');
                 msgDiv.className = `${sender}-msg flex flex-col ${sender === 'user' ? 'items-end' : 'items-start'} max-w-[85%] ${sender === 'user' ? 'ml-auto' : ''}`;
                 
@@ -3901,16 +3904,40 @@
                         })
                     });
 
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
                     const data = await response.json();
                     removeTyping();
-                    addMessage(data.reply, "bot");
 
-                    if (data.cta?.type === "button") {
+                    // Extract reply and cta robustly (n8n can return array or object)
+                    let replyText = "";
+                    let cta = null;
+
+                    if (Array.isArray(data)) {
+                        const firstItem = data[0] || {};
+                        replyText = firstItem.reply || firstItem.output || firstItem.message || "";
+                        cta = firstItem.cta || null;
+                    } else if (data && typeof data === 'object') {
+                        replyText = data.reply || data.output || data.message || "";
+                        cta = data.cta || null;
+                    }
+
+                    if (!replyText) {
+                        console.warn("Resposta do n8n não contém os campos esperados (reply, output ou message):", data);
+                        replyText = "Recebi uma resposta, mas não consegui processar o conteúdo. Verifique o console.";
+                    }
+
+                    addMessage(replyText, "bot");
+
+                    const currentCta = cta || (data && !Array.isArray(data) ? data.cta : null);
+                    if (currentCta && currentCta.type === "button") {
                         const button = document.createElement("a");
-                        button.href = data.cta.url;
+                        button.href = currentCta.url;
                         button.target = "_blank";
                         button.rel = "noopener noreferrer";
-                        button.textContent = data.cta.label;
+                        button.textContent = currentCta.label;
                         button.className = "chatbot-whatsapp-button";
 
                         messagesContainer.appendChild(button);
@@ -3922,13 +3949,19 @@
 
                 } catch(error) {
 
-                    console.error(error);
+                    console.error("Erro ao chamar o webhook do n8n:", error);
                     removeTyping();
 
-                    addMessage(
-                        "Erro ao conectar ao servidor. Verifique o console ou a URL do n8n.",
-                        "bot"
-                    );
+                    let errorMsg = "Erro ao conectar ao servidor. Verifique o console ou a URL do n8n.";
+                    
+                    // Check if it's a TypeError (usually Failed to fetch for CORS/network issues)
+                    if (error instanceof TypeError && error.message.includes("fetch")) {
+                        errorMsg = "Erro de conexão (CORS ou rede). Se estiver testando localmente, configure o CORS no n8n para permitir seu endereço atual. Veja o console para detalhes.";
+                    } else if (error.message && error.message.includes("HTTP error")) {
+                        errorMsg = `Erro no servidor n8n (${error.message}). Verifique se o workflow está ativo.`;
+                    }
+
+                    addMessage(errorMsg, "bot");
 
                 }
             });
