@@ -3952,11 +3952,11 @@
                     console.error("Erro ao chamar o webhook do n8n:", error);
                     removeTyping();
 
-                    let errorMsg = "Erro ao conectar ao servidor. Verifique o console ou a URL do n8n.";
+                    let errorMsg = `Erro ao conectar ao servidor. Detalhes: ${error.message || error.toString()}`;
                     
                     // Check if it's a TypeError (usually Failed to fetch for CORS/network issues)
                     if (error instanceof TypeError && error.message.includes("fetch")) {
-                        errorMsg = "Erro de conexão (CORS ou rede). Se estiver testando localmente, configure o CORS no n8n para permitir seu endereço atual. Veja o console para detalhes.";
+                        errorMsg = `Erro de conexão (CORS ou rede). Detalhes: ${error.message}. Se estiver testando localmente, certifique-se de configurar o CORS no n8n para permitir seu endereço atual.`;
                     } else if (error.message && error.message.includes("HTTP error")) {
                         errorMsg = `Erro no servidor n8n (${error.message}). Verifique se o workflow está ativo.`;
                     }
