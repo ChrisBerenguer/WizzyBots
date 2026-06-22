@@ -3908,7 +3908,18 @@
                         throw new Error(`HTTP error! status: ${response.status}`);
                     }
 
-                    const data = await response.json();
+                    const responseText = await response.text();
+                    let data = {};
+                    if (responseText.trim()) {
+                        try {
+                            data = JSON.parse(responseText);
+                        } catch (parseError) {
+                            console.warn("A resposta do servidor não é um JSON válido. Tratando como texto puro:", responseText);
+                            data = { reply: responseText };
+                        }
+                    } else {
+                        console.warn("A resposta do servidor está vazia.");
+                    }
                     removeTyping();
 
                     // Extract reply and cta robustly (n8n can return array or object)
