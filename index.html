@@ -4,13 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WizzyBots | Automação inteligente com toque de mágica</title>
-<meta name="description" content="Agência de automação e IA para PMEs. Tiramos o trabalho repetitivo das mãos do seu time com workflows e agentes de IA sob medida.">
+<meta name="description" content="95% dos projetos de IA não tiveram retorno mensurável. A WizzyBots coloca a IA dentro do seu processo, mede o resultado e acompanha até ela se pagar.">
+<link rel="canonical" href="https://wizzybots.com.br/">
 <meta name="theme-color" content="#0d0a14">
 <meta property="og:title" content="WizzyBots | Automação inteligente com toque de mágica">
-<meta property="og:description" content="O trabalho repetitivo que toma o dia do seu time passa a rodar sozinho, com IA sob medida.">
+<meta property="og:description" content="A WizzyBots coloca a IA dentro do seu processo, mede o resultado e acompanha até ela se pagar.">
+<meta property="og:url" content="https://wizzybots.com.br/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:image" content="assets/og.jpg">
+<meta property="og:image" content="https://wizzybots.com.br/assets/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/logo.png">
 
@@ -19,7 +21,7 @@
 <link rel="preload" as="image" href="assets/hero-poster.jpg" media="(min-width: 768px)">
 <link rel="preload" as="image" href="assets/hero-poster-mobile.jpg" media="(max-width: 767px)">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"WizzyBots","description":"Agência de automação e IA para PMEs.","founder":{"@type":"Person","name":"Chris Berenguer"},"sameAs":["https://www.linkedin.com/company/wizzy-bots/"],"contactPoint":{"@type":"ContactPoint","telephone":"+55-81-98777-9095","contactType":"sales","availableLanguage":"Portuguese"}}
+{"@context":"https://schema.org","@type":"Organization","name":"WizzyBots","url":"https://wizzybots.com.br/","logo":"https://wizzybots.com.br/assets/logo.png","description":"Agência de automação e IA para PMEs.","founder":{"@type":"Person","name":"Chris Berenguer"},"sameAs":["https://www.linkedin.com/company/wizzy-bots/","https://www.instagram.com/wizzybots/"],"contactPoint":{"@type":"ContactPoint","telephone":"+55-81-98777-9095","contactType":"sales","availableLanguage":"Portuguese"}}
 </script>
 
 <style>
@@ -142,6 +144,23 @@ section{position:relative}
 .pain-close{margin-top:48px;font-size:1.25rem;color:var(--muted);max-width:52ch}
 .pain-close em{font-style:normal;color:var(--text)}
 
+/* ── Estudo (95%) ─────────────────────────────── */
+.study{border-top:1px solid var(--line)}
+.study-grid{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
+.stat{position:sticky;top:calc(var(--nav-h) + 40px)}
+.stat b{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(6rem,14vw,11rem);line-height:.9;letter-spacing:-.05em;color:var(--accent)}
+.stat p{margin-top:18px;font-family:var(--font-display);font-size:clamp(1.35rem,2.2vw,1.75rem);line-height:1.2;letter-spacing:-.02em;font-weight:500;max-width:16ch}
+.stat p.source{margin-top:22px;font-family:var(--font-body);font-size:.8125rem;font-weight:400;letter-spacing:0;color:var(--faint);max-width:34ch;line-height:1.5}
+.source a{text-decoration:underline;text-underline-offset:3px}
+.source a:hover{color:var(--text)}
+.study h2{font-size:clamp(1.9rem,3.4vw,2.75rem)}
+.study .lead{margin-top:18px}
+.reasons{list-style:none;margin:36px 0 0;padding:0;border-top:1px solid var(--line)}
+.reasons li{display:flex;gap:18px;align-items:flex-start;padding:22px 0;border-bottom:1px solid var(--line);font-size:1.125rem;color:#ddd8e4;line-height:1.45}
+.reasons li svg{flex:none;width:22px;height:22px;color:var(--faint);margin-top:2px}
+.turn{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px}
+.turn strong{font-family:var(--font-display);font-size:1.5rem;font-weight:600;letter-spacing:-.02em}
+
 /* ── Automações (bento) ──────────────────────────── */
 .auto{background:var(--bg-2);border-top:1px solid var(--line)}
 .bento{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
@@ -193,6 +212,9 @@ section{position:relative}
 .panel .tools{margin-top:32px;display:flex;flex-wrap:wrap;gap:8px}
 .chip{font-size:.8125rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line-2);color:var(--muted)}
 
+.method-note{margin-top:28px;display:flex;gap:14px;align-items:flex-start;padding:20px 24px;border-radius:var(--r-card);background:var(--accent-tint);border:1px solid rgba(253,137,37,.22);color:#e9e4f0;max-width:none}
+.method-note svg{flex:none;width:22px;height:22px;color:var(--accent);margin-top:1px}
+
 /* ── Como funciona ───────────────────────────────── */
 .how{background:var(--bg-2);border-top:1px solid var(--line)}
 .how-grid{display:grid;grid-template-columns:5fr 7fr;gap:72px;align-items:start}
@@ -209,6 +231,23 @@ section{position:relative}
 .step p{margin-top:10px;color:var(--muted);max-width:52ch}
 .step .out{margin-top:14px;display:inline-flex;gap:8px;align-items:center;font-size:.875rem;color:#ddd8e4}
 .step .out svg{width:16px;height:16px;color:var(--accent)}
+
+/* ── Bastidor de um projeto ─────────────────────── */
+.case{border-top:1px solid var(--line)}
+.case-grid{display:grid;grid-template-columns:6fr 5fr;gap:72px;align-items:center}
+.case .story{margin-top:22px;font-size:1.125rem;color:#cdc8d6;max-width:54ch}
+.case .story + .story{margin-top:16px}
+.case .story strong{color:var(--text);font-weight:600}
+.loop{list-style:none;margin:0;padding:28px;border-radius:var(--r-card);background:var(--surface);border:1px solid var(--line);position:relative}
+.loop li{display:flex;gap:16px;align-items:center;padding:14px 0;position:relative}
+.loop li + li::before{content:"";position:absolute;left:21px;top:-14px;height:28px;width:1px;background:var(--line-2)}
+.loop .n{flex:none;width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:var(--surface-2);border:1px solid var(--line-2);color:var(--accent);position:relative;z-index:1}
+.loop .n svg{width:20px;height:20px}
+.loop span{color:#e2dde8;line-height:1.4}
+.loop li.hot .n{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.loop li.back::before{display:none}
+.loop .back{margin-top:10px;padding-top:18px;border-top:1px dashed var(--line-2);display:flex;gap:10px;align-items:center;color:var(--muted);font-size:.9rem}
+.loop .back svg{width:18px;height:18px;color:var(--accent)}
 
 /* ── Quem somos ──────────────────────────────────── */
 .about-grid{display:grid;grid-template-columns:7fr 5fr;gap:72px;align-items:center}
@@ -246,7 +285,7 @@ section{position:relative}
 .cta .bgimg{position:absolute;inset:0;z-index:-2}
 .cta .bgimg img{width:100%;height:100%;object-fit:cover;object-position:80% 40%;opacity:.4}
 .cta::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 55%,rgba(13,10,20,.55),var(--bg) 75%)}
-.cta h2{max-width:18ch;margin:0 auto;font-size:clamp(2.2rem,5vw,3.75rem)}
+.cta h2{max-width:22ch;margin:0 auto;font-size:clamp(2.2rem,5vw,3.75rem)}
 .cta .lead{margin:22px auto 0;max-width:50ch}
 .cta .hero-ctas{justify-content:center}
 
@@ -309,7 +348,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
   .tablist::-webkit-scrollbar{display:none}
   .tab{flex:none;scroll-snap-align:start;padding:12px 16px}
   .tab small{display:none}
-  .how-grid,.about-grid{grid-template-columns:1fr;gap:48px}
+  .how-grid,.about-grid,.study-grid,.case-grid{grid-template-columns:1fr;gap:48px}
+  .stat{position:relative;top:0}
   .how-visual{position:relative;top:0;aspect-ratio:16/10}
 }
 @media (max-width:767px){
@@ -392,7 +432,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
   <div class="wrap">
     <div class="hero-copy">
       <h1 class="hero-in"><span>Automação inteligente</span> <span>com toque de mágica.</span></h1>
-      <p class="hero-in">O trabalho repetitivo que toma o dia do seu time passa a rodar sozinho, com IA sob medida.</p>
+      <p class="hero-in">A WizzyBots coloca a IA dentro do seu processo, mede o resultado e acompanha até ela se pagar.</p>
       <div class="hero-ctas hero-in">
         <a class="btn btn-primary" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         <a class="btn btn-ghost" href="#automacoes">Ver automações</a>
@@ -401,19 +441,28 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
   </div>
 </section>
 
-<!-- ═══════════ DOR ═══════════ -->
-<section class="sec pain">
-  <div class="wrap">
-    <h2 class="reveal">O maior desperdício da sua empresa talvez não esteja no financeiro. <strong>Está no operacional.</strong></h2>
-    <div class="pain-grid">
-      <div class="pain-item reveal" style="--i:0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg><p>Alguém copia dado de um sistema para outro.</p></div>
-      <div class="pain-item reveal" style="--i:1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg><p>O atendimento responde a mesma pergunta o dia inteiro.</p></div>
-      <div class="pain-item reveal" style="--i:2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg><p>A planilha só fica em dia se alguém lembrar de atualizar.</p></div>
-      <div class="pain-item reveal" style="--i:3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="17" x2="22" y1="8" y2="13"/><line x1="22" x2="17" y1="8" y2="13"/></svg><p>O lead esfria esperando a primeira resposta.</p></div>
-      <div class="pain-item reveal" style="--i:4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg><p>A aprovação fica parada na caixa de alguém.</p></div>
-      <div class="pain-item reveal" style="--i:5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg><p>O time passa a semana apagando incêndio.</p></div>
+<!-- ═══════════ ESTUDO (argumento do folder) ═══════════ -->
+<section class="sec study" id="estudo">
+  <div class="wrap study-grid">
+    <div class="stat reveal">
+      <b>95%</b>
+      <p>dos projetos de IA não tiveram retorno mensurável.</p>
+      <p class="source">Fonte: MIT NANDA, <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/" target="_blank" rel="noopener">The GenAI Divide: State of AI in Business 2025</a>.</p>
     </div>
-    <p class="pain-close reveal">Isso custa tempo, venda e dinheiro. E quase nunca aparece num relatório, <em>porque ninguém mede o que é feito na mão.</em></p>
+    <div>
+      <h2 class="reveal">Por que a IA não se pagou</h2>
+      <p class="lead reveal">O MIT acompanhou mais de 300 projetos de IA em empresas. O modelo quase nunca era o problema. Os motivos se repetiam:</p>
+      <ul class="reasons">
+        <li class="reveal" style="--i:0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m19 5 3-3"/><path d="m2 22 3-3"/><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"/><path d="M7.5 13.5 10 11"/><path d="M10.5 16.5 13 14"/><path d="m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z"/></svg>A IA ficou solta, como mais uma ferramenta, fora do processo.</li>
+        <li class="reveal" style="--i:1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M9 13a4.5 4.5 0 0 0 3-4"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M12 13h4"/><path d="M12 18h6a2 2 0 0 1 2 2v1"/><path d="M12 8h8"/><path d="M16 8V5a2 2 0 0 1 2-2"/><circle cx="16" cy="13" r=".5"/><circle cx="18" cy="3" r=".5"/><circle cx="20" cy="21" r=".5"/><circle cx="20" cy="8" r=".5"/></svg>Ela não conhecia a empresa e não aprendia com quem usava.</li>
+        <li class="reveal" style="--i:2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></svg>Ninguém combinou antes o número que provaria o resultado.</li>
+        <li class="reveal" style="--i:3"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2c3 0 5 2 8 2s4-1 4-1v11"/><path d="M4 22V4"/><path d="M4 15s1-1 4-1 5 2 8 2"/><line x1="2" x2="22" y1="2" y2="22"/></svg>O piloto acabou e ninguém ficou para transformar em rotina.</li>
+      </ul>
+      <div class="turn reveal">
+        <strong>A WizzyBots trabalha do lado oposto.</strong>
+        <a class="link-arrow" href="#como-funciona">Ver o método <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -423,7 +472,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
     <div class="sec-head">
       <span class="eyebrow reveal">Automações prontas</span>
       <h2 class="reveal">Rotinas que já sabemos tirar das mãos do seu time.</h2>
-      <p class="lead reveal">Cada uma resolve uma dor específica e cabe na operação que você já tem.</p>
+      <p class="lead reveal">Começamos pela tarefa que mais custa para você. Estes são exemplos do que já colocamos para rodar.</p>
     </div>
 
     <div class="bento">
@@ -486,72 +535,75 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
 <section class="sec" id="servicos">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="reveal">Cinco frentes. Você entra pela que resolve a sua dor agora.</h2>
+      <h2 class="reveal">Cinco frentes, o mesmo método.</h2>
+      <p class="lead reveal">IA dentro do processo e resultado medido.</p>
     </div>
 
     <div class="tabs reveal">
       <div class="tablist" role="tablist" aria-label="Frentes de serviço">
-        <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg><span><strong>AI Powered Automation</strong><small>Processos sem etapa manual</small></span></button>
-        <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span><strong>AI Marketing Tools</strong><small>CRM, funil e campanhas</small></span></button>
-        <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span><strong>AI Content Factory</strong><small>Conteúdo em escala</small></span></button>
-        <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg><span><strong>AI Learnship</strong><small>Time que usa IA bem</small></span></button>
-        <button class="tab" role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg><span><strong>MVP Building</strong><small>Produto validado sem gastar muito</small></span></button>
+        <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg><span><strong>AI Powered Automation</strong><small>O processo roda sozinho</small></span></button>
+        <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><span><strong>AI Marketing Tools</strong><small>Resposta até de madrugada</small></span></button>
+        <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg><span><strong>AI Learnship</strong><small>Equipe usando IA com critério</small></span></button>
+        <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span><strong>AI Content Factory</strong><small>Conteúdo sem parar para gravar</small></span></button>
+        <button class="tab" role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg><span><strong>MVP Building</strong><small>Ideia testada antes de investir</small></span></button>
       </div>
 
       <div>
         <div class="panel show" role="tabpanel" id="p1" aria-labelledby="t1">
-          <h3>A gente entra no processo e tira dele as etapas manuais.</h3>
-          <p class="for">Mapeamos o fluxo com o seu time, achamos onde a automação paga a conta e colocamos RPA e agentes de IA para rodar.</p>
+          <h3>O processo que hoje depende de alguém lembrar passa a rodar sozinho.</h3>
+          <p class="for">Entramos na sua operação, desenhamos o processo e identificamos o que pode ser automatizado. Trocamos as etapas manuais por automações e agentes de IA, ligados às ferramentas que você já usa.</p>
           <ul>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Mapeamento do processo de ponta a ponta</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Começamos por atendimento, financeiro e operação, onde o retorno aparece primeiro</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Para clínicas, lojas, escritórios e toda operação com tarefa que se repete todo dia</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>RPA e orquestração de agentes de IA</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Integração com os sistemas que você já usa</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Relatórios e alertas que chegam sozinhos</li>
           </ul>
           <div class="tools"><span class="chip">n8n</span><span class="chip">LangChain</span><span class="chip">Langflow</span><span class="chip">LangSmith</span></div>
         </div>
         <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
-          <h3>Agentes de IA ligados ao CRM que você já tem.</h3>
-          <p class="for">Montamos a pipeline de vendas inteira, com foco em gestão de lead e crescimento. Os agentes aprendem com os dados do funil e ajustam a aquisição.</p>
+          <h3>O cliente que chama recebe resposta, mesmo de madrugada.</h3>
+          <p class="for">Integramos o CRM que você já usa e montamos o funil de vendas com agentes que respondem, qualificam e lembram. Os agentes aprendem com o padrão dos seus dados.</p>
           <ul>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Integração com Pipedrive, RD Station, HubSpot e outros</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Campanhas em Meta, Google, LinkedIn, TikTok e YouTube Ads</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Chatbot de vendas e campanhas de e-mail</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Agentes que otimizam o funil com base nos dados</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Resposta imediata a quem preencheu o formulário</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Pedido de avaliação depois do atendimento</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Lembrete do orçamento parado no funil</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Campanhas em Meta, Google, LinkedIn, TikTok e YouTube Ads, e-mail e chatbot de vendas</li>
           </ul>
         </div>
         <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
-          <h3>Uma fábrica de conteúdo tocada por agentes de IA.</h3>
-          <p class="for">Agentes pesquisam o que é relevante no seu nicho e produzem carrosséis, enquetes e vídeos. Você só aprova.</p>
+          <h3>Sua equipe usando IA com critério.</h3>
+          <p class="for">Para empresas em transformação digital. Criamos rituais de mentoria para o time usar ChatGPT, Gemini, Claude e agentes de IA nas tarefas reais de cada área.</p>
           <ul>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Pauta a partir das tendências do seu nicho</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Carrosséis e enquetes prontos para aprovação</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Vídeos com avatar de IA ou com a sua imagem</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Sem horas de gravação na sua agenda</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Rituais de mentoria com o time</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>IA aplicada às tarefas reais de cada área</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Boas práticas de ética, compliance e LGPD</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Segurança no uso de IA</li>
           </ul>
         </div>
         <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
-          <h3>Mentoria para o seu time usar IA bem, e com segurança.</h3>
-          <p class="for">Para empresas em transformação digital que precisam qualificar as pessoas, não só comprar ferramenta.</p>
+          <h3>Conteúdo toda semana, sem você parar para gravar.</h3>
+          <p class="for">Uma fábrica de conteúdo operada por agentes de IA. Eles buscam o assunto do seu setor, escrevem carrosséis e enquetes e produzem vídeos com um avatar de IA ou com a sua própria imagem.</p>
           <ul>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Rituais de mentoria com o time</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>ChatGPT, Gemini, Claude e Hermes Agent na prática</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Ética, compliance e LGPD</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Cibersegurança no uso de IA</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Pauta a partir do que acontece no seu setor</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Carrosséis e enquetes prontos para aprovação</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Vídeos com avatar de IA ou com a sua imagem</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Sem gravações cansativas</li>
           </ul>
         </div>
         <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5" hidden>
-          <h3>Teste a sua ideia no mercado antes de investir pesado.</h3>
-          <p class="for">Para quem quer abrir uma startup ou lançar um produto. Usamos Lean Inception e desenvolvimento low-code e no-code para validar rápido.</p>
+          <h3>A ideia testada no mercado antes do investimento grande.</h3>
+          <p class="for">Para quem quer lançar um produto ou abrir a própria startup sem grandes custos. Com o método Lean Inception e desenvolvimento low-code e no-code, colocamos a primeira versão na frente de clientes reais.</p>
           <ul>
             <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Lean Inception com o seu time</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Definição do escopo mínimo</li>
             <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Desenvolvimento low-code e no-code</li>
-            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Produto na mão do primeiro usuário</li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>Primeira versão na frente de clientes reais</li>
           </ul>
         </div>
       </div>
     </div>
+
+    <p class="method-note reveal"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg><span>Em qualquer frente, o número que prova o resultado é combinado antes, e você vê como o fluxo funciona antes de aprovar. Nada fica numa caixa-preta.</span></p>
   </div>
 </section>
 
@@ -562,32 +614,51 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
       <img src="assets/mago-3d.webp" alt="Mago-robô da WizzyBots, de chapéu e capa laranja, segurando um cajado" loading="lazy">
     </figure>
     <div>
-      <h2 class="reveal">Do diagnóstico à operação rodando sozinha.</h2>
-      <p class="lead reveal" style="margin-top:18px">Cada etapa termina com uma entrega concreta, para você saber o que pagou e o que recebeu.</p>
+      <h2 class="reveal">A WizzyBots trabalha do lado oposto.</h2>
+      <p class="lead reveal" style="margin-top:18px">Cada motivo que travou os projetos do estudo virou uma etapa do nosso método.</p>
       <ol class="steps" id="steps">
         <span class="progress" aria-hidden="true"></span>
         <li class="step reveal">
-          <h3>Diagnóstico</h3>
-          <p>Encontramos onde o tempo e o dinheiro estão vazando. Inclui o que custa caro e não aparece nos relatórios.</p>
-          <span class="out"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Relatório de oportunidades</span>
+          <h3>Começamos pela tarefa que mais custa</h3>
+          <p>Mapeamos a operação com você e escolhemos a primeira tarefa pelo quanto ela custa hoje, não pela ferramenta da moda.</p>
+          <span class="out"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/><path d="m16 16-1.9-1.9"/></svg>Diagnóstico das oportunidades</span>
         </li>
         <li class="step reveal">
-          <h3>Arquitetura</h3>
-          <p>Desenhamos as automações para a sua realidade. Nada de solução genérica de prateleira.</p>
-          <span class="out"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12.99 6.74 1.93 3.44"/><path d="M19.136 12a10 10 0 0 1-14.271 0"/><path d="m21 21-2.16-3.84"/><path d="m3 21 8.02-14.26"/><circle cx="12" cy="5" r="2"/></svg>Blueprint das automações</span>
+          <h3>Colocamos a IA dentro do processo</h3>
+          <p>Ela trabalha ligada aos seus documentos e sistemas. Por isso conhece a empresa e aprende com quem usa.</p>
+          <span class="out"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Nada de IA solta, fora do processo</span>
         </li>
         <li class="step reveal">
-          <h3>Implementação</h3>
-          <p>Bots, integrações e workflows funcionando no seu ambiente, ligados às ferramentas que você já usa.</p>
-          <span class="out"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>Automações em produção</span>
+          <h3>Combinamos antes o número que prova o resultado</h3>
+          <p>Antes de ligar, definimos juntos o indicador que vai mostrar se a automação se pagou.</p>
+          <span class="out"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>Resultado medido, não suposto</span>
         </li>
         <li class="step reveal">
-          <h3>Evolução contínua</h3>
-          <p>Monitoramos, medimos e ajustamos. A operação muda, e as automações acompanham.</p>
-          <span class="out"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>Acompanhamento e ajustes</span>
+          <h3>Ficamos depois de ligar</h3>
+          <p>Acompanhamos e ajustamos até a rotina se pagar. O projeto não termina no piloto.</p>
+          <span class="out"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>O piloto vira rotina</span>
         </li>
       </ol>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════ BASTIDOR DE UM PROJETO ═══════════ -->
+<section class="sec case" id="bastidor">
+  <div class="wrap case-grid">
+    <div>
+      <span class="eyebrow reveal">Bastidor de um projeto</span>
+      <h2 class="reveal">A IA que aprende com quem usa.</h2>
+      <p class="story reveal">Uma organização recebia todo dia as mesmas perguntas sobre benefícios, políticas e processos. Colocamos uma assistente de IA dentro do chat que a equipe já usava. Ela consulta os documentos oficiais antes de responder e, no fim, pergunta se resolveu.</p>
+      <p class="story reveal">Cada "não resolveu" aponta o documento que falta ou a regra que confunde. <strong>É assim que a IA aprende com o uso, o ponto em que a maioria dos projetos para.</strong></p>
+    </div>
+    <ol class="loop reveal" aria-label="Como a assistente aprende">
+      <li><span class="n"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><span>Alguém da equipe pergunta no chat que já usa</span></li>
+      <li><span class="n"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></span><span>A assistente consulta os documentos oficiais e responde</span></li>
+      <li><span class="n"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg></span><span>No fim, ela pergunta: isso resolveu?</span></li>
+      <li class="hot"><span class="n"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span>Cada "não" aponta o documento que falta ou a regra que confunde</span></li>
+      <li class="back" style="padding:18px 0 0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>A base é corrigida e a próxima resposta sai melhor.</li>
+    </ol>
   </div>
 </section>
 
@@ -595,9 +666,9 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
 <section class="sec about" id="quem-somos">
   <div class="wrap about-grid">
     <div>
-      <span class="eyebrow reveal">Quem somos</span>
       <h2 class="reveal">Wyzzard + Bots. <span class="hl">Mago e robô, de propósito.</span></h2>
       <p class="story reveal">A WizzyBots tira das mãos das pessoas as tarefas repetitivas e mecânicas e coloca nas mãos de agentes de IA. Assim o time volta a gastar tempo só com o que exige julgamento humano.</p>
+      <p class="story reveal" style="margin-top:16px">Fundada por Chris Berenguer, que hoje também presta consultoria de IA para grandes organizações do terceiro setor.</p>
       <p class="belief reveal">A tecnologia importa menos que resolver o problema certo com a ferramenta certa. Sem correr atrás de hype.</p>
     </div>
 
@@ -634,8 +705,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
 <section class="cta" id="contato">
   <div class="bgimg"><img src="assets/mago-bg.webp" alt="" loading="lazy"></div>
   <div class="wrap">
-    <h2 class="reveal">Qual rotina vai sair das mãos do seu time primeiro?</h2>
-    <p class="lead reveal">No diagnóstico a gente encontra o primeiro processo que vale automatizar e mostra como ele vai rodar.</p>
+    <h2 class="reveal">O seu pode estar nos outros <span class="hl">5%</span>.</h2>
+    <p class="lead reveal">No diagnóstico escolhemos a primeira tarefa e o número que vai provar que ela se pagou.</p>
     <div class="hero-ctas reveal">
       <a class="btn btn-primary" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       <a class="btn btn-ghost" href="https://api.whatsapp.com/send/?phone=%2B5581987779095&text=Ol%C3%A1%2C+vim+pelo+site+da+WizzyBots&type=phone_number&app_absent=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Chamar no WhatsApp</a>
@@ -650,7 +721,7 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
     <div class="foot">
       <div>
         <a href="#home" class="brand"><img src="assets/logo.png" alt="" width="30" height="30">WizzyBots</a>
-        <p class="tag">Agência de automação e IA para PMEs. Tarefas tediosas nunca mais.</p>
+        <p class="tag">Automação inteligente com toque de mágica. IA dentro do processo, com resultado medido.</p>
       </div>
       <div>
         <h4>Navegação</h4>
@@ -667,7 +738,8 @@ footer{border-top:1px solid var(--line);padding:56px 0 40px;color:var(--muted);f
           <li><a href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico</a></li>
           <li><a href="https://api.whatsapp.com/send/?phone=%2B5581987779095&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="https://www.linkedin.com/company/wizzy-bots/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <!-- TODO: adicionar Instagram, YouTube e TikTok quando houver as URLs reais -->
+          <li><a href="https://www.instagram.com/wizzybots/" target="_blank" rel="noopener">Instagram @wizzybots</a></li>
+          <!-- TODO: YouTube e TikTok quando houver as URLs reais -->
         </ul>
       </div>
     </div>
