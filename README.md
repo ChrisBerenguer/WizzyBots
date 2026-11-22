@@ -34,7 +34,7 @@ assets/
 ├── hero-mobile.mp4      # vídeo recortado para celular (~410 KB)
 ├── hero-poster*.jpg     # quadro inicial do vídeo
 ├── og.jpg               # imagem de compartilhamento 1200x630
-└── *.webp               # mago 3D, foto do fundador, fundos
+└── *.webp               # renders do mago (saudação, caminhando), foto do fundador, fundo
 ```
 
 Os arquivos originais (vídeos em alta, renders, referências) continuam em `Site References/`.
