@@ -236,29 +236,30 @@ section{position:relative}
 .cell h3{margin-top:auto;padding-top:24px}
 .cell .who{margin-top:6px;font-size:.875rem;color:var(--accent);font-weight:500}
 .cell p.desc{margin-top:12px;color:var(--muted);font-size:.975rem;max-width:46ch}
-.media{position:relative;z-index:1;overflow:hidden}
-.media img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
-.cell:hover .media img{transform:scale(1.06)}
-.media::after{content:"";position:absolute;inset:0;pointer-events:none}
-.c-a{grid-column:span 4;min-height:380px;position:relative}
-.c-a .bg{position:absolute;inset:0;z-index:0}
-.c-a .bg img{width:100%;height:100%;object-fit:cover;object-position:100% 30%;opacity:.8;transition:transform 1.4s var(--ease)}
-.c-a:hover .bg img{transform:scale(1.04)}
-.c-a .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0d0a14 0%,rgba(13,10,20,.9) 46%,rgba(13,10,20,.1) 85%)}
+/* Cada card tem foto cobrindo todo o fundo, com véu escuro para o texto */
+.cell{position:relative;justify-content:flex-end;background:#120e18!important}
+.cell .bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.cell .bg img{width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease),filter .8s var(--ease);filter:saturate(.85) brightness(.82)}
+.cell:hover .bg img{transform:scale(1.06);filter:saturate(1) brightness(.9)}
+.cell .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(13,10,20,.97) 0%,rgba(13,10,20,.86) 38%,rgba(13,10,20,.35) 72%,rgba(13,10,20,.15) 100%)}
+.cell .body{flex:0 0 auto}
+.cell h3{margin-top:0;padding-top:0}
+.c-a{grid-column:span 4;min-height:400px}
+.c-a .bg img{object-position:100% 30%}
+.c-a .bg::after{background:linear-gradient(90deg,rgba(13,10,20,.97) 0%,rgba(13,10,20,.88) 44%,rgba(13,10,20,.15) 82%)}
+.c-a .body{flex:1;justify-content:flex-end}
 .c-a p.desc{max-width:38ch}
 .c-a .cmd{margin-top:18px;align-self:flex-start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8125rem;color:#e9e4f0;padding:10px 14px;border-radius:12px;max-width:44ch}
-.c-b,.c-c,.c-d,.c-e{grid-column:span 2}
-.c-b .media,.c-c .media{height:150px}
-.c-b .media::after,.c-c .media::after{background:linear-gradient(0deg,rgba(23,18,31,1) 0%,rgba(23,18,31,0) 70%)}
-.c-b .media img{object-position:50% 64%}
-.c-b h3,.c-c h3{margin-top:0;padding-top:6px}
-.c-e{background:linear-gradient(160deg,rgba(253,137,37,.18),rgba(253,137,37,.03) 55%),rgba(255,255,255,.03)!important;border-color:rgba(253,137,37,.24)!important}
-.c-f{grid-column:span 6;min-height:0;display:grid;grid-template-columns:1fr 1.1fr}
-.c-f .body h3{margin-top:auto}
-.c-f .media{min-height:260px}
-.c-f .media img{position:absolute;inset:0;object-position:50% 40%}
-.c-f .media::after{background:linear-gradient(90deg,rgba(21,16,29,1) 0%,rgba(21,16,29,.2) 40%,rgba(21,16,29,0) 70%)}
-.cell,.c-a{background-color:rgba(23,18,31,.55)}
+.c-b,.c-c,.c-d,.c-e{grid-column:span 2;min-height:400px}
+.c-b .bg img{object-position:50% 60%}
+.c-c .bg img{object-position:42% 40%}
+.c-d .bg img{object-position:38% 30%}
+.c-e .bg img{object-position:40% 50%}
+.c-e .bg::after{background:linear-gradient(0deg,rgba(13,10,20,.97) 0%,rgba(13,10,20,.84) 40%,rgba(60,28,6,.35) 75%,rgba(253,137,37,.12) 100%)}
+.c-f{grid-column:span 6;min-height:340px}
+.c-f .bg img{object-position:50% 45%}
+.c-f .bg::after{background:linear-gradient(90deg,rgba(13,10,20,.97) 0%,rgba(13,10,20,.88) 34%,rgba(13,10,20,.25) 68%,rgba(13,10,20,.1) 100%)}
+.c-f .body{max-width:560px}
 .auto-foot{margin-top:36px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;color:var(--muted)}
 
 /* ── Frentes (abas) ────────────────────────────── */
@@ -479,11 +480,9 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
   .flow-top .flow-title span{display:none}
   .bento{grid-template-columns:1fr}
   .c-a,.c-b,.c-c,.c-d,.c-e,.c-f{grid-column:auto}
-  .c-a{min-height:440px}
-  .c-a .bg::after{background:linear-gradient(0deg,#0d0a14 38%,rgba(13,10,20,.55) 70%,rgba(13,10,20,.15))}
-  .c-f{grid-template-columns:1fr}
-  .c-f .media{min-height:200px;order:-1}
-  .c-f .media::after{background:linear-gradient(0deg,rgba(21,16,29,1),rgba(21,16,29,0) 60%)}
+  .c-a,.c-b,.c-c,.c-d,.c-e{min-height:380px}
+  .c-f{min-height:380px}
+  .c-a .bg::after,.c-f .bg::after{background:linear-gradient(0deg,rgba(13,10,20,.97) 0%,rgba(13,10,20,.86) 42%,rgba(13,10,20,.3) 75%,rgba(13,10,20,.12))}
   .panel{padding:28px;min-height:0}
   .panel ul{grid-template-columns:1fr}
   .fact b{min-width:80px;font-size:1.25rem}
@@ -624,7 +623,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       </article>
 
       <article class="cell c-b glass spot reveal" style="--i:1">
-        <div class="media"><img src="assets/foto-barbearia.webp" alt="Cadeira de barbearia vazia esperando o próximo cliente" loading="lazy"></div>
+        <div class="bg"><img src="assets/foto-barbearia.webp" alt="Cadeira de barbearia vazia esperando o próximo cliente" loading="lazy"></div>
         <div class="body">
           <h3>Confirma o horário na véspera</h3>
           <span class="who">Clínica, salão, barbearia e oficina</span>
@@ -633,7 +632,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       </article>
 
       <article class="cell c-c glass spot reveal">
-        <div class="media"><img src="assets/foto-chaves.webp" alt="Mão segurando chaves com chaveiro em forma de casa" loading="lazy"></div>
+        <div class="bg"><img src="assets/foto-chaves.webp" alt="Mão segurando chaves com chaveiro em forma de casa" loading="lazy"></div>
         <div class="body">
           <h3>O lead que não espera até segunda</h3>
           <span class="who">Imobiliária, corretora e quem vive de lead quente</span>
@@ -642,6 +641,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       </article>
 
       <article class="cell c-d glass spot reveal" style="--i:1">
+        <div class="bg"><img src="assets/foto-followup.webp" alt="Vendedor falando ao telefone em um escritório" loading="lazy"></div>
         <div class="body">
           <h3>O follow-up que o vendedor esquece</h3>
           <span class="who">Time comercial com funil no CRM</span>
@@ -650,6 +650,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       </article>
 
       <article class="cell c-e glass spot reveal" style="--i:2">
+        <div class="bg"><img src="assets/foto-cartao.webp" alt="Pagamento com cartão na maquininha" loading="lazy"></div>
         <div class="body">
           <h3>O extrato que já chega conciliado</h3>
           <span class="who">Quem recebe por PIX, cartão e boleto</span>
@@ -658,12 +659,12 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       </article>
 
       <article class="cell c-f glass spot reveal">
+        <div class="bg"><img src="assets/foto-precos.webp" alt="Prateleira de loja com etiquetas de preço amarelas" loading="lazy"></div>
         <div class="body">
           <h3>O concorrente mudou o preço</h3>
           <span class="who">E-commerce, distribuidora e loja</span>
           <p class="desc">Ele acompanha as páginas dos concorrentes e só avisa quando o preço muda. Ninguém precisa conferir quinze abas por dia.</p>
         </div>
-        <div class="media"><img src="assets/foto-precos.webp" alt="Prateleira de loja com etiquetas de preço amarelas" loading="lazy"></div>
       </article>
     </div>
 
@@ -888,7 +889,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       </div>
     </div>
     <div class="foot-bottom">© 2026 WizzyBots. Todos os direitos reservados.</div>
-    <!-- Fotos dos cards: Unsplash (licença gratuita). Barbearia: Joshua Lawrence. Chaves: Jakub Żerdzicki. Prateleira: Zoshua Colah. -->
+    <!-- Fotos dos cards: Unsplash (licença gratuita). Barbearia: Joshua Lawrence. Chaves: Jakub Żerdzicki. Prateleira: Zoshua Colah. Telefone: Vitaly Gariev. Cartão: CardMapr.nl. -->
   </div>
 </footer>
 
