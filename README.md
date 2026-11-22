@@ -1,46 +1,56 @@
 # WizzyBots Landing Page
 
-![WizzyBots](https://img.shields.io/badge/WizzyBots-IA%20%26%20Automação-orange?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Produção-success?style=for-the-badge)
+Site institucional da WizzyBots, agência de automação e IA para PMEs.
 
-WizzyBots é uma consultoria premium focada em transformar operações empresariais através de IA e automação inteligente. Esta landing page foi desenvolvida para transmitir autoridade, inovação e o toque de "mágica" que a tecnologia proporciona.
+## Stack
 
-## 🚀 Tecnologias Utilizadas
+Um único `index.html` estático, sem build e sem CDN:
 
-O projeto foi construído com foco em performance e experiência do usuário (UX), utilizando uma stack moderna de front-end:
+- HTML e CSS escritos à mão, com tokens em variáveis CSS (`:root`)
+- Fontes hospedadas no próprio site (`assets/fonts`): Outfit nos títulos e Plus Jakarta Sans no texto
+- Ícones Lucide já embutidos como SVG
+- JavaScript puro: IntersectionObserver para animações de entrada, abas acessíveis por teclado e menu mobile
+- Chat Nino ligado ao webhook do n8n (`wizzy-bots-chat-bot-v2`)
 
-- **HTML5 & CSS3**: Estrutura semântica e estilização customizada.
-- **Tailwind CSS**: Framework utilitário para design responsivo e ágil.
-- **GSAP (GreenSock Animation Platform)**: Motor de animações de alta performance para efeitos de scroll e parallax.
-- **Lucide Icons**: Conjunto de ícones vetoriais modernos e leves.
-- **Particles.js**: Fundo interativo com partículas para ambientação tecnológica.
+## Estrutura da página
 
-## ✨ Principais Funcionalidades
+| Âncora | Seção |
+|---|---|
+| `#home` | Hero com vídeo do mago-robô |
+| (sem âncora) | Dor: o desperdício está no operacional |
+| `#automacoes` | 6 automações do catálogo (bento) |
+| `#servicos` | As 5 frentes de serviço (abas) |
+| `#como-funciona` | Diagnóstico, Arquitetura, Implementação, Evolução |
+| `#quem-somos` | História do nome e fundador |
+| `#tecnologia` | Faixa de logos do stack (Simple Icons) |
+| `#contato` | Agendar diagnóstico (Calendly) ou WhatsApp |
 
-- **Design Editorial Premium**: Estética baseada em referências como n8n, LangChain e CrewAI.
-- **Hero Section Dinâmica**: Vídeo em loop de alta definição com efeitos de paralaxe e mouse-tracking.
-- **Scroll-Driven Storytelling**: Seções que se revelam conforme a navegação do usuário, guiando-o pela jornada de transformação digital.
-- **Timeline de Evolução**: Componente visual que detalha o processo de implementação da WizzyBots.
-- **Conversão Otimizada**: Integração direta com **Calendly** para agendamento de reuniões e **WhatsApp** para suporte imediato.
-- **Mobile First**: Totalmente responsivo, garantindo uma experiência impecável em smartphones, tablets e desktops.
-
-## 📂 Estrutura do Projeto
+## Assets
 
 ```text
-WizzyBots/
-├── Site References/    # Assets (Imagens, Vídeos, Design System)
-├── .gitignore          # Proteção de arquivos sensíveis
-├── index.html          # Estrutura principal e lógica do site
-└── README.md           # Documentação do projeto
+assets/
+├── fonts/               # woff2 latin + latin-ext
+├── hero.mp4             # vídeo desktop (~620 KB)
+├── hero-mobile.mp4      # vídeo recortado para celular (~410 KB)
+├── hero-poster*.jpg     # quadro inicial do vídeo
+├── og.jpg               # imagem de compartilhamento 1200x630
+└── *.webp               # mago 3D, foto do fundador, fundos
 ```
 
-## 🛠️ Como Visualizar Localmente
+Os arquivos originais (vídeos em alta, renders, referências) continuam em `Site References/`.
 
-Como o projeto é baseado em um único arquivo estático, você pode simplesmente abrir o `index.html` em qualquer navegador moderno. 
+## Rodar localmente
 
-Para a melhor experiência de desenvolvimento, recomenda-se o uso de uma extensão como **Live Server** (VS Code) para visualização em tempo real das alterações.
+Abra o `index.html` no navegador ou use a extensão Live Server do VS Code.
+
+O chat só responde se o n8n aceitar a origem da página (CORS). Abrindo direto do disco, ele cai na mensagem de erro com o botão de WhatsApp.
+
+## Pendências
+
+- Adicionar no rodapé as URLs reais de Instagram, YouTube e TikTok
+- Trocar `og:image` por URL absoluta quando o domínio estiver definido
+- Liberar o domínio do site no CORS do webhook do n8n
 
 ---
 
-Desenhado com precisão por **WizzyBots**.
 *"Tarefas tediosas nunca mais."*
