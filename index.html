@@ -245,8 +245,9 @@ section{position:relative}
 .cell .body{flex:0 0 auto}
 .cell h3{margin-top:0;padding-top:0}
 .c-a{grid-column:span 4;min-height:400px}
-.c-a .bg img{object-position:100% 30%}
-.c-a .bg::after{background:linear-gradient(90deg,rgba(13,10,20,.97) 0%,rgba(13,10,20,.88) 44%,rgba(13,10,20,.15) 82%)}
+.c-a .bg img{width:66%;margin-left:auto;object-position:50% 45%}
+@media (max-width:767px){.c-a .bg img{width:100%;margin:0;object-position:50% 40%}}
+.c-a .bg::after{background:linear-gradient(90deg,rgba(13,10,20,1) 0%,rgba(13,10,20,.95) 34%,rgba(13,10,20,.35) 56%,rgba(13,10,20,.05) 80%)}
 .c-a .body{flex:1;justify-content:flex-end}
 .c-a p.desc{max-width:38ch}
 .c-a .cmd{margin-top:18px;align-self:flex-start;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8125rem;color:#e9e4f0;padding:10px 14px;border-radius:12px;max-width:44ch}
@@ -613,7 +614,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
 
     <div class="bento">
       <article class="cell c-a glass spot reveal">
-        <div class="bg"><img src="assets/mago-bg.webp" alt="" loading="lazy"></div>
+        <div class="bg"><img src="assets/foto-resumo.webp" alt="Pessoa conferindo os números do dia no celular ao lado de uma xícara de café" loading="lazy"></div>
         <div class="body">
           <h3>O número de ontem, às 8 da manhã</h3>
           <span class="who">Comércio, e-commerce e quem tem painel</span>
@@ -889,7 +890,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       </div>
     </div>
     <div class="foot-bottom">© 2026 WizzyBots. Todos os direitos reservados.</div>
-    <!-- Fotos dos cards: Unsplash (licença gratuita). Barbearia: Joshua Lawrence. Chaves: Jakub Żerdzicki. Prateleira: Zoshua Colah. Telefone: Vitaly Gariev. Cartão: CardMapr.nl. -->
+    <!-- Fotos dos cards: Unsplash (licença gratuita). Barbearia: Joshua Lawrence. Chaves: Jakub Żerdzicki. Prateleira: Zoshua Colah. Telefone: Vitaly Gariev. Cartão: CardMapr.nl. Celular com café: Swello. -->
   </div>
 </footer>
 
