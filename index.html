@@ -233,7 +233,7 @@ section{position:relative}
 .cell .ico{width:44px;height:44px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:var(--accent-tint);border:1px solid rgba(253,137,37,.2);color:var(--accent);margin-bottom:auto;transition:transform .6s var(--pop)}
 .cell:hover .ico{transform:rotate(-8deg) scale(1.08)}
 .cell .ico svg{width:21px;height:21px}
-.cell h3{margin-top:32px}
+.cell h3{margin-top:auto;padding-top:24px}
 .cell .who{margin-top:6px;font-size:.875rem;color:var(--accent);font-weight:500}
 .cell p.desc{margin-top:12px;color:var(--muted);font-size:.975rem;max-width:46ch}
 .media{position:relative;z-index:1;overflow:hidden}
@@ -251,11 +251,10 @@ section{position:relative}
 .c-b .media,.c-c .media{height:150px}
 .c-b .media::after,.c-c .media::after{background:linear-gradient(0deg,rgba(23,18,31,1) 0%,rgba(23,18,31,0) 70%)}
 .c-b .media img{object-position:50% 64%}
-.c-b .ico,.c-c .ico{margin-top:-22px;margin-bottom:0;position:relative}
-.c-b h3,.c-c h3{margin-top:18px}
+.c-b h3,.c-c h3{margin-top:0;padding-top:6px}
 .c-e{background:linear-gradient(160deg,rgba(253,137,37,.18),rgba(253,137,37,.03) 55%),rgba(255,255,255,.03)!important;border-color:rgba(253,137,37,.24)!important}
 .c-f{grid-column:span 6;min-height:0;display:grid;grid-template-columns:1fr 1.1fr}
-.c-f .body h3{margin-top:28px}
+.c-f .body h3{margin-top:auto}
 .c-f .media{min-height:260px}
 .c-f .media img{position:absolute;inset:0;object-position:50% 40%}
 .c-f .media::after{background:linear-gradient(90deg,rgba(21,16,29,1) 0%,rgba(21,16,29,.2) 40%,rgba(21,16,29,0) 70%)}
@@ -339,11 +338,16 @@ section{position:relative}
 .founder-top img{width:76px;height:76px;border-radius:999px;object-fit:cover;filter:saturate(.85);box-shadow:0 0 0 2px var(--bg),0 0 0 3px rgba(253,137,37,.6)}
 .founder-top strong{font-family:var(--font-display);font-size:1.25rem;font-weight:600;letter-spacing:-.01em;display:block}
 .founder-top span{color:var(--muted);font-size:.9rem}
-.facts{display:grid;grid-template-columns:1fr 1fr}
-.fact{padding:22px 24px}
-.fact:nth-child(odd){border-right:1px solid var(--line)}
-.fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
-.fact b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.75rem;letter-spacing:-.02em;line-height:1.1}
+.facts{display:grid}
+.fact{display:flex;gap:16px;align-items:baseline;padding:16px 24px}
+.fact + .fact{border-top:1px solid var(--line)}
+.fact b{flex:none;min-width:92px}
+.fact span{margin-top:0!important}
+.fact-wide{display:block;padding:22px 24px}
+.fact-wide span{margin-top:6px!important}
+.fact-wide b{font-size:1.25rem}
+.fact-wide span{font-size:.9375rem;color:#cfcad8;max-width:52ch}
+.fact b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.4rem;letter-spacing:-.02em;line-height:1.1}
 .fact span{display:block;margin-top:6px;color:var(--muted);font-size:.875rem;line-height:1.4}
 .founder .li{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem;transition:color .3s}
 .founder .li:hover{color:var(--text)}
@@ -380,6 +384,12 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 .foot a{transition:color .3s}
 .foot a:hover{color:var(--text)}
+.social{display:flex;flex-wrap:wrap;gap:10px}
+.social a{position:relative;width:46px;height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#d9d4e0;transition:color .3s,transform .5s var(--pop),border-color .3s,background-color .3s}
+.social a svg{width:20px;height:20px}
+.social a:hover{color:var(--accent);border-color:rgba(253,137,37,.45);background:var(--accent-tint);transform:translateY(-3px)}
+.social a::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 10px);left:50%;transform:translate(-50%,6px);white-space:nowrap;font-size:.75rem;font-weight:600;color:var(--text);background:rgba(30,24,40,.95);border:1px solid var(--line-2);padding:5px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .25s var(--ease),transform .35s var(--ease)}
+.social a:hover::after,.social a:focus-visible::after{opacity:1;transform:translate(-50%,0)}
 .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:.8125rem}
 
 /* ── Chat (Nino) ───────────────────────────────── */
@@ -476,7 +486,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
   .c-f .media::after{background:linear-gradient(0deg,rgba(21,16,29,1),rgba(21,16,29,0) 60%)}
   .panel{padding:28px;min-height:0}
   .panel ul{grid-template-columns:1fr}
-  .facts .fact b{font-size:1.4rem}
+  .fact b{min-width:80px;font-size:1.25rem}
   .foot{grid-template-columns:1fr 1fr}
   .foot > div:first-child{grid-column:1/-1}
   .cta{padding:96px 0}
@@ -606,7 +616,6 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       <article class="cell c-a glass spot reveal">
         <div class="bg"><img src="assets/mago-bg.webp" alt="" loading="lazy"></div>
         <div class="body">
-          <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></div>
           <h3>O número de ontem, às 8 da manhã</h3>
           <span class="who">Comércio, e-commerce e quem tem painel</span>
           <p class="desc">Ele abre o painel que a empresa já usa, resume o dia anterior e manda no WhatsApp do dono antes de qualquer um chegar.</p>
@@ -617,7 +626,6 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       <article class="cell c-b glass spot reveal" style="--i:1">
         <div class="media"><img src="assets/foto-barbearia.webp" alt="Cadeira de barbearia vazia esperando o próximo cliente" loading="lazy"></div>
         <div class="body">
-          <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg></div>
           <h3>Confirma o horário na véspera</h3>
           <span class="who">Clínica, salão, barbearia e oficina</span>
           <p class="desc">Toda tarde ele confirma cada horário do dia seguinte. Cada falta evitada é uma cadeira que volta a faturar.</p>
@@ -627,7 +635,6 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       <article class="cell c-c glass spot reveal">
         <div class="media"><img src="assets/foto-chaves.webp" alt="Mão segurando chaves com chaveiro em forma de casa" loading="lazy"></div>
         <div class="body">
-          <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></div>
           <h3>O lead que não espera até segunda</h3>
           <span class="who">Imobiliária, corretora e quem vive de lead quente</span>
           <p class="desc">Formulário preenchido às 23h de sábado? Ele qualifica, registra no CRM e já responde.</p>
@@ -636,7 +643,6 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
 
       <article class="cell c-d glass spot reveal" style="--i:1">
         <div class="body">
-          <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M22 8c0-2.3-.8-4.3-2-6"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/><path d="M4 2C2.8 3.7 2 5.7 2 8"/></svg></div>
           <h3>O follow-up que o vendedor esquece</h3>
           <span class="who">Time comercial com funil no CRM</span>
           <p class="desc">Negócio parado há dias vira lembrete para o vendedor ou uma mensagem de reaquecimento.</p>
@@ -645,7 +651,6 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
 
       <article class="cell c-e glass spot reveal" style="--i:2">
         <div class="body">
-          <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/></svg></div>
           <h3>O extrato que já chega conciliado</h3>
           <span class="who">Quem recebe por PIX, cartão e boleto</span>
           <p class="desc">Ele cruza o que entrou com o que deveria ter entrado e mostra só a diferença.</p>
@@ -654,7 +659,6 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
 
       <article class="cell c-f glass spot reveal">
         <div class="body">
-          <div class="ico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg></div>
           <h3>O concorrente mudou o preço</h3>
           <span class="who">E-commerce, distribuidora e loja</span>
           <p class="desc">Ele acompanha as páginas dos concorrentes e só avisa quando o preço muda. Ninguém precisa conferir quinze abas por dia.</p>
@@ -817,11 +821,12 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
         <div><strong>Chris Berenguer</strong><span>Fundador</span></div>
       </div>
       <div class="facts">
-        <div class="fact"><b>Hapvida</b><span>Foi Coordenador de Inteligência Artificial</span></div>
+        <div class="fact fact-wide"><b>Experiência</b><span>Foi Coordenador de Inteligência Artificial na Hapvida, com passagens por startups, grandes empresas do setor financeiro e setor público. Hoje atua como consultor especialista pela WizzyBots.</span></div>
         <div class="fact"><b>UFPE</b><span>Mestre em Administração, ênfase em Inovação</span></div>
         <div class="fact"><b>20</b><span>Artigos acadêmicos publicados em inovação</span></div>
         <div class="fact"><b>UTFPR</b><span>Especialista em Python para Negócios</span></div>
       </div>
+      <a class="li" href="http://lattes.cnpq.br/9356045255672878" target="_blank" rel="noopener">Currículo Lattes <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
       <a class="li" href="https://www.linkedin.com/company/wizzy-bots/" target="_blank" rel="noopener">WizzyBots no LinkedIn <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
     </aside>
   </div>
@@ -873,13 +878,13 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       </div>
       <div>
         <h4>Contato</h4>
-        <ul>
-          <li><a href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico</a></li>
-          <li><a href="https://api.whatsapp.com/send/?phone=%2B5581987779095&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="https://www.linkedin.com/company/wizzy-bots/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/wizzybots/" target="_blank" rel="noopener">Instagram @wizzybots</a></li>
+        <div class="social">
+          <a class="glass" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener" aria-label="Agendar diagnóstico" data-tip="Agendar diagnóstico"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg></a>
+          <a class="glass" href="https://api.whatsapp.com/send/?phone=%2B5581987779095&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="WhatsApp" data-tip="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+          <a class="glass" href="https://www.linkedin.com/company/wizzy-bots/" target="_blank" rel="noopener" aria-label="LinkedIn" data-tip="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a class="glass" href="https://www.instagram.com/wizzybots/" target="_blank" rel="noopener" aria-label="Instagram @wizzybots" data-tip="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg></a>
           <!-- TODO: YouTube e TikTok quando houver as URLs reais -->
-        </ul>
+        </div>
       </div>
     </div>
     <div class="foot-bottom">© 2026 WizzyBots. Todos os direitos reservados.</div>
