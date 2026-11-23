@@ -996,8 +996,8 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
     <div class="lead-done" role="status">
       <div class="ok"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></div>
       <h2>Recebemos seu contato.</h2>
-      <p>Em até 1 dia útil alguém da WizzyBots fala com você. Se quiser adiantar, já pode agendar o diagnóstico.</p>
-      <a class="btn btn-primary" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <p>Em até 1 dia útil alguém da WizzyBots fala com você.</p>
+      <button class="btn btn-primary" type="button" id="leadThanks">Obrigado</button>
     </div>
   </div>
 </dialog>
@@ -1336,6 +1336,7 @@ const openLead = (via) => {
 const closeLead = () => { dlg.close(); if (lastFocus && lastFocus.focus) lastFocus.focus(); };
 document.querySelectorAll('[data-lead-open]').forEach(b => b.addEventListener('click', () => openLead(b.dataset.leadOpen || 'botao')));
 document.getElementById('leadClose').addEventListener('click', closeLead);
+document.getElementById('leadThanks').addEventListener('click', closeLead);
 dlg.addEventListener('click', e => { if (e.target === dlg) closeLead(); });
 dlg.addEventListener('close', () => { if (!dlg.classList.contains('sent')) lsave({ dismissed: Date.now() }); });
 
