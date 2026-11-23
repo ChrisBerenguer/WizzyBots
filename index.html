@@ -572,7 +572,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       <a href="#tecnologia">Tecnologia</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-primary btn-sm" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico</a>
+      <button class="btn btn-primary btn-sm" type="button" data-lead-open="header">Agendar diagnóstico</button>
       <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></button>
     </div>
   </div>
@@ -582,7 +582,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
   <a href="#como-funciona">Como funciona</a>
   <a href="#quem-somos">Quem somos</a>
   <a href="#tecnologia">Tecnologia</a>
-  <a class="btn btn-primary" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico</a>
+  <button class="btn btn-primary" type="button" data-lead-open="menu-mobile">Agendar diagnóstico</button>
 </div>
 
 <main>
@@ -903,7 +903,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       <p class="lead">No diagnóstico escolhemos a primeira tarefa e o número que vai provar que ela se pagou.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        <a class="btn btn-ghost" href="https://api.whatsapp.com/send/?phone=%2B5581987779095&text=Ol%C3%A1%2C+vim+pelo+site+da+WizzyBots&type=phone_number&app_absent=0" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Chamar no WhatsApp</a>
+        <button class="btn btn-ghost" type="button" data-lead-open="cta-final"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Entre em contato</button>
       </div>
     </div>
   </div>
@@ -1041,7 +1041,7 @@ const secObs = new IntersectionObserver(entries => {
 const menuBtn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu');
 const setMenu = open => { menu.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', open); menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu'); };
 menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
-menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+menu.querySelectorAll('a, button').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
 /* Vídeo do hero */
 const vid = document.getElementById('heroVideo');
@@ -1334,7 +1334,7 @@ const openLead = (via) => {
   setTimeout(() => document.getElementById('lfNome').focus(), 80);
 };
 const closeLead = () => { dlg.close(); if (lastFocus && lastFocus.focus) lastFocus.focus(); };
-document.querySelectorAll('[data-lead-open]').forEach(b => b.addEventListener('click', () => openLead('botao')));
+document.querySelectorAll('[data-lead-open]').forEach(b => b.addEventListener('click', () => openLead(b.dataset.leadOpen || 'botao')));
 document.getElementById('leadClose').addEventListener('click', closeLead);
 dlg.addEventListener('click', e => { if (e.target === dlg) closeLead(); });
 dlg.addEventListener('close', () => { if (!dlg.classList.contains('sent')) lsave({ dismissed: Date.now() }); });
