@@ -50,6 +50,7 @@
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 8px)}
+html,body{overflow-x:clip;max-width:100%}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,video,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -151,7 +152,7 @@ section{position:relative}
 
 /* ── Estudo (95%) ──────────────────────────────── */
 .study-grid{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
-.stat{position:sticky;top:calc(var(--nav-h) + 40px);border-radius:var(--r);padding:40px 36px}
+.stat{position:sticky;top:calc(var(--nav-h) + 40px);border-radius:var(--r);padding:40px 36px;overflow:hidden}
 .stat::selection{background:none}
 .stat-glow{position:absolute;inset:auto -30% -40% -30%;height:80%;z-index:-1;background:radial-gradient(closest-side,rgba(253,137,37,.28),transparent);filter:blur(20px);pointer-events:none}
 .stat b{position:relative;z-index:1;display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(6rem,12vw,10rem);line-height:.9;letter-spacing:-.05em;color:var(--accent);font-variant-numeric:tabular-nums}
