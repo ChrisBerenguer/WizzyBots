@@ -369,6 +369,33 @@ const buscaLead = node({
   }
 });
 
+const nomeConversa = node({
+  type: 'n8n-nodes-base.dataTable',
+  version: 1.1,
+  config: {
+    name: 'Nome do cliente na conversa',
+    executeOnce: true,
+    alwaysOutputData: true,
+    onError: 'continueRegularOutput',
+    parameters: {
+      resource: 'row',
+      operation: 'update',
+      dataTableId: CONVERSAS,
+      matchType: 'allConditions',
+      filters: { conditions: [{ keyName: 'session_id', condition: 'eq', keyValue: SESSAO }] },
+      columns: {
+        mappingMode: 'defineBelow',
+        value: {
+          nome_cliente: "={{ ($('Busca cadastro do chat').all().map(i => i.json).find(j => j && j.id) || {}).nome || '' }}"
+        },
+        matchingColumns: [],
+        schema: [{ id: 'nome_cliente', displayName: 'nome_cliente', required: false, defaultMatch: false, display: true, type: 'string', canBeUsedToMatch: true }]
+      }
+    },
+    position: [2570, 300]
+  }
+});
+
 const avalia = node({
   type: 'n8n-nodes-base.code',
   version: 2,
@@ -377,7 +404,7 @@ const avalia = node({
     parameters: {
       mode: 'runOnceForAllItems',
       language: 'javaScript',
-      jsCode: `const r = ($input.all().map(i => i.json).find(j => j && j.id)) || null;
+      jsCode: `const r = ($('Busca cadastro do chat').all().map(i => i.json).find(j => j && j.id)) || null;
 if (!r) return [{ json: { alertar: false } }];
 const t = v => String(v == null ? '' : v).replace(/[<>]/g, '').trim();
 const email = t(r.email).toLowerCase();
@@ -388,7 +415,7 @@ const zapOk = dig.length >= 12 && dig.length <= 13;
 const completo = !!(t(r.nome) && t(r.segmento) && t(r.tamanho_empresa) && t(r.processos) && t(r.ferramentas) && emailOk && zapOk);
 return [{ json: { alertar: completo && r.alertado !== true, id: r.id, email, whatsapp: dig ? '+' + dig : '' } }];`
     },
-    position: [2680, 300]
+    position: [2790, 300]
   }
 });
 
@@ -403,7 +430,7 @@ const deveAlertar = ifElse({
         conditions: [{ leftValue: '={{ $json.alertar }}', rightValue: true, operator: { type: 'boolean', operation: 'true', singleValue: true } }]
       }
     },
-    position: [2900, 300]
+    position: [3010, 300]
   }
 });
 
@@ -502,5 +529,6 @@ export default workflow('wizzybots-chat-nino', 'WizzyBots_chat_v2_FINAL')
   .add(responde)
   .to(logNino)
   .to(buscaLead)
+  .to(nomeConversa)
   .to(avalia)
   .to(deveAlertar.onTrue(marca.to(linhaPlanilha).to(planilha).to(alerta)));

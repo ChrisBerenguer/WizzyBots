@@ -18,7 +18,6 @@
 <link rel="preload" href="assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/hero-poster.jpg" media="(min-width: 768px)">
-<link rel="preload" as="image" href="assets/hero-poster-mobile.jpg" media="(max-width: 767px)">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"WizzyBots","url":"https://wizzybots.com.br/","logo":"https://wizzybots.com.br/assets/logo.png","description":"Agência de automação e IA para PMEs.","founder":{"@type":"Person","name":"Chris Berenguer"},"sameAs":["https://www.linkedin.com/company/wizzy-bots/","https://www.instagram.com/wizzybots/"],"contactPoint":{"@type":"ContactPoint","telephone":"+55-81-98777-9095","contactType":"sales","availableLanguage":"Portuguese"}}
 </script>
@@ -521,9 +520,10 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
   .nav-bar{margin:0 10px;padding:0 8px 0 16px;height:56px}
   .nav-cta .btn{display:none}
   .sec{padding:92px 0}
-  .hero{align-items:flex-end}
-  .hero .wrap{padding-bottom:56px}
-  .hero-media video{object-position:50% 20%}
+  .hero{align-items:center;min-height:auto;padding:calc(var(--nav-h) + 56px) 0 8px}
+  .hero .wrap{padding-top:0}
+  .hero-media{display:none}
+  .how-visual{display:none}
   .hero::before{background:linear-gradient(0deg,var(--bg) 8%,rgba(13,10,20,.88) 45%,rgba(13,10,20,.15) 75%,rgba(13,10,20,.35) 100%)}
   .hero p{font-size:1.0625rem}
   .hero-ctas .btn{flex:1 1 100%;justify-content:center}
@@ -590,9 +590,8 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero" id="home">
   <div class="hero-media">
-    <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-hidden="true">
+    <video id="heroVideo" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
       <source src="assets/hero.mp4" type="video/mp4" media="(min-width: 768px)">
-      <source src="assets/hero-mobile.mp4" type="video/mp4">
     </video>
   </div>
   <div class="wrap">
@@ -862,7 +861,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
 <section class="sec sec-line about" id="quem-somos">
   <div class="wrap about-grid">
     <div>
-      <h2 class="reveal">Wyzzard + Bots. <span class="hl">Mago e robô, de propósito.</span></h2>
+      <h2 class="reveal">Wizzard + Bots. <span class="hl">Mago e robô, de propósito.</span></h2>
       <p class="story reveal">A WizzyBots tira das mãos das pessoas as tarefas repetitivas e mecânicas e coloca nas mãos de agentes de IA. Assim o time volta a gastar tempo só com o que exige julgamento humano.</p>
       <p class="story reveal" style="margin-top:16px">Fundada por Chris Berenguer, que hoje também presta consultoria de IA para grandes organizações do terceiro setor.</p>
       <p class="belief reveal">A tecnologia importa menos que resolver o problema certo com a ferramenta certa. Sem correr atrás de hype.</p>
@@ -1046,9 +1045,12 @@ menu.querySelectorAll('a, button').forEach(a => a.addEventListener('click', () =
 
 /* Vídeo do hero */
 const vid = document.getElementById('heroVideo');
-if (matchMedia('(max-width: 767px)').matches) vid.poster = 'assets/hero-poster-mobile.jpg';
-if (reduce) { vid.removeAttribute('autoplay'); vid.pause(); }
-else { const vObs = new IntersectionObserver(([e]) => e.isIntersecting ? vid.play().catch(()=>{}) : vid.pause()); vObs.observe(vid); }
+if (matchMedia('(max-width: 767px)').matches) { vid.closest('.hero-media').remove(); }
+else {
+  vid.poster = 'assets/hero-poster.jpg';
+  if (reduce) { vid.removeAttribute('autoplay'); vid.pause(); }
+  else { const vObs = new IntersectionObserver(([e]) => e.isIntersecting ? vid.play().catch(()=>{}) : vid.pause()); vObs.observe(vid); }
+}
 
 /* Revelação no scroll */
 const rev = new IntersectionObserver(entries => {
