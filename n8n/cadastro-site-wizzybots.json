@@ -1,0 +1,115 @@
+{
+  "name": "[WizzyBots] Cadastro do site → Data Table",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "wizzybots-cadastro-site",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "id": "a1f0c6e2-1b1a-4d1e-9a01-000000000001",
+      "name": "Webhook do site",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "wizzybots-cadastro-site"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Valida e limpa os dados que chegam do pop-up do site.\nconst b = $input.first().json.body || {};\nconst txt = (v, max) => String(v ?? '').replace(/[\\u0000-\\u001f<>]/g, '').trim().slice(0, max);\nconst nome = txt(b.nome, 120);\nconst email = txt(b.email, 160).toLowerCase();\nconst digitos = String(b.whatsapp ?? '').replace(/\\D/g, '');\nconst whatsapp = digitos ? '+' + (digitos.startsWith('55') ? digitos : '55' + digitos).slice(0, 15) : '';\nconst erros = [];\nif (nome.length < 2) erros.push('nome');\nif (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(email)) erros.push('email');\nif (whatsapp.replace(/\\D/g, '').length < 12) erros.push('whatsapp');\nif (b.consentimento !== true) erros.push('consentimento');\nif (b.website) erros.push('spam');\nreturn [{ json: {\n  valido: erros.length === 0,\n  erros: erros.join(','),\n  linha: {\n    nome,\n    email,\n    whatsapp,\n    empresa: txt(b.empresa, 120),\n    interesse: txt(b.interesse, 80),\n    consentimento: b.consentimento === true,\n    origem: txt(b.origem || 'site', 40),\n    abertura: txt(b.abertura, 20),\n    pagina: txt(b.pagina, 300),\n    utm_source: txt(b.utm_source, 100),\n    utm_medium: txt(b.utm_medium, 100),\n    utm_campaign: txt(b.utm_campaign, 100),\n    enviado_em: txt(b.enviado_em, 40),\n    recebido_em: new Date().toISOString(),\n    status: 'novo'\n  }\n}}];"
+      },
+      "id": "a1f0c6e2-1b1a-4d1e-9a01-000000000002",
+      "name": "Valida e limpa",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [240, 0]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict", "version": 2 },
+          "conditions": [
+            {
+              "id": "c0ffee00-0000-4000-8000-000000000001",
+              "leftValue": "={{ $json.valido }}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "true", "singleValue": true }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a1f0c6e2-1b1a-4d1e-9a01-000000000003",
+      "name": "Dados válidos?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [480, 0]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Entrega só as colunas da tabela para o nó da Data Table.\nreturn [{ json: $input.first().json.linha }];"
+      },
+      "id": "a1f0c6e2-1b1a-4d1e-9a01-000000000004",
+      "name": "Monta a linha",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [720, -100]
+    },
+    {
+      "parameters": {
+        "resource": "row",
+        "operation": "insert",
+        "dataTableId": { "__rl": true, "mode": "list", "value": "" },
+        "columns": { "mappingMode": "autoMapInputData", "value": {} },
+        "options": {}
+      },
+      "id": "a1f0c6e2-1b1a-4d1e-9a01-000000000005",
+      "name": "Grava na Data Table",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [960, -100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"ok\": true } }}",
+        "options": { "responseCode": 200 }
+      },
+      "id": "a1f0c6e2-1b1a-4d1e-9a01-000000000006",
+      "name": "Responde OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [1200, -100]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"ok\": false, \"erros\": $('Valida e limpa').first().json.erros } }}",
+        "options": { "responseCode": 400 }
+      },
+      "id": "a1f0c6e2-1b1a-4d1e-9a01-000000000007",
+      "name": "Responde erro",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [720, 120]
+    }
+  ],
+  "connections": {
+    "Webhook do site": { "main": [[{ "node": "Valida e limpa", "type": "main", "index": 0 }]] },
+    "Valida e limpa": { "main": [[{ "node": "Dados válidos?", "type": "main", "index": 0 }]] },
+    "Dados válidos?": {
+      "main": [
+        [{ "node": "Monta a linha", "type": "main", "index": 0 }],
+        [{ "node": "Responde erro", "type": "main", "index": 0 }]
+      ]
+    },
+    "Monta a linha": { "main": [[{ "node": "Grava na Data Table", "type": "main", "index": 0 }]] },
+    "Grava na Data Table": { "main": [[{ "node": "Responde OK", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}

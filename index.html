@@ -395,6 +395,54 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
 .social a:hover::after,.social a:focus-visible::after{opacity:1;transform:translate(-50%,0)}
 .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:.8125rem}
 
+/* ── Pop-up de cadastro ────────────────────────── */
+.lead-dlg{width:min(560px,calc(100vw - 24px));max-height:calc(100dvh - 24px);padding:0;border:1px solid var(--line-2);border-radius:24px;background:rgba(20,16,28,.86);backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);color:var(--text);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 50px 120px -30px rgba(0,0,0,.9);overflow:auto;opacity:0;transform:translateY(18px) scale(.97);transition:opacity .35s var(--ease),transform .55s var(--ease),overlay .55s allow-discrete,display .55s allow-discrete}
+.lead-dlg[open]{opacity:1;transform:none}
+@starting-style{.lead-dlg[open]{opacity:0;transform:translateY(18px) scale(.97)}}
+.lead-dlg::backdrop{background:rgba(6,4,12,.62);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.lead-dlg::before{content:"";position:absolute;right:-30%;top:-40%;width:80%;height:80%;background:radial-gradient(closest-side,rgba(253,137,37,.18),transparent);pointer-events:none}
+.lead-in{position:relative;padding:36px 36px 32px}
+.lead-close{position:absolute;top:14px;right:14px}
+.lead-dlg h2{font-size:clamp(1.6rem,4vw,2rem);max-width:20ch}
+.lead-dlg .sub{margin-top:10px;color:var(--muted);font-size:.975rem;max-width:44ch}
+.lead-form{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.lead-form .full{grid-column:1/-1}
+.fld{display:flex;flex-direction:column;gap:7px}
+.fld label{font-size:.875rem;font-weight:600;color:#e2dde8}
+.fld label .opt{font-weight:400;color:var(--faint)}
+.fld input,.fld select{height:48px;border-radius:14px;border:1px solid var(--line-2);background:rgba(255,255,255,.05);color:var(--text);padding:0 14px;font:inherit;font-size:16px;transition:border-color .3s,box-shadow .3s,background-color .3s}
+.fld select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,#aaa4b5 50%),linear-gradient(135deg,#aaa4b5 50%,transparent 50%);background-position:calc(100% - 20px) 21px,calc(100% - 15px) 21px;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+.fld select option{background:#1e1828;color:var(--text)}
+.fld input::placeholder{color:#8c8598}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(253,137,37,.18);background:rgba(255,255,255,.07)}
+.fld[data-invalid] input,.fld[data-invalid] select{border-color:#ff8a7a}
+.fld .err{display:none;font-size:.8125rem;color:#ffb3a8}
+.fld[data-invalid] .err{display:block}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:.875rem;color:var(--muted);line-height:1.45}
+.consent input{flex:none;width:20px;height:20px;margin-top:1px;accent-color:var(--accent)}
+.consent[data-invalid]{color:#ffb3a8}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.lead-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.lead-actions .btn{flex:1 1 auto;justify-content:center}
+.lead-actions .btn[disabled]{opacity:.7;cursor:progress}
+.lead-actions .spin{display:none;width:16px;height:16px;border-radius:999px;border:2px solid rgba(26,13,2,.3);border-top-color:var(--accent-ink);animation:spin .8s linear infinite}
+.lead-actions .btn[aria-busy="true"] .spin{display:inline-block}
+.lead-actions .btn[aria-busy="true"] svg{display:none}
+.lead-msg{grid-column:1/-1;font-size:.9rem;color:#ffb3a8}
+.lead-msg a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.lead-done{display:none;text-align:center;padding:12px 0 4px}
+.lead-done .ok{width:64px;height:64px;margin:4px auto 18px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:var(--accent-tint);border:1px solid rgba(253,137,37,.35);color:var(--accent);animation:pop .6s var(--pop) both}
+.lead-done .ok svg{width:30px;height:30px}
+.lead-done p{margin:10px auto 0;color:var(--muted);max-width:40ch}
+.lead-done .btn{margin-top:22px}
+.lead-dlg.sent .lead-form,.lead-dlg.sent .lead-head{display:none}
+.lead-dlg.sent .lead-done{display:block}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.foot-cta{margin-top:18px;background:none;border:0;padding:0;color:var(--accent);font-weight:600;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.foot-cta svg{width:17px;height:17px;transition:transform .5s var(--ease)}
+.foot-cta:hover svg{transform:translateX(4px)}
+@media (max-width:767px){.lead-in{padding:30px 20px 24px}.lead-form{grid-template-columns:1fr}}
+
 /* ── Chat (Nino) ───────────────────────────────── */
 .chat-fab{position:fixed;right:24px;bottom:24px;z-index:50;width:60px;height:60px;border-radius:999px;border:0;background:var(--accent);color:var(--accent-ink);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 14px 34px -10px rgba(253,137,37,.7);transition:transform .5s var(--pop)}
 .chat-fab:hover{transform:translateY(-3px) scale(1.04)}
@@ -671,7 +719,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
     </div>
 
     <div class="auto-foot reveal">
-      <span>Sua rotina não está aqui? A gente desenha junto no diagnóstico.</span>
+      <span>Sua rotina não está aqui? <button class="foot-cta" type="button" data-lead-open style="margin:0">Conte para a gente <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></span>
       <a class="link-arrow" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
   </div>
@@ -869,6 +917,7 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
       <div>
         <a href="#home" class="brand"><img src="assets/logo.png" alt="" width="28" height="28">WizzyBots</a>
         <p class="tag">Automação inteligente com toque de mágica. IA dentro do processo, com resultado medido.</p>
+        <button class="foot-cta" type="button" data-lead-open>Deixar meu contato <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
       </div>
       <div>
         <h4>Navegação</h4>
@@ -894,6 +943,64 @@ footer{padding:64px 0 40px;color:var(--muted);font-size:.9rem}
     <!-- Fotos dos cards: Unsplash (licença gratuita). Barbearia: Joshua Lawrence. Chaves: Jakub Żerdzicki. Prateleira: Zoshua Colah. Telefone: Vitaly Gariev. Cartão: CardMapr.nl. Celular com café: Swello. -->
   </div>
 </footer>
+
+<!-- ═══════════ POP-UP DE CADASTRO ═══════════ -->
+<dialog class="lead-dlg" id="leadDlg" aria-labelledby="leadTitle" aria-describedby="leadSub">
+  <div class="lead-in">
+    <button class="icon-btn lead-close" type="button" id="leadClose" aria-label="Fechar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    <div class="lead-head">
+      <h2 id="leadTitle">Qual tarefa você quer tirar das mãos do seu time?</h2>
+      <p class="sub" id="leadSub">Deixe seu contato. A gente responde em até 1 dia útil com o primeiro passo para automatizar essa rotina.</p>
+    </div>
+    <form class="lead-form" id="leadForm" novalidate>
+      <div class="fld full">
+        <label for="lfNome">Nome</label>
+        <input id="lfNome" name="nome" type="text" autocomplete="name" required maxlength="120">
+        <span class="err">Diga como podemos te chamar.</span>
+      </div>
+      <div class="fld">
+        <label for="lfEmail">E-mail</label>
+        <input id="lfEmail" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160">
+        <span class="err">Confira o e-mail.</span>
+      </div>
+      <div class="fld">
+        <label for="lfWhats">WhatsApp</label>
+        <input id="lfWhats" name="whatsapp" type="tel" autocomplete="tel" inputmode="tel" placeholder="(81) 99999-9999" required maxlength="20">
+        <span class="err">Informe um número com DDD.</span>
+      </div>
+      <div class="fld">
+        <label for="lfEmpresa">Empresa <span class="opt">(opcional)</span></label>
+        <input id="lfEmpresa" name="empresa" type="text" autocomplete="organization" maxlength="120">
+      </div>
+      <div class="fld">
+        <label for="lfInteresse">O que mais toma tempo hoje?</label>
+        <select id="lfInteresse" name="interesse" required>
+          <option value="" disabled selected>Escolha uma opção</option>
+          <option>Atendimento e WhatsApp</option>
+          <option>Vendas e follow-up</option>
+          <option>Financeiro e conciliação</option>
+          <option>Relatórios e planilhas</option>
+          <option>Marketing e conteúdo</option>
+          <option>Capacitar o time em IA</option>
+          <option>Outra coisa</option>
+        </select>
+        <span class="err">Escolha uma opção.</span>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="lfSite">Não preencha</label><input id="lfSite" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+      <label class="consent full" id="lfConsentWrap"><input id="lfConsent" name="consentimento" type="checkbox" required><span>Autorizo a WizzyBots a entrar em contato comigo sobre este pedido e a guardar estes dados para isso, conforme a LGPD.</span></label>
+      <p class="lead-msg" id="leadMsg" role="alert" hidden></p>
+      <div class="lead-actions full">
+        <button class="btn btn-primary" type="submit" id="leadSend"><span class="spin" aria-hidden="true"></span><span id="leadSendTxt">Quero ser contatado</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+      </div>
+    </form>
+    <div class="lead-done" role="status">
+      <div class="ok"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h2>Recebemos seu contato.</h2>
+      <p>Em até 1 dia útil alguém da WizzyBots fala com você. Se quiser adiantar, já pode agendar o diagnóstico.</p>
+      <a class="btn btn-primary" href="https://calendly.com/chrisberenguer/meeting-your-company" target="_blank" rel="noopener">Agendar diagnóstico <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</dialog>
 
 <!-- ═══════════ CHAT (Nino) ═══════════ -->
 <div class="chat-win" id="chatWin" role="dialog" aria-label="Conversa com o Nino" hidden>
@@ -1210,6 +1317,92 @@ async function run() {
   }
 }
 if (reduce) finalState(); else run();
+
+/* ── Pop-up de cadastro → webhook n8n → Data Table ── */
+const LEAD_WEBHOOK = 'https://n8n.srv1632946.hstgr.cloud/webhook/wizzybots-cadastro-site';
+const dlg = document.getElementById('leadDlg'), lform = document.getElementById('leadForm');
+const lsend = document.getElementById('leadSend'), lsendTxt = document.getElementById('leadSendTxt'), lmsg = document.getElementById('leadMsg');
+const LKEY = 'wizzy_lead_popup';
+const lstate = () => { try { return JSON.parse(localStorage.getItem(LKEY) || '{}'); } catch (_) { return {}; } };
+const lsave = v => { try { localStorage.setItem(LKEY, JSON.stringify({ ...lstate(), ...v })); } catch (_) {} };
+let lastFocus = null;
+const openLead = (via) => {
+  if (dlg.open || !dlg.showModal) return;
+  lastFocus = document.activeElement; dlg.dataset.via = via || 'botao';
+  if (!win.hidden) setOpen(false);
+  dlg.showModal(); lsave({ shown: Date.now() });
+  setTimeout(() => document.getElementById('lfNome').focus(), 80);
+};
+const closeLead = () => { dlg.close(); if (lastFocus && lastFocus.focus) lastFocus.focus(); };
+document.querySelectorAll('[data-lead-open]').forEach(b => b.addEventListener('click', () => openLead('botao')));
+document.getElementById('leadClose').addEventListener('click', closeLead);
+dlg.addEventListener('click', e => { if (e.target === dlg) closeLead(); });
+dlg.addEventListener('close', () => { if (!dlg.classList.contains('sent')) lsave({ dismissed: Date.now() }); });
+
+/* Abertura automática: uma vez, depois de 25 s na página ou ao chegar nas automações; não volta por 7 dias se a pessoa fechou, nunca depois de enviar */
+const st = lstate(), WEEK = 7 * 864e5;
+const canAuto = !st.sent && !(st.dismissed && Date.now() - st.dismissed < WEEK);
+if (canAuto) {
+  let fired = false; const fire = () => { if (fired) return; fired = true; clearTimeout(t); autoObs.disconnect(); openLead('auto'); };
+  const t = setTimeout(fire, 25000);
+  const autoObs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setTimeout(fire, 1200); }, { threshold: .35 });
+  autoObs.observe(document.getElementById('servicos'));
+}
+
+/* Máscara de WhatsApp */
+const wInput = document.getElementById('lfWhats');
+wInput.addEventListener('input', () => {
+  let d = wInput.value.replace(/\D/g, '').replace(/^55(?=\d{10,11}$)/, '').slice(0, 11);
+  wInput.value = d.length > 10 ? `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}` : d.length > 6 ? `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}` : d.length > 2 ? `(${d.slice(0,2)}) ${d.slice(2)}` : d;
+});
+
+const fld = id => document.getElementById(id).closest('.fld') || document.getElementById(id).closest('.consent');
+const setInvalid = (id, bad) => { const f = fld(id); bad ? f.setAttribute('data-invalid', '') : f.removeAttribute('data-invalid'); document.getElementById(id).setAttribute('aria-invalid', bad); };
+const validate = () => {
+  const v = id => document.getElementById(id).value.trim();
+  const checks = {
+    lfNome: v('lfNome').length >= 2,
+    lfEmail: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v('lfEmail')),
+    lfWhats: v('lfWhats').replace(/\D/g, '').length >= 10,
+    lfInteresse: !!v('lfInteresse'),
+    lfConsent: document.getElementById('lfConsent').checked
+  };
+  Object.entries(checks).forEach(([id, ok]) => setInvalid(id, !ok));
+  const first = Object.keys(checks).find(k => !checks[k]);
+  if (first) document.getElementById(first).focus();
+  return !first;
+};
+['lfNome','lfEmail','lfWhats','lfInteresse','lfConsent'].forEach(id => document.getElementById(id).addEventListener('change', () => setInvalid(id, false)));
+
+lform.addEventListener('submit', async e => {
+  e.preventDefault(); lmsg.hidden = true;
+  if (!validate()) return;
+  const fd = new FormData(lform);
+  if (fd.get('website')) { dlg.classList.add('sent'); return; }   /* honeypot: robô, finge sucesso */
+  const qs = new URLSearchParams(location.search);
+  const payload = {
+    nome: fd.get('nome').trim(), email: fd.get('email').trim().toLowerCase(),
+    whatsapp: '+55' + fd.get('whatsapp').replace(/\D/g, ''), empresa: (fd.get('empresa') || '').trim(),
+    interesse: fd.get('interesse'), consentimento: true,
+    origem: 'site', abertura: dlg.dataset.via || 'botao', pagina: location.href.split('#')[0],
+    utm_source: qs.get('utm_source') || '', utm_medium: qs.get('utm_medium') || '', utm_campaign: qs.get('utm_campaign') || '',
+    enviado_em: new Date().toISOString()
+  };
+  lsend.disabled = true; lsend.setAttribute('aria-busy', 'true'); lsendTxt.textContent = 'Enviando';
+  try {
+    const ctrl = new AbortController(); const to = setTimeout(() => ctrl.abort(), 15000);
+    const r = await fetch(LEAD_WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: ctrl.signal });
+    clearTimeout(to);
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    dlg.classList.add('sent'); lsave({ sent: Date.now() }); lform.reset();
+    dlg.querySelector('.lead-done .btn').focus();
+  } catch (err) {
+    console.error('Cadastro:', err);
+    lmsg.textContent = 'Não conseguimos enviar agora. ';
+    const a = document.createElement('a'); a.href = 'https://api.whatsapp.com/send/?phone=%2B5581987779095&text=' + encodeURIComponent('Olá, sou ' + payload.nome + '. Quero falar sobre: ' + payload.interesse); a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Fale com a gente pelo WhatsApp';
+    lmsg.appendChild(a); lmsg.hidden = false;
+  } finally { lsend.disabled = false; lsend.removeAttribute('aria-busy'); lsendTxt.textContent = 'Quero ser contatado'; }
+});
 
 /* ── Chat Nino: mesmo webhook n8n do site atual ── */
 const WEBHOOK = 'https://n8n.srv1632946.hstgr.cloud/webhook/wizzy-bots-chat-bot-v2';
